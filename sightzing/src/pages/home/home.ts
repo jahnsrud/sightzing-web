@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
+import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
 
 @Component({
   selector: 'page-home',
@@ -41,7 +42,7 @@ export class HomePage {
   async presentAttraction() {
     // push-logikk
 
-    this.navController.push("attraction-detail");
+    this.navController.push(AttractionDetailPage);
 
   }
 
