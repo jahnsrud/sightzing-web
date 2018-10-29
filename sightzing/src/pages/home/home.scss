@@ -1,3 +1,26 @@
-page-home {
+.title-uppercase {
+    text-transform: uppercase;
+    font-size: 10pt;
+}
+
+.weather-temperature {
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+.weather-subtitle {
+    font-style: italic;
+    font-size: 11pt;
+    color: gray;
+    
+}
+
+.card-featured {
+    width: 100%;
+    height: 200px;
+    background-color: #E9E9E9;
+    background: url('../../assets/img/kenny-luo-649778-unsplash.jpg') no-repeat 100% center;
+    border-radius: 10px;
+    padding: 10px;
 
 }
