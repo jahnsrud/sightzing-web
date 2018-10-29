@@ -22,9 +22,10 @@ export class HomePage {
     // http://www.yr.no/place/Norway/Oslo/Oslo/Oslo/forecast_hour_by_hour.xml
 
   }
-/*
+
   async presentWelcomePage() {
 
+    /*
     const modal = await this.modalController.create({
       component: WelcomePage,
 
@@ -34,15 +35,16 @@ export class HomePage {
     });
     modal.present();
     return await modal.present();
+    */
   }
 
   async presentAttraction() {
     // push-logikk
 
-    this.navController.navigateForward("attraction-detail");
+    this.navController.push("attraction-detail");
 
   }
-*/
+
   isFirstLaunch() {
 
     // legg inn logikk her
