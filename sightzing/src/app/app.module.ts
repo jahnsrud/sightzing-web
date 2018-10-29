@@ -12,6 +12,7 @@ import { ExplorePage } from '../pages/explore/explore';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { InfoPage } from '../pages/info/info';
+import { MyGuidePage } from '../pages/my-guide/my-guide';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { InfoPage } from '../pages/info/info';
     TicketsPage,
     AttractionDetailPage,
     TabsPage,
+    MyGuidePage,
     InfoPage
   ],
   imports: [
@@ -34,6 +36,7 @@ import { InfoPage } from '../pages/info/info';
     AttractionDetailPage,
     HomePage,
     ExplorePage,
+    MyGuidePage,
     TabsPage,
     InfoPage
   ],
