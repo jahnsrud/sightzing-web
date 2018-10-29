@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
+import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
 
 @Component({
   selector: 'page-home',
@@ -22,9 +23,10 @@ export class HomePage {
     // http://www.yr.no/place/Norway/Oslo/Oslo/Oslo/forecast_hour_by_hour.xml
 
   }
-/*
+
   async presentWelcomePage() {
 
+    /*
     const modal = await this.modalController.create({
       component: WelcomePage,
 
@@ -34,15 +36,16 @@ export class HomePage {
     });
     modal.present();
     return await modal.present();
+    */
   }
 
   async presentAttraction() {
     // push-logikk
 
-    this.navController.navigateForward("attraction-detail");
+    this.navController.push(AttractionDetailPage);
 
   }
-*/
+
   isFirstLaunch() {
 
     // legg inn logikk her
