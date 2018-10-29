@@ -1,46 +1,37 @@
 <ion-header>
 
     <ion-title>
-      <h1>Info</h1>  
+      <h1 class="info">Info</h1>  
     </ion-title>
 
 </ion-header>
 
 <ion-content padding>
 <!-- BUTTONS  -->
-  <div padding>
     <button ion-button full block clear icon-end class="buttons">
       About Oslo
       <ion-icon name="add"></ion-icon>
     </button>
-  </div>
 
-  <div padding>
-      <button ion-button full block clear icon-end class="buttons">
-        Practical Information
-        <ion-icon name="add"></ion-icon>
-      </button>
-    </div>
+    <button ion-button (click)="showInfo()" full block clear icon-end class="buttons">
+      Practical Information
+      <ion-icon name="add"></ion-icon>
+    </button>
+    <div>Information text</div>
+  
+    <button ion-button full block clear icon-end class="buttons">
+      Public Transportation
+      <ion-icon name="add"></ion-icon>
+    </button>
 
-    <div padding>
-        <button ion-button full block clear icon-end class="buttons">
-          Public Transportation
-          <ion-icon name="add"></ion-icon>
-        </button>
-      </div>
+    <button ion-button full block clear icon-end class="buttons">
+      About sightZing
+      <ion-icon name="add"></ion-icon>
+    </button>
 
-      <div padding>
-          <button ion-button full block clear icon-end class="buttons">
-            About sightZing
-            <ion-icon name="add"></ion-icon>
-          </button>
-        </div>
-
-        <div padding>
-            <button ion-button full block clear icon-end class="buttons">
-              Terms and Conditions
-              <ion-icon name="add"></ion-icon>
-            </button>
-          </div>
+    <button ion-button full block clear icon-end class="buttons">
+      Terms and Conditions
+      <ion-icon name="add"></ion-icon>
+    </button>
 
 </ion-content>
