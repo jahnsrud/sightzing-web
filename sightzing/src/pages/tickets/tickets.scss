@@ -1,7 +1,8 @@
 .ticket-card {
     width: 100%;
     background-color: black;
-    height: 600px;
+    background-image: url('../../assets/imgs/fun.jpg');
+    height: 550px;
     border-radius: 10px;
     padding: 10px;
     overflow: hidden;
@@ -9,14 +10,22 @@
 }
 
 #qr {
-    padding: 30px;
+    padding: 10px;
     background-color: white;
     border-radius: 10px;
-    width: 20%;
+    width: 200px;
     
 }
 
 .qr-subtitle {
     color: gray;
     font-size: 12pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+.buy-button {
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
 }
