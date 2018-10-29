@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { TicketsPage } from '../pages/tickets/tickets';
 import { AttractionDetailPage } from '../pages/attraction-detail/attraction-detail';
 import { TabsPage } from '../pages/tabs/tabs';
+import { ExplorePage } from '../pages/explore/explore';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -16,6 +17,7 @@ import { InfoPage } from '../pages/info/info';
   declarations: [
     MyApp,
     HomePage,
+    ExplorePage, 
     TicketsPage,
     AttractionDetailPage,
     TabsPage,
@@ -31,8 +33,8 @@ import { InfoPage } from '../pages/info/info';
     TicketsPage,
     AttractionDetailPage,
     HomePage,
-    TabsPage,
-    InfoPage
+    ExplorePage,
+    TabsPage
   ],
   providers: [
     StatusBar,
