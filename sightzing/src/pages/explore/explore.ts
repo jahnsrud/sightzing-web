@@ -16,14 +16,14 @@ import { FilterComponent } from '../../components/filter/filter';
 })
 export class ExplorePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private popoverController: PopoverController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public popoverController: PopoverController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ExplorePage');
   }
 
-  openFilter(event){
+  openFilter(event):void{
     let filterPop = this.popoverController.create(FilterComponent);
     filterPop.present({
       ev: event

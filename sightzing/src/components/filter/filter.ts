@@ -15,10 +15,10 @@ export class FilterComponent {
 
   text: string;
 
-  constructor(public viewCtrl: ViewController) {
+  constructor(public viewController: ViewController) {
   }
 
   closeFilter(){
-    this.viewCtrl.dismiss();
+    this.viewController.dismiss();
   }
 }
