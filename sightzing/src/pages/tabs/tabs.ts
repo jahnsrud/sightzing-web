@@ -12,11 +12,7 @@ import { ExplorePage } from '../explore/explore';
 export class TabsPage {
 
   tab1Root = HomePage;
-<<<<<<< HEAD
-  // tab2Root = ;
-=======
   tab2Root = ExplorePage;
->>>>>>> ce8fe9bf9e920a96894efe986b392be11e8be216
   // tab3Root = ; 
   tab4Root = TicketsPage;
   tab5Root = InfoPage;
