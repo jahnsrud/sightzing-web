@@ -1,4 +1,110 @@
-<!-- Generated template for the FilterComponent component -->
-<div>
-  {{text}}
-</div>
+<ion-header>
+  <ion-toolbar>
+    <ion-title start><h3>Filter</h3></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeFilter()">
+        <ion-icon name="ios-close" id="close-icon"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding id="filter-page">
+  <ion-grid>
+    <ion-row>
+    
+      <!--WEATHER-->
+      <ion-col col-4>
+          <ion-row>
+            <ion-col col-12>
+                <h6>Weather</h6>
+            </ion-col>
+              
+          </ion-row>
+
+        <!--1st line-->
+        <ion-row>
+          <!--Sunny-->
+          <ion-col col-6>
+            <button ion-button>
+              <ion-icon name="ios-sunny"></ion-icon>
+            </button>
+          </ion-col>
+          <!--Cloudy-->
+          <ion-col col-6>
+            <button ion-button>
+              <ion-icon name="ios-partly-sunny"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+
+        <!--2nd line-->
+        <ion-row>
+          <!--Snow-->
+          <ion-col col-6>
+            <button ion-button>
+              <ion-icon name="snow"></ion-icon>
+            </button>
+          </ion-col>
+          <!--Rainy-->
+          <ion-col col-6>
+            <button ion-button>
+              <ion-icon name="rainy"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+
+      <!--PRICE & RATING-->
+      <ion-col col-8>
+        <ion-row>
+          <ion-col col-12>
+              <h6>Price</h6>
+          </ion-col>
+            
+        </ion-row>
+
+        <!--Price-->
+        <ion-row>
+          <ion-col col-12>
+            <ion-item>
+                <ion-range min="0" max="5" step="1" snaps="True">
+                  <ion-icon size="small" slot="start" name="sunny"></ion-icon>
+                  <ion-icon slot="end" name="sunny"></ion-icon>
+                </ion-range>
+              </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <!--Rating-->
+        <ion-row>
+            <ion-col col-12>
+                <h6>Rating</h6>
+            </ion-col>
+              
+          </ion-row>
+
+        <ion-row>
+          <ion-col col-12>
+              <ion-item>
+                  <ion-range min="0" max="5" step="1" snaps="True">
+                    <ion-icon size="small" slot="start" name="sunny"></ion-icon>
+                    <ion-icon slot="end" name="sunny"></ion-icon>
+                  </ion-range>
+                </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+        <button ion-button><h6>Kids</h6></button>
+        <button ion-button><h6>Single</h6></button>
+        <button ion-button><h6>Couples</h6></button>
+        <button ion-button><h6>Handicapped</h6></button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

@@ -29,7 +29,7 @@ $color-gray: rgb(156, 156, 156);
 /*--------------------------------------*/
 
 
-.popover-content.sc-ion-popover-md{
+.popover-content{
     width: 100%; 
     top: 0 !important; 
     left: 0 !important; 
@@ -56,6 +56,7 @@ h1{
     font-family: 'Playfair Display', serif;
     color: $color-dark-gray;
     font-size: $h1-font-size !important;
+    padding-top: 50px; 
 }
 
 /*Used on sub-pages like attraction or tour*/
@@ -99,3 +100,9 @@ h6{
 ion-col.col{
     padding: 0px;
 }
+
+/*Title
+ion-title{
+    padding: 0 !important; 
+
+}*/
