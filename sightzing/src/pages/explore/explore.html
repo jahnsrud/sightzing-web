@@ -1,18 +1,181 @@
-<!--
-  Generated template for the ExplorePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>explore</ion-title>
-  </ion-navbar>
-
+  <ion-toolbar>
+      <ion-buttons slot="end">
+          <!--need to add function to this button-->
+          <button ion-button icon-only (click)="openFilter($event)">
+              <ion-icon name="ios-options" isActive="false" id="filter-icon"></ion-icon>
+          </button>
+      </ion-buttons>
+    
+  </ion-toolbar>
+  
 </ion-header>
 
+<ion-content fullscreen padding>
+  <ion-title><h1>Explore</h1></ion-title>
+  
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      {{ item }}
+    </ion-item>
+  </ion-list>
+  
+  <ion-grid no-padding>
+      <!--First card-->
+      <ion-row>
+          <ion-col col-12>
+              <ion-card class="cat-sm-height">
+                  <img src="../../assets/imgs/tours.jpg"/>
+                  <div class="card-txt">
+                      <div class="card-title"><h3>Tours</h3></div>
+                      <div class="card-subtitle"><h6>12 Attractions</h6></div>
+                  </div>
+              </ion-card>
+          </ion-col>
+      </ion-row>
+      
+      <ion-row>
+          <!--LEFT COLUMN-->
+          <ion-col col-6>
+              
+              <!--Sights-->
+              <ion-row>
+                  <ion-col col-12>
+                      <ion-card class="cat-sm-height">
+                          <img src="../../assets/imgs/sights.jpg"/>
+                          <div class="card-txt">
+                              <div class="card-title"><h3>Sights</h3></div>
+                              <div class="card-subtitle"><h6>12 Attractions</h6></div>
+                          </div>
+                      </ion-card>
+                  </ion-col>
+              </ion-row>
+              
+              <!--Theatre & Opera-->
+              <ion-row>
+                  <ion-col col-12>
+                      <ion-card class="cat-md-height">
+                          <img src="../../assets/imgs/opera.jpg"/>
+                          <div class="card-txt">
+                              <div class="card-title"><h3>Theatre &amp; Opera</h3></div>
+                              <div class="card-subtitle"><h6>12 Attractions</h6></div>
+                          </div>
+                      </ion-card>
+                  </ion-col>
+              </ion-row>
+              
+          </ion-col>
+              
+      
+          <!--RIGHT COLUMN-->
+          <ion-col col-6>
+              
+              <!--Museums-->
+              <ion-row>
+                  <ion-col col-12>
+                      <ion-card class="cat-md-height">
+                          <img src="../../assets/imgs/museums.jpg"/>
+                          <div class="card-txt">
+                              <div class="card-title"><h3>Museums</h3></div>
+                              <div class="card-subtitle"><h6>12 Attractions</h6></div>
+                          </div>
+                      </ion-card>
+                  </ion-col>
+              </ion-row>
+              
+              <!--Nature and Parks-->
+              <ion-row>
+                  <ion-col col-12>
+                      <ion-card class="cat-sm-height">
+                          <img src="../../assets/imgs/parks.jpg"/>
+                          <div class="card-txt">
+                              <div class="card-title"><h3>Nature &amp; Parks</h3></div>
+                              <div class="card-subtitle"><h6>12 Attractions</h6></div>
+                          </div>
+                      </ion-card>
+                  </ion-col>
+              </ion-row>
 
-<ion-content padding>
-
+          </ion-col>
+      </ion-row>
+      
+      <!--BIG CATEGORY 2 (FOOD)-->
+      <ion-row>
+          <ion-col col-12>
+              <ion-card class="cat-md-height">
+                  <img src="../../assets/imgs/restaurant.jpg"/>
+                  <div class="card-txt">
+                      <div class="card-title"><h3>Food &amp; Drinks</h3></div>
+                      <div class="card-subtitle"><h6>12 Attractions</h6></div>
+                  </div>
+              </ion-card>
+          </ion-col>
+      </ion-row>
+      
+      <!--COLUMN 1-->
+      <ion-row>
+          <ion-col col-6>
+          
+              <!--Shopping-->
+              <ion-row>
+                  <ion-col col-12>
+                      <ion-card class="cat-md-height">
+                          <img src="../../assets/imgs/shopping.jpg"/>
+                          <div class="card-txt">
+                              <div class="card-title"><h3>Shopping</h3></div>
+                              <div class="card-subtitle"><h6>12 Attractions</h6></div>
+                          </div>
+                      </ion-card>
+                  </ion-col>
+              </ion-row>
+              
+              <!--Spas & Wellness-->
+              <ion-row>
+                  <ion-col col-12>
+                      <ion-card class="cat-sm-height">
+                          <img src="../../assets/imgs/spa.jpg"/>
+                          <div class="card-txt">
+                              <div class="card-title"><h3>Spas &amp; Wellness</h3></div>
+                              <div class="card-subtitle"><h6>12 Attractions</h6></div>
+                          </div>
+                      </ion-card>
+                  </ion-col>
+              </ion-row>
+              
+          </ion-col>
+          
+          <!--COLUMN 2-->
+          <ion-col col-6>
+              
+              <!--Fun & Games-->
+              <ion-row>
+                  <ion-col col-12>
+                      <ion-card class="cat-sm-height">
+                          <img src="../../assets/imgs/fun.jpg"/>
+                          <div class="card-txt">
+                              <div class="card-title"><h3>Fun &amp; Games</h3></div>
+                              <div class="card-subtitle"><h6>12 Attractions</h6></div>
+                          </div>
+                      </ion-card>
+                  </ion-col>
+              </ion-row>
+              
+              <!--Clubs & Pubs-->
+              <ion-row>
+                  <ion-col col-12>
+                      <ion-card class="cat-md-height">
+                          <img src="../../assets/imgs/clubs.jpg"/>
+                          <div class="card-txt">
+                              <div class="card-title"><h3>Clubs &amp; Pubs</h3></div>
+                              <div class="card-subtitle"><h6>12 Attractions</h6></div>
+                          </div>
+                      </ion-card>
+                  </ion-col>
+              </ion-row>
+              
+          </ion-col>
+      </ion-row>
+      
+  </ion-grid>
 </ion-content>
