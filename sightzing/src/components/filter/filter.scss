@@ -4,9 +4,31 @@ filter {
 
 #filter-page{
     height: auto;
+
+    .scroll-content{
+        padding: 0 !important;
+    }
 }
 
 #close-icon{
     height: 30px; 
     width: 30px;
+}
+
+.weather-icon{
+    padding: 0 12px; 
+    height: 40px;
+    width: 40px;
+}
+
+.goodForButton{
+    padding: 0 10px;
+}
+
+.button-txt{
+    margin: 0; 
+}
+
+.item-inner{
+    border-bottom: none !important; 
 }
