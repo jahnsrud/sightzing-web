@@ -14,6 +14,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { InfoPage } from '../pages/info/info';
 import { MyGuidePage } from '../pages/my-guide/my-guide';
 import { WelcomePage } from '../pages/welcome/welcome';
+import { FilterComponent } from '../components/filter/filter';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { WelcomePage } from '../pages/welcome/welcome';
     TabsPage,
     MyGuidePage,
     WelcomePage,
-    InfoPage
+    InfoPage, 
+    FilterComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import { WelcomePage } from '../pages/welcome/welcome';
     MyGuidePage,
     TabsPage,
     InfoPage,
-    WelcomePage
+    WelcomePage, 
+    FilterComponent
   ],
   providers: [
     StatusBar,
