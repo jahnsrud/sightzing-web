@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 
 import { HomePage } from '../pages/home/home';
 import { TicketsPage } from '../pages/tickets/tickets';
+import { AttractionDetailPage } from '../pages/attraction-detail/attraction-detail';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -15,6 +16,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     TicketsPage,
+    AttractionDetailPage,
     TabsPage
   ],
   imports: [
@@ -25,6 +27,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     TicketsPage,
+    AttractionDetailPage,
     HomePage,
     TabsPage
   ],
