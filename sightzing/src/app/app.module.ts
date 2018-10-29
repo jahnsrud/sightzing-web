@@ -34,7 +34,8 @@ import { InfoPage } from '../pages/info/info';
     AttractionDetailPage,
     HomePage,
     ExplorePage,
-    TabsPage
+    TabsPage,
+    InfoPage
   ],
   providers: [
     StatusBar,
