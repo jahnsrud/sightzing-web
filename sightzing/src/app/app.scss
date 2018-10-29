@@ -14,3 +14,83 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300i|Playfair+Display:700|Roboto:400,700|Source+Sans+Pro:700');
+
+
+/*COLOR VARIABLES*/
+/*--------------------------------------*/
+
+$color-dark-gray: rgb(28, 28, 28);
+$color-gray: rgb(156, 156, 156); 
+
+/*--------------------------------------*/
+/*POPOVERS (used on filter) */
+/*--------------------------------------*/
+
+
+.popover-content.sc-ion-popover-md{
+    width: 100%; 
+    top: 0 !important; 
+    left: 0 !important; 
+}
+
+
+/*--------------------------------------*/
+/*SEARCHBAR */
+/*--------------------------------------*/
+
+.searchbar-input.sc-ion-searchbar-md{
+    border-radius: 20px; 
+    -webkit-box-shadow: 0 7px 10px 0 rgba(0,0,0,.10), 0 1px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    box-shadow: 0 7px 10px 0 rgba(0,0,0,.10), 0 1px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+
+/*--------------------------------------*/
+/*TYPOGRAPHY */
+/*--------------------------------------*/
+
+/*Used on main tab-titles*/
+h1{
+    font-size: 2.3rem; 
+    font-family: 'Playfair Display', serif;
+    color: $color-dark-gray;
+}
+
+/*Used on sub-pages like attraction or tour*/
+h2{
+      
+}
+
+/*Used on other titles like category-listing*/
+h3{
+    font-family: 'Roboto', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+h4{
+    
+}
+
+h5{
+    
+}
+
+h6{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400; 
+    font-size: 0.8em;
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+
+
+/*--------------------------------------*/
+/*TOOLBAR */
+/*--------------------------------------*/
+
+.header-md::after{
+    background-image: none;
+}
