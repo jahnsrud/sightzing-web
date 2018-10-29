@@ -13,6 +13,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { InfoPage } from '../pages/info/info';
 import { MyGuidePage } from '../pages/my-guide/my-guide';
+import { WelcomePage } from '../pages/welcome/welcome';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MyGuidePage } from '../pages/my-guide/my-guide';
     AttractionDetailPage,
     TabsPage,
     MyGuidePage,
+    WelcomePage,
     InfoPage
   ],
   imports: [
@@ -38,7 +40,8 @@ import { MyGuidePage } from '../pages/my-guide/my-guide';
     ExplorePage,
     MyGuidePage,
     TabsPage,
-    InfoPage
+    InfoPage,
+    WelcomePage
   ],
   providers: [
     StatusBar,

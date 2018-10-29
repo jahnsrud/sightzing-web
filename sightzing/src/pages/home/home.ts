@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
+import { WelcomePage } from '../welcome/welcome';
 
 @Component({
   selector: 'page-home',
@@ -26,17 +27,10 @@ export class HomePage {
 
   async presentWelcomePage() {
 
-    /*
-    const modal = await this.modalController.create({
-      component: WelcomePage,
-
-      componentProps: { 
-        value: "Test" 
-      }
-    });
+    const modal = await this.modalController.create(WelcomePage);
     modal.present();
-    return await modal.present();
-    */
+    // return await modal.present();
+    
   }
 
   async presentAttraction() {
