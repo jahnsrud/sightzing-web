@@ -21,11 +21,12 @@ $color-gray: rgb(156, 156, 156);
 #filter-icon{
     height: 30px;
     width: 30px;
+    color: $color-dark-gray;
 }
 
 ion-toolbar{
-    --background: transparent;
-    --ion-color-base: transparent !important; 
+    //--background: transparent;
+    //--ion-color-base: transparent !important; 
     position: absolute; 
 }
 
@@ -39,7 +40,6 @@ button{
 /*--------------------------------------*/
 
 ion-content{
-    font-size: 1rem; 
     font-family: 'Roboto', sans-serif;
     font-weight: 400; 
 }
@@ -112,7 +112,7 @@ ion-card img{
 
 .card-title{
 
-    color: white;
+    color: white !important;
     text-align: center;
     display: block;
     z-index: 999;
@@ -120,7 +120,7 @@ ion-card img{
 }
 
 .card-subtitle{
-    color: white; 
+    color: white !important; 
     width: 100%; 
     display: block; 
     text-align: center; 

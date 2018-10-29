@@ -53,9 +53,9 @@ $color-gray: rgb(156, 156, 156);
 
 /*Used on main tab-titles*/
 h1{
-    font-size: 2.3rem; 
     font-family: 'Playfair Display', serif;
     color: $color-dark-gray;
+    font-size: $h1-font-size !important;
 }
 
 /*Used on sub-pages like attraction or tour*/
@@ -66,8 +66,9 @@ h2{
 /*Used on other titles like category-listing*/
 h3{
     font-family: 'Roboto', serif;
-    font-size: 1.1rem;
-    font-weight: 700;
+    font-weight: 700 !important;
+    font-size: $h3-font-size !important;
+    margin-bottom: 1rem !important;
 }
 
 h4{
@@ -79,9 +80,9 @@ h5{
 }
 
 h6{
+    font-size: $h6-font-size !important;
     font-family: 'Roboto', sans-serif;
-    font-weight: 400; 
-    font-size: 0.8em;
+    font-weight: 400 !important; 
     text-transform: uppercase; 
     letter-spacing: 1px;
 }
