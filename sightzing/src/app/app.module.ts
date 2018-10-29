@@ -11,6 +11,7 @@ import { ExplorePage } from '../pages/explore/explore';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { InfoPage } from '../pages/info/info';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ExplorePage, 
     TicketsPage,
     AttractionDetailPage,
-    TabsPage
+    TabsPage,
+    InfoPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AttractionDetailPage,
     HomePage,
     ExplorePage,
-    TabsPage
+    TabsPage,
+    InfoPage
   ],
   providers: [
     StatusBar,
