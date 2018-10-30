@@ -1,3 +1,31 @@
-page-welcome {
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300i|Playfair+Display:700|Roboto:400,700|Source+Sans+Pro:700');
 
+.splash-log-in{
+  bottom: 0; 
+  position: absolute; 
+  width: 100%; 
 }
+
+.btn {
+
+    align-self: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold; 
+    font-size: 0.8em;
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    width: 100%; 
+    }
+   
+    #weibologo {
+    width: 30px;
+
+    }
+    
+    :host {
+      ion-content {
+        --background: url('../../assets/imgs/oslo-splash.jpg') no-repeat 100% center;
+        background-color: black;
+      }
+    }
+    

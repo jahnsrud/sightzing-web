@@ -7,13 +7,34 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>welcome</ion-title>
-    <button ion-button class="btn button-full button-round" (click)="dismiss()">Skip</button>
+    <ion-title>Welcome</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+    <ion-grid class="splash-log-in">
+
+        <ion-row class="row">
+          <ion-col col-12>
+            <button ion-button class="btn button-full button-round">Log in with Weibo<ion-img id="weibologo" src="../../assets/imgs/weibo-logo.png"></ion-img></button>
+          </ion-col>
+        </ion-row>
+    
+        <ion-row class="row">
+            <ion-col col-12>
+              <button ion-button class="btn button-full button-round">Register with email</button>
+            </ion-col>
+        </ion-row>
+    
+        <ion-row class="row">
+          <ion-col col-12>
+            <button ion-button class="btn button-full button-round" (click)="dismiss()">Skip</button>
+          </ion-col>
+        </ion-row>
+    
+      </ion-grid>
 
 </ion-content>
