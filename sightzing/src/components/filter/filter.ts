@@ -21,4 +21,5 @@ export class FilterComponent {
   closeFilter(){
     this.viewController.dismiss();
   }
+
 }
