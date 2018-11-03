@@ -19,7 +19,9 @@ export class ExplorePage {
   public attraction2 = {name:"Heisann", time:"4h", stars:2};
   public attraction3 = {name:"The Vigelands Park", time:"1h", stars:5};
 
-  public attractions = [this.attraction1, this.attraction2, this.attraction3];;
+  public attractions = [this.attraction1, this.attraction2, this.attraction3];
+
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public popoverController: PopoverController) {
 
@@ -36,6 +38,7 @@ export class ExplorePage {
     });
   }
 
+
   changeToResults(choice: string){
     //get the explore-grid
     var exploreGrid = document.getElementById("explore-grid");
@@ -43,6 +46,7 @@ export class ExplorePage {
     //create button-row for choices
     var buttonRow = document.createElement("row");
     buttonRow.className += "btn-row";
+    buttonRow.setAttribute("id", "button-row");
 
     //create button with the element chosen
     var choiceButton = document.createElement("button");
@@ -50,7 +54,7 @@ export class ExplorePage {
     
     //create the text classes for the button
     var btnText = document.createElement("h6");
-    btnText.className += "button-txt";
+    btnText.className += "button-txt choice-btn-txt";
 
     //create the text for the button
     var buttonName = document.createTextNode(choice);
@@ -59,21 +63,54 @@ export class ExplorePage {
     //add the text to the button
     choiceButton.appendChild(btnText);
 
+    //create the cross-out for choice-button
+    var crossOut = document.createElement("ion-icon"); 
+    crossOut.setAttribute("name", "close"); 
+    crossOut.setAttribute("role", "img");
+    crossOut.className += "choice-btn-cross icon icon-md ion-md ion-md-close"
+    choiceButton.appendChild(crossOut); 
+
     //add the button to the button-row
     buttonRow.appendChild(choiceButton);
     
-    //Fjern alle rader i ExploreGrid når man klikker på en kategori
-    while(exploreGrid.firstChild){
-      exploreGrid.removeChild(exploreGrid.firstChild);
+    //Set all the existing rows in the explore-grid to display none.
+    var existingRows = exploreGrid.getElementsByTagName("ion-row");
+
+    for(var i = 0; i < existingRows.length; i++){
+      existingRows[i].setAttribute("style", "display: none;");
     }
 
+    //Add the row for the buttons in the explore-grid
     exploreGrid.appendChild(buttonRow);
 
-    //Legg til rader for hver av attraksjonene som skal vises i resultatet
+    //Add row for each attraction to go in the explore-grid
     for(var i = 0; i<this.attractions.length; i++){
       var resultRow = document.createElement("ion-row");
       exploreGrid.appendChild(resultRow);
     }
-  }
 
+
+    choiceButton.addEventListener('click', changeToExplore);
+
+  
+    function changeToExplore(){
+      //get the explore-grid
+      var exploreGrid = document.getElementById("explore-grid");
+
+      //get all the existing rows
+      var existingRows = exploreGrid.getElementsByTagName("ion-row");
+
+      //set all the rows to display: block
+      for(var i = 0; i < existingRows.length; i++){
+        existingRows[i].setAttribute("style", "display: flex;");
+      }
+
+      //delete row with choice-buttons
+      var buttonRow = document.getElementById("button-row");
+
+      exploreGrid.removeChild(buttonRow);
+
+    }
+  
+  }
 }

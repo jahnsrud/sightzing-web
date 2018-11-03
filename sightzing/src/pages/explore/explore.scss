@@ -121,8 +121,20 @@ ion-card img{
 .choiceButton{
     width: auto; 
     color: $color-dark-gray;
+    padding: 0 16px;
+    display: table; 
 }
 
 .btn-row{
     padding: 0 8px;
+}
+
+.choice-btn-txt{
+    display: table-cell; 
+    vertical-align: middle;
+}
+
+.choice-btn-cross{
+    display: table-cell; 
+    padding-left: 8px; 
 }
