@@ -178,4 +178,31 @@
       </ion-row>
       
   </ion-grid>
+
+
+  <ion-grid no-padding id="result-grid">
+    <ion-row class="btn-row">
+        <ion-col col-12>
+            <button ion-button round class="choiceButton" (click)="changeToExplore()">
+                <h6 class="button-txt choice-btn-txt" id="choice-btn">
+                    Something
+                </h6>
+                <ion-icon name="close" class="choice-btn-cross"></ion-icon>
+            </button>
+        </ion-col>
+    </ion-row>
+
+    <ion-row id="result-row">
+        <ion-col col-12>
+            <ion-card class="cat-md-height">
+                <img class="result-card-img"/>
+                <div class="card-txt">
+                    <div><h3 class="card-title result-title">Title</h3></div>
+                </div>
+            </ion-card>
+        </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
 </ion-content>

@@ -15,9 +15,9 @@ import { FilterComponent } from '../../components/filter/filter';
   templateUrl: 'explore.html',
 })
 export class ExplorePage {
-  public attraction1 = {name:"The Vigelands Park", time:"2h", stars:5};
-  public attraction2 = {name:"Heisann", time:"4h", stars:2};
-  public attraction3 = {name:"The Vigelands Park", time:"1h", stars:5};
+  public attraction1 = {name:"The Vigelands Park", time:"2h", stars:5, image:"../../assets/imgs/tours.jpg"};
+  public attraction2 = {name:"Heisann", time:"4h", stars:2, image:"../../assets/imgs/tours.jpg"};
+  public attraction3 = {name:"The Vigelands Park", time:"1h", stars:5, image:"../../assets/imgs/tours.jpg"};
 
   public attractions = [this.attraction1, this.attraction2, this.attraction3];
 
@@ -42,75 +42,53 @@ export class ExplorePage {
   changeToResults(choice: string){
     //get the explore-grid
     var exploreGrid = document.getElementById("explore-grid");
+
+    //set the explore-grid to display: none
+    exploreGrid.setAttribute("style", "display: none;");
     
-    //create button-row for choices
-    var buttonRow = document.createElement("row");
-    buttonRow.className += "btn-row";
-    buttonRow.setAttribute("id", "button-row");
+    //Update the information in category button
+    var choiceButton = document.getElementById("choice-btn");
+    choiceButton.innerHTML = choice; 
 
-    //create button with the element chosen
-    var choiceButton = document.createElement("button");
-    choiceButton.className += "choiceButton button button-md button-default button-default-md button-round button-round-md";
-    
-    //create the text classes for the button
-    var btnText = document.createElement("h6");
-    btnText.className += "button-txt choice-btn-txt";
+    //set the result-grid to display: flex
+    var resultGrid = document.getElementById("result-grid"); 
+    resultGrid.setAttribute("style", "display: flex;"); 
 
-    //create the text for the button
-    var buttonName = document.createTextNode(choice);
-    btnText.appendChild(buttonName); 
+    //Get the resultrow
+    var resultRow = document.getElementById("result-row");
 
-    //add the text to the button
-    choiceButton.appendChild(btnText);
-
-    //create the cross-out for choice-button
-    var crossOut = document.createElement("ion-icon"); 
-    crossOut.setAttribute("name", "close"); 
-    crossOut.setAttribute("role", "img");
-    crossOut.className += "choice-btn-cross icon icon-md ion-md ion-md-close"
-    choiceButton.appendChild(crossOut); 
-
-    //add the button to the button-row
-    buttonRow.appendChild(choiceButton);
-    
-    //Set all the existing rows in the explore-grid to display none.
-    var existingRows = exploreGrid.getElementsByTagName("ion-row");
-
-    for(var i = 0; i < existingRows.length; i++){
-      existingRows[i].setAttribute("style", "display: none;");
+    for(var i = 1; i<this.attractions.length; i++){
+      resultGrid.append(resultRow.cloneNode(true)); 
     }
 
-    //Add the row for the buttons in the explore-grid
-    exploreGrid.appendChild(buttonRow);
+    var images = resultGrid.getElementsByClassName("result-card-img"); 
+    var titles = resultGrid.getElementsByClassName("result-title"); 
 
-    //Add row for each attraction to go in the explore-grid
-    for(var i = 0; i<this.attractions.length; i++){
-      var resultRow = document.createElement("ion-row");
-      exploreGrid.appendChild(resultRow);
+
+    for(var i = 0; i < images.length; i++){
+      images[i].setAttribute("src", this.attractions[i].image);
+    }
+    for(var i = 0; i < titles.length; i++){
+      titles[i].innerHTML = this.attractions[i].name;
     }
 
-
-    choiceButton.addEventListener('click', changeToExplore);
-
+  }
   
-    function changeToExplore(){
+  changeToExplore(){
       //get the explore-grid
       var exploreGrid = document.getElementById("explore-grid");
+      exploreGrid.setAttribute("style", "display: flex;");
 
-      //get all the existing rows
-      var existingRows = exploreGrid.getElementsByTagName("ion-row");
-
-      //set all the rows to display: block
-      for(var i = 0; i < existingRows.length; i++){
-        existingRows[i].setAttribute("style", "display: flex;");
+      var resultGrid = document.getElementById("result-grid"); 
+      resultGrid.setAttribute("style", "display: none"); 
+      
+      //remove the list of attractions
+      var results = resultGrid.getElementsByTagName("ion-row");
+      
+      for(var i = 1; i < results.length; i++){
+        results[i].parentNode.removeChild(results[i]);
       }
-
-      //delete row with choice-buttons
-      var buttonRow = document.getElementById("button-row");
-
-      exploreGrid.removeChild(buttonRow);
-
     }
   
-  }
+  
 }
