@@ -21,11 +21,11 @@
     </ion-item>
   </ion-list>
   
-  <ion-grid no-padding>
-      <!--First card-->
+  <ion-grid no-padding id="explore-grid">
+      <!--First card Tours-->
       <ion-row>
           <ion-col col-12>
-              <ion-card class="cat-sm-height">
+              <ion-card class="cat-sm-height" (click)="changeToResults('Tours')">
                   <img src="../../assets/imgs/tours.jpg"/>
                   <div class="card-txt">
                       <div><h3 class="card-title">Tours</h3></div>
