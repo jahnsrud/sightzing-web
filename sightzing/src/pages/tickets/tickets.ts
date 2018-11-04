@@ -22,4 +22,10 @@ export class TicketsPage {
     console.log('ionViewDidLoad TicketsPage');
   }
 
+  buyTicket() {
+
+      prompt("Oh boy");
+
+  }
+
 }
