@@ -15,8 +15,8 @@ import { FilterComponent } from '../../components/filter/filter';
   templateUrl: 'explore.html',
 })
 export class ExplorePage {
-  public attraction1 = {name:"The Vigelands Park", time:"2h", stars:5, image:"../../assets/imgs/tours.jpg"};
-  public attraction2 = {name:"Heisann", time:"4h", stars:2, image:"../../assets/imgs/tours.jpg"};
+  public attraction1 = {name:"The Vigelands Park et langt navn her nå", time:"2h", stars:5, image:"../../assets/imgs/tours.jpg"};
+  public attraction2 = {name:"Heisann", time:"4h", stars:2.5, image:"../../assets/imgs/tours.jpg"};
   public attraction3 = {name:"The Vigelands Park", time:"1h", stars:5, image:"../../assets/imgs/tours.jpg"};
 
   public attractions = [this.attraction1, this.attraction2, this.attraction3];
@@ -68,26 +68,47 @@ export class ExplorePage {
     for(var j = 0; j < images.length; j++){
       images[j].setAttribute("src", this.attractions[j].image);
     }
-    
+
     for(var k = 0; k < titles.length; k++){
       titles[k].innerHTML = this.attractions[k].name;
     }
 
     for(var l = 0; l < stars.length; l++){
+      var starsCounted = 0;
+
       while(this.attractions[l].stars > 0){
         var starIcon = document.createElement("ion-icon");
+        starIcon.setAttribute("role", "img"); 
+        starIcon.className += "star-icon icon icon-md ion-md-star"; 
+
         var starHalfIcon = document.createElement("ion-icon");
+        starHalfIcon.setAttribute("role", "img"); 
+        starHalfIcon.className += "star-icon icon icon-md ion-md-star-half";
+
+        
 
         if(this.attractions[l].stars >= 1){
           starIcon.setAttribute("name", "star");
           stars[l].appendChild(starIcon); 
           this.attractions[l].stars = this.attractions[l].stars - 1;
+          starsCounted++;
         }
         if(this.attractions[l].stars > 0 && this.attractions[l].stars < 1){
           starHalfIcon.setAttribute("name", "star-half");
           stars[l].appendChild(starHalfIcon); 
           this.attractions[l].stars = this.attractions[l].stars - 0.5;
+          starsCounted++;
         }
+      }
+
+      while(starsCounted < 5){
+        var starOutlined = document.createElement("ion-icon");
+        starOutlined.setAttribute("role", "img"); 
+        starOutlined.setAttribute("name", "star-outline");
+        starOutlined.className += "star-icon icon icon-md ion-md-star-outline";
+
+        stars[l].appendChild(starOutlined);
+        starsCounted++;
       }
       
     }

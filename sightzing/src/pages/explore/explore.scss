@@ -120,18 +120,32 @@ ion-card img{
 .result-txt{
     position: absolute; 
     bottom: 16px;
+    padding-bottom: 10px; 
     display: table; 
-    width: 90%;
+    width: 95%;
+}
+
+.title-box{
+    width: 100%;
 }
 
 .result-title{
     bottom: 0; 
     padding-left: 16px; 
     text-align: left;
+    margin: 0 !important; 
 }
 
 .time-box{
     text-align: right; 
+    padding-right: 8px; 
+    min-width: 70px; 
+}
+
+.divider{
+    height: 20px; 
+    background-color: white; 
+    width: 1px; 
 }
 
 .time-icon{
@@ -141,11 +155,22 @@ ion-card img{
 
 .result-txt-box{
     display: table-cell;
+    vertical-align: bottom;
 }
 
 .result-time{
     color: white !important;
     display: inline-block;
+}
+
+.star-box{
+    padding-left: 8px; 
+    min-width: 90px; 
+    max-width: 90px; 
+}
+
+.star-icon{
+    color: white;
 }
 
 .choiceButton{
