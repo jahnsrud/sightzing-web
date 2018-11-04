@@ -58,18 +58,38 @@ export class ExplorePage {
     var resultRow = document.getElementById("result-row");
 
     for(var i = 1; i<this.attractions.length; i++){
-      resultGrid.append(resultRow.cloneNode(true)); 
+      resultGrid.appendChild(resultRow.cloneNode(true)); 
     }
 
     var images = resultGrid.getElementsByClassName("result-card-img"); 
     var titles = resultGrid.getElementsByClassName("result-title"); 
+    var stars = resultGrid.getElementsByClassName("star-box"); 
 
-
-    for(var i = 0; i < images.length; i++){
-      images[i].setAttribute("src", this.attractions[i].image);
+    for(var j = 0; j < images.length; j++){
+      images[j].setAttribute("src", this.attractions[j].image);
     }
-    for(var i = 0; i < titles.length; i++){
-      titles[i].innerHTML = this.attractions[i].name;
+    
+    for(var k = 0; k < titles.length; k++){
+      titles[k].innerHTML = this.attractions[k].name;
+    }
+
+    for(var l = 0; l < stars.length; l++){
+      while(this.attractions[l].stars > 0){
+        var starIcon = document.createElement("ion-icon");
+        var starHalfIcon = document.createElement("ion-icon");
+
+        if(this.attractions[l].stars >= 1){
+          starIcon.setAttribute("name", "star");
+          stars[l].appendChild(starIcon); 
+          this.attractions[l].stars = this.attractions[l].stars - 1;
+        }
+        if(this.attractions[l].stars > 0 && this.attractions[l].stars < 1){
+          starHalfIcon.setAttribute("name", "star-half");
+          stars[l].appendChild(starHalfIcon); 
+          this.attractions[l].stars = this.attractions[l].stars - 0.5;
+        }
+      }
+      
     }
 
   }

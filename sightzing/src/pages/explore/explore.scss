@@ -117,6 +117,36 @@ ion-card img{
 }
 
 /*Result-page*/
+.result-txt{
+    position: absolute; 
+    bottom: 16px;
+    display: table; 
+    width: 90%;
+}
+
+.result-title{
+    bottom: 0; 
+    padding-left: 16px; 
+    text-align: left;
+}
+
+.time-box{
+    text-align: right; 
+}
+
+.time-icon{
+    display: inline-block;
+    color: white; 
+}
+
+.result-txt-box{
+    display: table-cell;
+}
+
+.result-time{
+    color: white !important;
+    display: inline-block;
+}
 
 .choiceButton{
     width: auto; 
@@ -127,6 +157,7 @@ ion-card img{
 
 .btn-row{
     padding: 0 8px;
+    margin-bottom: 10px; 
 }
 
 .choice-btn-txt{
