@@ -103,7 +103,7 @@
       <!--BIG CATEGORY 2 (FOOD)-->
       <ion-row>
           <ion-col col-12>
-              <ion-card class="cat-md-height" (click)="changeToResults('Food & Drinks')">
+              <ion-card class="cat-sm-height" (click)="changeToResults('Food & Drinks')">
                   <img src="../../assets/imgs/restaurant.jpg"/>
                   <div class="card-txt">
                       <div><h3 class="card-title">Food &amp; Drinks</h3></div>
@@ -176,14 +176,27 @@
               
           </ion-col>
       </ion-row>
+
+      <!--Category : All-->
+      <ion-row>
+            <ion-col col-12>
+                <ion-card class="cat-sm-height" (click)="changeToResults('All')">
+                    <img src="../../assets/imgs/all-attractions.jpg"/>
+                    <div class="card-txt">
+                        <div><h3 class="card-title">All</h3></div>
+                        <div><h6 class="card-subtitle">34 Attractions</h6></div>
+                    </div>
+                </ion-card>
+            </ion-col>
+        </ion-row>
       
   </ion-grid>
 
 
   <ion-grid no-padding id="result-grid">
     <ion-row class="btn-row">
-        <ion-col col-12>
-            <button ion-button round class="choiceButton" (click)="changeToExplore()">
+        <ion-col col-12 id="btn-col">
+            <button ion-button round id="cat-btn" class="choiceButton" (click)="changeToExplore()">
                 <h6 class="button-txt choice-btn-txt" id="choice-btn">
                     Something
                 </h6>

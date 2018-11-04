@@ -20,7 +20,7 @@ export class ExplorePage {
   public attraction3 = {name:"The Vigelands Park", time:"1h", stars:5, image:"../../assets/imgs/tours.jpg"};
 
   public attractions = [this.attraction1, this.attraction2, this.attraction3];
-
+  public onResultPage = false; 
   
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public popoverController: PopoverController) {
@@ -40,6 +40,8 @@ export class ExplorePage {
 
 
   changeToResults(choice: string){
+    this.onResultPage = true; 
+
     //get the explore-grid
     var exploreGrid = document.getElementById("explore-grid");
 
@@ -49,6 +51,7 @@ export class ExplorePage {
     //Update the information in category button
     var choiceButton = document.getElementById("choice-btn");
     choiceButton.innerHTML = choice; 
+    //choiceButton.onclick = this.changeToExplore;
 
     //set the result-grid to display: flex
     var resultGrid = document.getElementById("result-grid"); 
@@ -116,31 +119,62 @@ export class ExplorePage {
     }
 
   }
+
   
   changeToExplore(){
-      //get the explore-grid
-      var exploreGrid = document.getElementById("explore-grid");
-      exploreGrid.setAttribute("style", "display: flex;");
+    this.onResultPage = false;
 
-      var resultGrid = document.getElementById("result-grid"); 
-      resultGrid.setAttribute("style", "display: none"); 
-      
-      //remove the list of attractions
-      var results = resultGrid.getElementsByTagName("ion-row");
-      
-      for(var i = 1; i < results.length; i++){
-        results[i].parentNode.removeChild(results[i]);
-      }
+    //get the explore-grid
+    var exploreGrid = document.getElementById("explore-grid");
+    exploreGrid.setAttribute("style", "display: flex;");
 
-      var stars = resultGrid.getElementsByClassName("star-box"); 
-
-      for(var i = 0; i<stars.length; i++){
-        while(stars[i].firstChild){
-          stars[i].removeChild(stars[i].firstChild);
-        }
-      }
-
+    var resultGrid = document.getElementById("result-grid"); 
+    resultGrid.setAttribute("style", "display: none"); 
+    
+    //remove the list of attractions
+    var results = resultGrid.getElementsByTagName("ion-row");
+    
+    for(var i = 1; i < results.length; i++){
+      results[i].parentNode.removeChild(results[i]);
     }
+
+    var stars = resultGrid.getElementsByClassName("star-box"); 
+
+    for(var j = 0; j<stars.length; j++){
+      while(stars[j].firstChild){
+        stars[j].removeChild(stars[j].firstChild);
+      }
+    }
+
+  }
+
+  /*
+  getOnResultPage(){
+    return this.onResultPage;
+  }*/
+
+    /*
+  removeFromRow(id: string){
+
+    var buttonColumn = document.getElementById("btn-col");
+    var existingChoices = buttonColumn.children;
+
+    for(var i = 0; i < existingChoices.length; i++){
+      if((existingChoices[i].id == id) && (existingChoices.length > 1)){
+        buttonColumn.removeChild(existingChoices[i]);
+      }
+    }
+
+    this.checkIfEmpty(); 
+  }
+
+  checkIfEmpty(){
+      var buttonColumn = document.getElementById("btn-col");
+
+     if(buttonColumn.children.length < 2){
+       this.changeToExplore(); 
+     }
+  }*/
   
   
 }
