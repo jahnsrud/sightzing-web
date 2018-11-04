@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
 import { WelcomePage } from '../welcome/welcome';
+import { TourPage } from '../tour/tour'
 
 @Component({
   selector: 'page-home',
@@ -39,6 +40,10 @@ export class HomePage {
 
     this.navController.push(AttractionDetailPage);
 
+  }
+
+  async presentTour() {
+    this.navController.push(TourPage);
   }
 
   isFirstLaunch() {
