@@ -15,7 +15,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AttractionDetailPage {
 
+  // let attraction = 
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
+    console.log(this.navParams.get("attraction"));
+
+    
+
   }
 
   ionViewDidLoad() {

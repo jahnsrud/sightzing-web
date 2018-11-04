@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Testability } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
 import { WelcomePage } from '../welcome/welcome';
@@ -36,9 +36,18 @@ export class HomePage {
   }
 
   async presentAttraction() {
-    // push-logikk
 
-    this.navController.push(AttractionDetailPage);
+    let attraction:Attraction  = new Attraction();
+    attraction.title = "Title";
+    attraction.description = "Subtitle";
+    attraction.imageUrl = "";
+    attraction.googlePlacesId = "";
+    attraction.website = "";
+    
+
+    this.navController.push(AttractionDetailPage, {
+      attraction: attraction
+    });
 
   }
 
@@ -101,7 +110,7 @@ export class HomePage {
 
   displayRandomQuote() {
     
-    window.onload= () => document.getElementById("weather-subtitle").innerHTML= this.randomQuote;
+    window.onload= () => document.getElementById("weather-subtitle").innerHTML = this.randomQuote;
   }
 
 }
