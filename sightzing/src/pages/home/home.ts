@@ -3,6 +3,7 @@ import { NavController, ModalController } from 'ionic-angular';
 import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
 import { WelcomePage } from '../welcome/welcome';
 import { TourPage } from '../tour/tour'
+import { ProfilePage } from '../profile/profile';
 
 @Component({
   selector: 'page-home',
@@ -53,6 +54,10 @@ export class HomePage {
 
   async presentTour() {
     this.navController.push(TourPage);
+  }
+
+  async presentProfile() {
+    this.navController.push(ProfilePage);
   }
 
   isFirstLaunch() {

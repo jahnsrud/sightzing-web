@@ -16,6 +16,7 @@ import { MyGuidePage } from '../pages/my-guide/my-guide';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { FilterComponent } from '../components/filter/filter';
 import { TourPage } from '../pages/tour/tour';
+import { ProfilePage } from '../pages/profile/profile';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TourPage } from '../pages/tour/tour';
     WelcomePage,
     InfoPage, 
     FilterComponent,
-    TourPage
+    TourPage,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { TourPage } from '../pages/tour/tour';
     InfoPage,
     WelcomePage, 
     FilterComponent,
-    TourPage
+    TourPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,
