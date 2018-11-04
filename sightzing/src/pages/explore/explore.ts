@@ -75,8 +75,10 @@ export class ExplorePage {
 
     for(var l = 0; l < stars.length; l++){
       var starsCounted = 0;
+      var attractionStars = this.attractions[l].stars;
 
-      while(this.attractions[l].stars > 0){
+
+      while(attractionStars > 0){
         var starIcon = document.createElement("ion-icon");
         starIcon.setAttribute("role", "img"); 
         starIcon.className += "star-icon icon icon-md ion-md-star"; 
@@ -87,16 +89,16 @@ export class ExplorePage {
 
         
 
-        if(this.attractions[l].stars >= 1){
+        if(attractionStars >= 1){
           starIcon.setAttribute("name", "star");
           stars[l].appendChild(starIcon); 
-          this.attractions[l].stars = this.attractions[l].stars - 1;
+          attractionStars--;
           starsCounted++;
         }
-        if(this.attractions[l].stars > 0 && this.attractions[l].stars < 1){
+        if(attractionStars > 0 && attractionStars < 1){
           starHalfIcon.setAttribute("name", "star-half");
           stars[l].appendChild(starHalfIcon); 
-          this.attractions[l].stars = this.attractions[l].stars - 0.5;
+          attractionStars--;
           starsCounted++;
         }
       }
@@ -110,7 +112,7 @@ export class ExplorePage {
         stars[l].appendChild(starOutlined);
         starsCounted++;
       }
-      
+
     }
 
   }
@@ -129,6 +131,15 @@ export class ExplorePage {
       for(var i = 1; i < results.length; i++){
         results[i].parentNode.removeChild(results[i]);
       }
+
+      var stars = resultGrid.getElementsByClassName("star-box"); 
+
+      for(var i = 0; i<stars.length; i++){
+        while(stars[i].firstChild){
+          stars[i].removeChild(stars[i].firstChild);
+        }
+      }
+
     }
   
   
