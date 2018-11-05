@@ -1,18 +1,23 @@
 .title-uppercase {
     text-transform: uppercase;
     font-size: 10pt;
+    letter-spacing: 1px;
 }
 
 .weather-temperature {
-    font-size: 20pt;
-    font-weight: bold;
+    font-size: 18pt;
+    // font-weight: bold;
 }
 
 #weather-subtitle {
     font-style: italic;
     font-size: 11pt;
     color: gray;
-    
+    text-align: right;
+}
+
+#sun {
+    font-size: 35pt;
 }
 
 .card-featured {

@@ -11,10 +11,28 @@
 
 <ion-content padding>
 
-  <p class="title-uppercase">Weather</p>
-  <ion-icon name="sunny"></ion-icon>  
-  <p class="weather-temperature">0 °C</p>
-  <p id="weather-subtitle"></p>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <p class="title-uppercase">Weather</p>
+        <ion-col col-12>
+
+          <ion-col col-6>
+            <ion-icon id="sun" name="sunny"></ion-icon>
+          </ion-col>
+          <ion-col col-6>
+            <p class="weather-temperature">0 °C</p>
+          </ion-col>
+        </ion-col>
+      </ion-col>
+
+      <ion-col col-6>
+        <p id="weather-subtitle"></p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
 
   <h3>Featured</h3>
 
@@ -28,16 +46,16 @@
 
   </div>
 
-  <h3>Featured [test]</h3>
+  <h3>Featured</h3>
 
   <button ion-button shape="round" color="primary" (click)="presentAttraction()">Open Attraction 1</button>
   <button ion-button shape="round" color="primary" (click)="presentAttraction()">Open Attraction 2</button>
 
-
   <h3>Tours</h3>
-
   <button ion-button shape="round" color="primary" (click)="presentTour()">Open Tour</button>
 
+  <h3>Events</h3>
+  <button ion-button shape="round" color="primary" (click)="presentTour()">Open Attraction 3</button>
 
   <h3>Coming soon</h3>
   <button ion-button shape="round" color="primary" (click)="presentWelcomePage()">Open Welcome Screen</button>
