@@ -17,7 +17,11 @@ export class InfoPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
     this.items = [
-      {expanded: false},
+      {
+        title: 'Practical information: \n',
+        content: 'Oslo is the best city evah we have trolls and a opera house you can walk on. its pretty cool. we also have lusekofter. brunos and ostehøvels',
+        expanded: false
+      },
       {expanded: false}
     ];
 
