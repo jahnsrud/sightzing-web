@@ -51,7 +51,7 @@ export class ExplorePage {
     //Update the information in category button
     var choiceButton = document.getElementById("choice-btn");
     choiceButton.innerHTML = choice; 
-    //choiceButton.onclick = this.changeToExplore;
+    //choiceButton.onclick = () => this.changeToExplore("hei");
 
     //set the result-grid to display: flex
     var resultGrid = document.getElementById("result-grid"); 
@@ -118,10 +118,11 @@ export class ExplorePage {
 
     }
 
+
   }
 
   
-  changeToExplore(){
+  changeToExplore(hei: string){
     this.onResultPage = false;
 
     //get the explore-grid

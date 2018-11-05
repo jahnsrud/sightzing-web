@@ -4,6 +4,8 @@ import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
 import { WelcomePage } from '../welcome/welcome';
 import { TourPage } from '../tour/tour'
 import { ProfilePage } from '../profile/profile';
+import { Main, Attraction } from '../../app/main'; 
+
 
 @Component({
   selector: 'page-home',
@@ -37,14 +39,23 @@ export class HomePage {
   }
 
   async presentAttraction() {
-
-    let attraction:Attraction  = new Attraction();
+    var m = new Main(); 
+    m.addNewAttractionToList("Title", "Subtitle", "", "", "", 1, 1);
+    console.log(attraction); 
+    /*let attraction:Attraction  = Attraction();
     attraction.title = "Title";
     attraction.description = "Subtitle";
     attraction.imageUrl = "";
     attraction.googlePlacesId = "";
     attraction.website = "";
     
+
+    this.navController.push(AttractionDetailPage, {
+      attraction: attraction
+    });*/
+
+    var attraction = m.getAttraction("Title");
+    console.log(attraction); 
 
     this.navController.push(AttractionDetailPage, {
       attraction: attraction
@@ -119,7 +130,7 @@ export class HomePage {
   }
 
 }
-
+/*
 class Attraction {
     
   title: String;
@@ -148,4 +159,4 @@ class Tour {
 
   // attractions
 
-}
+}*/
