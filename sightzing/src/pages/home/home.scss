@@ -5,7 +5,10 @@
 }
 
 .weather-temperature {
-    font-size: 18pt;
+    font-size: 20pt;
+    display: inherit;
+    margin-left: 10px;
+    margin-bottom: 4px;
     // font-weight: bold;
 }
 
@@ -21,8 +24,12 @@
 }
 
 #sun {
-    font-size: 35pt;
+    font-size: 31pt;
     color: orange;
+}
+
+ion-slides {
+    height: auto;
 }
 
 .featured-card {
