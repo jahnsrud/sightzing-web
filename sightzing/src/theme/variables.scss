@@ -43,6 +43,9 @@ $colors: (
 
 $color-dark-gray: rgb(28, 28, 28);
 $color-gray: rgb(156, 156, 156); 
+$color-light-gray: rgb(200,200,200);
+$color-orange: rgb(245, 131, 84);
+$color-yellow: rgb(254, 223, 65);
 
 
 // App iOS Variables
@@ -97,12 +100,21 @@ $h1-font-size: 2em;
 
 $h3-font-size: 1.8rem;
 
+$h4-font-size: 1.5rem;
+
 $h6-font-size: 0.8em;
 
+
+// Tabs
+$tabs-tab-color-active: orange;
+$tabs-background: white;
 
 // Toolbar
 $toolbar-background: transparent;
 $toolbar-md-title-text-color: $color-dark-gray;
+$toolbar-ios-title-text-color: $color-dark-gray;
+$toolbar-ios-button-color: black;
+$toolbar-md-button-color: black;
 
 // Search
 $searchbar-md-input-box-shadow: 0 7px 10px 0 rgba(0,0,0,.10), 0 1px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
@@ -113,8 +125,14 @@ $card-md-box-shadow: 0 7px 10px 0 rgba(0,0,0,.10), 0 1px 1px -2px rgba(0,0,0,.2)
 
 //Popover
 $popover-wp-width: 100%;
-
+$popover-ios-width: 100%;
 $popover-md-width: 100%;
 
 //Range
 $item-md-divider-border-bottom: none; 
+$range-md-bar-background-color: $color-light-gray;
+$range-md-bar-active-background-color: $color-orange;
+$range-md-knob-width: 35px;
+$range-md-knob-min-border	: none;
+$range-md-tick-width: 0;
+$range-md-bar-height: 1px;

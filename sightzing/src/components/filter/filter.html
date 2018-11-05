@@ -27,13 +27,13 @@
           <!--Sunny-->
           <ion-col col-6>
             <button ion-button round class="weather-icon">
-              <ion-icon name="ios-sunny"></ion-icon>
+              <ion-icon name="sunny"></ion-icon>
             </button>
           </ion-col>
           <!--Cloudy-->
           <ion-col col-6>
             <button ion-button round class="weather-icon">
-              <ion-icon name="ios-partly-sunny"></ion-icon>
+              <ion-icon name="partly-sunny"></ion-icon>
             </button>
           </ion-col>
         </ion-row>
@@ -59,7 +59,7 @@
       <ion-col col-8>
         <ion-row>
           <ion-col col-12>
-              <h6 class="button-txt">Price</h6>
+              <h6 class="button-txt range-label">Price</h6>
           </ion-col>
             
         </ion-row>
@@ -68,9 +68,9 @@
         <ion-row>
           <ion-col col-12>
             <ion-item>
-                <ion-range min="0" max="5" step="1" snaps="True">
-                  <ion-icon small range-left name="sunny"></ion-icon>
-                  <ion-icon range-right name="sunny"></ion-icon>
+                <ion-range min="0" max="5" snaps="True">
+                  <ion-icon small range-left><h6 class="button-txt">$</h6></ion-icon>
+                  <ion-icon range-right><h6>$</h6></ion-icon>
                 </ion-range>
               </ion-item>
           </ion-col>
@@ -79,7 +79,7 @@
         <!--Rating-->
         <ion-row>
             <ion-col col-12>
-                <h6 class="button-txt">Rating</h6>
+                <h6 class="button-txt range-label">Rating</h6>
             </ion-col>
               
           </ion-row>
@@ -88,8 +88,8 @@
           <ion-col col-12>
               <ion-item>
                   <ion-range min="0" max="5" step="1" snaps="True">
-                    <ion-icon small range-left name="sunny"></ion-icon>
-                    <ion-icon range-right name="sunny"></ion-icon>
+                    <ion-icon small range-left name="star"></ion-icon>
+                    <ion-icon large range-right name="star"></ion-icon>
                   </ion-range>
                 </ion-item>
           </ion-col>
@@ -111,3 +111,4 @@
 
   </ion-grid>
 </ion-content>
+

@@ -6,14 +6,23 @@
     border-radius: 10px;
     padding: 10px;
     overflow: hidden;
+    position: relative;
 
 }
 
+#city-pass-logo {
+    width: 80px;
+    right: 20px;
+    position: absolute;
+}
+
 #qr {
-    padding: 10px;
+    padding: 33px;
     background-color: white;
     border-radius: 10px;
-    width: 200px;
+    width: 170px;
+    position: absolute;
+    top: 120px;
     
 }
 
@@ -28,4 +37,24 @@
     background-color: white;
     border-radius: 10px;
     padding: 5px;
+    height: 55px;
+    width: 90%;
+    overflow: hidden;
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    box-shadow: 0 7px 10px 0 rgba(0,0,0,.10), 0 1px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.buy-logo {
+    width: 30px;
+}
+
+.buy-text {
+    color: black;
+
 }

@@ -15,7 +15,8 @@ import { InfoPage } from '../pages/info/info';
 import { MyGuidePage } from '../pages/my-guide/my-guide';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { FilterComponent } from '../components/filter/filter';
-import { ExpandableComponent } from '../components/expandable/expandable';
+import { TourPage } from '../pages/tour/tour';
+import { ProfilePage } from '../pages/profile/profile';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ExpandableComponent } from '../components/expandable/expandable';
     WelcomePage,
     InfoPage, 
     FilterComponent,
-    ExpandableComponent
+    TourPage,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
@@ -47,6 +49,8 @@ import { ExpandableComponent } from '../components/expandable/expandable';
     InfoPage,
     WelcomePage, 
     FilterComponent,
+    TourPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,

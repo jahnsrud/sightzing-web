@@ -76,7 +76,7 @@ ion-card{
 }
 
 ion-card img{
-    opacity: 0.6;
+    opacity: 0.4;
     min-width: 100%;
     min-height: 100%; 
     object-fit: cover; 
@@ -116,3 +116,99 @@ ion-card img{
     text-align: center; 
 }
 
+/*Result-page*/
+.result-txt{
+    position: absolute; 
+    bottom: 16px;
+    padding-bottom: 10px; 
+    display: table; 
+    width: 95%;
+}
+
+.title-box{
+    width: 100%;
+}
+
+.result-title{
+    bottom: 0; 
+    padding-left: 16px; 
+    text-align: left;
+    margin: 0 !important; 
+}
+
+.time-box{
+    text-align: right; 
+    padding-right: 8px; 
+    min-width: 70px; 
+}
+
+.divider{
+    height: 20px; 
+    background-color: white; 
+    width: 1px; 
+}
+
+.time-icon{
+    display: inline-block;
+    color: white; 
+}
+
+.result-txt-box{
+    display: table-cell;
+    vertical-align: bottom;
+}
+
+.result-time{
+    color: white !important;
+    display: inline-block;
+}
+
+.star-box{
+    padding-left: 8px; 
+    min-width: 90px; 
+    max-width: 90px; 
+}
+
+.star-icon{
+    color: white;
+}
+
+.choiceButton{
+    width: auto; 
+    color: $color-dark-gray;
+    padding: 0 16px;
+    display: table; 
+}
+
+.btn-row{
+    padding: 0 8px;
+    margin-bottom: 10px; 
+}
+
+.choice-btn-txt{
+    display: table-cell; 
+    vertical-align: middle;
+}
+
+.choice-btn-cross{
+    display: table-cell; 
+    padding-left: 8px; 
+}
+
+#result-grid{
+    display: none; 
+}
+
+.add-button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 20px;
+    margin-top: 20px;
+    width: 35px;
+    height: 35px;
+}
+
+.add-button-icon{
+    font-size: 1.3em !important;
+}

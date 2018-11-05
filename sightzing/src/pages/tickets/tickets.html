@@ -12,11 +12,10 @@
 
 </ion-header>
 
-
 <ion-content padding>
 
     <div class="ticket-card">
-      <img src="../../assets/imgs/oslo-city-pass-logo.png">
+      <img id="city-pass-logo" src="../../assets/imgs/oslo-city-pass-logo.png">
 
       <ion-row justify-content-center align-items-center>
           <div id="qr">
@@ -25,10 +24,10 @@
           </div>
       </ion-row>
       
-      <div class="buy-button">
-          <img src="../../assets/imgs/alipay.png">
-          <p>1 PERSON</p>  
-          <p>Buy with AliPay (kr 0)</p>
+      <div (click)="buyTicket()" class="buy-button">
+          <img class="buy-logo" src="../../assets/imgs/alipay.png">
+          <p class="buy-overhead-title">1 PERSON</p>  
+          <p class="buy-text">Buy with AliPay (kr 0)</p>
     </div>
     
       </div>

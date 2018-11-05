@@ -21,11 +21,11 @@
     </ion-item>
   </ion-list>
   
-  <ion-grid no-padding>
-      <!--First card-->
+  <ion-grid no-padding id="explore-grid">
+      <!--First card Tours-->
       <ion-row>
           <ion-col col-12>
-              <ion-card class="cat-sm-height">
+              <ion-card class="cat-sm-height" (click)="changeToResults('Tours')">
                   <img src="../../assets/imgs/tours.jpg"/>
                   <div class="card-txt">
                       <div><h3 class="card-title">Tours</h3></div>
@@ -42,7 +42,7 @@
               <!--Sights-->
               <ion-row>
                   <ion-col col-12>
-                      <ion-card class="cat-sm-height">
+                      <ion-card class="cat-sm-height" (click)="changeToResults('Sights')">
                           <img src="../../assets/imgs/sights.jpg"/>
                           <div class="card-txt">
                               <div><h3 class="card-title">Sights</h3></div>
@@ -55,7 +55,7 @@
               <!--Theatre & Opera-->
               <ion-row>
                   <ion-col col-12>
-                      <ion-card class="cat-md-height">
+                      <ion-card class="cat-md-height" (click)="changeToResults('Theatre & Opera')">
                           <img src="../../assets/imgs/opera.jpg"/>
                           <div class="card-txt">
                               <div><h3 class="card-title">Theatre &amp; Opera</h3></div>
@@ -74,7 +74,7 @@
               <!--Museums-->
               <ion-row>
                   <ion-col col-12>
-                      <ion-card class="cat-md-height">
+                      <ion-card class="cat-md-height" (click)="changeToResults('Museums')">
                           <img src="../../assets/imgs/museums.jpg"/>
                           <div class="card-txt">
                               <div><h3 class="card-title">Museums</h3></div>
@@ -87,7 +87,7 @@
               <!--Nature and Parks-->
               <ion-row>
                   <ion-col col-12>
-                      <ion-card class="cat-sm-height">
+                      <ion-card class="cat-sm-height" (click)="changeToResults('Nature & Parks')">
                           <img src="../../assets/imgs/parks.jpg"/>
                           <div class="card-txt">
                               <div><h3 class="card-title">Nature &amp; Parks</h3></div>
@@ -103,7 +103,7 @@
       <!--BIG CATEGORY 2 (FOOD)-->
       <ion-row>
           <ion-col col-12>
-              <ion-card class="cat-md-height">
+              <ion-card class="cat-sm-height" (click)="changeToResults('Food & Drinks')">
                   <img src="../../assets/imgs/restaurant.jpg"/>
                   <div class="card-txt">
                       <div><h3 class="card-title">Food &amp; Drinks</h3></div>
@@ -120,7 +120,7 @@
               <!--Shopping-->
               <ion-row>
                   <ion-col col-12>
-                      <ion-card class="cat-md-height">
+                      <ion-card class="cat-md-height" (click)="changeToResults('Shopping')">
                           <img src="../../assets/imgs/shopping.jpg"/>
                           <div class="card-txt">
                               <div><h3 class="card-title">Shopping</h3></div>
@@ -133,7 +133,7 @@
               <!--Spas & Wellness-->
               <ion-row>
                   <ion-col col-12>
-                      <ion-card class="cat-sm-height">
+                      <ion-card class="cat-sm-height" (click)="changeToResults('Spas & Wellness')">
                           <img src="../../assets/imgs/spa.jpg"/>
                           <div class="card-txt">
                               <div><h3 class="card-title">Spas &amp; Wellness</h3></div>
@@ -151,7 +151,7 @@
               <!--Fun & Games-->
               <ion-row>
                   <ion-col col-12>
-                      <ion-card class="cat-sm-height">
+                      <ion-card class="cat-sm-height" (click)="changeToResults('Fun & Games')">
                           <img src="../../assets/imgs/fun.jpg"/>
                           <div class="card-txt">
                               <div><h3 class="card-title">Fun &amp; Games</h3></div>
@@ -164,7 +164,7 @@
               <!--Clubs & Pubs-->
               <ion-row>
                   <ion-col col-12>
-                      <ion-card class="cat-md-height">
+                      <ion-card class="cat-md-height" (click)="changeToResults('Clubs & Pubs')">
                           <img src="../../assets/imgs/clubs.jpg"/>
                           <div class="card-txt">
                               <div><h3 class="card-title">Clubs &amp; Pubs</h3></div>
@@ -176,6 +176,78 @@
               
           </ion-col>
       </ion-row>
+
+      <!--Category : All-->
+      <ion-row>
+            <ion-col col-12>
+                <ion-card class="cat-sm-height" (click)="changeToResults('All')">
+                    <img src="../../assets/imgs/all-attractions.jpg"/>
+                    <div class="card-txt">
+                        <div><h3 class="card-title">All</h3></div>
+                        <div><h6 class="card-subtitle">34 Attractions</h6></div>
+                    </div>
+                </ion-card>
+            </ion-col>
+        </ion-row>
       
+  </ion-grid>
+
+
+  <ion-grid no-padding id="result-grid">
+    <ion-row class="btn-row">
+        <ion-col col-12 id="btn-col">
+            <button ion-button round id="cat-btn" class="choiceButton" (click)="changeToExplore()">
+                <h6 class="button-txt choice-btn-txt" id="choice-btn">
+                    Something
+                </h6>
+                <ion-icon name="close" class="choice-btn-cross"></ion-icon>
+            </button>
+        </ion-col>
+    </ion-row>
+
+    <!--The rows for the result. All info is set dynamicalyy through typescript.-->
+    <ion-row id="result-row">
+        <ion-col col-12>
+            <ion-card class="cat-sm-height">
+
+                <!--Background image-->
+                <img class="result-card-img"/>
+
+                <button ion-button round icon-only class="add-button">
+                    <ion-icon name="add" class="add-button-icon"></ion-icon>
+                </button>
+
+                <!--Text-->
+                <div class="result-txt">
+
+                    <!--Title for attraction-->
+                    <div class="result-txt-box title-box">
+                        <h3 class="card-title result-title">
+                            Title
+                        </h3>
+                    </div>
+
+                    <!--Time-box-->
+                    <div class="result-txt-box time-box">
+                        <ion-icon class="time-icon" name="time"></ion-icon>
+                        <h4 class="result-time">
+                            3h
+                        </h4>
+                    </div>
+
+                    <!--Divider-line-->
+                    <div class="result-txt-box">
+                        <div class="divider"></div>
+                    </div>
+
+                    <!--Star box-->
+                    <div class="result-txt-box star-box">
+
+                    </div>
+                </div>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+
   </ion-grid>
 </ion-content>
