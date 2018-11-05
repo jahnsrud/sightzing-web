@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 import { FilterComponent } from '../../components/filter/filter';
+import { Main } from '../../app/main'; 
 
 /**
  * Generated class for the ExplorePage page.
@@ -15,12 +16,13 @@ import { FilterComponent } from '../../components/filter/filter';
   templateUrl: 'explore.html',
 })
 export class ExplorePage {
-  public attraction1 = {name:"The Vigelands Park et langt navn her nå", time:"2h", stars:5, image:"../../assets/imgs/tours.jpg"};
+  /*public attraction1 = {name:"The Vigelands Park et langt navn her nå", time:"2h", stars:5, image:"../../assets/imgs/tours.jpg"};
   public attraction2 = {name:"Heisann", time:"4h", stars:2.5, image:"../../assets/imgs/tours.jpg"};
   public attraction3 = {name:"The Vigelands Park", time:"1h", stars:5, image:"../../assets/imgs/tours.jpg"};
-
-  public attractions = [this.attraction1, this.attraction2, this.attraction3];
+*/
+  public attractions = new Array();
   public onResultPage = false; 
+  main: Main = new Main(); 
   
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public popoverController: PopoverController) {
@@ -40,6 +42,14 @@ export class ExplorePage {
 
 
   changeToResults(choice: string){
+    if(choice == "Tours"){
+      this.attractions = this.main.getTours(); 
+    }
+
+    else {
+      this.attractions = this.main.getAttractionByCategory(choice); 
+    }
+
     this.onResultPage = true; 
 
     //get the explore-grid
@@ -69,16 +79,16 @@ export class ExplorePage {
     var stars = resultGrid.getElementsByClassName("star-box"); 
 
     for(var j = 0; j < images.length; j++){
-      images[j].setAttribute("src", this.attractions[j].image);
+      images[j].setAttribute("src", this.attractions[j].imageUrl);
     }
 
     for(var k = 0; k < titles.length; k++){
-      titles[k].innerHTML = this.attractions[k].name;
+      titles[k].innerHTML = this.attractions[k].title;
     }
 
     for(var l = 0; l < stars.length; l++){
       var starsCounted = 0;
-      var attractionStars = this.attractions[l].stars;
+      var attractionStars = this.attractions[l].rating;
 
 
       while(attractionStars > 0){
