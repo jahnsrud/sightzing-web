@@ -2,8 +2,8 @@
 
 Kommer her 🕵
 
-Gruppe:
-- Andreas Breime Persson: 704845
-- Marcus Tveide Jensen
-- Markus Jahnsrud
-- Stine Sandberg
+### Gruppe:
+- Andreas Breime Persson - perand17 - 704845
+- Marcus Tveide Jensen - jenmar17 - 705023
+- Markus Jahnsrud - jahmar17 - 704851
+- Stine Sandberg - sansti17 - 704857
