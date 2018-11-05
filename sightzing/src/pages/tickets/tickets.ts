@@ -15,6 +15,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TicketsPage {
 
+  qrView:boolean = true;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -23,8 +25,7 @@ export class TicketsPage {
   }
 
   buyTicket() {
-
-      prompt("Oh boy");
+    this.qrView = !this.qrView;
 
   }
 
