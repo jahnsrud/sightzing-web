@@ -18,6 +18,7 @@ import { FilterComponent } from '../components/filter/filter';
 import { ExpandableComponent } from '../components/expandable/expandable';
 import { TourPage } from '../pages/tour/tour';
 import { ProfilePage } from '../pages/profile/profile';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -60,4 +61,8 @@ import { ProfilePage } from '../pages/profile/profile';
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {}
+export class AppModule {
+  
+
+
+}
