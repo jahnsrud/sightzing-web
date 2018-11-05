@@ -2,10 +2,12 @@ page-info {
 
 }
 
-.info {
-    font-weight: bold;
-}
+.ios, .md {
+    page-info {
 
-.buttons {
-    color: black;
+        button {
+            align-items: baseline;
+        }
+        
+    }
 }

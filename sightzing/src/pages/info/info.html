@@ -1,37 +1,27 @@
 <ion-header>
-
-    <ion-title>
-      <h1 class="info">Info</h1>  
-    </ion-title>
-
+    <ion-navbar>
+        <ion-title>Info</ion-title>
+      </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 <!-- BUTTONS  -->
-    <button ion-button full block clear icon-end class="buttons">
-      About Oslo
-      <ion-icon name="add"></ion-icon>
+<!---------------------------------------------------------->
+    
+  <ion-list>
+
+    <button detail-none (click)="expandItem(item)" ion-item *ngFor="let item of items">
+      <ion-icon name="add">
+      </ion-icon>
+      <h2>My Neighbor Totoro</h2>
+      <p>Hayao Miyazaki * 1988</p>
+      <expandable [expandHeight]="itemExpandHeight" [expand]="item.expanded">
+        Hello there
+      </expandable>
+      <button ion-button clear item-end>View</button>
     </button>
 
-    <button ion-button (click)="showInfo()" full block clear icon-end class="buttons">
-      Practical Information
-      <ion-icon name="add"></ion-icon>
-    </button>
-    <div>Information text</div>
-  
-    <button ion-button full block clear icon-end class="buttons">
-      Public Transportation
-      <ion-icon name="add"></ion-icon>
-    </button>
+  </ion-list>
 
-    <button ion-button full block clear icon-end class="buttons">
-      About sightZing
-      <ion-icon name="add"></ion-icon>
-    </button>
-
-    <button ion-button full block clear icon-end class="buttons">
-      Terms and Conditions
-      <ion-icon name="add"></ion-icon>
-    </button>
-
+<!---------------------------------------------------------->
 </ion-content>
