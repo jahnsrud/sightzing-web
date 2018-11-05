@@ -26,4 +26,19 @@ export class ProfilePage {
     this.viewController.dismiss(this.modalController);
   }
 
+  changeToLogin() {
+
+    let loginGrid = document.getElementById("logindiv");
+    let profileGrid = document.getElementById("notloggedindiv");
+    let loginText = document.getElementById("logintext");
+    let registerText = document.getElementById("registertext");
+
+    profileGrid.setAttribute("style", "display: none;");
+    loginGrid.setAttribute("style", "display: block;");
+    loginText.setAttribute("style", "visibility: visible;");
+    registerText.setAttribute("style", "visibility: visible;");
+
+
+  }
+
 }

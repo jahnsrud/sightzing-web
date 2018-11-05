@@ -8,15 +8,17 @@
   <ion-navbar>
     <ion-buttons end><button ion-button shape="round" class="closeBtn" (click)="dismiss()">X</button></ion-buttons>
   </ion-navbar>
-  <ion-title>
+  <ion-toolbar class="toolbar">
     <h1 class="title">profile</h1>
-  </ion-title>
-
+    <h3 id="registertext">Register</h3>
+    <h3 id="logintext">Log in</h3>
+  </ion-toolbar>
 </ion-header>
 
 
 <ion-content padding>
 
+  <div id="notloggedindiv">
   <img ion-img class="profilePlaceholder" src="http://pronksiapartments.ee/wp-content/uploads/2015/10/placeholder-face-big.png">
  
   <p class="tinyText">You are not logged in.</p>
@@ -27,11 +29,38 @@
         
   
      
-            <button ion-button class="btn button-full button-round">Log in</button>
+            <button ion-button class="btn button-full button-round" (click)="changeToLogin()">Log in</button>
           
   
       
           <button ion-button class="btn button-full button-round">Register</button>
+  </div>
+
+  <div id="logindiv">
+      <ion-list>
+          <ion-item>
+            <ion-input placeholder="Username/email"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-input placeholder="Password"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <button ion-button class="btn button-full button-round">Log in</button>
+          </ion-item>
+
+          <ion-item>
+            <p class="ortext">Or</p>
+          </ion-item>
+
+          <ion-item>
+              <button ion-button class="btn button-full button-round">Log in with Weibo</button>
+          </ion-item>
+
+      </ion-list>
+  </div>
+  
        
 
 </ion-content>

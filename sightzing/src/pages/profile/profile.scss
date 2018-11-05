@@ -18,4 +18,50 @@ page-profile {
     margin-top: 5%;
    }
 
+   .title {
+
+    display: table-cell;
+    width: 100%;
+   }
+
+   .toolbar {
+
+    display: table;
+   }
+
+   #logintext {
+
+    
+    display: table-cell;
+    min-width: 50px;
+    max-width: 50px;
+    width: auto;
+    visibility: hidden;
+   }
+
+   #registertext {
+
+    display : table-cell;
+    min-width: 100px;
+    max-width: 100px;
+    width: auto;
+    visibility: hidden;
+   }
+
+   #logindiv {
+
+    text-align: center;
+    display: none;
+   }
+   .ortext {
+
+    text-align: center;
+   }
+
+
+    /*.titleDiv {
+
+    width: 100%;
+    }*/
+
 }
