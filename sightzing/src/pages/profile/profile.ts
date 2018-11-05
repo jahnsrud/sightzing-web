@@ -32,11 +32,13 @@ export class ProfilePage {
     let profileGrid = document.getElementById("notloggedindiv");
     let loginText = document.getElementById("logintext");
     let registerText = document.getElementById("registertext");
+    let profilePlaceHolder = document.getElementById("profilePlaceholder");
 
     profileGrid.setAttribute("style", "display: none;");
     loginGrid.setAttribute("style", "display: block;");
     loginText.setAttribute("style", "visibility: visible;");
     registerText.setAttribute("style", "visibility: visible;");
+    profilePlaceHolder.setAttribute("style", "display: none;");
 
 
   }
@@ -47,11 +49,13 @@ export class ProfilePage {
     let registerGrid = document.getElementById("registerdiv");
     let loginText = document.getElementById("logintext");
     let registerText = document.getElementById("registertext");
+    let profilePlaceHolder = document.getElementById("profilePlaceholder");
 
     profileGrid.setAttribute("style", "display: none;");
     registerGrid.setAttribute("style", "display: block;");
     loginText.setAttribute("style", "visibility: visible;");
     registerText.setAttribute("style", "visibility: visible;");
+    profilePlaceHolder.setAttribute("style", "display: none;");
 
   }
 
@@ -61,11 +65,24 @@ export class ProfilePage {
     let welcomeUserGrid = document.getElementById("welcomeuserdiv");
     let loginText = document.getElementById("logintext");
     let registerText = document.getElementById("registertext");
+    let profilePlaceHolder = document.getElementById("profilePlaceholder");
+    let plusBtn = document.getElementById("plusbtn");
+    
+    document.getElementById("title").innerHTML="Welcome!";
 
     registerGrid.setAttribute("style", "display: none;");
     welcomeUserGrid.setAttribute("style", "display: block;");
     loginText.setAttribute("style", "visibility: hidden;");
     registerText.setAttribute("style", "visibility: hidden;");
+    profilePlaceHolder.setAttribute("style", "display: block;");
+    plusBtn.setAttribute("style", "display: block");
+  }
+
+  changeToLoggedinUser() {
+
+    let loggedinGrid = document.getElementById("loggedindiv");
+    let fullName = document.getElementById("fullname");
+    
   }
 
 }

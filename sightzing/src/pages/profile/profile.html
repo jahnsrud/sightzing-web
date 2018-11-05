@@ -9,7 +9,7 @@
     <ion-buttons end><button ion-button shape="round" class="closeBtn" (click)="dismiss()">X</button></ion-buttons>
   </ion-navbar>
   <ion-toolbar class="toolbar">
-    <h1 class="title">profile</h1>
+    <h1 id="title">Profile</h1>
     <h3 id="registertext">Register</h3>
     <h3 id="logintext">Log in</h3>
   </ion-toolbar>
@@ -18,10 +18,10 @@
 
 <ion-content padding>
 
-  <div id="notloggedindiv">
-  <img ion-img class="profilePlaceholder" src="http://pronksiapartments.ee/wp-content/uploads/2015/10/placeholder-face-big.png">
-  <button ion-button round class="plusbtn">+</button>
+  <img ion-img id="profilePlaceholder" src="http://pronksiapartments.ee/wp-content/uploads/2015/10/placeholder-face-big.png">
+  <button ion-button round id="plusbtn">+</button>
  
+  <div id="notloggedindiv">
   <p class="tinyText">You are not logged in.</p>
  
 
@@ -65,7 +65,7 @@
   <div id="registerdiv">
       <ion-list>
           <ion-item>
-            <ion-input placeholder="email" class="input"></ion-input>
+            <ion-input placeholder="email" class="input" id="emailinput"></ion-input>
           </ion-item>
 
           <ion-item>
@@ -86,15 +86,31 @@
 
     <ion-list>
       <ion-item>
-          <ion-input placeholder="Full Name" class="input"></ion-input>
+          <ion-input placeholder="Full Name" class="input" id="fullname"></ion-input>
       </ion-item>
       
       <ion-item>
-      <ion-input placeholder="Country" class="input"></ion-input>
+      <ion-input placeholder="Country" class="input" id="countryinput"></ion-input>
       </ion-item>
 
       <button ion-button class="btn button-full button-round">Save</button>
 
+    </ion-list>
+  </div>
+
+  <div id="loggedindiv">
+    <ion-list>
+      <ion-item>
+        <h2 id= "username"></h2>
+      </ion-item>
+
+      <ion-item>
+        <h4 id= "email"></h4>
+      </ion-item>
+
+      <ion-item>
+        <h4 id= "country"></h4>
+      </ion-item>
     </ion-list>
   </div>
   
