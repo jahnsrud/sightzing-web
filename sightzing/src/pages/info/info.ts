@@ -12,16 +12,17 @@ export class InfoPage {
 
 
   items: any = [];
-  itemExpandHeight: number = 60;
+  itemExpandHeight: number = 100;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
     this.items = [
+      {expanded: false},
       {expanded: false}
     ];
 
   }
-
+  
   expandItem(item) {
     this.items.map((listItem) => {
 

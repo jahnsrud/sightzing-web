@@ -15,19 +15,10 @@
       </ion-icon>
       <h2>About Oslo: </h2>
       <expandable [expandHeight]="itemExpandHeight" [expanded]="item.expanded">
-        
+        Oslo is the best city EVAH! we have trolls and a opera house
+        you can walk on, it's pretty cool! we also have lusekofter, 
+        brunost and ostehøvels
       </expandable>
-      <button ion-button clear item-end>View</button>
-    </button>
-
-    <button detail-none (click)="expandItem(item)" ion-item *ngFor="let item of items">
-      <ion-icon name="add">
-      </ion-icon>
-      <h2>Practical Info: </h2>
-      <expandable [expandHeight]="itemExpandHeight" [expanded]="item.expanded">
-        
-      </expandable>
-      <button ion-button clear item-end>View</button>
     </button>
 
   </ion-list>
