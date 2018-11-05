@@ -41,4 +41,18 @@ export class ProfilePage {
 
   }
 
+  changeToRegister() {
+
+    let profileGrid = document.getElementById("notloggedindiv");
+    let registerGrid = document.getElementById("registerdiv");
+    let loginText = document.getElementById("logintext");
+    let registerText = document.getElementById("registertext");
+
+    profileGrid.setAttribute("style", "display: none;");
+    registerGrid.setAttribute("style", "display: block;");
+    loginText.setAttribute("style", "visibility: visible;");
+    registerText.setAttribute("style", "visibility: visible;");
+
+  }
+
 }
