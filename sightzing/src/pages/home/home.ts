@@ -40,22 +40,10 @@ export class HomePage {
 
   async presentAttraction() {
     var m = new Main(); 
-    m.addNewAttractionToList("Title", "Subtitle", "", "", "", 1, 1);
-    console.log(attraction); 
-    /*let attraction:Attraction  = Attraction();
-    attraction.title = "Title";
-    attraction.description = "Subtitle";
-    attraction.imageUrl = "";
-    attraction.googlePlacesId = "";
-    attraction.website = "";
-    
+    //m.addNewAttractionToList("Title", "Subtitle", "", "", "", 1, 1, "");
+    //console.log(attraction); 
 
-    this.navController.push(AttractionDetailPage, {
-      attraction: attraction
-    });*/
-
-    var attraction = m.getAttraction("Title");
-    console.log(attraction); 
+    var attraction = m.getAttraction("The Vigelands Park");
 
     this.navController.push(AttractionDetailPage, {
       attraction: attraction
