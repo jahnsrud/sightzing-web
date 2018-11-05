@@ -39,6 +39,7 @@ export class ProfilePage {
     loginText.setAttribute("style", "visibility: visible;");
     registerText.setAttribute("style", "visibility: visible;");
     profilePlaceHolder.setAttribute("style", "display: none;");
+    this.isLoggedIn();
 
 
   }
@@ -83,6 +84,13 @@ export class ProfilePage {
     let loggedinGrid = document.getElementById("loggedindiv");
     let fullName = document.getElementById("fullname");
     
+  }
+
+  isLoggedIn() {
+
+    localStorage.getItem("loggedIn");
+    localStorage.setItem("loggedIn", "true");
+    return true;
   }
 
 }
