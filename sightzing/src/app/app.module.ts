@@ -15,6 +15,7 @@ import { InfoPage } from '../pages/info/info';
 import { MyGuidePage } from '../pages/my-guide/my-guide';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { FilterComponent } from '../components/filter/filter';
+import { ExpandableComponent } from '../components/expandable/expandable';
 import { TourPage } from '../pages/tour/tour';
 import { ProfilePage } from '../pages/profile/profile';
 
@@ -30,6 +31,7 @@ import { ProfilePage } from '../pages/profile/profile';
     WelcomePage,
     InfoPage, 
     FilterComponent,
+    ExpandableComponent,
     TourPage,
     ProfilePage
   ],
@@ -49,6 +51,7 @@ import { ProfilePage } from '../pages/profile/profile';
     InfoPage,
     WelcomePage, 
     FilterComponent,
+    ExpandableComponent,
     TourPage,
     ProfilePage
   ],

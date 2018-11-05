@@ -21,10 +21,6 @@ export class InfoPage {
       {expanded: false},
       {expanded: false},
       {expanded: false},
-      {expanded: false},
-      {expanded: false},
-      {expanded: false},
-      {expanded: false},
       {expanded: false}
     ];
 
