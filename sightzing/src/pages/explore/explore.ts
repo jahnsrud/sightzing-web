@@ -16,12 +16,8 @@ import { Main } from '../../app/main';
   templateUrl: 'explore.html',
 })
 export class ExplorePage {
-  /*public attraction1 = {name:"The Vigelands Park et langt navn her nå", time:"2h", stars:5, image:"../../assets/imgs/tours.jpg"};
-  public attraction2 = {name:"Heisann", time:"4h", stars:2.5, image:"../../assets/imgs/tours.jpg"};
-  public attraction3 = {name:"The Vigelands Park", time:"1h", stars:5, image:"../../assets/imgs/tours.jpg"};
-*/
-  public attractions = new Array();
-  public onResultPage = false; 
+  results = new Array();
+  //onResultPage = false; 
   main: Main = new Main(); 
   
 
@@ -43,14 +39,16 @@ export class ExplorePage {
 
   changeToResults(choice: string){
     if(choice == "Tours"){
-      this.attractions = this.main.getTours(); 
+      this.results = this.main.getTours(); 
     }
 
     else {
-      this.attractions = this.main.getAttractionByCategory(choice); 
+      this.results = this.main.getAttractionByCategory(choice); 
+      console.log(this.results);
+      console.log("url: " + this.results[0].imageUrl);
     }
 
-    this.onResultPage = true; 
+    //this.onResultPage = true; 
 
     //get the explore-grid
     var exploreGrid = document.getElementById("explore-grid");
@@ -70,7 +68,7 @@ export class ExplorePage {
     //Get the resultrow
     var resultRow = document.getElementById("result-row");
 
-    for(var i = 1; i<this.attractions.length; i++){
+    for(var i = 1; i<this.results.length; i++){
       resultGrid.appendChild(resultRow.cloneNode(true)); 
     }
 
@@ -79,16 +77,17 @@ export class ExplorePage {
     var stars = resultGrid.getElementsByClassName("star-box"); 
 
     for(var j = 0; j < images.length; j++){
-      images[j].setAttribute("src", this.attractions[j].imageUrl);
+      console.log(this.results[j]); 
+      images[j].setAttribute("src", this.results[j].imageUrl);
     }
 
     for(var k = 0; k < titles.length; k++){
-      titles[k].innerHTML = this.attractions[k].title;
+      titles[k].innerHTML = this.results[k].title;
     }
 
     for(var l = 0; l < stars.length; l++){
       var starsCounted = 0;
-      var attractionStars = this.attractions[l].rating;
+      var attractionStars = this.results[l].rating;
 
 
       while(attractionStars > 0){
@@ -133,7 +132,7 @@ export class ExplorePage {
 
   
   changeToExplore(hei: string){
-    this.onResultPage = false;
+    //this.onResultPage = false;
 
     //get the explore-grid
     var exploreGrid = document.getElementById("explore-grid");
@@ -143,11 +142,17 @@ export class ExplorePage {
     resultGrid.setAttribute("style", "display: none"); 
     
     //remove the list of attractions
-    var results = resultGrid.getElementsByTagName("ion-row");
-    
-    for(var i = 1; i < results.length; i++){
-      results[i].parentNode.removeChild(results[i]);
+    var resultsRow = resultGrid.getElementsByTagName("ion-row");
+
+    while(resultsRow.length > 2){
+      for(var i = 1; i < resultsRow.length; i++){
+        resultsRow[i].parentNode.removeChild(resultsRow[i]);
+      }
     }
+    
+    /*for(var i = 1; i < resultsRow.length; i++){
+      resultsRow[i].parentNode.removeChild(resultsRow[i]);
+    }*/
 
     var stars = resultGrid.getElementsByClassName("star-box"); 
 
