@@ -13,13 +13,13 @@ export class Main{
     }
 
     public addNewAttractionToList(title: string,
-        description: String, 
-        imageUrl: String, 
-        googlePlacesId: String, 
-        website: String, 
-        price: Number,
-        rating: Number, 
-        category: String){
+        description: string, 
+        imageUrl: string, 
+        googlePlacesId: string, 
+        website: string, 
+        price: number,
+        rating: number, 
+        category: string){
             var attraction: Attraction = new Attraction(); 
             attraction.setValues(title, description, imageUrl, googlePlacesId, website, price, rating, category);
             this.attractions.push(attraction); 

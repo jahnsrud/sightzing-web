@@ -44,7 +44,6 @@ export class HomePage {
     //console.log(attraction); 
 
     var attraction = m.getAttraction("The Vigelands Park");
-
     this.navController.push(AttractionDetailPage, {
       attraction: attraction
     });
@@ -119,33 +118,3 @@ export class HomePage {
   }
 
 }
-/*
-class Attraction {
-    
-  title: String;
-  description: String; // intro-teksten til guide
-  imageUrl: String;
-  googlePlacesId: String;
-  website: String;
-
-  // more pictures
-  // amenities
-  // price level
-  // rating
-  // opening hours
-
-
-}
-
-class Tour {
-
-  title: String;
-  description: String;
-  imageUrl: String;
-
-  totalTime: Number;
-  rating: Number;
-
-  // attractions
-
-}*/
