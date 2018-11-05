@@ -55,4 +55,17 @@ export class ProfilePage {
 
   }
 
+  changeToWelcomeUser() {
+
+    let registerGrid = document.getElementById("registerdiv");
+    let welcomeUserGrid = document.getElementById("welcomeuserdiv");
+    let loginText = document.getElementById("logintext");
+    let registerText = document.getElementById("registertext");
+
+    registerGrid.setAttribute("style", "display: none;");
+    welcomeUserGrid.setAttribute("style", "display: block;");
+    loginText.setAttribute("style", "visibility: hidden;");
+    registerText.setAttribute("style", "visibility: hidden;");
+  }
+
 }

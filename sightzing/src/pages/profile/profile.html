@@ -20,6 +20,7 @@
 
   <div id="notloggedindiv">
   <img ion-img class="profilePlaceholder" src="http://pronksiapartments.ee/wp-content/uploads/2015/10/placeholder-face-big.png">
+  <button ion-button round class="plusbtn">+</button>
  
   <p class="tinyText">You are not logged in.</p>
  
@@ -39,11 +40,11 @@
   <div id="logindiv">
       <ion-list>
           <ion-item>
-            <ion-input placeholder="Username/email"></ion-input>
+            <ion-input placeholder="Username/email" class="input"></ion-input>
           </ion-item>
 
           <ion-item>
-              <ion-input placeholder="Password"></ion-input>
+              <ion-input placeholder="Password" class="input"></ion-input>
           </ion-item>
 
           <ion-item>
@@ -64,21 +65,37 @@
   <div id="registerdiv">
       <ion-list>
           <ion-item>
-            <ion-input placeholder="email"></ion-input>
+            <ion-input placeholder="email" class="input"></ion-input>
           </ion-item>
 
           <ion-item>
-              <ion-input placeholder="Password"></ion-input>
+              <ion-input placeholder="Password" class="input"></ion-input>
           </ion-item>
 
           <ion-item>
-            <ion-input placeholder="Confirm Password"></ion-input>
+            <ion-input placeholder="Confirm Password" class="input"></ion-input>
           </ion-item>
 
-          <button ion-button class="btn button-full button-round">Register</button>
+          <button ion-button class="btn button-full button-round" (click)="changeToWelcomeUser()">Register</button>
           
 
       </ion-list>
+  </div>
+
+  <div id="welcomeuserdiv">
+
+    <ion-list>
+      <ion-item>
+          <ion-input placeholder="Full Name" class="input"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+      <ion-input placeholder="Country" class="input"></ion-input>
+      </ion-item>
+
+      <button ion-button class="btn button-full button-round">Save</button>
+
+    </ion-list>
   </div>
   
        
