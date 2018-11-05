@@ -56,7 +56,8 @@ export class HomePage {
   }
 
   async presentProfile() {
-    this.navController.push(ProfilePage);
+    const modal = await this.modalController.create(ProfilePage);
+    modal.present();
   }
 
   isFirstLaunch() {
