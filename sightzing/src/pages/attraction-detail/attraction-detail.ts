@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Label } from 'ionic-angular';
+import { Attraction } from '../../app/main';
 
 /**
  * Generated class for the AttractionDetailPage page.
@@ -15,13 +16,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AttractionDetailPage {
 
-  // let attraction = 
+  attraction:Attraction;
+
+  title: string;
+  description: string;
+  imageUrl: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     
-    console.log(this.navParams.get("attraction"));
-
-    
+    this.attraction = this.navParams.get("attraction");
+    this.title = this.attraction.title;
+    this.description = this.attraction.description;
+    this.imageUrl = this.attraction.imageUrl;
 
   }
 

@@ -26,4 +26,46 @@ export class ProfilePage {
     this.viewController.dismiss(this.modalController);
   }
 
+  changeToLogin() {
+
+    let loginGrid = document.getElementById("logindiv");
+    let profileGrid = document.getElementById("notloggedindiv");
+    let loginText = document.getElementById("logintext");
+    let registerText = document.getElementById("registertext");
+
+    profileGrid.setAttribute("style", "display: none;");
+    loginGrid.setAttribute("style", "display: block;");
+    loginText.setAttribute("style", "visibility: visible;");
+    registerText.setAttribute("style", "visibility: visible;");
+
+
+  }
+
+  changeToRegister() {
+
+    let profileGrid = document.getElementById("notloggedindiv");
+    let registerGrid = document.getElementById("registerdiv");
+    let loginText = document.getElementById("logintext");
+    let registerText = document.getElementById("registertext");
+
+    profileGrid.setAttribute("style", "display: none;");
+    registerGrid.setAttribute("style", "display: block;");
+    loginText.setAttribute("style", "visibility: visible;");
+    registerText.setAttribute("style", "visibility: visible;");
+
+  }
+
+  changeToWelcomeUser() {
+
+    let registerGrid = document.getElementById("registerdiv");
+    let welcomeUserGrid = document.getElementById("welcomeuserdiv");
+    let loginText = document.getElementById("logintext");
+    let registerText = document.getElementById("registertext");
+
+    registerGrid.setAttribute("style", "display: none;");
+    welcomeUserGrid.setAttribute("style", "display: block;");
+    loginText.setAttribute("style", "visibility: hidden;");
+    registerText.setAttribute("style", "visibility: hidden;");
+  }
+
 }

@@ -12,16 +12,21 @@ export class InfoPage {
 
 
   items: any = [];
-  itemExpandHeight: number = 60;
+  itemExpandHeight: number = 100;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
     this.items = [
+      {
+        title: 'Practical information: \n',
+        content: 'Oslo is the best city evah we have trolls and a opera house you can walk on. its pretty cool. we also have lusekofter. brunos and ostehøvels',
+        expanded: false
+      },
       {expanded: false}
     ];
 
   }
-
+  
   expandItem(item) {
     this.items.map((listItem) => {
 
