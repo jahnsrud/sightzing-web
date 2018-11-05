@@ -42,6 +42,10 @@ export class ExplorePage {
       this.results = this.main.getTours(); 
     }
 
+    else if(choice == "All"){
+      this.results = this.main.getAttractions(); 
+    }
+
     else {
       this.results = this.main.getAttractionByCategory(choice); 
       console.log(this.results);
@@ -150,9 +154,6 @@ export class ExplorePage {
       }
     }
     
-    /*for(var i = 1; i < resultsRow.length; i++){
-      resultsRow[i].parentNode.removeChild(resultsRow[i]);
-    }*/
 
     var stars = resultGrid.getElementsByClassName("star-box"); 
 

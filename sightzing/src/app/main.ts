@@ -72,18 +72,18 @@ export class Main{
 
     public fillListWithAttractions(){
         //Sights
-        this.addNewAttractionToList("Akershus Fortress", "description", "", "", "", 1, 5, "Sights", 1);
-        this.addNewAttractionToList("Royal Palace", "description", "", "", "", 1, 5, "Sights", 2);
-        this.addNewAttractionToList("Oslo Rådhus", "description", "", "", "", 1, 5, "Sights", 4);
-        this.addNewAttractionToList("Oslo Cathedral", "description", "", "", "", 1, 5, "Sights", 2);
+        this.addNewAttractionToList("Akershus Fortress", "description", "../assets/imgs/akershus-festning.jpg", "", "", 1, 4.5, "Sights", 1);
+        this.addNewAttractionToList("Royal Palace", "description", "../assets/imgs/royal-palace.jpg", "", "", 1, 4, "Sights", 2);
+        this.addNewAttractionToList("Oslo City Hall", "description", "../assets/imgs/city-hall.jpeg", "", "", 1, 3, "Sights", 4);
+        this.addNewAttractionToList("Oslo Cathedral", "description", "../assets/imgs/oslo-cathedral.jpeg", "", "", 1, 5, "Sights", 2);
 
         //Museums
-        this.addNewAttractionToList("Fram Museum", "description", "", "", "", 1, 5, "Museums", 1);
-        this.addNewAttractionToList("Kon Tiki Museum", "description", "", "", "", 1, 5, "Museums", 2.5);
-        this.addNewAttractionToList("The Vikingship Museum", "description", "", "", "", 1, 5, "Museums", 5);
-        this.addNewAttractionToList("Nobel Peace Center", "description", "", "", "", 1, 5, "Museum", 2.5);
-        this.addNewAttractionToList("National Museum of Art", "description", "", "", "", 1, 5, "Museums", 1.5);
-        this.addNewAttractionToList("Astrup Fearnley Museum", "description", "", "", "", 1, 5, "Museums", 2);
+        this.addNewAttractionToList("Fram Museum", "description", "../assets/imgs/fram-museum.jpg", "", "", 1, 5, "Museums", 1);
+        this.addNewAttractionToList("Kon Tiki Museum", "description", "../assets/imgs/kon-tiki-museum.jpeg", "", "", 3, 5, "Museums", 2.5);
+        this.addNewAttractionToList("The Vikingship Museum", "description", "", "", "", 1, 3.5, "Museums", 5);
+        this.addNewAttractionToList("Nobel Peace Center", "description", "", "", "", 1, 3, "Museum", 2.5);
+        this.addNewAttractionToList("National Museum of Art", "description", "", "", "", 2, 4, "Museums", 1.5);
+        this.addNewAttractionToList("Astrup Fearnley Museum", "description", "", "", "", 3, 5, "Museums", 2);
 
         //Theatre & Opera 
         this.addNewAttractionToList("Oslo Opera House", "description", "", "", "", 1, 5, "Theatre & Opera", 3);
@@ -93,7 +93,7 @@ export class Main{
         this.addNewAttractionToList("Bygdøy", "description", "", "", "", 1, 5, "Nature & Parks", 1);
         this.addNewAttractionToList("The Vigelands Park", "description", "", "", "", 1, 5, "Nature & Parks", 2);
         this.addNewAttractionToList("Holmenkollbakken", "description", "", "", "", 1, 5, "Nature & Parks", 1.5);
-        this.addNewAttractionToList("The Vigelands Park", "description", "", "", "", 1, 5, "Nature & Parks", 2);
+        this.addNewAttractionToList("Nordmarka", "description", "", "", "", 1, 5, "Nature & Parks", 2);
         this.addNewAttractionToList("Sognsvann", "description", "", "", "", 1, 5, "Nature & Parks", 1);
 
         //Food & Drinks
