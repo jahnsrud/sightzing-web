@@ -71,7 +71,7 @@ export class Main{
         this.addNewAttractionToList("Bygdøy", "description", "", "", "", 1, 5, "Nature & Parks");
         this.addNewAttractionToList("The Vigelands Park", "description", "", "", "", 1, 5, "Nature & Parks");
         this.addNewAttractionToList("Holmenkollbakken", "description", "", "", "", 1, 5, "Nature & Parks");
-        this.addNewAttractionToList("The Vigelands Park", "description", "", "", "", 1, 5, "Nature & Parks");
+        this.addNewAttractionToList("The Vigelands Park", "description", "../../assets/imgs/museums.jpg", "", "", 1, 5, "Nature & Parks");
         this.addNewAttractionToList("Sognsvann", "description", "", "", "", 1, 5, "Nature & Parks");
 
         //Food & Drinks
@@ -99,14 +99,14 @@ export class Main{
 
 export class Attraction {
     
-    title: String;
-    description: String; // intro-teksten til guide
-    imageUrl: String;
-    googlePlacesId: String;
-    website: String;
-    price: Number; 
-    rating: Number; 
-    category: String; 
+    title: string;
+    description: string; // intro-teksten til guide
+    imageUrl: string;
+    googlePlacesId: string;
+    website: string;
+    price: number; 
+    rating: number; 
+    category: string; 
 
 
     // more pictures
@@ -117,14 +117,14 @@ export class Attraction {
         
     }
 
-    setValues(title: String, 
-        description: String, 
-        imageUrl: String, 
-        googlePlacesId: String, 
-        website: String, 
-        price: Number, 
-        rating: Number, 
-        category: String){
+    setValues(title: string, 
+        description: string, 
+        imageUrl: string, 
+        googlePlacesId: string, 
+        website: string, 
+        price: number, 
+        rating: number, 
+        category: string){
             this.title = title; 
             this.description = description; 
             this.imageUrl = imageUrl; 
@@ -138,12 +138,12 @@ export class Attraction {
   
   export class Tour {
   
-    title: String;
-    description: String;
-    imageUrl: String;
+    title: string;
+    description: string;
+    imageUrl: string;
   
-    totalTime: Number;
-    rating: Number;
+    totalTime: number;
+    rating: number;
   
     // attractions
   
