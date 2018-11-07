@@ -13,6 +13,8 @@ import { Main, Attraction } from '../../app/main';
 })
 export class HomePage {
 
+  featuredList:any;
+
   constructor(public navController:NavController, public modalController: ModalController) {
 
     this.getCurrentWeather();
@@ -21,6 +23,12 @@ export class HomePage {
     if (this.isFirstLaunch()) {
         // presenter welcome
     }
+
+    this.featuredList = [
+      "Hidden Treasures of Oslo",
+      "National Gallery",
+      "Instafriendly"
+    ]
 
   }
 

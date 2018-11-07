@@ -41,33 +41,51 @@
 
   <ion-slides>
       <ion-slide>
-          <div class="featured-card" (click)="presentAttraction()">
-
+          <div ngFor="let item of featuredList" class="featured-card" (click)="presentAttraction()">
               <p class="featured-card-time-usage">12h</p>
               <p class="featured-card-type-heading">Tour</p>
               <p class="featured-card-title">Hidden Treasures of Oslo</p>
-          
             </div>
       </ion-slide>
       <ion-slide>
-        <h1>Slide 2</h1>
+          <div class="featured-card" (click)="presentAttraction()">
+              <p class="featured-card-time-usage">12h</p>
+              <p class="featured-card-type-heading">Tour</p>
+              <p class="featured-card-title">Hidden Treasures of Oslo</p>
+          </div>
       </ion-slide>
       <ion-slide>
-        <h1>Slide 3</h1>
+        <div class="featured-card" (click)="presentAttraction()">
+              <p class="featured-card-time-usage">12h</p>
+              <p class="featured-card-type-heading">Tour</p>
+              <p class="featured-card-title">Hidden Treasures of Oslo</p>
+              </div>
       </ion-slide>
     </ion-slides>
  
 
   <h3>Featured</h3>
 
-  <button ion-button shape="round" color="primary" (click)="presentAttraction()">Open Attraction 1</button>
-  <button ion-button shape="round" color="primary" (click)="presentAttraction()">Open Attraction 2</button>
+  <ion-content>    
+      <ion-row>
+         <ion-scroll scrollX="true">
+           <div ngFor="let item of itemlist">
+             <!---<button ion-button>{{item}}</button>-->
+             <button ion-button>BETA</button>
+             <button ion-button>while(true)</button>
+           </div>
+         </ion-scroll>
+     </ion-row>
+   </ion-content>
 
   <h3>Tours</h3>
   <button ion-button shape="round" color="primary" (click)="presentTour()">Open Tour</button>
 
   <h3>Events</h3>
-  <button ion-button shape="round" color="primary" (click)="presentTour()">Open Attraction 3</button>
+  <button ion-button shape="round" color="primary" (click)="presentAttraction()">Open Attraction [TEST]</button>
+
+  <h3>Attractions</h3>
+  <button ion-button shape="round" color="primary" (click)="presentAttraction()">Open Attraction [TEST]</button>
 
   <h3>Coming soon</h3>
   <button ion-button shape="round" color="primary" (click)="presentWelcomePage()">Open Welcome Screen</button>
