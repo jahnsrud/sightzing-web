@@ -98,11 +98,50 @@
       
         <p id= "country" class="userinfo">China</p>
 
-        <button ion-button class="btn button-full button-round">Edit password</button>
+        <button ion-button class="btn button-full button-round" (click)="changeToEditPassword()">Edit password</button>
 
-        <button ion-button class="btn button-full button-round" (click)="changeToLoggedinUser()">Edit profile</button>
+        <button ion-button class="btn button-full button-round" (click)="changeToEditProfile()">Edit profile</button>
 
-        <button ion-button class="btn button-full button-round" (click)="changeToLoggedinUser()">Sign out</button>
+        <button ion-button class="btn button-full button-round" (click)="signOut()">Sign out</button>
+  </div>
+
+  <div id="editprofilediv">
+    <ion-list>
+      <ion-item>
+          <ion-input placeholder="Full Name" class="input" id="fullname"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+      <ion-input placeholder="Country" class="input" id="countryinput"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="email" class="input"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <button ion-button class="btn button-full button-round" (click)="changeToLoggedinUser()">Confirm</button>
+
+    <p class="tinyText">Or</p>
+
+    <button ion-button class="btn button-full button-round" (click)="signOut()">Delete profile</button>
+
+  </div>
+
+  <div id="editpassworddiv">
+    <ion-list>
+      <ion-item>
+        <ion-input placeholder="Old password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="New password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Confirm password"></ion-input>
+      </ion-item>
+
+    <button ion-button class="btn button-full button-round" (click)="changeToLoggedinUser()">Confirm</button>
+    </ion-list>
   </div>
   
        

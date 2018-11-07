@@ -81,6 +81,8 @@ export class ProfilePage {
 
   changeToLoggedinUser() {
 
+    let editPasswordGrid = document.getElementById("editpassworddiv");
+    let editProfieGrid = document.getElementById("editprofilediv");
     let loggedinGrid = document.getElementById("loggedindiv");
     let loginGrid = document.getElementById("logindiv");
     let welcomeUserGrid = document.getElementById("welcomeuserdiv");
@@ -91,16 +93,54 @@ export class ProfilePage {
 
     document.getElementById("title").innerHTML="Profile";
 
-
+    editPasswordGrid.setAttribute("style","display: none;");
+    editProfieGrid.setAttribute("style","display: none;");
     profilePlaceholder.setAttribute("style","display: block;");
     loginGrid.setAttribute("style","display: none;");
     loggedinGrid.setAttribute("style", "display: block;");
     welcomeUserGrid.setAttribute("style","display: none");
     plusBtn.setAttribute("style","display: none;");
     loginText.setAttribute("style", "visibility: hidden;");
-    registerText.setAttribute("style", "visibility: hidden;");
+    registerText.setAttribute("style", "visibility: hidden;");    
+  }
 
-    
+  signOut() {
+
+    let editProfieGrid = document.getElementById("editprofilediv");
+    let loggedinGrid = document.getElementById("loggedindiv");
+    let profileGrid = document.getElementById("notloggedindiv");
+
+    profileGrid.setAttribute("style","display: block");
+    loggedinGrid.setAttribute("style", "display: none;");
+    editProfieGrid.setAttribute("style","display: none;");
+  }
+
+  changeToEditProfile() {
+
+    let plusBtn = document.getElementById("plusbtn");
+    let profilePlaceholder = document.getElementById("profilePlaceholder");
+    let editProfieGrid = document.getElementById("editprofilediv");
+    let loggedinGrid = document.getElementById("loggedindiv");
+
+    document.getElementById("title").innerHTML="Edit Profile";
+
+    loggedinGrid.setAttribute("style","display: none;");
+    editProfieGrid.setAttribute("style","display: block;");
+    profilePlaceholder.setAttribute("style","display: block;");
+    plusBtn.setAttribute("style","display: block;");
+  }
+
+  changeToEditPassword() {
+
+    let editPasswordGrid = document.getElementById("editpassworddiv");
+    let profilePlaceholder = document.getElementById("profilePlaceholder");
+    let loggedinGrid = document.getElementById("loggedindiv");
+
+    document.getElementById("title").innerHTML="Edit Password";
+
+    editPasswordGrid.setAttribute("style","display: block;");
+    loggedinGrid.setAttribute("style","display: none;");
+    profilePlaceholder.setAttribute("style","display: none;");
   }
 
   isLoggedIn() {
