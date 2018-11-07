@@ -46,20 +46,13 @@
           <ion-item>
               <ion-input placeholder="Password" class="input"></ion-input>
           </ion-item>
-
-          <ion-item>
-            <button ion-button class="btn button-full button-round">Log in</button>
-          </ion-item>
-
-          <ion-item>
-            <p class="ortext">Or</p>
-          </ion-item>
-
-          <ion-item>
-              <button ion-button class="btn button-full button-round">Log in with Weibo</button>
-          </ion-item>
-
       </ion-list>
+
+            <button ion-button class="btn button-full button-round" (click)="changeToLoggedinUser()">Log in</button>
+          
+            <p class="ortext">Or</p>
+
+            <button ion-button class="btn button-full button-round">Log in with Weibo</button>
   </div>
 
   <div id="registerdiv">
@@ -93,25 +86,23 @@
       <ion-input placeholder="Country" class="input" id="countryinput"></ion-input>
       </ion-item>
 
-      <button ion-button class="btn button-full button-round">Save</button>
+      <button ion-button class="btn button-full button-round" (click)="changeToLoggedinUser()">Save</button>
 
     </ion-list>
   </div>
 
   <div id="loggedindiv">
-    <ion-list>
-      <ion-item>
-        <h2 id= "username"></h2>
-      </ion-item>
+        <h3 id= "username" class="userinfo">Username</h3>
+      
+        <p id= "email" class="userinfo">email@hotmail.com</p>
+      
+        <p id= "country" class="userinfo">China</p>
 
-      <ion-item>
-        <h4 id= "email"></h4>
-      </ion-item>
+        <button ion-button class="btn button-full button-round">Edit password</button>
 
-      <ion-item>
-        <h4 id= "country"></h4>
-      </ion-item>
-    </ion-list>
+        <button ion-button class="btn button-full button-round" (click)="changeToLoggedinUser()">Edit profile</button>
+
+        <button ion-button class="btn button-full button-round" (click)="changeToLoggedinUser()">Sign out</button>
   </div>
   
        

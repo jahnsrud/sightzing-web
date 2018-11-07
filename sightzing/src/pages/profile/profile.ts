@@ -82,7 +82,24 @@ export class ProfilePage {
   changeToLoggedinUser() {
 
     let loggedinGrid = document.getElementById("loggedindiv");
-    let fullName = document.getElementById("fullname");
+    let loginGrid = document.getElementById("logindiv");
+    let welcomeUserGrid = document.getElementById("welcomeuserdiv");
+    let plusBtn = document.getElementById("plusbtn");
+    let profilePlaceholder = document.getElementById("profilePlaceholder");
+    let loginText = document.getElementById("logintext");
+    let registerText = document.getElementById("registertext");
+
+    document.getElementById("title").innerHTML="Profile";
+
+
+    profilePlaceholder.setAttribute("style","display: block;");
+    loginGrid.setAttribute("style","display: none;");
+    loggedinGrid.setAttribute("style", "display: block;");
+    welcomeUserGrid.setAttribute("style","display: none");
+    plusBtn.setAttribute("style","display: none;");
+    loginText.setAttribute("style", "visibility: hidden;");
+    registerText.setAttribute("style", "visibility: hidden;");
+
     
   }
 
