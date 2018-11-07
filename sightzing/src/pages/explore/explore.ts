@@ -31,6 +31,7 @@ export class ExplorePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ExplorePage');
+    this.addCorrectAmountOfAttractions(); 
   }
 
   openFilter(event):void{
@@ -41,10 +42,38 @@ export class ExplorePage {
   }
 
   addCorrectAmountOfAttractions(){
-    var toursTxt = document.getElementById("tours-number");
-    console.log(this.main.getTours().length); 
-    console.log(toursTxt);
-    toursTxt.innerHTML = this.main.getTours().length + "tours";
+    let toursTxt = document.getElementById("tours-number");
+    toursTxt.innerHTML = this.main.getTours().length + " tours";
+
+    let sightsTxt = document.getElementById("sights-number"); 
+    sightsTxt.innerHTML = this.main.getAttractionByCategory("Sights").length + " attractions";
+
+    let theatreTxt = document.getElementById("theatre-number"); 
+    theatreTxt.innerHTML = this.main.getAttractionByCategory("Theatre & Opera").length + " attractions";
+
+    let museumsTxt = document.getElementById("museums-number"); 
+    museumsTxt.innerHTML = this.main.getAttractionByCategory("Museums").length + " attractions";
+
+    let natureTxt = document.getElementById("nature-number"); 
+    natureTxt.innerHTML = this.main.getAttractionByCategory("Nature & Parks").length + " attractions";
+
+    let foodTxt = document.getElementById("food-number"); 
+    foodTxt.innerHTML = this.main.getAttractionByCategory("Food & Drinks").length + " attractions";
+
+    let shoppingTxt = document.getElementById("shopping-number"); 
+    shoppingTxt.innerHTML = this.main.getAttractionByCategory("Shopping").length + " attractions";
+
+    let funTxt = document.getElementById("fun-number"); 
+    funTxt.innerHTML = this.main.getAttractionByCategory("Fun & Games").length + " attractions";
+
+    let spasTxt = document.getElementById("spas-number"); 
+    spasTxt.innerHTML = this.main.getAttractionByCategory("Spas & Wellness").length + " attractions";
+
+    let clubsTxt = document.getElementById("clubs-number"); 
+    clubsTxt.innerHTML = this.main.getAttractionByCategory("Clubs & Pubs").length + " attractions";
+
+    let allTxt = document.getElementById("all-number"); 
+    allTxt.innerHTML = this.main.getAttractions().length + " attractions";
   }
 
 
