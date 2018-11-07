@@ -40,26 +40,12 @@
   <!--I en slider-->
 
   <ion-slides>
-      <ion-slide>
-          <div ngFor="let item of featuredList" class="featured-card" (click)="presentAttraction()">
-              <p class="featured-card-time-usage">12h</p>
-              <p class="featured-card-type-heading">Tour</p>
-              <p class="featured-card-title">Hidden Treasures of Oslo</p>
-            </div>
-      </ion-slide>
-      <ion-slide>
+      <ion-slide loop="true" ng-repeat="let item of featuredList">
           <div class="featured-card" (click)="presentAttraction()">
               <p class="featured-card-time-usage">12h</p>
               <p class="featured-card-type-heading">Tour</p>
-              <p class="featured-card-title">Hidden Treasures of Oslo</p>
+              <p class="featured-card-title">Hidden Treasures of Oslo {{ title }}</p>
           </div>
-      </ion-slide>
-      <ion-slide>
-        <div class="featured-card" (click)="presentAttraction()">
-              <p class="featured-card-time-usage">12h</p>
-              <p class="featured-card-type-heading">Tour</p>
-              <p class="featured-card-title">Hidden Treasures of Oslo</p>
-              </div>
       </ion-slide>
     </ion-slides>
  

@@ -25,9 +25,19 @@ export class HomePage {
     }
 
     this.featuredList = [
-      "Hidden Treasures of Oslo",
-      "National Gallery",
-      "Instafriendly"
+      {
+        "title": "Hidden Treasures of Oslo",
+        "type": "Tour"
+      },
+      {
+        "title": "National Gallery",
+        "type": "Attraction"
+      },
+      {
+        "title": "Instafriendly",
+        "type": "Tour"
+      }
+      
     ]
 
   }
