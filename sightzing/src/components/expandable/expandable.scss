@@ -3,6 +3,8 @@ expandable {
 
     .expand-wrapper {
         transition: 0.2s linear;
+        white-space: normal;
+        line-height: 1.5em;
     }
 
     .collapsed {

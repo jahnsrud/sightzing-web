@@ -13,7 +13,8 @@
     <button detail-none (click)="expandItem(item)" ion-item *ngFor="let item of items">
       <ion-icon name="add">
       </ion-icon>
-      <h2>{{ item.title }}</h2>
+      <h2 style="font-weight: bold">{{ item.title }}</h2>
+      <br>
       <expandable [expandHeight]="itemExpandHeight" [expanded]="item.expanded">
         {{ item.content }}
       </expandable>
