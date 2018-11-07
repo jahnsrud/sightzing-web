@@ -22,7 +22,11 @@ export class ExplorePage {
   
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public popoverController: PopoverController) {
+  
 
+    //window.onload = () => console.log("this worksssss");
+    
+    //(document).ready = this.addCorrectAmountOfAttractions; 
   }
 
   ionViewDidLoad() {
@@ -34,6 +38,13 @@ export class ExplorePage {
     filterPop.present({
       ev: event
     });
+  }
+
+  addCorrectAmountOfAttractions(){
+    var toursTxt = document.getElementById("tours-number");
+    console.log(this.main.getTours().length); 
+    console.log(toursTxt);
+    toursTxt.innerHTML = this.main.getTours().length + "tours";
   }
 
 
@@ -52,8 +63,6 @@ export class ExplorePage {
       console.log("url: " + this.results[0].imageUrl);
     }
 
-    //this.onResultPage = true; 
-
     //get the explore-grid
     var exploreGrid = document.getElementById("explore-grid");
 
@@ -63,7 +72,6 @@ export class ExplorePage {
     //Update the information in category button
     var choiceButton = document.getElementById("choice-btn");
     choiceButton.innerHTML = choice; 
-    //choiceButton.onclick = () => this.changeToExplore("hei");
 
     //set the result-grid to display: flex
     var resultGrid = document.getElementById("result-grid"); 
@@ -166,6 +174,10 @@ export class ExplorePage {
   }
 
   /*
+
+  CODE FOR SETTING CLICK-FUNCTION DYNAMICALLY: 
+  //choiceButton.onclick = () => this.changeToExplore("hei");
+
   getOnResultPage(){
     return this.onResultPage;
   }*/
@@ -193,5 +205,7 @@ export class ExplorePage {
      }
   }*/
   
-  
+
 }
+
+

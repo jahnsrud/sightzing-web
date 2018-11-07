@@ -167,6 +167,7 @@ ion-card img{
     padding-left: 8px; 
     min-width: 90px; 
     max-width: 90px; 
+    padding-bottom: 1px; 
 }
 
 .star-icon{
@@ -188,6 +189,8 @@ ion-card img{
 .choice-btn-txt{
     display: table-cell; 
     vertical-align: middle;
+    margin-top: 0 !important; 
+    line-height: 1rem;
 }
 
 .choice-btn-cross{

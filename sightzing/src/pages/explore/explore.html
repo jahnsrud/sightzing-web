@@ -11,7 +11,7 @@
   
 </ion-header>
 
-<ion-content fullscreen padding>
+<ion-content fullscreen padding onload="addCorrectAmountOfAttractions()">
   <ion-title><h1>Explore</h1></ion-title>
   
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
@@ -29,7 +29,7 @@
                   <img src="../../assets/imgs/tours.jpg"/>
                   <div class="card-txt">
                       <div><h3 class="card-title">Tours</h3></div>
-                      <div><h6 class="card-subtitle">12 Attractions</h6></div>
+                      <div><h6 id="tours-number" class="card-subtitle">12 Attractions</h6></div>
                   </div>
               </ion-card>
           </ion-col>
@@ -46,7 +46,7 @@
                           <img src="../../assets/imgs/sights.jpg"/>
                           <div class="card-txt">
                               <div><h3 class="card-title">Sights</h3></div>
-                              <div><h6 class="card-subtitle">12 Attractions</h6></div>
+                              <div><h6 class="card-subtitle" id="sights-number">12 Attractions</h6></div>
                           </div>
                       </ion-card>
                   </ion-col>
@@ -59,7 +59,7 @@
                           <img src="../../assets/imgs/opera.jpg"/>
                           <div class="card-txt">
                               <div><h3 class="card-title">Theatre &amp; Opera</h3></div>
-                              <div><h6 class="card-subtitle">12 Attractions</h6></div>
+                              <div><h6 class="card-subtitle" id="theatre-number">12 Attractions</h6></div>
                           </div>
                       </ion-card>
                   </ion-col>
