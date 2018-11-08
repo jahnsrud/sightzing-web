@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 import { FilterComponent } from '../../components/filter/filter';
-import { Main } from '../../app/main'; 
+import { Main } from '../../app/main';
 
 /**
  * Generated class for the ExplorePage page.
@@ -17,21 +17,25 @@ import { Main } from '../../app/main';
 })
 export class ExplorePage {
   results = new Array();
-  //onResultPage = false; 
-  main: Main = new Main(); 
-  
+  //onResultPage = false;
+  main: Main = new Main();
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public popoverController: PopoverController) {
-  
+
 
     //window.onload = () => console.log("this worksssss");
-    
-    //(document).ready = this.addCorrectAmountOfAttractions; 
+
+    //(document).ready = this.addCorrectAmountOfAttractions;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ExplorePage');
-    this.addCorrectAmountOfAttractions(); 
+
+  }
+
+  ionViewDidEnter(){
+    this.addCorrectAmountOfAttractions();
   }
 
   openFilter(event):void{
@@ -45,49 +49,49 @@ export class ExplorePage {
     let toursTxt = document.getElementById("tours-number");
     toursTxt.innerHTML = this.main.getTours().length + " tours";
 
-    let sightsTxt = document.getElementById("sights-number"); 
+    let sightsTxt = document.getElementById("sights-number");
     sightsTxt.innerHTML = this.main.getAttractionByCategory("Sights").length + " attractions";
 
-    let theatreTxt = document.getElementById("theatre-number"); 
+    let theatreTxt = document.getElementById("theatre-number");
     theatreTxt.innerHTML = this.main.getAttractionByCategory("Theatre & Opera").length + " attractions";
 
-    let museumsTxt = document.getElementById("museums-number"); 
+    let museumsTxt = document.getElementById("museums-number");
     museumsTxt.innerHTML = this.main.getAttractionByCategory("Museums").length + " attractions";
 
-    let natureTxt = document.getElementById("nature-number"); 
+    let natureTxt = document.getElementById("nature-number");
     natureTxt.innerHTML = this.main.getAttractionByCategory("Nature & Parks").length + " attractions";
 
-    let foodTxt = document.getElementById("food-number"); 
+    let foodTxt = document.getElementById("food-number");
     foodTxt.innerHTML = this.main.getAttractionByCategory("Food & Drinks").length + " attractions";
 
-    let shoppingTxt = document.getElementById("shopping-number"); 
+    let shoppingTxt = document.getElementById("shopping-number");
     shoppingTxt.innerHTML = this.main.getAttractionByCategory("Shopping").length + " attractions";
 
-    let funTxt = document.getElementById("fun-number"); 
+    let funTxt = document.getElementById("fun-number");
     funTxt.innerHTML = this.main.getAttractionByCategory("Fun & Games").length + " attractions";
 
-    let spasTxt = document.getElementById("spas-number"); 
+    let spasTxt = document.getElementById("spas-number");
     spasTxt.innerHTML = this.main.getAttractionByCategory("Spas & Wellness").length + " attractions";
 
-    let clubsTxt = document.getElementById("clubs-number"); 
+    let clubsTxt = document.getElementById("clubs-number");
     clubsTxt.innerHTML = this.main.getAttractionByCategory("Clubs & Pubs").length + " attractions";
 
-    let allTxt = document.getElementById("all-number"); 
+    let allTxt = document.getElementById("all-number");
     allTxt.innerHTML = this.main.getAttractions().length + " attractions";
   }
 
 
   changeToResults(choice: string){
     if(choice == "Tours"){
-      this.results = this.main.getTours(); 
+      this.results = this.main.getTours();
     }
 
     else if(choice == "All"){
-      this.results = this.main.getAttractions(); 
+      this.results = this.main.getAttractions();
     }
 
     else {
-      this.results = this.main.getAttractionByCategory(choice); 
+      this.results = this.main.getAttractionByCategory(choice);
       console.log(this.results);
       console.log("url: " + this.results[0].imageUrl);
     }
@@ -97,28 +101,28 @@ export class ExplorePage {
 
     //set the explore-grid to display: none
     exploreGrid.setAttribute("style", "display: none;");
-    
+
     //Update the information in category button
     var choiceButton = document.getElementById("choice-btn");
-    choiceButton.innerHTML = choice; 
+    choiceButton.innerHTML = choice;
 
     //set the result-grid to display: flex
-    var resultGrid = document.getElementById("result-grid"); 
-    resultGrid.setAttribute("style", "display: flex;"); 
+    var resultGrid = document.getElementById("result-grid");
+    resultGrid.setAttribute("style", "display: flex;");
 
     //Get the resultrow
     var resultRow = document.getElementById("result-row");
 
     for(var i = 1; i<this.results.length; i++){
-      resultGrid.appendChild(resultRow.cloneNode(true)); 
+      resultGrid.appendChild(resultRow.cloneNode(true));
     }
 
-    var images = resultGrid.getElementsByClassName("result-card-img"); 
-    var titles = resultGrid.getElementsByClassName("result-title"); 
-    var stars = resultGrid.getElementsByClassName("star-box"); 
+    var images = resultGrid.getElementsByClassName("result-card-img");
+    var titles = resultGrid.getElementsByClassName("result-title");
+    var stars = resultGrid.getElementsByClassName("star-box");
 
     for(var j = 0; j < images.length; j++){
-      console.log(this.results[j]); 
+      console.log(this.results[j]);
       images[j].setAttribute("src", this.results[j].imageUrl);
     }
 
@@ -133,24 +137,24 @@ export class ExplorePage {
 
       while(attractionStars > 0){
         var starIcon = document.createElement("ion-icon");
-        starIcon.setAttribute("role", "img"); 
-        starIcon.className += "star-icon icon icon-md ion-md-star"; 
+        starIcon.setAttribute("role", "img");
+        starIcon.className += "star-icon icon icon-md ion-md-star";
 
         var starHalfIcon = document.createElement("ion-icon");
-        starHalfIcon.setAttribute("role", "img"); 
+        starHalfIcon.setAttribute("role", "img");
         starHalfIcon.className += "star-icon icon icon-md ion-md-star-half";
 
-        
+
 
         if(attractionStars >= 1){
           starIcon.setAttribute("name", "star");
-          stars[l].appendChild(starIcon); 
+          stars[l].appendChild(starIcon);
           attractionStars--;
           starsCounted++;
         }
         if(attractionStars > 0 && attractionStars < 1){
           starHalfIcon.setAttribute("name", "star-half");
-          stars[l].appendChild(starHalfIcon); 
+          stars[l].appendChild(starHalfIcon);
           attractionStars--;
           starsCounted++;
         }
@@ -158,7 +162,7 @@ export class ExplorePage {
 
       while(starsCounted < 5){
         var starOutlined = document.createElement("ion-icon");
-        starOutlined.setAttribute("role", "img"); 
+        starOutlined.setAttribute("role", "img");
         starOutlined.setAttribute("name", "star-outline");
         starOutlined.className += "star-icon icon icon-md ion-md-star-outline";
 
@@ -171,7 +175,7 @@ export class ExplorePage {
 
   }
 
-  
+
   changeToExplore(hei: string){
     //this.onResultPage = false;
 
@@ -179,9 +183,9 @@ export class ExplorePage {
     var exploreGrid = document.getElementById("explore-grid");
     exploreGrid.setAttribute("style", "display: flex;");
 
-    var resultGrid = document.getElementById("result-grid"); 
-    resultGrid.setAttribute("style", "display: none"); 
-    
+    var resultGrid = document.getElementById("result-grid");
+    resultGrid.setAttribute("style", "display: none");
+
     //remove the list of attractions
     var resultsRow = resultGrid.getElementsByTagName("ion-row");
 
@@ -190,9 +194,9 @@ export class ExplorePage {
         resultsRow[i].parentNode.removeChild(resultsRow[i]);
       }
     }
-    
 
-    var stars = resultGrid.getElementsByClassName("star-box"); 
+
+    var stars = resultGrid.getElementsByClassName("star-box");
 
     for(var j = 0; j<stars.length; j++){
       while(stars[j].firstChild){
@@ -204,7 +208,7 @@ export class ExplorePage {
 
   /*
 
-  CODE FOR SETTING CLICK-FUNCTION DYNAMICALLY: 
+  CODE FOR SETTING CLICK-FUNCTION DYNAMICALLY:
   //choiceButton.onclick = () => this.changeToExplore("hei");
 
   getOnResultPage(){
@@ -223,17 +227,17 @@ export class ExplorePage {
       }
     }
 
-    this.checkIfEmpty(); 
+    this.checkIfEmpty();
   }
 
   checkIfEmpty(){
       var buttonColumn = document.getElementById("btn-col");
 
      if(buttonColumn.children.length < 2){
-       this.changeToExplore(); 
+       this.changeToExplore();
      }
   }*/
-  
+
 
 }
 
