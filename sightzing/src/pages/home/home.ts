@@ -4,7 +4,8 @@ import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
 import { WelcomePage } from '../welcome/welcome';
 import { TourPage } from '../tour/tour'
 import { ProfilePage } from '../profile/profile';
-import { Main, Attraction } from '../../app/main'; 
+import { Main } from '../../app/main';
+import { Attraction } from '../../app/attraction/attraction';
 
 
 @Component({
@@ -37,7 +38,7 @@ export class HomePage {
         "title": "Instafriendly",
         "type": "Tour"
       }
-      
+
     ]
 
   }
@@ -53,17 +54,19 @@ export class HomePage {
     const modal = await this.modalController.create(WelcomePage);
     modal.present();
     // return await modal.present();
-    
+
   }
 
   async presentAttraction() {
-    var m = new Main(); 
+    var attraction = new Attraction();
     //m.addNewAttractionToList("Title", "Subtitle", "", "", "", 1, 1, "");
-    //console.log(attraction); 
+    //console.log(attraction);
+    attraction.fillListWithAttractions();
 
-    var attraction = m.getAttraction("The Vigelands Park");
+    var vigelandsparken = attraction.getAttraction("The Vigelands Park");
+    console.log(vigelandsparken);
     this.navController.push(AttractionDetailPage, {
-      attraction: attraction
+      attraction: vigelandsparken
     });
 
   }
@@ -90,23 +93,23 @@ export class HomePage {
   quoteList:string[] = ["Party in the city where the heat is on",
 
                         "Somebody call 911, shawty's fire burning on the dancefloor",
-                        
+
                         "Fire burning fire burning on the dancefloor",
-                        
+
                         "I am getting so hot, i wanna take my clothes off",
-                        
+
                         "It's gettin hot in here!",
-                        
+
                         "I wanna make you wet",
-                        
+
                         "I wanna make you sweat",
-                        
+
                         "It rains, it pours, it rains, it pours",
-                        
+
                         "I only wanted to see you laughing in the purple rain.",
-                        
+
                         "lil' homie in my hood, when it rains it pours",
-                      
+
                         "I tell her baby baby baby baby, I'm a fireball",
 
                         "The sun is shining, and so are you",
@@ -124,14 +127,14 @@ export class HomePage {
                         "Cant you hear, can't you hear the thunder",
 
                         "Man's not hot"];
-  
- 
+
+
 
     randomQuote = this.quoteList[Math.floor(Math.random() * this.quoteList.length)];
-   
+
 
   displayRandomQuote() {
-    
+
     window.onload= () => document.getElementById("weather-subtitle").innerHTML = this.randomQuote;
   }
 

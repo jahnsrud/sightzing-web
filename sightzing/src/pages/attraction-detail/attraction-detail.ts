@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Label } from 'ionic-angular';
-import { Attraction } from '../../app/main';
+import { Attraction } from '../../app/attraction/attraction';
 
 /**
  * Generated class for the AttractionDetailPage page.
@@ -23,7 +23,7 @@ export class AttractionDetailPage {
   imageUrl: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    
+
     this.attraction = this.navParams.get("attraction");
     this.title = this.attraction.title;
     this.description = this.attraction.description;

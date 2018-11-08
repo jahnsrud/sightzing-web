@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 import { FilterComponent } from '../../components/filter/filter';
 import { Main } from '../../app/main';
+import {Attraction} from '../../app/attraction/attraction';
+import { Tour } from '../../app/tour/tour';
+
+const attraction: Attraction = new Attraction();
+const tour: Tour = new Tour();
 
 /**
  * Generated class for the ExplorePage page.
@@ -18,10 +23,11 @@ import { Main } from '../../app/main';
 export class ExplorePage {
   results = new Array();
   //onResultPage = false;
-  main: Main = new Main();
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public popoverController: PopoverController) {
+    attraction.fillListWithAttractions();
+    tour.fillListWithTours();
   }
 
   ionViewDidLoad() {
@@ -41,51 +47,55 @@ export class ExplorePage {
 
   addCorrectAmountOfAttractions(){
     let toursTxt = document.getElementById("tours-number");
-    toursTxt.innerHTML = this.main.getTours().length + " tours";
+    toursTxt.innerHTML = tour.getTours().length + " tours";
 
     let sightsTxt = document.getElementById("sights-number");
-    sightsTxt.innerHTML = this.main.getAttractionByCategory("Sights").length + " attractions";
+    sightsTxt.innerHTML = attraction.getAttractionByCategory("Sights").length + " attractions";
 
     let theatreTxt = document.getElementById("theatre-number");
-    theatreTxt.innerHTML = this.main.getAttractionByCategory("Theatre & Opera").length + " attractions";
+    theatreTxt.innerHTML = attraction.getAttractionByCategory("Theatre & Opera").length + " attractions";
 
     let museumsTxt = document.getElementById("museums-number");
-    museumsTxt.innerHTML = this.main.getAttractionByCategory("Museums").length + " attractions";
+    museumsTxt.innerHTML = attraction.getAttractionByCategory("Museums").length + " attractions";
 
     let natureTxt = document.getElementById("nature-number");
-    natureTxt.innerHTML = this.main.getAttractionByCategory("Nature & Parks").length + " attractions";
+    natureTxt.innerHTML = attraction.getAttractionByCategory("Nature & Parks").length + " attractions";
 
     let foodTxt = document.getElementById("food-number");
-    foodTxt.innerHTML = this.main.getAttractionByCategory("Food & Drinks").length + " attractions";
+    foodTxt.innerHTML = attraction.getAttractionByCategory("Food & Drinks").length + " attractions";
 
     let shoppingTxt = document.getElementById("shopping-number");
-    shoppingTxt.innerHTML = this.main.getAttractionByCategory("Shopping").length + " attractions";
+    shoppingTxt.innerHTML = attraction.getAttractionByCategory("Shopping").length + " attractions";
 
     let funTxt = document.getElementById("fun-number");
-    funTxt.innerHTML = this.main.getAttractionByCategory("Fun & Games").length + " attractions";
+    funTxt.innerHTML = attraction.getAttractionByCategory("Fun & Games").length + " attractions";
 
     let spasTxt = document.getElementById("spas-number");
-    spasTxt.innerHTML = this.main.getAttractionByCategory("Spas & Wellness").length + " attractions";
+    spasTxt.innerHTML = attraction.getAttractionByCategory("Spas & Wellness").length + " attractions";
 
     let clubsTxt = document.getElementById("clubs-number");
-    clubsTxt.innerHTML = this.main.getAttractionByCategory("Clubs & Pubs").length + " attractions";
+    clubsTxt.innerHTML = attraction.getAttractionByCategory("Clubs & Pubs").length + " attractions";
 
     let allTxt = document.getElementById("all-number");
-    allTxt.innerHTML = this.main.getAttractions().length + " attractions";
+    allTxt.innerHTML = attraction.getAttractions().length + " attractions";
+  }
+
+  someRandomMethod(){
   }
 
 
   changeToResults(choice: string){
     if(choice == "Tours"){
-      this.results = this.main.getTours();
+      this.results = tour.getTours();
     }
 
     else if(choice == "All"){
-      this.results = this.main.getAttractions();
+      this.results = attraction.getAttractions();
     }
 
     else {
-      this.results = this.main.getAttractionByCategory(choice);
+      console.log(attraction.getAttractionByCategory(choice));
+      this.results = attraction.getAttractionByCategory(choice);
       console.log(this.results);
       console.log("url: " + this.results[0].imageUrl);
     }
