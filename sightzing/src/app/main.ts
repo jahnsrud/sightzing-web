@@ -1,36 +1,39 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
+import {Tour} from './tour';
+import {Attraction} from './attraction';
+
 import { AppModule } from './app.module';
 
 platformBrowserDynamic().bootstrapModule(AppModule);
 
 
 export class Main{
-    attractions: Attraction[] = new Array(); 
-    tours: Tour[] = new Array(); 
+    attractions: Attraction[] = new Array();
+    tours: Tour[] = new Array();
 
     constructor(){
-        this.fillListWithAttractions(); 
-        this.fillListWithTours(); 
+        this.fillListWithAttractions();
+        this.fillListWithTours();
     }
 
     public addNewAttractionToList(title: string,
-        description: string, 
-        imageUrl: string, 
-        googlePlacesId: string, 
-        website: string, 
+        description: string,
+        imageUrl: string,
+        googlePlacesId: string,
+        website: string,
         price: number,
-        rating: number, 
-        category: string, 
+        rating: number,
+        category: string,
         time: number){
-            var attraction: Attraction = new Attraction(); 
+            var attraction: Attraction = new Attraction();
             attraction.setValues(title, description, imageUrl, googlePlacesId, website, price, rating, category, time);
-            this.attractions.push(attraction); 
+            this.attractions.push(attraction);
     }
 
     public addNewTourToList(title: string, description: string, imageUrl: string, rating: number, attractions: Attraction[]){
-        var tour: Tour = new Tour(); 
-        tour.setValues(title, description, imageUrl, rating, attractions); 
+        var tour: Tour = new Tour();
+        tour.setValues(title, description, imageUrl, rating, attractions);
         this.tours.push(tour);
     }
 
@@ -40,28 +43,28 @@ export class Main{
                 return this.attractions[i];
             }
         }
-        return null; 
+        return null;
     }
 
     public getTour(name: string){
         for(var i = 0; i < this.tours.length; i++){
             if(this.tours[i].title == name){
-                return this.tours[i]; 
+                return this.tours[i];
             }
         }
-        return null; 
+        return null;
     }
 
     public getAttractions(){
-        return this.attractions; 
+        return this.attractions;
     }
 
     public getTours(){
-        return this.tours; 
+        return this.tours;
     }
 
     public getAttractionByCategory(category: string){
-        let attractionsWithCat: Attraction[] = new Array(); 
+        let attractionsWithCat: Attraction[] = new Array();
         for(var i = 0; i < this.attractions.length; i++){
             if(this.attractions[i].category == category){
                 attractionsWithCat.push(this.attractions[i]);
@@ -85,7 +88,7 @@ export class Main{
         this.addNewAttractionToList("National Gallery", "description", "../assets/imgs/national-gallery.jpg", "", "", 2, 4, "Museums", 1.5);
         this.addNewAttractionToList("Astrup Fearnley Museum", "description", "../assets/imgs/astrup-fearnley.jpeg", "", "", 3, 5, "Museums", 2);
 
-        //Theatre & Opera 
+        //Theatre & Opera
         this.addNewAttractionToList("Oslo Opera House", "description", "../assets/imgs/opera-house.jpg", "", "", 4, 5, "Theatre & Opera", 3);
 
 
@@ -107,93 +110,19 @@ export class Main{
         //Fun & Games
         this.addNewAttractionToList("The Escape Games", "description", "../assets/imgs/escape-room.jpg", "", "", 1, 2.5, "Fun & Games", 2);
         this.addNewAttractionToList("Tusenfryd", "description", "../assets/imgs/tusenfryd.jpg", "", "", 1, 3, "Fun & Games", 2);
-        
+
         //Spas & Wellness
         this.addNewAttractionToList("The Thief Spa", "description", "../assets/imgs/the-thief.jpg", "", "", 1, 5, "Spas & Wellness", 2);
 
         //Clubs & Pubs
         this.addNewAttractionToList("Jaeger", "description", "../assets/imgs/jaeger.jpg", "", "", 1, 5, "Clubs & Pubs", 1.5);
         this.addNewAttractionToList("The Villa", "description", "../assets/imgs/the-villa.jpg", "", "", 1, 4, "Clubs & Pubs", 2);
-    
+
     }
 
     public fillListWithTours(){
         this.addNewTourToList("The Panorama Tour", "", "../assets/imgs/panorama-tour.jpg", 3.5, this.getAttractionByCategory("Sights"));
         this.addNewTourToList("For the Cultural Ones", "", "../assets/imgs/cultural-tour.jpg", 2, this.getAttractionByCategory("Museums"));
-        this.addNewTourToList("Instafriendly", "", "../assets/imgs/instafriendly-tour.jpg", 5, this.getAttractionByCategory("Nature & Parks")) 
+        this.addNewTourToList("Instafriendly", "", "../assets/imgs/instafriendly-tour.jpg", 5, this.getAttractionByCategory("Nature & Parks"))
     }
 }
-
-
-export class Attraction {
-    
-    title: string;
-    description: string; // intro-teksten til guide
-    imageUrl: string;
-    googlePlacesId: string;
-    website: string;
-    price: number; 
-    rating: number; 
-    category: string; 
-    time: number; 
-
-
-    // more pictures
-    // opening hours
-  
-
-    constructor(){}
-
-    setValues(title: string, 
-        description: string, 
-        imageUrl: string, 
-        googlePlacesId: string, 
-        website: string, 
-        price: number, 
-        rating: number, 
-        category: string, 
-        time: number){
-            this.title = title; 
-            this.description = description; 
-            this.imageUrl = imageUrl; 
-            this.googlePlacesId = googlePlacesId;
-            this.website = website; 
-            this.price = price; 
-            this.rating = rating;
-            this.category = category; 
-            this.time = time; 
-        }
-  }
-  
-  export class Tour {
-  
-    title: string;
-    description: string;
-    imageUrl: string;
-    rating: number;
-    attractions: Attraction[]; 
-    totalTime: number;
-
-    setValues(title: string, 
-        description: string, 
-        imageUrl: string, 
-        rating: number, 
-        attractions: Attraction[]){
-            this.title = title; 
-            this.description = description; 
-            this.imageUrl = imageUrl; 
-            this.rating = rating; 
-            this.attractions = attractions; 
-
-            if(attractions.length > 0){
-                for(let i = 0; i < attractions.length; i++){
-                    let attractionTime = attractions[i].time; 
-                    this.totalTime += attractionTime;
-                }
-            }
-
-            else{this.totalTime = 0; }
-
-    }
-  
-  }

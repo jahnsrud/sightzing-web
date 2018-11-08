@@ -107,7 +107,7 @@ export class ExplorePage {
     //Get the resultrow
     var resultRow = document.getElementById("result-row");
 
-    for(let i = 1; i<this.results.length; i++){
+     for(let i = 1; i<this.results.length; i++){
       resultGrid.appendChild(resultRow.cloneNode(true));
     }
 
@@ -124,7 +124,6 @@ export class ExplorePage {
 
       var starsCounted = 0;
       var attractionStars = this.results[i].rating;
-
 
       while(attractionStars > 0){
         var starIcon = document.createElement("ion-icon");
@@ -180,7 +179,6 @@ export class ExplorePage {
         resultsRow[i].parentNode.removeChild(resultsRow[i]);
       }
     }
-
 
     var stars = resultGrid.getElementsByClassName("star-box");
 
