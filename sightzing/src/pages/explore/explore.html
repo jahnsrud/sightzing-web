@@ -6,21 +6,21 @@
               <ion-icon name="options" isActive="false" id="filter-icon"></ion-icon>
           </button>
       </ion-buttons>
-    
+
   </ion-toolbar>
-  
+
 </ion-header>
 
 <ion-content fullscreen padding onload="addCorrectAmountOfAttractions()">
   <ion-title><h1>Explore</h1></ion-title>
-  
+
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let item of items">
       {{ item }}
     </ion-item>
   </ion-list>
-  
+
   <ion-grid no-padding id="explore-grid">
       <!--First card Tours-->
       <ion-row>
@@ -34,11 +34,11 @@
               </ion-card>
           </ion-col>
       </ion-row>
-      
+
       <ion-row>
           <!--LEFT COLUMN-->
           <ion-col col-6>
-              
+
               <!--Sights-->
               <ion-row>
                   <ion-col col-12>
@@ -51,7 +51,7 @@
                       </ion-card>
                   </ion-col>
               </ion-row>
-              
+
               <!--Theatre & Opera-->
               <ion-row>
                   <ion-col col-12>
@@ -64,13 +64,13 @@
                       </ion-card>
                   </ion-col>
               </ion-row>
-              
+
           </ion-col>
-              
-      
+
+
           <!--RIGHT COLUMN-->
           <ion-col col-6>
-              
+
               <!--Museums-->
               <ion-row>
                   <ion-col col-12>
@@ -83,7 +83,7 @@
                       </ion-card>
                   </ion-col>
               </ion-row>
-              
+
               <!--Nature and Parks-->
               <ion-row>
                   <ion-col col-12>
@@ -99,7 +99,7 @@
 
           </ion-col>
       </ion-row>
-      
+
       <!--BIG CATEGORY 2 (FOOD)-->
       <ion-row>
           <ion-col col-12>
@@ -112,11 +112,11 @@
               </ion-card>
           </ion-col>
       </ion-row>
-      
+
       <!--COLUMN 1-->
       <ion-row>
           <ion-col col-6>
-          
+
               <!--Shopping-->
               <ion-row>
                   <ion-col col-12>
@@ -129,7 +129,7 @@
                       </ion-card>
                   </ion-col>
               </ion-row>
-              
+
               <!--Spas & Wellness-->
               <ion-row>
                   <ion-col col-12>
@@ -142,12 +142,12 @@
                       </ion-card>
                   </ion-col>
               </ion-row>
-              
+
           </ion-col>
-          
+
           <!--COLUMN 2-->
           <ion-col col-6>
-              
+
               <!--Fun & Games-->
               <ion-row>
                   <ion-col col-12>
@@ -160,7 +160,7 @@
                       </ion-card>
                   </ion-col>
               </ion-row>
-              
+
               <!--Clubs & Pubs-->
               <ion-row>
                   <ion-col col-12>
@@ -173,7 +173,7 @@
                       </ion-card>
                   </ion-col>
               </ion-row>
-              
+
           </ion-col>
       </ion-row>
 
@@ -189,7 +189,7 @@
                 </ion-card>
             </ion-col>
         </ion-row>
-      
+
   </ion-grid>
 
 
@@ -213,7 +213,7 @@
                 <!--Background image-->
                 <img class="result-card-img"/>
 
-                <button ion-button round icon-only class="add-button">
+                <button ion-button round icon-only class="add-button" (click)="someRandomMethod()">
                     <ion-icon name="add" class="add-button-icon"></ion-icon>
                 </button>
 

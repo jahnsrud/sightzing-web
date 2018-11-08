@@ -22,16 +22,10 @@ export class ExplorePage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public popoverController: PopoverController) {
-
-
-    //window.onload = () => console.log("this worksssss");
-
-    //(document).ready = this.addCorrectAmountOfAttractions;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ExplorePage');
-
   }
 
   ionViewDidEnter(){
@@ -113,7 +107,7 @@ export class ExplorePage {
     //Get the resultrow
     var resultRow = document.getElementById("result-row");
 
-    for(var i = 1; i<this.results.length; i++){
+    for(let i = 1; i<this.results.length; i++){
       resultGrid.appendChild(resultRow.cloneNode(true));
     }
 
@@ -121,18 +115,15 @@ export class ExplorePage {
     var titles = resultGrid.getElementsByClassName("result-title");
     var stars = resultGrid.getElementsByClassName("star-box");
 
-    for(var j = 0; j < images.length; j++){
-      console.log(this.results[j]);
-      images[j].setAttribute("src", this.results[j].imageUrl);
-    }
+    //console.log(images.length, titles.length, stars.length);
 
-    for(var k = 0; k < titles.length; k++){
-      titles[k].innerHTML = this.results[k].title;
-    }
+    for(let i = 0; i < images.length; i++){
+      console.log(this.results[i]);
+      images[i].setAttribute("src", this.results[i].imageUrl);
+      titles[i].innerHTML = this.results[i].title;
 
-    for(var l = 0; l < stars.length; l++){
       var starsCounted = 0;
-      var attractionStars = this.results[l].rating;
+      var attractionStars = this.results[i].rating;
 
 
       while(attractionStars > 0){
@@ -144,17 +135,15 @@ export class ExplorePage {
         starHalfIcon.setAttribute("role", "img");
         starHalfIcon.className += "star-icon icon icon-md ion-md-star-half";
 
-
-
         if(attractionStars >= 1){
           starIcon.setAttribute("name", "star");
-          stars[l].appendChild(starIcon);
+          stars[i].appendChild(starIcon);
           attractionStars--;
           starsCounted++;
         }
         if(attractionStars > 0 && attractionStars < 1){
           starHalfIcon.setAttribute("name", "star-half");
-          stars[l].appendChild(starHalfIcon);
+          stars[i].appendChild(starHalfIcon);
           attractionStars--;
           starsCounted++;
         }
@@ -166,15 +155,12 @@ export class ExplorePage {
         starOutlined.setAttribute("name", "star-outline");
         starOutlined.className += "star-icon icon icon-md ion-md-star-outline";
 
-        stars[l].appendChild(starOutlined);
+        stars[i].appendChild(starOutlined);
         starsCounted++;
       }
-
     }
 
-
   }
-
 
   changeToExplore(hei: string){
     //this.onResultPage = false;
@@ -198,9 +184,9 @@ export class ExplorePage {
 
     var stars = resultGrid.getElementsByClassName("star-box");
 
-    for(var j = 0; j<stars.length; j++){
-      while(stars[j].firstChild){
-        stars[j].removeChild(stars[j].firstChild);
+    for(let i = 0; i<stars.length; i++){
+      while(stars[i].firstChild){
+        stars[i].removeChild(stars[i].firstChild);
       }
     }
 
