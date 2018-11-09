@@ -64,7 +64,6 @@ export class HomePage {
     attraction.fillListWithAttractions();
 
     var vigelandsparken = attraction.getAttraction("The Vigelands Park");
-    console.log(vigelandsparken);
     this.navController.push(AttractionDetailPage, {
       attraction: vigelandsparken
     });

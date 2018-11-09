@@ -81,6 +81,7 @@ export class ExplorePage {
   }
 
   someRandomMethod(){
+
   }
 
 
@@ -94,7 +95,6 @@ export class ExplorePage {
     }
 
     else {
-      console.log(attraction.getAttractionByCategory(choice));
       this.results = attraction.getAttractionByCategory(choice);
       console.log(this.results);
       console.log("url: " + this.results[0].imageUrl);
@@ -117,15 +117,13 @@ export class ExplorePage {
     //Get the resultrow
     var resultRow = document.getElementById("result-row");
 
-     for(let i = 1; i<this.results.length; i++){
+    for(let i = 1; i<this.results.length; i++){
       resultGrid.appendChild(resultRow.cloneNode(true));
     }
 
     var images = resultGrid.getElementsByClassName("result-card-img");
     var titles = resultGrid.getElementsByClassName("result-title");
     var stars = resultGrid.getElementsByClassName("star-box");
-
-    //console.log(images.length, titles.length, stars.length);
 
     for(let i = 0; i < images.length; i++){
       console.log(this.results[i]);
