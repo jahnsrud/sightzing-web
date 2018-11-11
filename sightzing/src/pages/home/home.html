@@ -16,7 +16,6 @@
   <ion-grid>
     <ion-row>
       <ion-col col-6>
-        <p class="title-uppercase">Weather</p>
         <ion-col col-12>
 
           <ion-col col-6>
@@ -40,29 +39,29 @@
   <!--I en slider-->
 
   <ion-slides>
-      <ion-slide loop="true" ng-repeat="let item of featuredList">
+      <ion-slide loop="true" *ngFor="let item of featuredList">
           <div class="featured-card" (click)="presentAttraction()">
               <p class="featured-card-time-usage">12h</p>
               <p class="featured-card-type-heading">Tour</p>
-              <p class="featured-card-title">Hidden Treasures of Oslo {{ title }}</p>
+              <p class="featured-card-title">{{ item.title }}</p>
           </div>
       </ion-slide>
     </ion-slides>
- 
 
-  <h3>Featured</h3>
 
-  <ion-content>    
-      <ion-row>
-         <ion-scroll scrollX="true">
-           <div ngFor="let item of itemlist">
-             <!---<button ion-button>{{item}}</button>-->
-             <button ion-button>BETA</button>
-             <button ion-button>while(true)</button>
-           </div>
-         </ion-scroll>
-     </ion-row>
-   </ion-content>
+  <h3>Tours</h3>
+    <ion-scroll scrollX="true" style="width: 90%; height: 100px;">
+      <!-- <div class="something" style="width: 5000px; height: 5000px; background: url('https://upload.wikimedia.org/wikipedia/commons/a/ad/Europe_geological_map-en.jpg') repeat"></div> -->
+    <div class="somewhere" style="width: 5000px; float: left;">
+      <div class="thisisdumb" style="width: 100px; height: 200px; background: red; float: left; margin-left: 10px"></div>
+      <div class="thisisdumb" style="width: 100px; height: 200px; background: red; float: left; margin-left: 10px"></div>
+      <div class="thisisdumb" style="width: 100px; height: 200px; background: red; float: left; margin-left: 10px"></div>
+      <div class="thisisdumb" style="width: 100px; height: 200px; background: red; float: left; margin-left: 10px"></div>
+      <div class="thisisdumb" style="width: 100px; height: 200px; background: red; float: left; margin-left: 10px "></div>
+      <div class="thisisdumb" style="width: 100px; height: 200px; background: red; float: left; margin-left: 10px"></div>
+    </div>
+    </ion-scroll>
+
 
   <h3>Tours</h3>
   <button ion-button shape="round" color="primary" (click)="presentTour()">Open Tour</button>

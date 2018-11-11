@@ -15,6 +15,7 @@ import { Attraction } from '../../app/attraction/attraction';
 export class HomePage {
 
   featuredList:any;
+  itemList:any;
 
   constructor(public navController:NavController, public modalController: ModalController) {
 
@@ -26,6 +27,22 @@ export class HomePage {
     }
 
     this.featuredList = [
+      {
+        "title": "Hidden Treasures of Oslo",
+        "type": "Tour"
+      },
+      {
+        "title": "National Gallery",
+        "type": "Attraction"
+      },
+      {
+        "title": "Instafriendly",
+        "type": "Tour"
+      }
+
+    ]
+
+        this.itemList = [
       {
         "title": "Hidden Treasures of Oslo",
         "type": "Tour"
