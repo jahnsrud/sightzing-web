@@ -11,7 +11,7 @@
 /*--------------------------------------*/
 
 $color-dark-gray: rgb(28, 28, 28);
-$color-gray: rgb(156, 156, 156); 
+$color-gray: rgb(156, 156, 156);
 
 
 
@@ -25,7 +25,7 @@ $color-gray: rgb(156, 156, 156);
 }
 /*
 ion-toolbar{
-    position: absolute; 
+    position: absolute;
 }*/
 
 /*Button*/
@@ -39,7 +39,7 @@ button{
 
 ion-content{
     font-family: 'Roboto', sans-serif;
-    font-weight: 400; 
+    font-weight: 400;
 }
 
 
@@ -51,8 +51,8 @@ ion-searchbar{
     padding: 10px;
 }
 
-ion-searchbar{        
-    .searchbar-input-container{            
+ion-searchbar{
+    .searchbar-input-container{
         .searchbar-input{
             border-radius: 20px;
         }
@@ -69,7 +69,7 @@ ion-col{
 }*/
 
 ion-card{
-    margin: 10px !important; 
+    margin: 10px !important;
     border-radius: 5px !important;
     overflow: hidden;
     background-color: $color-dark-gray !important;
@@ -78,8 +78,8 @@ ion-card{
 ion-card img{
     opacity: 0.4;
     min-width: 100%;
-    min-height: 100%; 
-    object-fit: cover; 
+    min-height: 100%;
+    object-fit: cover;
 }
 
 .cat-md-height{
@@ -91,7 +91,7 @@ ion-card img{
 }
 
 .card-txt{
-    position: absolute; 
+    position: absolute;
     z-index: 999;
     height: auto;
     top: 50%;
@@ -106,22 +106,22 @@ ion-card img{
     text-align: center;
     display: block;
     z-index: 999;
-    width: 100%; 
+    width: 100%;
 }
 
 .card-subtitle{
-    color: white !important; 
-    width: 100%; 
-    display: block; 
-    text-align: center; 
+    color: white !important;
+    width: 100%;
+    display: block;
+    text-align: center;
 }
 
 /*Result-page*/
 .result-txt{
-    position: absolute; 
+    position: absolute;
     bottom: 16px;
-    padding-bottom: 10px; 
-    display: table; 
+    padding-bottom: 10px;
+    display: table;
     width: 95%;
 }
 
@@ -130,27 +130,27 @@ ion-card img{
 }
 
 .result-title{
-    bottom: 0; 
-    padding-left: 16px; 
+    bottom: 0;
+    padding-left: 16px;
     text-align: left;
-    margin: 0 !important; 
+    margin: 0 !important;
 }
 
 .time-box{
-    text-align: right; 
-    padding-right: 8px; 
-    min-width: 70px; 
+    text-align: right;
+    padding-right: 8px;
+    min-width: 70px;
 }
 
 .divider{
-    height: 20px; 
-    background-color: white; 
-    width: 1px; 
+    height: 20px;
+    background-color: white;
+    width: 1px;
 }
 
 .time-icon{
     display: inline-block;
-    color: white; 
+    color: white;
 }
 
 .result-txt-box{
@@ -164,10 +164,10 @@ ion-card img{
 }
 
 .star-box{
-    padding-left: 8px; 
-    min-width: 90px; 
-    max-width: 90px; 
-    padding-bottom: 1px; 
+    padding-left: 8px;
+    min-width: 90px;
+    max-width: 90px;
+    padding-bottom: 1px;
 }
 
 .star-icon{
@@ -175,31 +175,31 @@ ion-card img{
 }
 
 .choiceButton{
-    width: auto; 
+    width: auto;
     color: $color-dark-gray;
     padding: 0 16px;
-    display: table; 
+    display: table;
 }
 
 .btn-row{
     padding: 0 8px;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
 .choice-btn-txt{
-    display: table-cell; 
+    display: table-cell;
     vertical-align: middle;
-    margin-top: 0 !important; 
+    margin-top: 0 !important;
     line-height: 1rem;
 }
 
 .choice-btn-cross{
-    display: table-cell; 
-    padding-left: 8px; 
+    display: table-cell;
+    padding-left: 8px;
 }
 
 #result-grid{
-    display: none; 
+    display: none;
 }
 
 .add-button{

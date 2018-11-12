@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {TourList} from '../../app/tour/tourlist';
+import {Attraction} from '../../app/attraction/attraction';
 import {Main} from '../../app/main';
 
-const tourList: TourList = new TourList();
-//const main: Main = new Main();
+const attraction: Attraction = new Attraction();
 
 @IonicPage()
 @Component({
@@ -13,12 +13,18 @@ const tourList: TourList = new TourList();
 })
 export class MyGuidePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public tourList: TourList) {
+  	attraction.fillListWithAttractions();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyGuidePage');
+  }
+
+  ionViewDidEnter(){
+  	//This list is populated from where the user adds tours or attractions.
+  	console.log(this.tourList.getTourList());
   }
 
 }

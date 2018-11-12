@@ -28,6 +28,7 @@ export class ExplorePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public popoverController: PopoverController) {
     attraction.fillListWithAttractions();
     tour.fillListWithTours();
+
   }
 
   ionViewDidLoad() {

@@ -18,18 +18,19 @@ import { FilterComponent } from '../components/filter/filter';
 import { ExpandableComponent } from '../components/expandable/expandable';
 import { TourPage } from '../pages/tour/tour';
 import { ProfilePage } from '../pages/profile/profile';
+import { TourList } from './tour/tourlist';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ExplorePage, 
+    ExplorePage,
     TicketsPage,
     AttractionDetailPage,
     TabsPage,
     MyGuidePage,
     WelcomePage,
-    InfoPage, 
+    InfoPage,
     FilterComponent,
     ExpandableComponent,
     TourPage,
@@ -49,7 +50,7 @@ import { ProfilePage } from '../pages/profile/profile';
     MyGuidePage,
     TabsPage,
     InfoPage,
-    WelcomePage, 
+    WelcomePage,
     FilterComponent,
     ExpandableComponent,
     TourPage,
@@ -58,11 +59,10 @@ import { ProfilePage } from '../pages/profile/profile';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    TourList
   ]
 })
 export class AppModule {
-  
-
 
 }

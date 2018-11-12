@@ -3,10 +3,13 @@ import { NavController, ModalController } from 'ionic-angular';
 import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
 import { WelcomePage } from '../welcome/welcome';
 import { TourPage } from '../tour/tour'
+import { Tour } from '../../app/tour/tour';
 import { ProfilePage } from '../profile/profile';
 import { Main } from '../../app/main';
 import { Attraction } from '../../app/attraction/attraction';
 
+const tour: Tour = new Tour();
+const attraction: Attraction = new Attraction();
 
 @Component({
   selector: 'page-home',
@@ -15,12 +18,15 @@ import { Attraction } from '../../app/attraction/attraction';
 export class HomePage {
 
   featuredList:any;
-  itemList:any;
+  tourList:any;
+  attractionList:any;
 
   constructor(public navController:NavController, public modalController: ModalController) {
 
     this.getCurrentWeather();
     this.displayRandomQuote();
+    tour.fillListWithTours();
+    attraction.fillListWithAttractions();
 
     if (this.isFirstLaunch()) {
         // presenter welcome
@@ -42,21 +48,9 @@ export class HomePage {
 
     ]
 
-        this.itemList = [
-      {
-        "title": "Hidden Treasures of Oslo",
-        "type": "Tour"
-      },
-      {
-        "title": "National Gallery",
-        "type": "Attraction"
-      },
-      {
-        "title": "Instafriendly",
-        "type": "Tour"
-      }
+     this.tourList = tour.getTours();
 
-    ]
+     this.attractionList = attraction.getAttractions();
 
   }
 
@@ -74,10 +68,10 @@ export class HomePage {
 
   }
 
-  async presentAttraction() {
+  //Parameter is index of array clicked. Get the element of attraction based on that.
+  async presentAttraction(i: Number) {
+    console.log(i);
     var attraction = new Attraction();
-    //m.addNewAttractionToList("Title", "Subtitle", "", "", "", 1, 1, "");
-    //console.log(attraction);
     attraction.fillListWithAttractions();
 
     var vigelandsparken = attraction.getAttraction("The Vigelands Park");

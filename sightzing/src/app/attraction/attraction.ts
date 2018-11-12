@@ -15,9 +15,7 @@ export class Attraction {
     category: string;
     time: number;
 
-    constructor(){
-
-    }
+    constructor(){}
 
     setValues(title: string,
         description: string,

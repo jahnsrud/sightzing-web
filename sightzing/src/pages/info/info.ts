@@ -1,6 +1,7 @@
 
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {TourList} from '../../app/tour/tourlist';
 
 
 @IonicPage()
@@ -14,7 +15,9 @@ export class InfoPage {
   items: any = [];
   itemExpandHeight: number = 100;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public tourList: TourList) {
+
+    console.log(tourList.getTourList());
 
     this.items = [
       {
@@ -40,7 +43,7 @@ export class InfoPage {
       ];
 
   }
-  
+
   expandItem(item) {
     this.items.map((listItem) => {
 
