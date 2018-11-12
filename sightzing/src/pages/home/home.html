@@ -39,7 +39,7 @@
   <!--I en slider-->
 
   <ion-slides>
-      <ion-slide loop="true" *ngFor="let item of featuredList; let i = index;" (click)="presentAttraction(i)">
+      <ion-slide loop="true" *ngFor="let item of featuredList; let i = index;">
           <div class="featured-card">
               <p class="featured-card-time-usage">12h</p>
               <p class="featured-card-type-heading">Tour</p>
@@ -50,7 +50,7 @@
 
 
   <h3>Tours</h3>
-    <ion-scroll scrollX="true" style="width: 100%; height: 200px; margin-left: -5px; margin-top: -15px;">
+    <ion-scroll scrollX="true" class="front-page-content">
     <div class="somewhere" style="display: inline-flex">
       <div class="thisisdumb" *ngFor="let item of tourList">
         <p class="scroll-title">{{item.title}}</p>
@@ -59,18 +59,21 @@
     </ion-scroll>
 
   <h3>Events</h3>
-    <ion-scroll scrollX="true" style="width: 100%; height: 200px; margin-left: -5px; margin-top: -15px;">
+    <ion-scroll scrollX="true" class="front-page-content">
       <div class="somewhere" style="display: inline-flex">
         <div class="thisisdumb" *ngFor="let item of featuredList"></div>
       </div>
     </ion-scroll>
 
   <h3>Attractions</h3>
-    <ion-scroll scrollX="true" style="width: 100%; height: 200px; margin-left: -5px; margin-top: -15px;">
+    <ion-scroll scrollX="true" class="front-page-content">
       <div class="somewhere" style="display: inline-flex">
         <div *ngFor="let item of attractionList; let i = index;"> <!-- Use index to get the correct attraction-->
-          <div class="thisisdumb" [style.backgroundImage]="'url('+ item.imageUrl +')'" (click)="presentAttraction(item.title)">
-            <div class="inner-image">
+          <div class="thisisdumb" [style.backgroundImage]="'url('+ item.imageUrl +')'">
+              <button ion-button round icon-only class="hello" (click)="tempMethod(item.title)">
+                <ion-icon name="add" class="add-button-icon"></ion-icon>
+              </button>
+            <div class="inner-image" (click)="presentAttraction(item.title)">
             </div>
             <p class="featured-card-title scroll-title">{{item.title}}</p>
           </div>

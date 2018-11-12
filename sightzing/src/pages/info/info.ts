@@ -17,8 +17,6 @@ export class InfoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public tourList: TourList) {
 
-    console.log(tourList.getTourList());
-
     this.items = [
       {
         title: 'About Oslo:',
@@ -62,6 +60,8 @@ export class InfoPage {
     console.log('ionViewDidLoad InfoPage');
   }
 
-
+  ionViewDidEnter(){
+    console.log(this.tourList.getTourList());
+  }
 
 }

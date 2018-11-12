@@ -4,6 +4,7 @@ import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
 import { WelcomePage } from '../welcome/welcome';
 import { TourPage } from '../tour/tour'
 import { Tour } from '../../app/tour/tour';
+import { TourList } from '../../app/tour/tourlist';
 import { ProfilePage } from '../profile/profile';
 import { Main } from '../../app/main';
 import { Attraction } from '../../app/attraction/attraction';
@@ -21,7 +22,7 @@ export class HomePage {
   tourList:any;
   attractionList:any;
 
-  constructor(public navController:NavController, public modalController: ModalController) {
+  constructor(public navController:NavController, public modalController: ModalController, public mainTourList: TourList) {
 
     this.getCurrentWeather();
     this.displayRandomQuote();
@@ -60,9 +61,8 @@ export class HomePage {
 
   }
 
-  tempMethod(i: String){
-    console.log(i);
-
+  tempMethod(i: string){
+     this.mainTourList.addAttractionToList(attraction.getAttraction(i));
   }
 
   async presentWelcomePage() {
@@ -76,9 +76,7 @@ export class HomePage {
   //Parameter is index of array clicked. Get the element of attraction based on that.
   async presentAttraction(i: string) {
     var attraction = new Attraction();
-    attraction.fillListWithAttractions();
-
-    //var vigelandsparken = attraction.getAttraction("The Vigelands Park");
+     attraction.fillListWithAttractions();
     this.navController.push(AttractionDetailPage, {
       attraction: attraction.getAttraction(i)
     });
