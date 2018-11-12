@@ -50,7 +50,7 @@
 
 
   <h3>Tours</h3>
-    <ion-scroll scrollX="true" style="width: 100%; height: 200px; margin-left: -5px; margin-top: -15px;">
+    <ion-scroll scrollX="true" class="content-scroller" >
     <div class="somewhere" style="display: inline-flex">
       <div class="thisisdumb" *ngFor="let item of tourList">
         <p class="something">{{item.title}}</p>
@@ -59,14 +59,14 @@
     </ion-scroll>
 
   <h3>Events</h3>
-    <ion-scroll scrollX="true" style="width: 100%; height: 200px; margin-left: -5px; margin-top: -15px;">
+    <ion-scroll scrollX="true" class="content-scroller">
       <div class="somewhere" style="display: inline-flex">
         <div class="thisisdumb" *ngFor="let item of featuredList"></div>
       </div>
     </ion-scroll>
 
   <h3>Attractions</h3>
-    <ion-scroll scrollX="true" style="width: 100%; height: 200px; margin-left: -5px; margin-top: -15px;">
+    <ion-scroll scrollX="true" class="content-scroller">
       <div class="somewhere" style="display: inline-flex">
         <div *ngFor="let item of attractionList; let i = index;"> <!-- Use index to get the correct attraction-->
           <div class="thisisdumb" [style.backgroundImage]="'url('+ item.imageUrl +')'">
