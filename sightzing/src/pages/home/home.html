@@ -53,7 +53,7 @@
     <ion-scroll scrollX="true" style="width: 100%; height: 200px; margin-left: -5px; margin-top: -15px;">
     <div class="somewhere" style="display: inline-flex">
       <div class="thisisdumb" *ngFor="let item of tourList">
-        <p class="something">{{item.title}}</p>
+        <p class="scroll-title">{{item.title}}</p>
       </div>
     </div>
     </ion-scroll>
@@ -69,10 +69,10 @@
     <ion-scroll scrollX="true" style="width: 100%; height: 200px; margin-left: -5px; margin-top: -15px;">
       <div class="somewhere" style="display: inline-flex">
         <div *ngFor="let item of attractionList; let i = index;"> <!-- Use index to get the correct attraction-->
-          <div class="thisisdumb" [style.backgroundImage]="'url('+ item.imageUrl +')'">
+          <div class="thisisdumb" [style.backgroundImage]="'url('+ item.imageUrl +')'" (click)="presentAttraction(item.title)">
             <div class="inner-image">
             </div>
-            <p class="featured-card-title something">{{item.title}}</p>
+            <p class="featured-card-title scroll-title">{{item.title}}</p>
           </div>
         </div>
       </div>

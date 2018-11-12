@@ -60,6 +60,11 @@ export class HomePage {
 
   }
 
+  tempMethod(i: String){
+    console.log(i);
+
+  }
+
   async presentWelcomePage() {
 
     const modal = await this.modalController.create(WelcomePage);
@@ -69,14 +74,13 @@ export class HomePage {
   }
 
   //Parameter is index of array clicked. Get the element of attraction based on that.
-  async presentAttraction(i: Number) {
-    console.log(i);
+  async presentAttraction(i: string) {
     var attraction = new Attraction();
     attraction.fillListWithAttractions();
 
-    var vigelandsparken = attraction.getAttraction("The Vigelands Park");
+    //var vigelandsparken = attraction.getAttraction("The Vigelands Park");
     this.navController.push(AttractionDetailPage, {
-      attraction: vigelandsparken
+      attraction: attraction.getAttraction(i)
     });
 
   }
