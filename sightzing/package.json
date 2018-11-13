@@ -1,7 +1,7 @@
 {
   "name": "sightzing",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
+  "version": "1.0.0",
+  "author": "Gruppe 8",
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
@@ -35,5 +35,5 @@
     "@ionic/lab": "1.0.11",
     "typescript": "~2.6.2"
   },
-  "description": "An Ionic project"
+  "description": "Your guide to 24 hours in Oslo"
 }
