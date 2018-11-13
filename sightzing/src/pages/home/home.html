@@ -41,8 +41,9 @@
   <ion-slides>
       <ion-slide loop="true" *ngFor="let item of featuredList; let i = index;">
           <div class="featured-card">
-              <p class="featured-card-time-usage">12h</p>
-              <p class="featured-card-type-heading">Tour</p>
+               <p class="featured-card-time-usage">{{item.type == 'Attraction' ? item.attraction.time : item.time }}</p>
+              <!-- <p class="featured-card-time-usage">{{i }}</p> -->
+              <p class="featured-card-type-heading">{{item.type}}</p>
               <p class="featured-card-title">{{ item.title }}</p>
           </div>
       </ion-slide>
@@ -61,7 +62,7 @@
   <h3>Events</h3>
     <ion-scroll scrollX="true" class="front-page-content">
       <div class="somewhere" style="display: inline-flex">
-        <div class="thisisdumb" *ngFor="let item of featuredList"></div>
+        <div class="thisisdumb" *ngFor="let item of eventList"></div>
       </div>
     </ion-scroll>
 
@@ -70,7 +71,7 @@
       <div class="somewhere" style="display: inline-flex">
         <div *ngFor="let item of attractionList; let i = index;"> <!-- Use index to get the correct attraction-->
           <div class="thisisdumb" [style.backgroundImage]="'url('+ item.imageUrl +')'">
-              <button ion-button round icon-only class="hello" (click)="tempMethod(item.title)">
+              <button ion-button round icon-only class="hello" (click)="addAttractionToMainList(item.title)">
                 <ion-icon name="add" class="add-button-icon"></ion-icon>
               </button>
             <div class="inner-image" (click)="presentAttraction(item.title)">

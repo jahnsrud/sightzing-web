@@ -18,9 +18,10 @@ const attraction: Attraction = new Attraction();
 })
 export class HomePage {
 
-  featuredList:any;
+  featuredList:any[];
   tourList:any;
   attractionList:any;
+  eventList:any;
 
   constructor(public navController:NavController, public modalController: ModalController, public mainTourList: TourList) {
 
@@ -35,24 +36,29 @@ export class HomePage {
 
     this.featuredList = [
       {
-        "title": "Hidden Treasures of Oslo",
-        "type": "Tour"
+        "title": "Hidden treasures of Oslo",
+        "type": "Tour",
+        "attractions": [
+          attraction.getAttraction("Nordmarka"),
+          attraction.getAttraction("Fram Museum"),
+          attraction.getAttraction("Oslo Cathedral")
+        ],
+        "time": 0
       },
       {
-        "title": "National Gallery",
-        "type": "Attraction"
+        "title": attraction.getAttraction("Holmenkollen").title,
+        "type": "Attraction",
+        "attraction": attraction.getAttraction("Holmenkollen"),
       },
-      {
-        "title": "Instafriendly",
-        "type": "Tour"
-      }
+    ];
 
-    ]
+    this.eventList = [...attraction.getAttractions()].slice(4, 8);
 
-     this.tourList = tour.getTours();
+    this.tourList = tour.getTours();
 
-     this.attractionList = attraction.getAttractions();
+    this.attractionList = attraction.getAttractions();
 
+    this.getFeaturedTime();
   }
 
   getCurrentWeather() {
@@ -61,7 +67,17 @@ export class HomePage {
 
   }
 
-  tempMethod(i: string){
+  getFeaturedTime(){
+    this.featuredList.forEach(elem => {
+      if(elem.type == "Tour"){
+        elem.attractions.forEach(e => {
+          elem.time += e.time;
+        });
+      }
+    });
+  }
+
+  addAttractionToMainList(i: string){
      this.mainTourList.addAttractionToList(attraction.getAttraction(i));
   }
 
@@ -73,7 +89,6 @@ export class HomePage {
 
   }
 
-  //Parameter is index of array clicked. Get the element of attraction based on that.
   async presentAttraction(i: string) {
     var attraction = new Attraction();
      attraction.fillListWithAttractions();
