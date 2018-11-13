@@ -14,9 +14,9 @@ export class AttractionDetailPage {
   title: string;
   description: string;
   imageUrl: string;
-  time: number; 
-  rating: number; 
-  price: number; 
+  time: number;
+  rating: number;
+  price: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
@@ -24,16 +24,16 @@ export class AttractionDetailPage {
     this.title = this.attraction.title;
     this.description = this.attraction.description;
     this.imageUrl = this.attraction.imageUrl;
-    this.time = this.attraction.time; 
-    this.rating = this.attraction.rating; 
-    this.price = this.attraction.price; 
+    this.time = this.attraction.time;
+    this.rating = this.attraction.rating;
+    this.price = this.attraction.price;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AttractionDetailPage');
 
     this.fillPrice();
-    this.fillStars(); 
+    this.fillStars();
   }
 
 
@@ -46,8 +46,8 @@ export class AttractionDetailPage {
   }
 
   fillStars(){
-    let stars = document.getElementsByClassName("star-icon"); 
-    let starsCounter = this.rating; 
+    let stars = document.getElementsByClassName("star-icon");
+    let starsCounter = this.rating;
     let indexCounter = 0;
 
     for(let i = 0; i < this.rating; i++){
@@ -63,10 +63,10 @@ export class AttractionDetailPage {
       stars[indexCounter].setAttribute("class", "star-icon icon icon-md ion-md-star-half");
       stars[indexCounter].setAttribute("aria-label", "star half");
     }
-  
-    
 
-  
+
+
+
   }
 
 }

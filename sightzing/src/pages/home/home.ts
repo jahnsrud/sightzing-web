@@ -94,7 +94,7 @@ export class HomePage {
   }
 
   async presentAttraction(i: string) {
-    var attraction = new Attraction();
+    let attraction = new Attraction();
      attraction.fillListWithAttractions();
     this.navController.push(AttractionDetailPage, {
       attraction: attraction.getAttraction(i)
@@ -102,8 +102,13 @@ export class HomePage {
 
   }
 
-  async presentTour() {
-    this.navController.push(TourPage);
+  async presentTour(i: string) {
+    let tour = new Tour();
+    tour.fillListWithTours();
+
+    this.navController.push(TourPage, {
+      tour: tour.getTour(i)
+    });
   }
 
   async presentProfile() {
