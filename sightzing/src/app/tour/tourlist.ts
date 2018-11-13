@@ -3,11 +3,13 @@ import {Tour} from './tour'
 import { Injectable } from '@angular/core';
 
 const tourList: Attraction[] = new Array();
+const attraction: Attraction = new Attraction();
 
 @Injectable()
 export class TourList {
 
-	constructor(){}
+	constructor(){
+	}
 
 	addAttractionToList(attraction: Attraction){
 		tourList.push(attraction);

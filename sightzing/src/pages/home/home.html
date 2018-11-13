@@ -52,11 +52,18 @@
 
   <h3>Tours</h3>
     <ion-scroll scrollX="true" class="front-page-content">
-    <div class="somewhere" style="display: inline-flex">
-      <div class="thisisdumb" *ngFor="let item of tourList">
-        <p class="scroll-title">{{item.title}}</p>
+      <div class="somewhere" style="display: inline-flex">
+        <div *ngFor="let item of tourList; let i = index;">
+          <div class="thisisdumb" [style.backgroundImage]="'url('+ item.imageUrl +')'">
+              <button ion-button round icon-only class="hello" (click)="addTourToMainList(item.title)">
+                <ion-icon name="add" class="add-button-icon"></ion-icon>
+              </button>
+            <div class="inner-image" (click)="presentAttraction(item.title)">
+            </div>
+            <p class="featured-card-title scroll-title">{{item.title}}</p>
+          </div>
+        </div>
       </div>
-    </div>
     </ion-scroll>
 
   <h3>Events</h3>
@@ -69,7 +76,7 @@
   <h3>Attractions</h3>
     <ion-scroll scrollX="true" class="front-page-content">
       <div class="somewhere" style="display: inline-flex">
-        <div *ngFor="let item of attractionList; let i = index;"> <!-- Use index to get the correct attraction-->
+        <div *ngFor="let item of attractionList; let i = index;">
           <div class="thisisdumb" [style.backgroundImage]="'url('+ item.imageUrl +')'">
               <button ion-button round icon-only class="hello" (click)="addAttractionToMainList(item.title)">
                 <ion-icon name="add" class="add-button-icon"></ion-icon>
@@ -81,18 +88,5 @@
         </div>
       </div>
     </ion-scroll>
-
-
-  <h3>Tours</h3>
-  <button ion-button shape="round" color="primary" (click)="presentTour()">Open Tour</button>
-
-  <h3>Events</h3>
-  <button ion-button shape="round" color="primary" (click)="presentAttraction()">Open Attraction [TEST]</button>
-
-  <h3>Attractions</h3>
-  <button ion-button shape="round" color="primary" (click)="presentAttraction()">Open Attraction [TEST]</button>
-
-  <h3>Coming soon</h3>
-  <button ion-button shape="round" color="primary" (click)="presentWelcomePage()">Open Welcome Screen</button>
 
 </ion-content>

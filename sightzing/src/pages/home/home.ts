@@ -81,6 +81,10 @@ export class HomePage {
      this.mainTourList.addAttractionToList(attraction.getAttraction(i));
   }
 
+  addTourToMainList(i: string){
+    this.mainTourList.addTourToList(tour.getTour(i));
+  }
+
   async presentWelcomePage() {
 
     const modal = await this.modalController.create(WelcomePage);
