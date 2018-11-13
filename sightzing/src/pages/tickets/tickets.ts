@@ -31,12 +31,25 @@ export class TicketsPage {
     const modal = await this.modalController.create(TicketsBuyPage);
     modal.present();
 
-    this.qrView = !this.qrView;
-    localStorage.setItem("ticketPurchased", "true");
+    // this.qrView = !this.qrView;
+
+    this.checkTicketStatus();
 
   }
 
+  onViewWillEnter() {
+    this.checkTicketStatus();
+  }
+
   checkTicketStatus() {
+    
+    if (localStorage.getItem("ticketPurchased") == "true") {
+      this.qrView = true;
+
+      console.log("Purchased! YEAH");
+
+    }
+    
     localStorage.getItem("ticketPurchased");
   }
 

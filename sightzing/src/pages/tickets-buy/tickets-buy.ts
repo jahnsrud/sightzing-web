@@ -23,6 +23,7 @@ export class TicketsBuyPage {
   }
 
   dismiss() {
+    localStorage.setItem("ticketPurchased", "true");
     this.viewController.dismiss();
   }
 
