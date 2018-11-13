@@ -7,26 +7,192 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Attraction</ion-title>
+    <ion-title></ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content no-padding>
+    <div id="header-img">
+      <img src="{{ imageUrl }}" alt="Attraction Photo" id="attraction-large-photo">
+    </div>
 
-    <img src="{{ imageUrl }}" alt="Attraction Photo" id="attraction-large-photo">
-    
-    <h1>{{ title }}</h1>
-    <ion-label>{{ description }}</ion-label>
+    <div padding>
+      <div class="inner-container">
+        <ion-grid>
+          <ion-row>
+            <h2>{{ title }}</h2>
+          </ion-row>
 
-    <ion-label class="subheading">Time</ion-label>
-    
-    <ion-label class="subheading">Price</ion-label>
+          <!--Adress & Website-->
+          <ion-row>
+            <div class="small-info-container adress-table-bar">
+              <div class="adress-container">
+                <ion-icon name="pin" class="adress-icon"></ion-icon>
+                <p class="adressbar">
+                  Her kommer 
+                </p>
+              </div>
+              <div class="adress-container">
+                <ion-icon name="desktop"></ion-icon>
+                <p class="adressbar">
+                  Her kommer webadresse
+                </p>
+              </div>
+            </div>
+          </ion-row>
 
-    <ion-label class="subheading">Website</ion-label>
+          <!--Add to my guide button-->
+          <ion-row>
+              <button ion-button full round>
+                <p class="button-txt">Add to my guide</p>
+              </button>
+          </ion-row>
+
+          <!--Time, price, stars-->
+          <ion-row class="info-row">
+            <ion-col col-12>
+              <!--Table for informtion-->
+              <div class="small-info-container">
+
+                <div class="inner-info-container">
+                  <h6 class="info-txt">Time</h6>
+                  <div class="icon-w-txt-container">
+                    <ion-icon name="time" class="inner-txt-container"></ion-icon>
+                    <h4 class="inner-txt-container time-txt">{{ time }}h</h4>
+                  </div>
+                </div>
+
+                <div class="inner-info-container middle-container">
+                  <h6 class="info-txt">Price</h6>
+                  <div class="icon-w-txt-container">
+                    <p class="inner-txt-container price-sign">$</p>
+                    <p class="inner-txt-container price-sign">$</p>
+                    <p class="inner-txt-container price-sign">$</p>
+                    <p class="inner-txt-container price-sign">$</p>
+                    <p class="inner-txt-container price-sign">$</p>
+                  </div>
+                </div>
+
+                <div class="inner-info-container">
+                  <h6 class="info-txt">Rating</h6>
+                  <div class="icon-w-txt-container">
+                    <ion-icon name="star-outline" class="star-icon"></ion-icon>
+                    <ion-icon name="star-outline" class="star-icon"></ion-icon>
+                    <ion-icon name="star-outline" class="star-icon"></ion-icon>
+                    <ion-icon name="star-outline" class="star-icon"></ion-icon>
+                    <ion-icon name="star-outline" class="star-icon"></ion-icon>
+                  </div>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <!--Amneties-->
+          <ion-row>
+              <ion-col col-12>
+                <h3>Amneties</h3>
+              </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+         
+    <ion-scroll scrollX="true" class="amnety-scroller">
+      <div class="main-scroller-box">
+      <div class="scroller-box">
+        <div class="amnety-box">
+          <div class="amnety-icon">
+            <ion-icon name="man"></ion-icon>
+            <ion-icon name="woman"></ion-icon>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroller-box">
+        <div class="amnety-box">
+          <div class="amnety-icon">
+            <ion-icon name="man"></ion-icon>
+            <ion-icon name="woman"></ion-icon>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroller-box">
+        <div class="amnety-box">
+          <div class="amnety-icon">
+            <ion-icon name="man"></ion-icon>
+            <ion-icon name="woman"></ion-icon>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroller-box">
+        <div class="amnety-box">
+          <div class="amnety-icon">
+            <ion-icon name="man"></ion-icon>
+            <ion-icon name="woman"></ion-icon>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroller-box">
+        <div class="amnety-box">
+          <div class="amnety-icon">
+            <ion-icon name="man"></ion-icon>
+            <ion-icon name="woman"></ion-icon>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroller-box">
+        <div class="amnety-box">
+          <div class="amnety-icon">
+            <ion-icon name="man"></ion-icon>
+            <ion-icon name="woman"></ion-icon>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroller-box">
+        <div class="amnety-box">
+          <div class="amnety-icon">
+            <ion-icon name="man"></ion-icon>
+            <ion-icon name="woman"></ion-icon>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroller-box">
+        <div class="amnety-box">
+          <div class="amnety-icon">
+            <ion-icon name="man"></ion-icon>
+            <ion-icon name="woman"></ion-icon>
+          </div>
+        </div>
+      </div>
+      </div>
+    </ion-scroll>
+
+    <div padding>
+      <div class="inner-container">
+        <ion-grid>
+          
+
+          <!--Information / Description-->
+          <ion-row>
+            <ion-col col-12>
+              <h3>Info</h3>
+            </ion-col>
+            <ion-col>
+              <p>{{ description }}</p>
+            </ion-col>
+          </ion-row>
+        
+        </ion-grid>
+      </div>
+    </div>
+  </ion-content>
 
 
-    <button ion-button shape="round" color="primary">ADD TO MY GUIDE</button>
-
-</ion-content>

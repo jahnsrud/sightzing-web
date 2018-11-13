@@ -1,9 +1,9 @@
 //more pictures
 //opening hours
 
-export class Attraction {
+const attractions: Attraction[] = new Array();
 
-    attractions: Attraction[] = new Array();
+export class Attraction {
 
     title: string;
     description: string; // intro-teksten til guide
@@ -15,7 +15,9 @@ export class Attraction {
     category: string;
     time: number;
 
-    constructor(){}
+    constructor(){
+
+    }
 
     setValues(title: string,
         description: string,
@@ -38,13 +40,13 @@ export class Attraction {
     }
 
     getAttractions(){
-       return this.attractions;
+       return attractions;
     }
 
     getAttraction(name: string){
-        for(var i = 0; i < this.attractions.length; i++){
-            if(this.attractions[i].title == name){
-                return this.attractions[i];
+        for(var i = 0; i < attractions.length; i++){
+            if(attractions[i].title == name){
+                return attractions[i];
             }
         }
         return null;
@@ -52,9 +54,9 @@ export class Attraction {
 
     getAttractionByCategory(category: string){
         let attractionsWithCat: Attraction[] = new Array();
-        for(var i = 0; i < this.attractions.length; i++){
-            if(this.attractions[i].category == category){
-                attractionsWithCat.push(this.attractions[i]);
+        for(var i = 0; i < attractions.length; i++){
+            if(attractions[i].category == category){
+                attractionsWithCat.push(attractions[i]);
             }
         }
         return attractionsWithCat;
@@ -71,12 +73,12 @@ export class Attraction {
         time: number){
             let attraction: Attraction = new Attraction();
             attraction.setValues(title, description, imageUrl, googlePlacesId, website, price, rating, category, time);
-            this.attractions.push(attraction);
+            attractions.push(attraction);
     }
 
     fillListWithAttractions(){
         //Sights
-        this.addNewAttractionToList("Akershus Fortress", "description", "../assets/imgs/akershus-festning.jpg", "googleplacesid", "website", 1, 4.5, "Sights", 1);
+        this.addNewAttractionToList("Akershus Fortress", "descriptiooooon", "../assets/imgs/akershus-festning.jpg", "googleplacesid", "website", 1, 4.5, "Sights", 1);
         this.addNewAttractionToList("Royal Palace", "description", "../assets/imgs/royal-palace.jpg", "", "", 1, 4, "Sights", 2);
         this.addNewAttractionToList("Oslo City Hall", "description", "../assets/imgs/city-hall.jpeg", "", "", 1, 3, "Sights", 4);
         this.addNewAttractionToList("Oslo Cathedral", "description", "../assets/imgs/oslo-cathedral.jpeg", "", "", 1, 5, "Sights", 2);
@@ -118,6 +120,6 @@ export class Attraction {
         //Clubs & Pubs
         this.addNewAttractionToList("Jaeger", "description", "../assets/imgs/jaeger.jpg", "", "", 1, 5, "Clubs & Pubs", 1.5);
         this.addNewAttractionToList("The Villa", "description", "../assets/imgs/the-villa.jpg", "", "", 1, 4, "Clubs & Pubs", 2);
-
+console.log("here");
     }
 }

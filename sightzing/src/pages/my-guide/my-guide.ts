@@ -13,7 +13,6 @@ const attraction: Attraction = new Attraction();
 })
 export class MyGuidePage {
 
-
   constructor(public navCtrl: NavController, public navParams: NavParams, public tourList: TourList) {
   	attraction.fillListWithAttractions();
   }

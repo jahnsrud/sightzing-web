@@ -29,23 +29,26 @@ page-profile {
     display: table;
    }
 
-   #logintext {
+   #loginbtn {
 
-    
-    display: table-cell;
     min-width: 50px;
     max-width: 50px;
     width: auto;
-    visibility: hidden;
+    display: none;
+    margin-top: 40%;
+    float: right;
+    background-color: orange;
    }
 
-   #registertext {
+   #registerbtn {
 
-    display : table-cell;
     min-width: 100px;
     max-width: 100px;
     width: auto;
-    visibility: hidden;
+    display: none;
+    margin-top: 40%;
+    margin-left: 40%;
+    background-color: orange;
    }
 
    #logindiv {
@@ -100,6 +103,16 @@ page-profile {
    #editpassworddiv {
 
     display: none;
+   }
+
+   #kappagrid {
+
+    width: 100%;
+   }
+
+   #titleandbtnsrow {
+
+    margin-bottom: 0%;
    }
 
 

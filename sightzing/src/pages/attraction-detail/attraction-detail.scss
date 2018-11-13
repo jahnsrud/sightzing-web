@@ -1,10 +1,134 @@
-.attraction-large-photo {
-    width: 100vw;
-    max-height: 490px;
-    
-}
+page-attraction-detail{
 
-.subheading {
-    text-transform: uppercase;
-    font-size: 10pt;
+    h3{
+        margin: 0 !important; 
+        
+    }
+
+    .adress-table-bar{
+        width: 100%; 
+        padding: 8px 0;
+    }
+
+    .adressbar{
+        margin-top: 0 !important; 
+        font-size: 0.8em;
+        font-weight: 400;
+        color: $color-dark-gray;
+        padding-left: 5px; 
+        display: inline-block;
+    }
+
+    .adress-icon{
+        color: $color-dark-gray;
+    }
+
+    .adress-container{
+        display: table-cell;
+        padding: 0; 
+    }
+
+    .back-button-icon{
+        color: white; 
+    }
+
+    .scroll-content{
+        margin-top: 0 !important; 
+    }
+
+    .inner-container{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .middle-container{
+        border-left: solid $color-gray 1px; 
+        border-right: solid $color-gray 1px; 
+    }
+
+    .info-row{
+        margin-top: 24px; 
+        margin-bottom: 24px; 
+    }
+
+    .grid{
+        padding: 0 !important; 
+    }
+
+    #attraction-large-photo {
+        min-width: 100%; 
+        min-height: 100%; 
+        width: auto; 
+        height: auto; 
+        object-fit: cover; 
+    }
+
+    #header-img{
+        width: 100%; 
+        height: 490px;
+    }
+
+    .small-info-container{
+        display: table;
+        margin: auto;
+    }
+
+    .info-txt{
+        text-align: center;    }
+
+    .inner-info-container{
+        display: table-cell; 
+        padding-left: 15px; 
+        padding-right: 15px; 
+    }
+
+    .inner-txt-container{
+        display: table-cell; 
+        vertical-align: middle;
+    }
+
+
+    .icon-w-txt-container{
+        display: table; 
+    }
+
+    .price-sign{
+        font-size: 1em !important; 
+    }
+
+    .time-txt{
+        padding-left: 5px; 
+    }
+
+    .star-icon{
+        color: $color-dark-gray; 
+    }
+
+    .amnety-box{
+        border-radius: 100px;
+        height: 50px;
+        width: 50px;
+        background-color: $color-lighter-gray;
+        display: table; 
+        margin: 0px 16px 20px 0;
+    }
+
+    .amnety-icon{
+        display: table-cell;
+        vertical-align: middle; 
+        text-align: center; 
+    }
+
+    .amnety-scroller{
+        height: 50px; 
+    }
+    
+    .scroller-box{
+        display: inline-block; 
+    }
+
+    .main-scroller-box{
+        display: inline-flex; 
+    }
+
 }

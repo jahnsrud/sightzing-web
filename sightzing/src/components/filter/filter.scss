@@ -1,5 +1,17 @@
 filter {
     width: 100%;
+
+    h6{
+        margin: 0 0 5px 0 !important; 
+    }
+
+    .item-inner{
+        padding: 0 !important; 
+    }
+
+    ion-range{
+        padding: 0 !important;
+    }
 }
 
 #filter-page{

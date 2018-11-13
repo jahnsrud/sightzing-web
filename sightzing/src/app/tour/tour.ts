@@ -13,7 +13,9 @@ export class Tour {
     attractions: Attraction[];
     totalTime: number = 0;
 
-    constructor(){}
+    constructor(){
+
+    }
 
     setValues(title: string,
         description: string,
@@ -54,9 +56,9 @@ export class Tour {
     }
 
     fillListWithTours(){
-        this.addNewTourToList("The Panorama Tour", "", "../assets/imgs/panorama-tour.jpg", 3.5, attraction.getAttractionByCategory("Sights"));
-        this.addNewTourToList("For the Cultural Ones", "", "../assets/imgs/cultural-tour.jpg", 2, attraction.getAttractionByCategory("Museums"));
-        this.addNewTourToList("Instafriendly", "", "../assets/imgs/instafriendly-tour.jpg", 5, attraction.getAttractionByCategory("Nature & Parks"))
+        this.addNewTourToList("The Panorama Tour", "Your best friend to do stuff", "../assets/imgs/panorama-tour.jpg", 3.5, attraction.getAttractionByCategory("Sights"));
+        this.addNewTourToList("For the Cultural Ones", "Your next best friend to do stuff", "../assets/imgs/cultural-tour.jpg", 2, attraction.getAttractionByCategory("Museums"));
+        this.addNewTourToList("Instafriendly", "I don't even know who this guy is", "../assets/imgs/instafriendly-tour.jpg", 5, attraction.getAttractionByCategory("Nature & Parks"))
     }
 
 }

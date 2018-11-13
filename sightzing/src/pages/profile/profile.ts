@@ -26,18 +26,22 @@ export class ProfilePage {
     this.viewController.dismiss(this.modalController);
   }
 
-  changeToLogin() {
+  
 
+  changeToLogin() {
+    
+    let registerGrid = document.getElementById("registerdiv");
     let loginGrid = document.getElementById("logindiv");
     let profileGrid = document.getElementById("notloggedindiv");
-    let loginText = document.getElementById("logintext");
-    let registerText = document.getElementById("registertext");
+    let loginBtn = document.getElementById("loginbtn");
+    let registerBtn = document.getElementById("registerbtn");
     let profilePlaceHolder = document.getElementById("profilePlaceholder");
 
+    registerGrid.setAttribute("style", "display: none;");
     profileGrid.setAttribute("style", "display: none;");
     loginGrid.setAttribute("style", "display: block;");
-    loginText.setAttribute("style", "visibility: visible;");
-    registerText.setAttribute("style", "visibility: visible;");
+    loginBtn.setAttribute("style", "display: block;");
+    registerBtn.setAttribute("style", "display: block;");
     profilePlaceHolder.setAttribute("style", "display: none;");
     this.isLoggedIn();
 
@@ -46,26 +50,28 @@ export class ProfilePage {
 
   changeToRegister() {
 
+    let loginGrid = document.getElementById("logindiv");
     let profileGrid = document.getElementById("notloggedindiv");
     let registerGrid = document.getElementById("registerdiv");
-    let loginText = document.getElementById("logintext");
-    let registerText = document.getElementById("registertext");
+    let loginBtn = document.getElementById("loginbtn");
+    let registerBtn = document.getElementById("registerbtn");
     let profilePlaceHolder = document.getElementById("profilePlaceholder");
 
     profileGrid.setAttribute("style", "display: none;");
     registerGrid.setAttribute("style", "display: block;");
-    loginText.setAttribute("style", "visibility: visible;");
-    registerText.setAttribute("style", "visibility: visible;");
+    loginBtn.setAttribute("style", "font-size: 200px;");
+    loginBtn.setAttribute("style", "display: block;");
+    registerBtn.setAttribute("style", "display: block;");
     profilePlaceHolder.setAttribute("style", "display: none;");
-
+    loginGrid.setAttribute("style", "display: none;");
   }
 
   changeToWelcomeUser() {
 
     let registerGrid = document.getElementById("registerdiv");
     let welcomeUserGrid = document.getElementById("welcomeuserdiv");
-    let loginText = document.getElementById("logintext");
-    let registerText = document.getElementById("registertext");
+    let loginBtn = document.getElementById("loginbtn");
+    let registerBtn = document.getElementById("registerbtn");
     let profilePlaceHolder = document.getElementById("profilePlaceholder");
     let plusBtn = document.getElementById("plusbtn");
     
@@ -73,8 +79,8 @@ export class ProfilePage {
 
     registerGrid.setAttribute("style", "display: none;");
     welcomeUserGrid.setAttribute("style", "display: block;");
-    loginText.setAttribute("style", "visibility: hidden;");
-    registerText.setAttribute("style", "visibility: hidden;");
+    loginBtn.setAttribute("style", "visibility: hidden;");
+    registerBtn.setAttribute("style", "visibility: hidden;");
     profilePlaceHolder.setAttribute("style", "display: block;");
     plusBtn.setAttribute("style", "display: block");
   }
@@ -88,8 +94,8 @@ export class ProfilePage {
     let welcomeUserGrid = document.getElementById("welcomeuserdiv");
     let plusBtn = document.getElementById("plusbtn");
     let profilePlaceholder = document.getElementById("profilePlaceholder");
-    let loginText = document.getElementById("logintext");
-    let registerText = document.getElementById("registertext");
+    let loginBtn = document.getElementById("loginbtn");
+    let registerBtn = document.getElementById("registerbtn");
 
     document.getElementById("title").innerHTML="Profile";
 
@@ -100,8 +106,8 @@ export class ProfilePage {
     loggedinGrid.setAttribute("style", "display: block;");
     welcomeUserGrid.setAttribute("style","display: none");
     plusBtn.setAttribute("style","display: none;");
-    loginText.setAttribute("style", "visibility: hidden;");
-    registerText.setAttribute("style", "visibility: hidden;");    
+    loginBtn.setAttribute("style", "visibility: hidden;");
+    registerBtn.setAttribute("style", "visibility: hidden;");    
   }
 
   signOut() {
@@ -148,6 +154,10 @@ export class ProfilePage {
     localStorage.getItem("loggedIn");
     localStorage.setItem("loggedIn", "true");
     return true;
+  }
+
+  registrationIsActive() {
+    localStorage.setItem("registration", "true");
   }
 
 }

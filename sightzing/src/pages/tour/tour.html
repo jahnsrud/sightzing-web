@@ -7,12 +7,21 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Tour</ion-title>
+    <ion-title>{{tour.title}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+	  <div id="header-img">
+      <img src="{{ tour.imageUrl }}" alt="Attraction Photo" id="attraction-large-photo">
+      <p>{{tour.description}}<p>
+      <p>{{tour.attractions[0].title}}</p>
+      <p>{{tour.attractions[1].title}}</p>
+      <p>{{tour.attractions[2].title}}</p>
+      <p>{{tour.attractions[3].title}}</p>
+    </div>
 
 </ion-content>

@@ -44,6 +44,7 @@ $colors: (
 $color-dark-gray: rgb(28, 28, 28);
 $color-gray: rgb(156, 156, 156); 
 $color-light-gray: rgb(200,200,200);
+$color-lighter-gray: #e8e8e8;
 $color-orange: rgb(245, 131, 84);
 $color-yellow: rgb(254, 223, 65);
 $color-tab-gradient: linear-gradient(-225deg, #FFDF40 0%, #FF8359 100%);
@@ -97,13 +98,12 @@ $color-tab-gradient: linear-gradient(-225deg, #FFDF40 0%, #FF8359 100%);
 $font-family-base: 'Roboto', sans-serif;
 
 $h1-font-size: 2em;
-//$h2-font-size: ;
-
+$h2-font-size: 1.9em;
 $h3-font-size: 1.8rem;
-
 $h4-font-size: 1.5rem;
+$h5-font-size: 0.9em;
+$h6-font-size: 0.7em;
 
-$h6-font-size: 0.8em;
 
 
 // Tabs
