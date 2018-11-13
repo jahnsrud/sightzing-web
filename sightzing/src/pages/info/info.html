@@ -12,7 +12,7 @@
   <ion-list>
 
     <button detail-none (click)="expandItem(item)" ion-item *ngFor="let item of items">
-      <ion-icon name="add">
+      <ion-icon [name]="(isClicked) ? 'remove' : 'add'">
       </ion-icon>
       <h2 style="font-weight: bold">{{ item.title }}</h2>
       <br>
