@@ -5,16 +5,27 @@ page-attraction-detail{
         
     }
 
+    .adress-table-bar{
+        width: 100%; 
+        padding: 8px 0;
+    }
+
     .adressbar{
         margin-top: 0 !important; 
-        font-size: 1em;
+        font-size: 0.8em;
         font-weight: 400;
         color: $color-dark-gray;
         padding-left: 5px; 
+        display: inline-block;
     }
 
     .adress-icon{
         color: $color-dark-gray;
+    }
+
+    .adress-container{
+        display: table-cell;
+        padding: 0; 
     }
 
     .back-button-icon{
@@ -33,6 +44,11 @@ page-attraction-detail{
     .middle-container{
         border-left: solid $color-gray 1px; 
         border-right: solid $color-gray 1px; 
+    }
+
+    .info-row{
+        margin-top: 24px; 
+        margin-bottom: 24px; 
     }
 
     .grid{
@@ -88,6 +104,31 @@ page-attraction-detail{
         color: $color-dark-gray; 
     }
 
+    .amnety-box{
+        border-radius: 100px;
+        height: 50px;
+        width: 50px;
+        background-color: $color-lighter-gray;
+        display: table; 
+        margin: 0px 16px 20px 0;
+    }
 
+    .amnety-icon{
+        display: table-cell;
+        vertical-align: middle; 
+        text-align: center; 
+    }
+
+    .amnety-scroller{
+        height: 50px; 
+    }
+    
+    .scroller-box{
+        display: inline-block; 
+    }
+
+    .main-scroller-box{
+        display: inline-flex; 
+    }
 
 }
