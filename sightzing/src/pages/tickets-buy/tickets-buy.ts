@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 /**
  * Generated class for the TicketsBuyPage page.
@@ -15,11 +15,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TicketsBuyPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewController: ViewController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TicketsBuyPage');
+  }
+
+  dismiss() {
+    this.viewController.dismiss();
   }
 
 }
