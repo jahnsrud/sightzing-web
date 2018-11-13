@@ -41,9 +41,12 @@ export class TicketsPage {
       enableBackdropDismiss: true,
       cssClass:"purchase-modal"
     });
-    modal.present();
 
-    this.checkTicketStatus();
+    modal.onDidDismiss(data => {
+      this.checkTicketStatus();
+    })
+
+    modal.present();
 
   }
 
