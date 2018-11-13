@@ -20,14 +20,14 @@
       <ion-row justify-content-center align-items-center>
       <div (click)="betaDisablePurchase()" *ngIf="qrView" id="qr">
               <img src="../../assets/imgs/qr-code.png">
-              <p class="qr-subtitle">Valid for 0 hours</p>
+              <p class="qr-subtitle">Valid for 24 hours</p>
           </div>
       </ion-row>
       
       <div *ngIf="!qrView" (click)="buyTicket()" class="buy-button">
           <img class="buy-logo" src="../../assets/imgs/alipay.png">
           <p class="buy-overhead-title">1 PERSON</p>  
-          <p class="buy-text">Buy with Alipay (kr 0)</p>
+          <p class="buy-text">Buy with Alipay (kr 395)</p>
     </div>
     
       </div>

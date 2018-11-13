@@ -19,14 +19,18 @@ export class TicketsBuyPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TicketsBuyPage');
+    
   }
 
-  dismiss() {
+  
+  confirmPurchase() {
     localStorage.setItem("ticketPurchased", "true");
+    this.dismiss();
+  }
+        
+  dismiss() {
     this.viewController.dismiss();
   }
-
   
 
 }

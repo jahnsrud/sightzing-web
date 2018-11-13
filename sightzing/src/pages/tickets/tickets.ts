@@ -36,12 +36,17 @@ export class TicketsPage {
 
   async buyTicket() {
 
-    const modal = await this.modalController.create(TicketsBuyPage);
+    const modal = await this.modalController.create(TicketsBuyPage, null, {
+      showBackdrop: true, 
+      enableBackdropDismiss: true,
+      cssClass:"purchase-modal"
+    });
+
+    modal.onDidDismiss(data => {
+      this.checkTicketStatus();
+    })
+
     modal.present();
-
-    // this.qrView = !this.qrView;
-
-    this.checkTicketStatus();
 
   }
 
