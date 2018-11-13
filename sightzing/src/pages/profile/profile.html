@@ -8,11 +8,19 @@
   <ion-navbar>
     <ion-buttons end><button ion-button shape="round" class="closeBtn" (click)="dismiss()">X</button></ion-buttons>
   </ion-navbar>
-  <ion-toolbar class="toolbar">
+  <ion-grid class="kappagrid">
+    <ion-row id="titleandbtnsrow">
+      <ion-col>
     <h1 id="title">Profile</h1>
-    <h3 id="registertext">Register</h3>
-    <h3 id="logintext">Log in</h3>
-  </ion-toolbar>
+      </ion-col>
+      <ion-col>
+    <button ion-button class="button button-assertive button-clear" id="registerbtn" (click)="changeToLogin()">Register</button>
+      </ion-col>
+      <ion-col>
+    <button ion-button class="button button-assertive button-clear" id="loginbtn" (click)="changeToRegister()">Log in</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-header>
 
 
@@ -133,15 +141,17 @@
       <ion-item>
         <ion-input placeholder="Old password"></ion-input>
       </ion-item>
+
       <ion-item>
         <ion-input placeholder="New password"></ion-input>
       </ion-item>
+
       <ion-item>
         <ion-input placeholder="Confirm password"></ion-input>
       </ion-item>
-
-    <button ion-button class="btn button-full button-round" (click)="changeToLoggedinUser()">Confirm</button>
     </ion-list>
+    <button ion-button class="btn button-full button-round" (click)="changeToLoggedinUser()">Confirm</button>
+
   </div>
   
        
