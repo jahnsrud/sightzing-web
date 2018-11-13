@@ -29,17 +29,18 @@ export class ProfilePage {
   
 
   changeToLogin() {
-
+    
+    let registerGrid = document.getElementById("registerdiv");
     let loginGrid = document.getElementById("logindiv");
     let profileGrid = document.getElementById("notloggedindiv");
     let loginBtn = document.getElementById("loginbtn");
     let registerBtn = document.getElementById("registerbtn");
     let profilePlaceHolder = document.getElementById("profilePlaceholder");
 
+    registerGrid.setAttribute("style", "display: none;");
     profileGrid.setAttribute("style", "display: none;");
     loginGrid.setAttribute("style", "display: block;");
     loginBtn.setAttribute("style", "display: block;");
-    registerBtn.setAttribute("style", "background-color: white;");
     registerBtn.setAttribute("style", "display: block;");
     profilePlaceHolder.setAttribute("style", "display: none;");
     this.isLoggedIn();
@@ -49,6 +50,7 @@ export class ProfilePage {
 
   changeToRegister() {
 
+    let loginGrid = document.getElementById("logindiv");
     let profileGrid = document.getElementById("notloggedindiv");
     let registerGrid = document.getElementById("registerdiv");
     let loginBtn = document.getElementById("loginbtn");
@@ -61,7 +63,7 @@ export class ProfilePage {
     loginBtn.setAttribute("style", "display: block;");
     registerBtn.setAttribute("style", "display: block;");
     profilePlaceHolder.setAttribute("style", "display: none;");
-
+    loginGrid.setAttribute("style", "display: none;");
   }
 
   changeToWelcomeUser() {
@@ -152,6 +154,10 @@ export class ProfilePage {
     localStorage.getItem("loggedIn");
     localStorage.setItem("loggedIn", "true");
     return true;
+  }
+
+  registrationIsActive() {
+    localStorage.setItem("registration", "true");
   }
 
 }
