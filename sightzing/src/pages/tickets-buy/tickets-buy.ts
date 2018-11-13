@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Tour } from '../../app/tour/tour';
 
 /**
- * Generated class for the TourPage page.
+ * Generated class for the TicketsBuyPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,21 +10,16 @@ import { Tour } from '../../app/tour/tour';
 
 @IonicPage()
 @Component({
-  selector: 'page-tour',
-  templateUrl: 'tour.html',
+  selector: 'page-tickets-buy',
+  templateUrl: 'tickets-buy.html',
 })
-export class TourPage {
-
-	tour:Tour;
+export class TicketsBuyPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  	console.log(this.navParams);
-  	this.tour = this.navParams.get("tour");
-  	console.log(this.tour);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TourPage');
+    console.log('ionViewDidLoad TicketsBuyPage');
   }
 
 }
