@@ -19,9 +19,7 @@ export class TourPage {
 	tour:Tour;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  	console.log(this.navParams);
   	this.tour = this.navParams.get("tour");
-  	console.log(this.tour);
   }
 
   ionViewDidLoad() {
