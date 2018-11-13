@@ -27,4 +27,6 @@ export class TicketsBuyPage {
     this.viewController.dismiss();
   }
 
+  
+
 }
