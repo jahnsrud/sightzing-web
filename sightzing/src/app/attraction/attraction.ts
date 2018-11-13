@@ -76,7 +76,7 @@ export class Attraction {
 
     fillListWithAttractions(){
         //Sights
-        this.addNewAttractionToList("Akershus Fortress", "description", "../assets/imgs/akershus-festning.jpg", "googleplacesid", "website", 1, 4.5, "Sights", 1);
+        this.addNewAttractionToList("Akershus Fortress", "descriptiooooon", "../assets/imgs/akershus-festning.jpg", "googleplacesid", "website", 1, 4.5, "Sights", 1);
         this.addNewAttractionToList("Royal Palace", "description", "../assets/imgs/royal-palace.jpg", "", "", 1, 4, "Sights", 2);
         this.addNewAttractionToList("Oslo City Hall", "description", "../assets/imgs/city-hall.jpeg", "", "", 1, 3, "Sights", 4);
         this.addNewAttractionToList("Oslo Cathedral", "description", "../assets/imgs/oslo-cathedral.jpeg", "", "", 1, 5, "Sights", 2);

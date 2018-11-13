@@ -1,3 +1,4 @@
+
 .ticket-card {
     width: 100%;
     background-color: rgb(202, 202, 202);
@@ -12,7 +13,7 @@
 }
 
 #city-pass-logo {
-    width: 80px;
+    width: 84px;
     right: 20px;
     position: absolute;
 }
@@ -39,7 +40,7 @@
     border-radius: 10px;
     padding: 5px;
     height: 55px;
-    width: 90%;
+    width: 87%;
     overflow: hidden;
     position: absolute;
     bottom: 18px;
@@ -68,5 +69,11 @@
     font-weight: bold;
     font-size: 12pt;
 
+
+}
+
+.description-text {
+    color: gray;
+    font-size: 12pt;
 
 }

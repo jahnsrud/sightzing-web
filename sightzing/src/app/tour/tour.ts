@@ -13,7 +13,9 @@ export class Tour {
     attractions: Attraction[];
     totalTime: number = 0;
 
-    constructor(){}
+    constructor(){
+        attraction.fillListWithAttractions();
+    }
 
     setValues(title: string,
         description: string,

@@ -15,7 +15,11 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-@import url('https://fonts.googleapis.com/css?family=Merriweather:300i|Playfair+Display:700|Roboto:400,700|Source+Sans+Pro:700');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300i|Playfair+Display:700|Roboto:300,400,700|Source+Sans+Pro:700');
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
+@import url('https://fonts.googleapis.com/css?family=Heebo:700');
+
+
 
 
 /*COLOR VARIABLES*/
@@ -57,16 +61,21 @@ $color-gray: rgb(156, 156, 156);
 
 /*Used on main tab-titles*/
 h1{
-    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto', sans-serif;
     color: $color-dark-gray;
+    font-weight: 700; 
     font-size: $h1-font-size !important;
     padding-top: 50px; 
 }
 
 /*Used on sub-pages like attraction or tour*/
-/*h2{
-      
-}*/
+h2{
+    font-family: 'Roboto', sans-serif; 
+    color: $color-dark-gray; 
+    font-weight: 700; 
+    font-size: $h2-font-size !important; 
+    padding-top: 10px;      
+}
 
 /*Used on other titles like category-listing*/
 h3{
@@ -74,6 +83,7 @@ h3{
     font-weight: 700 !important;
     font-size: $h3-font-size !important;
     margin-bottom: 1rem !important;
+    color: $color-dark-gray;
 }
 
 /*Used on smaller titles like time-listing on attractions*/
@@ -83,13 +93,36 @@ h4{
     font-size: $h4-font-size !important; 
 }
 
-/*
+/*Used on small titles like titles on filter*/
 h5{
-    
-}*/
+    font-size: $h5-font-size !important;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700 !important; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
 
+/*Used on smallest titles, like headlines for icons*/
 h6{
     font-size: $h6-font-size !important;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400 !important; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+
+p{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400; 
+    font-size: 1.15em;
+    color: $color-dark-gray;
+}
+
+/*Used on buttons*/
+.button-txt{
+    margin: 0; 
+    color: $color-dark-gray;
+    font-size: 0.8em !important;
     font-family: 'Roboto', sans-serif;
     font-weight: 400 !important; 
     text-transform: uppercase; 

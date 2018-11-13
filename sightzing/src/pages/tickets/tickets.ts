@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { TicketsBuyPage } from '../tickets-buy/tickets-buy';
 
 /**
  * Generated class for the TicketsPage page.
@@ -16,17 +17,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class TicketsPage {
 
   qrView:boolean = true;
+  isPurchased:boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalController: ModalController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TicketsPage');
   }
 
-  buyTicket() {
-    this.qrView = !this.qrView;
+  async buyTicket() {
 
+    const modal = await this.modalController.create(TicketsBuyPage);
+    modal.present();
+
+    this.qrView = !this.qrView;
+    localStorage.setItem("ticketPurchased", "true");
+
+  }
+
+  checkTicketStatus() {
+    localStorage.getItem("ticketPurchased");
   }
 
 }
