@@ -11,12 +11,15 @@ import {TourList} from '../../app/tour/tourlist';
 })
 export class InfoPage {
 
-
+/* LIST OF ITEMS */
   items: any = [];
-  itemExpandHeight: number = 100;
+
+/* HEIGHT OF ITEMS */
+  itemExpandHeight: number = 110;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public tourList: TourList) {
 
+    /* HOW MANY AND CONTENT OF ITEMS */
     this.items = [
       {
         title: 'About Oslo:',
@@ -42,6 +45,7 @@ export class InfoPage {
 
   }
 
+  /* STATEMENT TO SEE IF ITEMS IS EXPANDED OR NOT */
   expandItem(item) {
     this.items.map((listItem) => {
 
