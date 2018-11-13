@@ -10,7 +10,8 @@ import { TourList } from '../../app/tour/tourlist';
   templateUrl: 'info.html',
 })
 export class InfoPage {
-
+  
+  isClicked: boolean = false;
   
   /* LIST OF ITEMS */
   items: any = [];
@@ -63,7 +64,6 @@ export class InfoPage {
             
 
         /*FUNCTION FOR CHANGE OF ICON*/
-        isClicked: boolean = false;
         
         clickFunction() {
           this.isClicked = !this.isClicked;
