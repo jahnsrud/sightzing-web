@@ -15,7 +15,7 @@ export class InfoPage {
   items: any = [];
 
 /* HEIGHT OF ITEMS */
-  itemExpandHeight: number = 110;
+  itemExpandHeight: number = 140;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public tourList: TourList) {
 
