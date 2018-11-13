@@ -26,6 +26,14 @@ export class TicketsPage {
     console.log('ionViewDidLoad TicketsPage');
   }
 
+  ionViewWillEnter() {
+    this.checkTicketStatus();
+  }
+
+  ionViewDidEnter() {
+    this.checkTicketStatus();
+  }
+
   async buyTicket() {
 
     const modal = await this.modalController.create(TicketsBuyPage);
@@ -37,20 +45,22 @@ export class TicketsPage {
 
   }
 
-  onViewWillEnter() {
+  betaDisablePurchase() {
+    localStorage.setItem("ticketPurchased", "false");
     this.checkTicketStatus();
+
   }
 
   checkTicketStatus() {
     
+    console.log(localStorage.getItem("ticketPurchased"));
+
     if (localStorage.getItem("ticketPurchased") == "true") {
       this.qrView = true;
-
-      console.log("Purchased! YEAH");
-
+    } else {
+      this.qrView = false;
     }
     
-    localStorage.getItem("ticketPurchased");
   }
 
 }
