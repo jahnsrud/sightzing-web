@@ -27,8 +27,8 @@ export class HomePage {
 
     this.getCurrentWeather();
     this.displayRandomQuote();
-    tour.fillListWithTours();
     attraction.fillListWithAttractions();
+    tour.fillListWithTours();
 
     if (this.isFirstLaunch()) {
         // presenter welcome
@@ -58,7 +58,6 @@ export class HomePage {
 
     this.attractionList = attraction.getAttractions();
 
-    this.getFeaturedTime();
   }
 
   getCurrentWeather() {
