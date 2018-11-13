@@ -1,16 +1,38 @@
 page-attraction-detail{
 
+    h3{
+        margin: 0 !important; 
+        
+    }
+
+    .adressbar{
+        margin-top: 0 !important; 
+        font-size: 1em;
+        font-weight: 400;
+        color: $color-dark-gray;
+        padding-left: 5px; 
+    }
+
+    .adress-icon{
+        color: $color-dark-gray;
+    }
+
     .back-button-icon{
         color: white; 
     }
 
     .scroll-content{
-        margin: 0 !important; 
+        margin-top: 0 !important; 
     }
 
     .inner-container{
         padding-left: 10px;
         padding-right: 10px;
+    }
+
+    .middle-container{
+        border-left: solid $color-gray 1px; 
+        border-right: solid $color-gray 1px; 
     }
 
     .grid{
@@ -40,8 +62,8 @@ page-attraction-detail{
 
     .inner-info-container{
         display: table-cell; 
-        padding-left: 5px; 
-        padding-right: 5px; 
+        padding-left: 15px; 
+        padding-right: 15px; 
     }
 
     .inner-txt-container{
@@ -54,6 +76,10 @@ page-attraction-detail{
         display: table; 
     }
 
+    .price-sign{
+        font-size: 1em !important; 
+    }
+
     .time-txt{
         padding-left: 5px; 
     }
@@ -61,6 +87,7 @@ page-attraction-detail{
     .star-icon{
         color: $color-dark-gray; 
     }
+
 
 
 }

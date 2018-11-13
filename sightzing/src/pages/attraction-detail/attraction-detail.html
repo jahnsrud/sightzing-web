@@ -25,10 +25,22 @@
             <h2>{{ title }}</h2>
           </ion-row>
 
+          <!--Adress and webpage-->
+          <ion-row>
+            <ion-icon name="pin" class="adress-icon"></ion-icon>
+            <p class="adressbar">
+              Her kommer en adresse
+            </p>
+            <ion-icon name="desktop"></ion-icon>
+            <p class="adressbar">
+              Her kommer webadresse
+            </p>
+
+          </ion-row>
+
           <!--Time, price, stars-->
           <ion-row>
-            <ion-col col-2></ion-col>
-            <ion-col col-8>
+            <ion-col col-12>
               <!--Table for informtion-->
               <div class="small-info-container">
 
@@ -36,11 +48,11 @@
                   <h6 class="info-txt">Time</h6>
                   <div class="icon-w-txt-container">
                     <ion-icon name="time" class="inner-txt-container"></ion-icon>
-                    <p class="inner-txt-container time-txt">{{ time }} h</p>
+                    <h4 class="inner-txt-container time-txt">{{ time }} h</h4>
                   </div>
                 </div>
 
-                <div class="inner-info-container">
+                <div class="inner-info-container middle-container">
                   <h6 class="info-txt">Price</h6>
                   <div class="icon-w-txt-container">
                     <p class="inner-txt-container price-sign">$</p>
@@ -63,14 +75,23 @@
                 </div>
               </div>
             </ion-col>
-            <ion-col col-2></ion-col>
           </ion-row>
 
           <ion-row>
-            <ion-label>{{ description }}</ion-label>
+            <ion-col col-12>
+              <h3>Info</h3>
+            </ion-col>
+            <ion-col>
+              <p>{{ description }}</p>
+            </ion-col>
           </ion-row>
 
-        <button ion-button shape="round" color="primary">ADD TO MY GUIDE</button>
+          <ion-row>
+              <button ion-button full round>
+                <p class="button-txt">Add to my guide</p>
+              </button>
+          </ion-row>
+        
         </ion-grid>
       </div>
     </div>

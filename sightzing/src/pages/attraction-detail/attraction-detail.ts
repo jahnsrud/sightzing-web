@@ -51,18 +51,21 @@ export class AttractionDetailPage {
     let indexCounter = 0;
 
     for(let i = 0; i < this.rating; i++){
-      stars[i].setAttribute("name", "star");
-      stars[i].setAttribute("class", "star-icon icon icon-md ion-md-star");
-      stars[i].setAttribute("aria-label", "star");
-      starsCounter--;
-      indexCounter++;
+      if(starsCounter > 0 && starsCounter < 1){
+        stars[indexCounter].setAttribute("name", "star-half");
+        stars[indexCounter].setAttribute("class", "star-icon icon icon-md ion-md-star-half");
+        stars[indexCounter].setAttribute("aria-label", "star half");
+      }
+      if(starsCounter >= 1){
+        stars[i].setAttribute("name", "star");
+        stars[i].setAttribute("class", "star-icon icon icon-md ion-md-star");
+        stars[i].setAttribute("aria-label", "star");
+        starsCounter--;
+        indexCounter++;
+      }
     }
 
-    if(starsCounter == 0.5){
-      stars[indexCounter].setAttribute("name", "star-half");
-      stars[indexCounter].setAttribute("class", "star-icon icon icon-md ion-md-star-half");
-      stars[indexCounter].setAttribute("aria-label", "star half");
-    }
+  
   
     
 
