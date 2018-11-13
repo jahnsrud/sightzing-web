@@ -169,3 +169,14 @@ ion-title{
     padding: 0 !important; 
 
 }*/
+
+.purchase-modal {
+    .modal-wrapper {
+      position: absolute;
+      bottom: 0 !important;
+      left: 0 !important;
+      display: block;
+      width: 100% !important;
+      height: 60% !important;
+    } 
+  }
