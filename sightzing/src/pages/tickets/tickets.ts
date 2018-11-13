@@ -16,6 +16,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class TicketsPage {
 
   qrView:boolean = true;
+  isPurchased:boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -26,7 +27,12 @@ export class TicketsPage {
 
   buyTicket() {
     this.qrView = !this.qrView;
+    localStorage.setItem("ticketPurchased", "true");
 
+  }
+
+  checkTicketStatus() {
+    localStorage.getItem("ticketPurchased");
   }
 
 }
