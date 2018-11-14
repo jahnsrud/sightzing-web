@@ -156,4 +156,137 @@ page-attraction-detail{
         border-right: solid $color-gray 1px; 
     }
 
+    #popular-hours-row{
+        margin-bottom: 24px;
+    }
+
+    #rate-share-row{
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    /*Styling for hour graph*/
+    /*The container for the background of the graph*/
+    #table-background-container{
+        display: flex; 
+        flex-direction: row;
+        justify-content: center; 
+        justify-items: center; 
+        width: 100%;
+        height: 120px; 
+        position: absolute;
+        bottom: 0px;
+    }
+
+    #table-background{
+        position: absolute; 
+        width: 100%; 
+        height: 120px;
+
+        tr{
+            border-top: 1px solid $color-light-gray;
+            display: block; 
+            position: absolute; 
+            width: 100%; 
+        }
+    }
+
+    #r1{bottom: 0;}
+    #r2{bottom: 20px;}
+    #r3{bottom: 40px;}
+    #r4{bottom: 60px;}
+    #r5{bottom: 80px;}
+    #r6{bottom: 100px;}
+
+
+    /*The container for the graph*/
+    #popular-hours-graph{
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        width: 100%; 
+    }
+
+    /*The table that contains the graph*/
+    #q-graph {
+        display: block; 
+        position: relative; 
+        width: 100%; 
+        height: 120px;
+        margin: 1.1em 0 0; 
+        padding: 0;
+        background: transparent;
+        font-size: 11px;
+    }
+
+    /*The rows, header and detail in the table*/
+    #q-graph tr, #q-graph th, #q-graph td { 
+        position: absolute;
+        bottom: 0; 
+        width: 20px; 
+        z-index: 2;
+        margin: 0; 
+        padding: 0;
+        text-align: center;
+    }
+      
+    /*The table rows*/  
+    #q-graph thead tr {
+        left: 100%; 
+        top: 50%; 
+        bottom: auto;
+        margin: -2.5em 0 0 5em;
+    }
+
+    /*The table headers (label for the bars)*/
+    #q-graph thead th {
+        width: 7.5em; 
+        height: auto; 
+        padding: 0.5em 1em;
+    }
+
+    /**/
+    #q-graph thead th.sent {
+        top: 0; 
+        left: 0; 
+        line-height: 2;
+    }
+      
+    /*The graph bars*/
+    #q-graph #q1 {left: 0;}
+    #q-graph #q2 {left: 20px;}
+    #q-graph #q3 {left: 40px;}
+    #q-graph #q4 {left: 60px;}
+    #q-graph #q5 {left: 80px;}
+    #q-graph #q6 {left: 100px;}
+    #q-graph #q7 {left: 120px;}
+    #q-graph #q8 {left: 140px;}
+    #q-graph #q9 {left: 160px;}
+    #q-graph #q10 {left: 180px;}
+    #q-graph #q11 {left: 200px;}
+    #q-graph #q12 {left: 220px;}
+    #q-graph #q13 {left: 240px;}
+    #q-graph #q14 {left: 260px;}
+    #q-graph #q15 {left: 280px;}
+    #q-graph #q16 {left: 300px;}
+
+    #q-graph tbody th {
+        bottom: -1.75em; 
+        vertical-align: top;
+        font-weight: normal; 
+        color: #333;
+    }
+
+    #q-graph .hour-bar {
+        width: 18px; 
+        border-bottom: none; 
+        color: #000;
+        background-color: $color-orange; 
+        border-color: transparent; 
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+
+
 }

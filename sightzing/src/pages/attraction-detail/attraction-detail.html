@@ -59,7 +59,7 @@
                 <div class="inner-info-container">
                   <h6 class="info-txt">Time</h6>
                   <div class="icon-w-txt-container">
-                    <ion-icon name="time" class="inner-txt-container"></ion-icon>
+                    <ion-icon name="stopwatch" class="inner-txt-container"></ion-icon>
                     <h4 class="inner-txt-container time-txt">{{ time }}h</h4>
                   </div>
                 </div>
@@ -99,7 +99,7 @@
       </div>
     </div>
          
-    <ion-scroll scrollX="true" class="amnety-scroller">
+    <ion-scroll scrollX="true" scrollbar-x="false" scrollbar-y="false" class="amnety-scroller">
       <div class="main-scroller-box" id="main-scroller-box">
       <div class="scroller-box">
         <div class="amnety-box">
@@ -202,19 +202,91 @@
                 <h3>Opening Hours</h3>
               </ion-col>
               <ion-col>
+                <ion-icon name="time"></ion-icon>
                 <p>Here comes the opening hours. Dont know how to do this yet. </p>
                 <p>{{ openinghours }}</p>
               </ion-col>
             </ion-row>
 
           <!--Popular Hours-->
-          <ion-row>
+          <ion-row id="popular-hours-row">
               <ion-col col-12>
                 <h3>Popular hours</h3>
               </ion-col>
-              <ion-col>
-                <p>Here comes the popular hours</p>
-                <p>{{ openinghours }}</p>
+              <ion-col col-12>
+                <div id="popular-hours-graph">
+                  <table id="q-graph">
+                      <tbody>
+                        <tr class="qtr" id="q1">
+                          <th scope="row">06</th>
+                          <td class="hour-bar" style="height: 10px;"></td>
+                        </tr>
+                        <tr class="qtr" id="q2">
+                          <td class="hour-bar" style="height: 15px;"></td>
+                        </tr>
+                        <tr class="qtr" id="q3">
+                          <td class="hour-bar" style="height: 20px;"></td>
+                        </tr>
+                        <tr class="qtr" id="q4">
+                          <th scope="row">09</th>
+                          <td class="hour-bar" style="height: 38px;"></td>
+                        </tr>
+                        <tr class="qtr" id="q5">
+                          <td class="hour-bar" style="height: 43px;"></td>
+                        </tr>
+                        <tr class="qtr" id="q6">
+                          <td class="hour-bar" style="height: 50px;"></td>
+                        </tr>
+                        <tr class="qtr" id="q7">
+                          <th scope="row">12</th>
+                          <td class="hour-bar" style="height: 54px;"></td>
+                        </tr>
+                        <tr class="qtr" id="q8">
+                          <td class="hour-bar" style="height: 65px;"></td>
+                        </tr>
+                        <tr class="qtr" id="q9">
+                          <td class="hour-bar" style="height: 70px;"></td>
+                        </tr>
+                        <tr class="qtr" id="q10">
+                          <th scope="row">15</th>
+                          <td class="hour-bar" style="height: 74px;"></td>
+                        </tr>
+                        <tr class="qtr" id="q11">
+                          <td class="hour-bar" style="height: 68px;"></td>
+                        </tr>
+                        <tr class="qtr" id="q12">
+                          <td class="hour-bar" style="height: 63px;"></td>
+                        </tr>
+                        <tr class="qtr" id="q13">
+                          <th scope="row">18</th>
+                          <td class="hour-bar" style="height: 56px;"></td>
+                        </tr>
+                        <tr class="qtr" id="q14">
+                          <td class="hour-bar" style="height: 43px;"></td>
+                        </tr>
+                        <tr class="qtr" id="q15">
+                          <td class="hour-bar" style="height: 35px;"></td>
+                        </tr>
+                        <tr class="qtr" id="q16">
+                          <th scope="row">21</th>
+                          <td class="hour-bar" style="height: 26px;"></td>
+                        </tr>
+                      </tbody>
+                  </table>
+                    
+                </div>
+                <div id="table-background-container">
+                  <table id="table-background">
+                      <tbody>
+                        <tr id="r1"></tr>
+                        <tr id="r2"></tr>
+                        <tr id="r3"></tr>
+                        <tr id="r4"></tr>
+                        <tr id="r5"></tr>
+                        <tr id="r6"></tr>
+                      </tbody>
+                    </table>
+                </div>
               </ion-col>
             </ion-row>
 
@@ -230,7 +302,7 @@
             </ion-row>
 
           <!--Rate & Share-->
-          <ion-row>
+          <ion-row id="rate-share-row">
               <ion-col col-12>
                   <!--Table for informtion-->
                   <div class="small-info-container">
