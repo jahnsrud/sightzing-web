@@ -37,6 +37,7 @@ export class ProfilePage {
     let registerBtn = document.getElementById("registerbtn");
     let profilePlaceHolder = document.getElementById("profilePlaceholder");
 
+    this.loginIsActive();
     registerGrid.setAttribute("style", "display: none;");
     profileGrid.setAttribute("style", "display: none;");
     loginGrid.setAttribute("style", "display: block;");
@@ -57,6 +58,7 @@ export class ProfilePage {
     let registerBtn = document.getElementById("registerbtn");
     let profilePlaceHolder = document.getElementById("profilePlaceholder");
 
+    this.registrationIsActive();
     profileGrid.setAttribute("style", "display: none;");
     registerGrid.setAttribute("style", "display: block;");
     loginBtn.setAttribute("style", "font-size: 200px;");
@@ -115,7 +117,11 @@ export class ProfilePage {
     let editProfieGrid = document.getElementById("editprofilediv");
     let loggedinGrid = document.getElementById("loggedindiv");
     let profileGrid = document.getElementById("notloggedindiv");
+    let plusBtn = document.getElementById("plusbtn");
 
+    document.getElementById("title").innerHTML="Profile";
+
+    plusBtn.setAttribute("style", "display: none;");
     profileGrid.setAttribute("style","display: block");
     loggedinGrid.setAttribute("style", "display: none;");
     editProfieGrid.setAttribute("style","display: none;");
@@ -157,7 +163,15 @@ export class ProfilePage {
   }
 
   registrationIsActive() {
-    localStorage.setItem("registration", "true");
+    (<HTMLInputElement> document.getElementById("registerbtn")).disabled = true;
+    (<HTMLInputElement> document.getElementById("loginbtn")).disabled = false;
+
+  }
+
+  loginIsActive() {
+
+    (<HTMLInputElement> document.getElementById("loginbtn")).disabled = true;
+    (<HTMLInputElement> document.getElementById("registerbtn")).disabled = false;
   }
 
 }

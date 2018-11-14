@@ -2,30 +2,49 @@
 
 .splash-log-in{
   bottom: 0; 
-  position: absolute; 
+  position: relative; 
   width: 100%; 
 }
 
 .btn {
+  width: 100%;
+  border-radius: 8px;
+}
 
-    align-self: center;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold; 
-    font-size: 0.8em;
-    text-transform: uppercase; 
-    letter-spacing: 1px;
-    width: 100%; 
-    }
-   
-    #weibologo {
-    width: 30px;
-
-    }
-
-    .welcome {
-
-      background-image: url('http://www.tripsavvy.com/thmb/7ZBViRizyNviehYe2J_wAaKdBFw=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/OsloOperaNorway-531511051-56746a015f9b586a9e4853f8.jpg');
-    }
-    
+/*
+.btn {
+  align-self: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold; 
+  font-size: 0.8em;
+  text-transform: uppercase; 
+  letter-spacing: 1px;
+  width: 100%; 
   
+}
+*/
+   
+#weibo-logo {
+  width: 30px;
+  margin-right: 10px;
+
+}
+
+.welcome {
+  background-image: url('http://www.tripsavvy.com/thmb/7ZBViRizyNviehYe2J_wAaKdBFw=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/OsloOperaNorway-531511051-56746a015f9b586a9e4853f8.jpg');
     
+}
+
+#splash-logo {
+  width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+#splash-intro-text {
+  font-size: 14pt;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}

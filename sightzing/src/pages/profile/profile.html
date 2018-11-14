@@ -14,7 +14,7 @@
     <h1 id="title">Profile</h1>
       </ion-col>
       <ion-col>
-    <button ion-button class="button button-assertive button-clear" id="registerbtn" (click)="changeToRegister()">Register</button>
+    <button ion-button class="button button-assertive button-clear" id="registerbtn" ngDisabled="checked" (click)="changeToRegister()">Register</button>
       </ion-col>
       <ion-col>
     <button ion-button class="button button-assertive button-clear" id="loginbtn" (click)="changeToLogin()">Log in</button>
@@ -42,7 +42,7 @@
           
   
       
-          <button ion-button class="btn button-full button-round" (click)="changeToRegister()">Register</button>
+          <button ion-button class="btn button-full button-round" ngDisabled="checked" (click)="changeToRegister()">Register</button>
   </div>
 
   <div id="logindiv">
