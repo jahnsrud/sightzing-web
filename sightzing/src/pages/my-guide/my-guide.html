@@ -14,13 +14,16 @@
       <h1>"Map comes later"</h1>
   </div>
 
-  <ion-card>
-    <div>Oslo City Hall</div>
-  </ion-card>
+  <div *ngFor="let item of attractionList; let i = index">
+    <ion-card>
+      <div>Oslo City Hall</div>
+    </ion-card>
 
-  <div class="timeline"></div>
-
-  <ion-card>
+    <div class="timeline">
+      <ion-icon name="walk"></ion-icon>
+    </div>
+  </div>
+  <!--  <ion-card>
     <div>Oslo City Hall</div>
   </ion-card>
 
@@ -32,9 +35,11 @@
     <div>Oslo City Hall</div>
   </ion-card>
 
-  <div class="timeline"></div>
+  <div class="timeline">
+    <ion-icon name="walk"></ion-icon>
+  </div>
 
   <ion-card>
     <div>Oslo City Hall</div>
-  </ion-card>
+  </ion-card>-->
 </ion-content>

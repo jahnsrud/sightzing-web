@@ -13,9 +13,14 @@ const attraction: Attraction = new Attraction();
 })
 export class MyGuidePage {
 
+  myAttractions = attraction.getAttraction("Nordmarka");
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, public tourList: TourList) {
-  	attraction.fillListWithAttractions();
+    attraction.fillListWithAttractions();
   }
+
+  
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyGuidePage');
