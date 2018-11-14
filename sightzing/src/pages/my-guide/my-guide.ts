@@ -13,11 +13,16 @@ const attraction: Attraction = new Attraction();
 })
 export class MyGuidePage {
 
-  myAttractions = this.tourList.getTourList(); 
+  myAttractions = attraction.getAttraction("Nordmarka");
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public tourList: TourList) {
-  	attraction.fillListWithAttractions();
+    attraction.fillListWithAttractions();
+    this.tourList.getTourList();
+
   }
+
+  
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyGuidePage');

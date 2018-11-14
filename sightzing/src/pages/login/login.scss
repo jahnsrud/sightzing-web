@@ -1,0 +1,37 @@
+page-login {
+
+
+    #loginbtn {
+
+        min-width: 50px;
+        max-width: 50px;
+        width: auto;
+        margin-top: 40%;
+        float: right;
+       }
+    
+       #registerbtn {
+    
+        min-width: 100px;
+        max-width: 100px;
+        width: auto;
+        margin-top: 40%;
+        margin-left: 40%;
+       }
+
+       #logindiv {
+
+        text-align: center;
+       }
+
+       .ortext {
+
+        text-align: center;
+       }
+
+       #title {
+
+        display: table-cell;
+        width: 100%;
+       }
+}

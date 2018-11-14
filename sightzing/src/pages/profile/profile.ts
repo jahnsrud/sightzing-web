@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, ModalController, ToastController } from 'ionic-angular';
-import { LoginAndRegisterPage } from '../login-and-register/login-and-register';
+import { LoginPage } from '../login/login';
+import { RegisterPage } from '../register/register';
 /**
  * Generated class for the ProfilePage page.
  *
@@ -55,28 +56,15 @@ export class ProfilePage {
   
 
   changeToLogin() {
-    
-    let loginModal = this.modalController.create(LoginAndRegisterPage);
+    let loginModal = this.modalController.create(LoginPage);
     loginModal.present();
+    this.dismiss();
   }
 
   changeToRegister() {
-
-    let loginGrid = document.getElementById("logindiv");
-    let profileGrid = document.getElementById("notloggedindiv");
-    let registerGrid = document.getElementById("registerdiv");
-    let loginBtn = document.getElementById("loginbtn");
-    let registerBtn = document.getElementById("registerbtn");
-    let profilePlaceHolder = document.getElementById("profilePlaceholder");
-
-    this.registrationIsActive();
-    profileGrid.setAttribute("style", "display: none;");
-    registerGrid.setAttribute("style", "display: block;");
-    loginBtn.setAttribute("style", "font-size: 200px;");
-    loginBtn.setAttribute("style", "display: block;");
-    registerBtn.setAttribute("style", "display: block;");
-    profilePlaceHolder.setAttribute("style", "display: none;");
-    loginGrid.setAttribute("style", "display: none;");
+    let registerModal = this.modalController.create(RegisterPage);
+    registerModal.present();
+    this.dismiss();
   }
 
   changeToWelcomeUser() {
