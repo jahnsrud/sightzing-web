@@ -6,7 +6,6 @@ import { TourPage } from '../tour/tour'
 import { Tour } from '../../app/tour/tour';
 import { TourList } from '../../app/tour/tourlist';
 import { ProfilePage } from '../profile/profile';
-import { Main } from '../../app/main';
 import { Attraction } from '../../app/attraction/attraction';
 
 const tour: Tour = new Tour();
@@ -43,13 +42,21 @@ export class HomePage {
           attraction.getAttraction("Fram Museum"),
           attraction.getAttraction("Oslo Cathedral")
         ],
-        "time": 0
+        "time": 0,
+        "image": "../../assets/imgs/all-attractions.jpg"
       },
       {
         "title": attraction.getAttraction("Holmenkollen").title,
         "type": "Attraction",
         "attraction": attraction.getAttraction("Holmenkollen"),
+        "image": attraction.getAttraction("Holmenkollen").imageUrl
       },
+      {
+        "title": attraction.getAttraction("National Gallery").title,
+        "type": "Attraction",
+        "attraction": attraction.getAttraction("National Gallery"),
+        "image": attraction.getAttraction("National Gallery").imageUrl
+      }
     ];
 
     this.eventList = [...attraction.getAttractions()].slice(4, 8);
@@ -88,7 +95,6 @@ export class HomePage {
 
     const modal = await this.modalController.create(WelcomePage);
     modal.present();
-    // return await modal.present();
 
   }
 

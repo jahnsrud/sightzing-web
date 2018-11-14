@@ -4,7 +4,7 @@
 
     <ion-buttons end>
       <button ion-button (click)="presentProfile()">
-          <ion-icon class="profile-button" name="contact"></ion-icon>
+        <ion-icon class="profile-button" name="contact"></ion-icon>
       </button>
     </ion-buttons>
 
@@ -39,51 +39,50 @@
   <!--I en slider-->
 
   <ion-slides>
-      <ion-slide loop="true" *ngFor="let item of featuredList; let i = index;">
-          <div class="featured-card">
-               <p class="featured-card-time-usage">{{item.type == 'Attraction' ? item.attraction.time : item.time }}</p>
-              <!-- <p class="featured-card-time-usage">{{i }}</p> -->
-              <p class="featured-card-type-heading">{{item.type}}</p>
-              <p class="featured-card-title">{{ item.title }}</p>
-          </div>
-      </ion-slide>
-    </ion-slides>
+    <ion-slide loop="true" *ngFor="let item of featuredList; let i = index;">
+      <div class="featured-card" [style.backgroundImage]="'url(' + item.image + ')'">
+        <p class="featured-card-time-usage">{{item.type == 'Attraction' ? item.attraction.time : item.time }}</p>
+        <p class="featured-card-type-heading">{{item.type}}</p>
+        <p class="featured-card-title">{{ item.title }}</p>
+      </div>
+    </ion-slide>
+  </ion-slides>
 
 
   <h3>Tours</h3>
-    <ion-scroll scrollX="true" class="front-page-content">
-      <div class="somewhere" style="display: inline-flex">
-        <div *ngFor="let item of tourList; let i = index;">
-          <div class="thisisdumb" [style.backgroundImage]="'url('+ item.imageUrl +')'">
-            <div class="inner-image" (click)="presentTour(item.title)">
-            </div>
-            <p class="featured-card-title scroll-title">{{item.title}}</p>
+  <ion-scroll scrollX="true" class="front-page-content">
+    <div class="somewhere" style="display: inline-flex">
+      <div *ngFor="let item of tourList; let i = index;">
+        <div class="thisisdumb" [style.backgroundImage]="'url('+ item.imageUrl +')'">
+          <div class="inner-image" (click)="presentTour(item.title)">
           </div>
+          <p class="featured-card-title scroll-title">{{item.title}}</p>
         </div>
       </div>
-    </ion-scroll>
+    </div>
+  </ion-scroll>
 
   <h3>Events</h3>
-    <ion-scroll scrollX="true" class="front-page-content">
-      <div class="somewhere" style="display: inline-flex">
-        <div class="thisisdumb" *ngFor="let item of eventList"></div>
-      </div>
-    </ion-scroll>
+  <ion-scroll scrollX="true" class="front-page-content">
+    <div class="somewhere" style="display: inline-flex">
+      <div class="thisisdumb" *ngFor="let item of eventList"></div>
+    </div>
+  </ion-scroll>
 
   <h3>Attractions</h3>
-    <ion-scroll scrollX="true" class="front-page-content">
-      <div class="somewhere" style="display: inline-flex">
-        <div *ngFor="let item of attractionList; let i = index;">
-          <div class="thisisdumb" [style.backgroundImage]="'url('+ item.imageUrl +')'">
-              <button ion-button round icon-only class="hello" (click)="addAttractionToMainList(item.title)">
-                <ion-icon name="add" class="add-button-icon"></ion-icon>
-              </button>
-            <div class="inner-image" (click)="presentAttraction(item.title)">
-            </div>
-            <p class="featured-card-title scroll-title">{{item.title}}</p>
+  <ion-scroll scrollX="true" class="front-page-content">
+    <div class="somewhere" style="display: inline-flex">
+      <div *ngFor="let item of attractionList; let i = index;">
+        <div class="thisisdumb" [style.backgroundImage]="'url('+ item.imageUrl +')'">
+          <button ion-button round icon-only class="hello" (click)="addAttractionToMainList(item.title)">
+            <ion-icon name="add" class="add-button-icon"></ion-icon>
+          </button>
+          <div class="inner-image" (click)="presentAttraction(item.title)">
           </div>
+          <p class="featured-card-title scroll-title">{{item.title}}</p>
         </div>
       </div>
-    </ion-scroll>
+    </div>
+  </ion-scroll>
 
 </ion-content>
