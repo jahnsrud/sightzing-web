@@ -197,16 +197,22 @@
           </ion-row>
 
           <!--Opening Hours-->
-          <ion-row>
+          <ion-row id="opening-hours-row">
               <ion-col col-12>
                 <h3>Opening Hours</h3>
               </ion-col>
-              <ion-col>
-                <ion-icon name="time"></ion-icon>
-                <p>Here comes the opening hours. Dont know how to do this yet. </p>
-                <p>{{ openinghours }}</p>
+          </ion-row>
+          <ion-row id="hours-info">
+              <ion-col col-1>
+                <ion-icon name="time" class="bigger-icon"></ion-icon>
               </ion-col>
-            </ion-row>
+              <ion-col col-9>
+                <p>Open now</p>
+              </ion-col>
+              <ion-col col-2 class="right-align">
+                <ion-icon name="ios-information-circle-outline" class="big-icon"></ion-icon>
+              </ion-col>
+          </ion-row>
 
           <!--Popular Hours-->
           <ion-row id="popular-hours-row">
@@ -295,7 +301,37 @@
               <ion-col col-12>
                 <h3>Reviews</h3>
               </ion-col>
+          </ion-row>
+
+          <div id="review-table">
+            <table>
+              <tr>
+                <td><h6>Excellent</h6></td>
+                <td class="rate-line-col">
+                  <div class="rate-line-background"></div>
+                  <div class="rate-line" id="excellent"></div>
+                </td>
+                <td class="rate-number"><h6>30%</h6></td>
+              </tr>
+                <td><h6>Very good</h6></td>
+              <tr>
+                <td><h6>Average</h6></td>
+              </tr>
+              <tr>
+                <td><h6>Poor</h6></td>
+              </tr>
+              <tr>
+                <td><h6>Terrible</h6></td>
+              </tr>
+            </table>
+
+          </div>
+
+          <ion-row>
+
               <ion-col>
+
+
                 <p>Here comes review</p>
                 <p>{{ openinghours }}</p>
               </ion-col>

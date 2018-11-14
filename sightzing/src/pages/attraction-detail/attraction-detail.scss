@@ -165,6 +165,28 @@ page-attraction-detail{
         margin-bottom: 24px;
     }
 
+    .bigger-icon{
+        font-size: 1.5em;
+    }
+
+    .big-icon{
+        font-size: 2.2em;
+        color: $color-orange;
+    }
+
+    .right-align{
+        text-align: right; 
+    }
+
+    #hours-info{
+        display: table; 
+
+        ion-col{
+            display: table-cell;
+            vertical-align: middle; 
+        }
+    }
+
     /*Styling for hour graph*/
     /*The container for the background of the graph*/
     #table-background-container{
@@ -289,4 +311,36 @@ page-attraction-detail{
     }
 
 
+    /*Review table*/
+    #review-table{
+        width: 100%; 
+
+        table{
+            width: 100%; 
+
+            tr{
+                height: 15px;
+            }
+
+            .rate-line-col{
+                width: 60%; 
+                background-color: $color-lighter-gray;
+            }
+
+            .rate-line{
+                background-color: $color-orange;
+                height: 15px; 
+            }
+
+            #excellent{
+                width: 60%; 
+            }
+
+            .rate-number{
+                text-align: right; 
+            }
+        }
+
+
+    }
 }
