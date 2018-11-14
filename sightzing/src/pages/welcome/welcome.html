@@ -14,30 +14,26 @@
 
 
 <ion-content padding class="welcome">
-  
+
   <img id="splash-logo" src="../assets/imgs/logo-sightzing.png">
   <p id="splash-intro-text">24 hours in Oslo? No problem</p>
 
-    <ion-grid class="splash-log-in">
+  <ion-grid class="splash-log-in">
 
-        <ion-row class="row">
+    <ion-row class="row">
+      <button ion-button shape="round" class="btn" color="primary" (click)="loginWithWeibo()">
+        <ion-img id="weibo-logo" src="../../assets/imgs/weibo-logo.png"></ion-img>Log in with Weibo
+      </button>
+    </ion-row>
 
-            <button (click)="loginWithWeibo()" ion-button class="btn button-full button-round"><ion-img id="weibo-logo" src="../../assets/imgs/weibo-logo.png"></ion-img> Log in with Weibo</button>
+    <ion-row class="row">
+      <button ion-button shape="round" class="btn" color="primary">Register with email</button>
+    </ion-row>
 
-        </ion-row>
-    
-        <ion-row class="row">
+    <ion-row class="row">
+      <button ion-button shape="round" class="btn" color="primary" (click)="dismiss()">Skip</button>
+    </ion-row>
 
-              <button ion-button class="btn button-full button-round">Register with email</button>
-
-        </ion-row>
-    
-        <ion-row class="row">
-          
-            <button ion-button class="btn button-full button-round" (click)="dismiss()">Skip</button>
-
-        </ion-row>
-    
-      </ion-grid>
+  </ion-grid>
 
 </ion-content>

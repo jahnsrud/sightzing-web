@@ -16,7 +16,6 @@
     font-style: italic;
     font-size: 11pt;
     color: gray;
-    text-align: right;
 }
 
 .profile-button {
@@ -46,6 +45,7 @@ ion-slides {
 
 }
 
+
 .featured-card-type-heading {
     font-size: 10pt;
     margin: 0;
@@ -61,8 +61,17 @@ ion-slides {
     position: absolute;
 }
 
-.featured-card-time.usage {
+.featured-card-time-usage {
     font-size: 12pt;
+    position: absolute;
+    left: 10px;
+    top: 0px;
+
+}
+
+.featured-card-time-usage::before {
+    content: "🕖";
+    margin-right: 7px;
 }
 
 h3 {
