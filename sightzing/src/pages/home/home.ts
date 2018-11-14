@@ -1,5 +1,5 @@
 import { Component, Testability } from '@angular/core';
-import { NavController, ModalController } from 'ionic-angular';
+import { NavController, ModalController, ToastController } from 'ionic-angular';
 import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
 import { WelcomePage } from '../welcome/welcome';
 import { TourPage } from '../tour/tour'
@@ -22,7 +22,7 @@ export class HomePage {
   attractionList: any;
   eventList: any;
 
-  constructor(public navController: NavController, public modalController: ModalController, public mainTourList: TourList) {
+  constructor(public navController: NavController, public modalController: ModalController, public mainTourList: TourList, public toastCtrl:ToastController) {
 
     this.getCurrentWeather();
     this.displayRandomQuote();
@@ -85,6 +85,15 @@ export class HomePage {
 
   addAttractionToMainList(i: string) {
     this.mainTourList.addAttractionToList(attraction.getAttraction(i));
+
+    let toast = this.toastCtrl.create({
+      message: '✅ Added ' + attraction.getAttraction(i).title,
+      duration: 3000,
+      position: 'bottom'
+    });
+
+    toast.present();
+
   }
 
   addTourToMainList(i: string) {
