@@ -14,9 +14,9 @@
       <h1>"Map comes later"</h1>
   </div>
 
-  <div *ngFor="let item of attractionList; let i = index">
+  <div *ngFor="let item of tourList.getTourList(); let i = index;">
     <ion-card>
-      <div>Oslo City Hall</div>
+      <div>{{ item.title }}</div>
     </ion-card>
 
     <div class="timeline">
