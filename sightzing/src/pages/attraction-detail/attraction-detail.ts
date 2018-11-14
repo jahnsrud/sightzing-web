@@ -34,14 +34,26 @@ export class AttractionDetailPage {
 
     this.fillPrice();
     this.fillStars();
+    this.fillAmneties(); 
   }
 
+  fillAmneties(){
+    let amnetyList: string[] = new Array();
+
+    let scrollBar = document.getElementById("main-scroller-box"); 
+
+    //scrollBar.innerHTML = "";
+
+    //for(let i = 0; i < amnetyList.length; i++){
+    //  scrollBar.append(amnetyList[i]);
+    //}
+  }
 
   fillPrice(){
     let priceSigns = document.getElementsByClassName("price-sign");
 
     for(let i = this.price; i < priceSigns.length; i++){
-      priceSigns[i].setAttribute("style", "color: gray;");
+      priceSigns[i].setAttribute("style", "color: #b7b7b7;");
     }
   }
 

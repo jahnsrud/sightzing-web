@@ -45,8 +45,8 @@
 
           <!--Add to my guide button-->
           <ion-row>
-              <button ion-button full round>
-                <p class="button-txt">Add to my guide</p>
+              <button ion-button full round class="add-my-guide-btn">
+                <p class="button-txt add-my-guide-txt"> + Add to my guide</p>
               </button>
           </ion-row>
 
@@ -100,7 +100,7 @@
     </div>
          
     <ion-scroll scrollX="true" class="amnety-scroller">
-      <div class="main-scroller-box">
+      <div class="main-scroller-box" id="main-scroller-box">
       <div class="scroller-box">
         <div class="amnety-box">
           <div class="amnety-icon">
@@ -185,10 +185,72 @@
             <ion-col col-12>
               <h3>Info</h3>
             </ion-col>
-            <ion-col>
+            <ion-col col-12>
               <p>{{ description }}</p>
             </ion-col>
           </ion-row>
+
+          <ion-row>
+              <button ion-button full round>
+                <p class="button-txt">Read complete guide</p>
+              </button>
+          </ion-row>
+
+          <!--Opening Hours-->
+          <ion-row>
+              <ion-col col-12>
+                <h3>Opening Hours</h3>
+              </ion-col>
+              <ion-col>
+                <p>Here comes the opening hours. Dont know how to do this yet. </p>
+                <p>{{ openinghours }}</p>
+              </ion-col>
+            </ion-row>
+
+          <!--Popular Hours-->
+          <ion-row>
+              <ion-col col-12>
+                <h3>Popular hours</h3>
+              </ion-col>
+              <ion-col>
+                <p>Here comes the popular hours</p>
+                <p>{{ openinghours }}</p>
+              </ion-col>
+            </ion-row>
+
+          <!--Reviews-->
+          <ion-row>
+              <ion-col col-12>
+                <h3>Reviews</h3>
+              </ion-col>
+              <ion-col>
+                <p>Here comes review</p>
+                <p>{{ openinghours }}</p>
+              </ion-col>
+            </ion-row>
+
+          <!--Rate & Share-->
+          <ion-row>
+              <ion-col col-12>
+                  <!--Table for informtion-->
+                  <div class="small-info-container">
+    
+                    <div class="inner-info-container border-right">
+                      <h6 class="info-txt">Rate</h6>
+                      <div class="icon-w-txt-container centered">
+                        <ion-icon name="star-outline"></ion-icon>
+                      </div>
+                    </div>
+    
+                    <div class="inner-info-container">
+                      <h6 class="info-txt">Share</h6>
+                      <div class="icon-w-txt-container centered">
+                        <ion-icon name="ios-share-outline"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+                </ion-col>
+            </ion-row>
         
         </ion-grid>
       </div>
