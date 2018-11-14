@@ -53,7 +53,7 @@
   <ion-scroll scrollX="true" class="front-page-content">
     <div class="somewhere" style="display: inline-flex">
       <div *ngFor="let item of tourList; let i = index;">
-        <div class="thisisdumb" [style.backgroundImage]="'url('+ item.imageUrl +')'">
+        <div class="scrollableCard" [style.backgroundImage]="'url('+ item.imageUrl +')'">
           <div class="inner-image" (click)="presentTour(item.title)">
           </div>
           <p class="featured-card-title scroll-title">{{item.title}}</p>
@@ -65,7 +65,7 @@
   <h3>Events</h3>
   <ion-scroll scrollX="true" class="front-page-content">
     <div class="somewhere" style="display: inline-flex">
-      <div class="thisisdumb" *ngFor="let item of eventList"></div>
+      <div class="scrollableCard" *ngFor="let item of eventList"></div>
     </div>
   </ion-scroll>
 
@@ -73,7 +73,7 @@
   <ion-scroll scrollX="true" class="front-page-content">
     <div class="somewhere" style="display: inline-flex">
       <div *ngFor="let item of attractionList; let i = index;">
-        <div class="thisisdumb" [style.backgroundImage]="'url('+ item.imageUrl +')'">
+        <div class="scrollableCard" [style.backgroundImage]="'url('+ item.imageUrl +')'">
           <button ion-button round icon-only class="hello" (click)="addAttractionToMainList(item.title)">
             <ion-icon name="add" class="add-button-icon"></ion-icon>
           </button>
