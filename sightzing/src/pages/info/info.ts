@@ -68,8 +68,14 @@ export class InfoPage {
             
 
         /*FUNCTION FOR CHANGE OF ICON*/
-        public changeIcon(theItem): void {
+        public changeIcon(theItem) {
+          
+          for (let i = 0; i < this.items.length; i++) {
+            this.items[i].iconName = "add";
+          }
+
           theItem.iconName = "remove";
+
         }
 
         async presentWelcomePage() {
