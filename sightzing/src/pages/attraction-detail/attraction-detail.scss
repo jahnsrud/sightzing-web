@@ -314,17 +314,23 @@ page-attraction-detail{
     /*Review table*/
     #review-table{
         width: 100%; 
+        margin-top: 16px;
 
         table{
             width: 100%; 
 
             tr{
-                height: 15px;
+                height: 20px;
+            }
+
+            td{
+                h6{
+                    margin: 0; 
+                }
             }
 
             .rate-line-col{
                 width: 60%; 
-                background-color: $color-lighter-gray;
             }
 
             .rate-line{
@@ -332,9 +338,19 @@ page-attraction-detail{
                 height: 15px; 
             }
 
-            #excellent{
-                width: 60%; 
+            .rate-line-background{
+                position: absolute;
+                height: 16px;
+                width: 52%;
+                background-color: $color-lighter-gray;
+                z-index: -1; 
             }
+
+            #excellent{width: 60%;}
+            #very-good{width: 30%;}
+            #average{width: 45%;}
+            #poor{width: 53%;}
+            #terrible{width: 2%;} 
 
             .rate-number{
                 text-align: right; 
