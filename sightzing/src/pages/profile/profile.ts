@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
-
+import { IonicPage, NavController, NavParams, ViewController, ModalController, ToastController } from 'ionic-angular';
+import { LoginAndRegisterPage } from '../login-and-register/login-and-register';
 /**
  * Generated class for the ProfilePage page.
  *
@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams, ViewController, ModalController } 
 })
 export class ProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewController: ViewController, public modalController: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewController: ViewController, public modalController: ModalController, public toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
@@ -26,27 +26,38 @@ export class ProfilePage {
     this.viewController.dismiss(this.modalController);
   }
 
+  loginWithWeibo() {
+
+    let toast = this.toastCtrl.create({
+      message: "Bai Bao signed in 🇨🇳",
+      duration: 3000,
+      position: 'bottom'
+    });
+
+    localStorage.setItem("isloggedin", "true");
+
+    this.checkLoginStatus();
+
+    toast.present();
+
+    this.viewController.dismiss(this.modalController);
+
+  }
+
+  checkLoginStatus(){
+
+    if(localStorage.getItem("isLoggedin") == "true") {
+
+      document.getElementById("loggedindiv").setAttribute("style", "display: block;");
+    }else {}
+    
+  }
   
 
   changeToLogin() {
     
-    let registerGrid = document.getElementById("registerdiv");
-    let loginGrid = document.getElementById("logindiv");
-    let profileGrid = document.getElementById("notloggedindiv");
-    let loginBtn = document.getElementById("loginbtn");
-    let registerBtn = document.getElementById("registerbtn");
-    let profilePlaceHolder = document.getElementById("profilePlaceholder");
-
-    this.loginIsActive();
-    registerGrid.setAttribute("style", "display: none;");
-    profileGrid.setAttribute("style", "display: none;");
-    loginGrid.setAttribute("style", "display: block;");
-    loginBtn.setAttribute("style", "display: block;");
-    registerBtn.setAttribute("style", "display: block;");
-    profilePlaceHolder.setAttribute("style", "display: none;");
-    this.isLoggedIn();
-
-
+    let loginModal = this.modalController.create(LoginAndRegisterPage);
+    loginModal.present();
   }
 
   changeToRegister() {
@@ -98,6 +109,10 @@ export class ProfilePage {
     let profilePlaceholder = document.getElementById("profilePlaceholder");
     let loginBtn = document.getElementById("loginbtn");
     let registerBtn = document.getElementById("registerbtn");
+
+    localStorage.setItem("isLoggedin", "true");
+
+    this.checkLoginStatus();
 
     document.getElementById("title").innerHTML="Profile";
 
@@ -153,13 +168,6 @@ export class ProfilePage {
     editPasswordGrid.setAttribute("style","display: block;");
     loggedinGrid.setAttribute("style","display: none;");
     profilePlaceholder.setAttribute("style","display: none;");
-  }
-
-  isLoggedIn() {
-
-    localStorage.getItem("loggedIn");
-    localStorage.setItem("loggedIn", "true");
-    return true;
   }
 
   registrationIsActive() {
