@@ -7,33 +7,35 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Welcome</ion-title>
+    <ion-title></ion-title>
   </ion-navbar>
 
-  <img ion-img src="sightzing\src\assets\imgs\logo.png">
 </ion-header>
 
 
 <ion-content padding class="welcome">
+  
+  <img id="splash-logo" src="../assets/imgs/logo-sightzing.png">
+  <p id="splash-intro-text">24 hours in Oslo? No problem</p>
 
     <ion-grid class="splash-log-in">
 
         <ion-row class="row">
-          <ion-col col-12>
-            <button ion-button class="btn button-full button-round">Log in with Weibo<ion-img id="weibologo" src="../../assets/imgs/weibo-logo.png"></ion-img></button>
-          </ion-col>
+
+            <button (click)="loginWithWeibo()" ion-button class="btn button-full button-round"><ion-img id="weibo-logo" src="../../assets/imgs/weibo-logo.png"></ion-img> Log in with Weibo</button>
+
         </ion-row>
     
         <ion-row class="row">
-            <ion-col col-12>
-              <button ion-button class="btn button-full button-round" (click)="changeToRegister()">Register with email</button>
-            </ion-col>
+
+              <button ion-button class="btn button-full button-round">Register with email</button>
+
         </ion-row>
     
         <ion-row class="row">
-          <ion-col col-12>
+          
             <button ion-button class="btn button-full button-round" (click)="dismiss()">Skip</button>
-          </ion-col>
+
         </ion-row>
     
       </ion-grid>
