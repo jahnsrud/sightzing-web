@@ -11,13 +11,13 @@
   <!----------->
   <ion-list>
 
-    <button detail-none (click)="expandItem(item)" ion-item *ngFor="let item of items" (click)="clickFunction()">
-      <ion-icon [name]="(isClicked) ? 'remove' : 'add'">
+    <button detail-none (click)="expandItem(item)" ion-item *ngFor="let item of items" (click)="changeIcon(item)">
+      <ion-icon [name]="item.iconName">
       </ion-icon>
-      <h2 style="font-weight: bold">{{ item.title }}</h2>
+      <h3 style="font-weight: bold">{{ item.title }}</h3>
       <br>
       <expandable [expandHeight]="itemExpandHeight" [expanded]="item.expanded">
-        {{ item.content }}
+        <p>{{ item.content }}</p>
       </expandable>
     </button>
 
@@ -25,5 +25,8 @@
   <!----------->
   <!--END-OF-BUTTONS-->
   <!----------->
+
+  <h3>Coming soon</h3>
+  <button ion-button shape="round" color="primary" (click)="presentWelcomePage()">Open Welcome Screen</button>
 
 </ion-content>
