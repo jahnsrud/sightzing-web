@@ -33,4 +33,23 @@ export class RegisterPage {
     this.viewCtrl.dismiss(this.modalCtrl);
   }
 
+  changeToWelcomeUser() {
+
+    let registerGrid = document.getElementById("registerdiv");
+    let welcomeUserGrid = document.getElementById("welcomeuserdiv");
+    let loginBtn = document.getElementById("loginbtn");
+    let registerBtn = document.getElementById("registerbtn");
+    let profilePlaceHolder = document.getElementById("profilePlaceholder");
+    let plusBtn = document.getElementById("plusbtn");
+    
+    document.getElementById("title").innerHTML="Welcome!";
+
+    registerGrid.setAttribute("style", "display: none;");
+    welcomeUserGrid.setAttribute("style", "display: block;");
+    loginBtn.setAttribute("style", "visibility: hidden;");
+    registerBtn.setAttribute("style", "visibility: hidden;");
+    profilePlaceHolder.setAttribute("style", "display: block;");
+    plusBtn.setAttribute("style", "display: block");
+  }
+
 }

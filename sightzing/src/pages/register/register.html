@@ -15,7 +15,7 @@
     <h1 id="title">Profile</h1>
       </ion-col>
       <ion-col>
-    <button ion-button class="button button-assertive button-clear" id="registerbtn" ngDisabled="checked" (click)="changeToRegister()">Register</button>
+    <button ion-button class="button button-assertive button-clear" id="registerbtn" (click)="changeToRegister()" disabled>Register</button>
       </ion-col>
       <ion-col>
     <button ion-button class="button button-assertive button-clear" id="loginbtn" (click)="changeToLogin()">Log in</button>
@@ -27,6 +27,9 @@
 
 
 <ion-content padding>
+
+    <img ion-img id="profilePlaceholder" src="http://pronksiapartments.ee/wp-content/uploads/2015/10/placeholder-face-big.png">
+    <button ion-button round id="plusbtn">+</button>
 
   <div id="registerdiv">
     <ion-list>
@@ -46,6 +49,22 @@
         
 
     </ion-list>
+</div>
+
+<div id="welcomeuserdiv">
+
+  <ion-list>
+    <ion-item>
+        <ion-input placeholder="Full Name" class="input" id="fullname"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+    <ion-input placeholder="Country" class="input" id="countryinput"></ion-input>
+    </ion-item>
+
+    <button ion-button class="btn button-full button-round" (click)="changeToLoggedinUser()">Save</button>
+
+  </ion-list>
 </div>
 
 </ion-content>
