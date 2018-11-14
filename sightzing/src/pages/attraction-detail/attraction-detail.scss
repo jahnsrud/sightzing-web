@@ -315,6 +315,7 @@ page-attraction-detail{
     #review-table{
         width: 100%; 
         margin-top: 16px;
+        margin-bottom: 24px;
 
         table{
             width: 100%; 
@@ -335,7 +336,7 @@ page-attraction-detail{
 
             .rate-line{
                 background-color: $color-orange;
-                height: 15px; 
+                height: 16px; 
             }
 
             .rate-line-background{
@@ -358,5 +359,56 @@ page-attraction-detail{
         }
 
 
+    }
+
+    .review-row{
+        margin-top: 8px; 
+
+        .review-img-col{
+            padding-right: 8px; 
+
+            .review-img-container{
+                width: 60px; 
+                height: 60px; 
+                border-radius: 60px; 
+                background-color: gray; 
+                overflow: hidden; 
+                margin: auto; 
+
+                img{
+                    object-fit: cover;
+                    min-height: 100%; 
+                    min-width: 100%; 
+                }
+            }
+            ion-row{
+                text-align: center; 
+                p{
+                    font-size: 1em;
+                    font-weight: 700;
+                    margin: auto; 
+                    padding-top: 8px; 
+                }
+
+                h6{
+                    margin: auto; 
+                    padding-top: 8px; 
+                }
+            }
+            
+        }
+
+        .review-txt-col{
+            .review-star-row{
+                padding-bottom: 8px; 
+            }
+            h6{
+                margin: 3px 0 0 10px; 
+            }
+            p{
+                margin-top: 0; 
+                font-size: 1em;
+            }
+        }
     }
 }
