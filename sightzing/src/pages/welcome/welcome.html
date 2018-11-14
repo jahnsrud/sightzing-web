@@ -16,10 +16,10 @@
 <ion-content padding class="welcome">
 
   <img id="splash-logo" src="../assets/imgs/logo-sightzing.png">
+  <h1 class="splash-intro-header">Sightzing</h1>
   <p id="splash-intro-text">24 hours in Oslo? No problem</p>
 
-  <ion-grid class="splash-log-in">
-
+  <div class="splash-log-in">
     <ion-row class="row">
       <button ion-button shape="round" class="btn" color="primary" (click)="loginWithWeibo()">
         <ion-img id="weibo-logo" src="../../assets/imgs/weibo-logo.png"></ion-img>Log in with Weibo
@@ -34,6 +34,6 @@
       <button ion-button shape="round" class="btn" color="primary" (click)="dismiss()">Skip</button>
     </ion-row>
 
-  </ion-grid>
+  </div>
 
 </ion-content>

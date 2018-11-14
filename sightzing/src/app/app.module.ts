@@ -20,6 +20,7 @@ import { TourPage } from '../pages/tour/tour';
 import { ProfilePage } from '../pages/profile/profile';
 import { TourList } from './tour/tourlist';
 import { TicketsBuyPage } from '../pages/tickets-buy/tickets-buy';
+import { LoginAndRegisterPage } from '../pages/login-and-register/login-and-register';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { TicketsBuyPage } from '../pages/tickets-buy/tickets-buy';
     ExpandableComponent,
     TourPage,
     ProfilePage,
-    TicketsBuyPage
+    TicketsBuyPage,
+    LoginAndRegisterPage
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { TicketsBuyPage } from '../pages/tickets-buy/tickets-buy';
     ExpandableComponent,
     TourPage,
     ProfilePage,
-    TicketsBuyPage
+    TicketsBuyPage,
+    LoginAndRegisterPage
   ],
   providers: [
     StatusBar,

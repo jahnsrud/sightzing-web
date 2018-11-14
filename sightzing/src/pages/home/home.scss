@@ -35,7 +35,9 @@ ion-slides {
     width: 95%;
     height: 200px;
     background-color: #E9E9E9;
-    background: url('../../assets/imgs/sights.jpg') no-repeat center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 10px;
     padding: 10px;
     overflow: hidden;
@@ -78,7 +80,7 @@ h3 {
     margin-left: 10px;
 }
 
-.thisisdumb {
+.scrollableCard {
     width: 125px;
     height: 175px;
     background: lightgray;
