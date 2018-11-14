@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, ModalController, ViewController, NavParams } from 'ionic-angular';
+import { ProfilePage } from '../profile/profile'
 
 /**
  * Generated class for the WelcomePage page.
@@ -25,4 +26,6 @@ export class WelcomePage {
   dismiss() {
     this.viewController.dismiss(this.modalController);
   }
+
+  
 }
