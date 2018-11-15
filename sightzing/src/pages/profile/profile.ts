@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, ModalController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, ModalController, ToastController, ActionSheetController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { RegisterPage } from '../register/register';
 /**
@@ -16,7 +16,7 @@ import { RegisterPage } from '../register/register';
 })
 export class ProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewController: ViewController, public modalController: ModalController, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewController: ViewController, public modalController: ModalController, public toastCtrl: ToastController, public actionSheetCtrl: ActionSheetController) {
   }
 
   ionViewDidLoad() {
@@ -137,4 +137,26 @@ export class ProfilePage {
     }
   }
 
+  presentActionSheet() {
+
+  let actionsheet = this.actionSheetCtrl.create({
+    title: 'Are you sure you want to sign out?',
+    buttons: [
+      {
+        text: 'Yes',
+        role: 'destructive',
+        handler: () => {
+          this.signOut();
+        }
+      },
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        handler: () => {
+        }
+      }
+    ]
+  });
+    actionsheet.present();
+  }
 }
