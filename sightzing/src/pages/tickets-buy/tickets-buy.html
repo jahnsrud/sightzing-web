@@ -8,6 +8,13 @@
 
   <ion-navbar>
     <ion-title>Confirm</ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()">
+        Cancel
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 
 </ion-header>
@@ -21,6 +28,5 @@
   <iframe *ngIf="shouldViewFaceId" class="face-id" width="90" height="90" src="https://lottiefiles.com/iframe/1052-face-id" frameborder="0" allowfullscreen></iframe>
 
   <button *ngIf="!shouldViewFaceId" ion-button shape="round" class="btn" color="primary" (click)=confirmPurchase()>Purchase</button>
-  <button *ngIf="!shouldViewFaceId" ion-button shape="round" class="btn" color="primary" (click)=dismiss()>Cancel</button>
 
 </ion-content>
