@@ -11,13 +11,13 @@
   <ion-grid class="kappagrid">
     <ion-row id="titleandbtnsrow">
       <ion-col>
-    <h1 id="title">Profile</h1>
+        <h1 id="title">Profile</h1>
       </ion-col>
       <ion-col>
-    <button ion-button class="button button-assertive button-clear" id="registerbtn" ngDisabled="checked" (click)="changeToRegister()">Register</button>
+        <button ion-button class="button button-assertive button-clear" id="registerbtn" ngDisabled="checked" (click)="changeToRegister()">Register</button>
       </ion-col>
       <ion-col>
-    <button ion-button class="button button-assertive button-clear" id="loginbtn" (click)="changeToLogin()">Log in</button>
+        <button ion-button class="button button-assertive button-clear" id="loginbtn" (click)="changeToLogin()">Log in</button>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -28,103 +28,49 @@
 
   <img ion-img id="profilePlaceholder" src="http://pronksiapartments.ee/wp-content/uploads/2015/10/placeholder-face-big.png">
   <button ion-button round id="plusbtn">+</button>
- 
+
   <div id="notloggedindiv">
-  <p class="tinyText">You are not logged in.</p>
- 
+    <p class="tinyText">You are not logged in.</p>
 
-     
-          <button ion-button class="btn button-full button-round" (click)="loginWithWeibo()">Log in with Weibo<ion-img id="weibologo" src="../../assets/imgs/weibo-logo.png"></ion-img></button>
-        
-  
-     
-            <button ion-button class="btn button-full button-round" (click)="changeToLogin()">Log in</button>
-          
-  
-      
-          <button ion-button class="btn button-full button-round" ngDisabled="checked" (click)="changeToRegister()">Register</button>
-  </div>
 
-  <div id="logindiv">
-      <ion-list>
-          <ion-item>
-            <ion-input placeholder="Username/email" class="input"></ion-input>
-          </ion-item>
 
-          <ion-item>
-              <ion-input placeholder="Password" class="input"></ion-input>
-          </ion-item>
-      </ion-list>
+    <button ion-button class="btn button-full button-round" (click)="loginWithWeibo()"><ion-img id="weibo-logo"
+      src="../../assets/imgs/weibo-logo.png"></ion-img>Log in with Weibo</button>
 
-            <button ion-button class="btn button-full button-round" (click)="changeToLoggedinUser()">Log in</button>
-          
-            <p class="ortext">Or</p>
+    <button ion-button class="btn button-full button-round" (click)="changeToLogin()">Log in</button>
 
-            <button ion-button class="btn button-full button-round" (click)="loginWithWeibo()">Log in with Weibo</button>
-  </div>
-
-  <div id="registerdiv">
-      <ion-list>
-          <ion-item>
-            <ion-input placeholder="email" class="input" id="emailinput"></ion-input>
-          </ion-item>
-
-          <ion-item>
-              <ion-input placeholder="Password" class="input"></ion-input>
-          </ion-item>
-
-          <ion-item>
-            <ion-input placeholder="Confirm Password" class="input"></ion-input>
-          </ion-item>
-
-          <button ion-button class="btn button-full button-round" (click)="changeToWelcomeUser()">Register</button>
-          
-
-      </ion-list>
-  </div>
-
-  <div id="welcomeuserdiv">
-
-    <ion-list>
-      <ion-item>
-          <ion-input placeholder="Full Name" class="input" id="fullname"></ion-input>
-      </ion-item>
-      
-      <ion-item>
-      <ion-input placeholder="Country" class="input" id="countryinput"></ion-input>
-      </ion-item>
-
-      <button ion-button class="btn button-full button-round" (click)="changeToLoggedinUser()">Save</button>
-
-    </ion-list>
+    <button ion-button class="btn button-full button-round" ngDisabled="checked" (click)="changeToRegister()">Register</button>
   </div>
 
   <div id="loggedindiv">
-        <h3 id= "username" class="userinfo">Username</h3>
-      
-        <p id= "email" class="userinfo">email@hotmail.com</p>
-      
-        <p id= "country" class="userinfo">China</p>
+    <h3 id="username" class="userinfo">Username</h3>
 
-        <button ion-button class="btn button-full button-round" (click)="changeToEditPassword()">Edit password</button>
+    <p id="email" class="userinfo">email@hotmail.com</p>
 
-        <button ion-button class="btn button-full button-round" (click)="changeToEditProfile()">Edit profile</button>
+    <p id="country" class="userinfo">China</p>
 
-        <button ion-button class="btn button-full button-round" (click)="signOut()">Sign out</button>
+    <button ion-button class="btn button-full button-round" (click)="changeToEditPassword()">Edit password</button>
+
+    <button ion-button class="btn button-full button-round" (click)="changeToEditProfile()">Edit profile</button>
+
+    <button ion-button class="btn button-full button-round" (click)="presentActionSheet()">Sign out</button>
   </div>
 
   <div id="editprofilediv">
     <ion-list>
       <ion-item>
-          <ion-input placeholder="Full Name" class="input" id="fullname"></ion-input>
-      </ion-item>
-      
-      <ion-item>
-      <ion-input placeholder="Country" class="input" id="countryinput"></ion-input>
+        <ion-label stacked>Full Name</ion-label>
+        <ion-input type="text" class="input" id="fullname"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input placeholder="email" class="input"></ion-input>
+        <ion-label stacked>Country</ion-label>
+        <ion-input type="text" class="input" id="countryinput"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Email</ion-label>
+        <ion-input type="email" class="input"></ion-input>
       </ion-item>
     </ion-list>
 
@@ -132,28 +78,31 @@
 
     <p class="tinyText">Or</p>
 
-    <button ion-button class="btn button-full button-round" (click)="signOut()">Delete profile</button>
+    <button ion-button class="btn button-full button-round" (click)="presentDeleteProfileActionSheet()">Delete profile</button>
 
   </div>
 
   <div id="editpassworddiv">
     <ion-list>
       <ion-item>
-        <ion-input placeholder="Old password"></ion-input>
+        <ion-label stacked>Old password</ion-label>
+        <ion-input type="password"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input placeholder="New password"></ion-input>
+        <ion-label stacked>New password</ion-label>
+        <ion-input type="password"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input placeholder="Confirm password"></ion-input>
+        <ion-label stacked>Confirm password</ion-label>
+        <ion-input type="passwrod"></ion-input>
       </ion-item>
     </ion-list>
     <button ion-button class="btn button-full button-round" (click)="changeToLoggedinUser()">Confirm</button>
 
   </div>
-  
-       
+
+
 
 </ion-content>

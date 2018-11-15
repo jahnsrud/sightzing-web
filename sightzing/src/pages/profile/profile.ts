@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, ModalController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, ModalController, ToastController, ActionSheetController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { RegisterPage } from '../register/register';
 /**
@@ -16,11 +16,12 @@ import { RegisterPage } from '../register/register';
 })
 export class ProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewController: ViewController, public modalController: ModalController, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewController: ViewController, public modalController: ModalController, public toastCtrl: ToastController, public actionSheetCtrl: ActionSheetController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
+    this.checkLoggedinStatus();
   }
 
   dismiss() {
@@ -35,23 +36,12 @@ export class ProfilePage {
       position: 'bottom'
     });
 
-    localStorage.setItem("isloggedin", "true");
-
-    this.checkLoginStatus();
+    localStorage.setItem("isLoggedin", "true");
 
     toast.present();
 
     this.viewController.dismiss(this.modalController);
 
-  }
-
-  checkLoginStatus(){
-
-    if(localStorage.getItem("isLoggedin") == "true") {
-
-      document.getElementById("loggedindiv").setAttribute("style", "display: block;");
-    }else {}
-    
   }
   
 
@@ -67,52 +57,23 @@ export class ProfilePage {
     this.dismiss();
   }
 
-  changeToWelcomeUser() {
-
-    let registerGrid = document.getElementById("registerdiv");
-    let welcomeUserGrid = document.getElementById("welcomeuserdiv");
-    let loginBtn = document.getElementById("loginbtn");
-    let registerBtn = document.getElementById("registerbtn");
-    let profilePlaceHolder = document.getElementById("profilePlaceholder");
-    let plusBtn = document.getElementById("plusbtn");
-    
-    document.getElementById("title").innerHTML="Welcome!";
-
-    registerGrid.setAttribute("style", "display: none;");
-    welcomeUserGrid.setAttribute("style", "display: block;");
-    loginBtn.setAttribute("style", "visibility: hidden;");
-    registerBtn.setAttribute("style", "visibility: hidden;");
-    profilePlaceHolder.setAttribute("style", "display: block;");
-    plusBtn.setAttribute("style", "display: block");
-  }
-
   changeToLoggedinUser() {
 
     let editPasswordGrid = document.getElementById("editpassworddiv");
-    let editProfieGrid = document.getElementById("editprofilediv");
+    let editProfileGrid = document.getElementById("editprofilediv");
     let loggedinGrid = document.getElementById("loggedindiv");
-    let loginGrid = document.getElementById("logindiv");
-    let welcomeUserGrid = document.getElementById("welcomeuserdiv");
     let plusBtn = document.getElementById("plusbtn");
     let profilePlaceholder = document.getElementById("profilePlaceholder");
-    let loginBtn = document.getElementById("loginbtn");
-    let registerBtn = document.getElementById("registerbtn");
 
     localStorage.setItem("isLoggedin", "true");
-
-    this.checkLoginStatus();
 
     document.getElementById("title").innerHTML="Profile";
 
     editPasswordGrid.setAttribute("style","display: none;");
-    editProfieGrid.setAttribute("style","display: none;");
+    editProfileGrid.setAttribute("style","display: none;");
     profilePlaceholder.setAttribute("style","display: block;");
-    loginGrid.setAttribute("style","display: none;");
     loggedinGrid.setAttribute("style", "display: block;");
-    welcomeUserGrid.setAttribute("style","display: none");
     plusBtn.setAttribute("style","display: none;");
-    loginBtn.setAttribute("style", "visibility: hidden;");
-    registerBtn.setAttribute("style", "visibility: hidden;");    
   }
 
   signOut() {
@@ -123,6 +84,7 @@ export class ProfilePage {
     let plusBtn = document.getElementById("plusbtn");
 
     document.getElementById("title").innerHTML="Profile";
+    localStorage.setItem("isLoggedin", "false");
 
     plusBtn.setAttribute("style", "display: none;");
     profileGrid.setAttribute("style","display: block");
@@ -158,16 +120,60 @@ export class ProfilePage {
     profilePlaceholder.setAttribute("style","display: none;");
   }
 
-  registrationIsActive() {
-    (<HTMLInputElement> document.getElementById("registerbtn")).disabled = true;
-    (<HTMLInputElement> document.getElementById("loginbtn")).disabled = false;
+  checkLoggedinStatus() {
 
+    if(localStorage.getItem("isLoggedin")== "true") {
+      document.getElementById("notloggedindiv").setAttribute("style","display: none;");
+      document.getElementById("loggedindiv").setAttribute("style","display: block;");
+    } else {
+      document.getElementById("loggedindiv").setAttribute("style", "display: none;");
+      document.getElementById("notloggedindiv").setAttribute("style","display: block;");
+    }
   }
 
-  loginIsActive() {
+  presentActionSheet() {
 
-    (<HTMLInputElement> document.getElementById("loginbtn")).disabled = true;
-    (<HTMLInputElement> document.getElementById("registerbtn")).disabled = false;
+  let actionSheet = this.actionSheetCtrl.create({
+    title: 'Are you sure you want to sign out?',
+    buttons: [
+      {
+        text: 'Yes',
+        role: 'destructive',
+        handler: () => {
+          this.signOut();
+        }
+      },
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        handler: () => {
+        }
+      }
+    ]
+  });
+    actionSheet.present();
   }
 
+  presentDeleteProfileActionSheet() {
+
+    let actionSheet = this.actionSheetCtrl.create({
+      title: 'Are you sure you want to delete your profile?',
+      buttons: [
+        {
+          text: 'Yes, delete my Profile',
+          role: 'destructive',
+          handler: () => {
+            this.signOut();
+          }
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+          }
+        }
+      ]
+    });
+    actionSheet.present();
+  }
 }

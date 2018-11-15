@@ -15,6 +15,8 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 })
 export class TicketsBuyPage {
 
+  shouldViewFaceId:boolean = false;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewController: ViewController) {
   }
 
@@ -24,8 +26,14 @@ export class TicketsBuyPage {
 
   
   confirmPurchase() {
+    this.shouldViewFaceId = true;
     localStorage.setItem("ticketPurchased", "true");
-    this.dismiss();
+
+    setTimeout(() => {
+      this.dismiss();
+    }, 6400);
+
+    // this.dismiss();
   }
         
   dismiss() {

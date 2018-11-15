@@ -14,6 +14,15 @@
       <h1>"Map comes later"</h1>
   </div>
 
+  <div>
+    <p><!-- {{ time }}--></p> 
+  </div>
+
+  <!--<ion-card>
+    <ion-label>START</ion-label>
+    <ion-input></ion-input>
+  </ion-card> -->
+
   <div *ngFor="let item of tourList.getTourList(); let i = index;">
     <ion-card>
       <div>{{ item.title }}</div>
@@ -23,23 +32,5 @@
       <ion-icon name="walk"></ion-icon>
     </div>
   </div>
-  <!--  <ion-card>
-    <div>Oslo City Hall</div>
-  </ion-card>
-
-  <div class="timeline">
-    <ion-icon name="walk"></ion-icon>
-  </div>
-
-  <ion-card>
-    <div>Oslo City Hall</div>
-  </ion-card>
-
-  <div class="timeline">
-    <ion-icon name="walk"></ion-icon>
-  </div>
-
-  <ion-card>
-    <div>Oslo City Hall</div>
-  </ion-card>-->
+  
 </ion-content>

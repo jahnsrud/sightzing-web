@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {TourList} from '../../app/tour/tourlist';
 import {Attraction} from '../../app/attraction/attraction';
-import {Main} from '../../app/main';
 
 const attraction: Attraction = new Attraction();
 
@@ -12,15 +11,30 @@ const attraction: Attraction = new Attraction();
   templateUrl: 'my-guide.html',
 })
 export class MyGuidePage {
+  attraction:Attraction;
 
-  myAttractions = attraction.getAttraction("Nordmarka");
+  time: number;
+
+  //myAttractions = attraction.getAttraction("Nordmarka");
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public tourList: TourList) {
     attraction.fillListWithAttractions();
-    this.tourList.getTourList();
+
+    //this.time = this.attraction.time;
+
+    //this.tourList.getTourList();
 
   }
 
+  /* getAttractionTime() {
+    this.fillListWithAttractions.forEach(elem => {
+      if (elem.type == "Tour") {
+        elem.attractions.forEach(e => {
+          elem.time += e.time;
+        });
+      }
+    });
+  } */
   
 
 
