@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar id="navbar">
     <ion-title></ion-title>
   </ion-navbar>
 
@@ -197,16 +197,22 @@
           </ion-row>
 
           <!--Opening Hours-->
-          <ion-row>
+          <ion-row id="opening-hours-row">
               <ion-col col-12>
                 <h3>Opening Hours</h3>
               </ion-col>
-              <ion-col>
-                <ion-icon name="time"></ion-icon>
-                <p>Here comes the opening hours. Dont know how to do this yet. </p>
-                <p>{{ openinghours }}</p>
+          </ion-row>
+          <ion-row id="hours-info">
+              <ion-col col-1>
+                <ion-icon name="time" class="bigger-icon"></ion-icon>
               </ion-col>
-            </ion-row>
+              <ion-col col-9>
+                <p>Open now</p>
+              </ion-col>
+              <ion-col col-2 class="right-align">
+                <ion-icon name="ios-information-circle-outline" class="big-icon"></ion-icon>
+              </ion-col>
+          </ion-row>
 
           <!--Popular Hours-->
           <ion-row id="popular-hours-row">
@@ -293,13 +299,146 @@
           <!--Reviews-->
           <ion-row>
               <ion-col col-12>
-                <h3>Reviews</h3>
+                <h3>Reviews (230)</h3>
               </ion-col>
-              <ion-col>
-                <p>Here comes review</p>
-                <p>{{ openinghours }}</p>
+          </ion-row>
+
+          <div id="review-table">
+            <table>
+              <tr>
+                <td><h6>Excellent</h6></td>
+                <td class="rate-line-col">
+                  <div class="rate-line-background"></div>
+                  <div class="rate-line" id="excellent"></div>
+                </td>
+                <td class="rate-number"><h6>60%</h6></td>
+              </tr>
+              <tr>
+                <td><h6>Very good</h6></td>
+                <td class="rate-line-col">
+                  <div class="rate-line-background"></div>
+                  <div class="rate-line" id="very-good"></div>
+                </td>
+                <td class="rate-number"><h6>30%</h6></td>
+              </tr>
+              <tr>
+                <td><h6>Average</h6></td>
+                <td class="rate-line-col">
+                  <div class="rate-line-background"></div>
+                  <div class="rate-line" id="average"></div>
+                </td>
+                <td class="rate-number"><h6>45%</h6></td>
+              </tr>
+              <tr>
+                <td><h6>Poor</h6></td>
+                <td class="rate-line-col">
+                  <div class="rate-line-background"></div>
+                  <div class="rate-line" id="poor"></div>
+                </td>
+                <td class="rate-number"><h6>53%</h6></td>
+              </tr>
+              <tr>
+                <td><h6>Terrible</h6></td>
+                <td class="rate-line-col">
+                  <div class="rate-line-background"></div>
+                  <div class="rate-line" id="terrible"></div>
+                </td>
+                <td class="rate-number"><h6>2%</h6></td>
+              </tr>
+            </table>
+
+          </div>
+
+          <!--Rows for written reviews-->
+          <ion-row class="review-row">
+              <ion-col col-3 class="review-img-col">
+                <ion-row>
+                  <div class="review-img-container">
+                    <img src="../../assets/imgs/clubs.jpg" alt="picture-of-person">
+                  </div>
+                </ion-row>
+                <ion-row>
+                  <p>Fornavn</p>
+                  <h6>Norway</h6>
+                </ion-row>
               </ion-col>
-            </ion-row>
+              <ion-col col-9 class="review-txt-col">
+                <ion-row class="review-star-row">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <h6>4 days ago</h6>
+                </ion-row>
+                <ion-row>
+                  <p>Here comes review. Lorem ipsum er her. Dette er den beste attraksjonen 
+                    ever. Koste meg gløgg ihjel da jeg gikk rundt. Burde absolutt ta med dere kidza
+                    og le boyfriend hvis dere skal til Oslo!
+                  </p>
+                </ion-row>
+              </ion-col>
+          </ion-row>
+
+          <ion-row class="review-row">
+              <ion-col col-3 class="review-img-col">
+                <ion-row>
+                  <div class="review-img-container">
+                    <img src="../../assets/imgs/clubs.jpg" alt="picture-of-person">
+                  </div>
+                </ion-row>
+                <ion-row>
+                  <p>Fornavn</p>
+                  <h6>Norway</h6>
+                </ion-row>
+              </ion-col>
+              <ion-col col-9 class="review-txt-col">
+                <ion-row class="review-star-row">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <h6>4 days ago</h6>
+                </ion-row>
+                <ion-row>
+                  <p>Here comes review. Lorem ipsum er her. Dette er den beste attraksjonen 
+                    ever. Koste meg gløgg ihjel da jeg gikk rundt. Burde absolutt ta med dere kidza
+                    og le boyfriend hvis dere skal til Oslo!
+                  </p>
+                </ion-row>
+              </ion-col>
+          </ion-row>
+
+          <ion-row class="review-row">
+              <ion-col col-3 class="review-img-col">
+                <ion-row>
+                  <div class="review-img-container">
+                    <img src="../../assets/imgs/clubs.jpg" alt="picture-of-person">
+                  </div>
+                </ion-row>
+                <ion-row>
+                  <p>Fornavn</p>
+                  <h6>Norway</h6>
+                </ion-row>
+              </ion-col>
+              <ion-col col-9 class="review-txt-col">
+                <ion-row class="review-star-row">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <h6>4 days ago</h6>
+                </ion-row>
+                <ion-row>
+                  <p>Here comes review. Lorem ipsum er her. Dette er den beste attraksjonen 
+                    ever. Koste meg gløgg ihjel da jeg gikk rundt. Burde absolutt ta med dere kidza
+                    og le boyfriend hvis dere skal til Oslo!
+                  </p>
+                </ion-row>
+              </ion-col>
+          </ion-row>
 
           <!--Rate & Share-->
           <ion-row id="rate-share-row">

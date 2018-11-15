@@ -165,6 +165,28 @@ page-attraction-detail{
         margin-bottom: 24px;
     }
 
+    .bigger-icon{
+        font-size: 1.5em;
+    }
+
+    .big-icon{
+        font-size: 2.2em;
+        color: $color-orange;
+    }
+
+    .right-align{
+        text-align: right; 
+    }
+
+    #hours-info{
+        display: table; 
+
+        ion-col{
+            display: table-cell;
+            vertical-align: middle; 
+        }
+    }
+
     /*Styling for hour graph*/
     /*The container for the background of the graph*/
     #table-background-container{
@@ -289,4 +311,104 @@ page-attraction-detail{
     }
 
 
+    /*Review table*/
+    #review-table{
+        width: 100%; 
+        margin-top: 16px;
+        margin-bottom: 24px;
+
+        table{
+            width: 100%; 
+
+            tr{
+                height: 20px;
+            }
+
+            td{
+                h6{
+                    margin: 0; 
+                }
+            }
+
+            .rate-line-col{
+                width: 60%; 
+            }
+
+            .rate-line{
+                background-color: $color-orange;
+                height: 16px; 
+            }
+
+            .rate-line-background{
+                position: absolute;
+                height: 16px;
+                width: 52%;
+                background-color: $color-lighter-gray;
+                z-index: -1; 
+            }
+
+            #excellent{width: 60%;}
+            #very-good{width: 30%;}
+            #average{width: 45%;}
+            #poor{width: 53%;}
+            #terrible{width: 2%;} 
+
+            .rate-number{
+                text-align: right; 
+            }
+        }
+
+
+    }
+
+    .review-row{
+        margin-top: 8px; 
+
+        .review-img-col{
+            padding-right: 8px; 
+
+            .review-img-container{
+                width: 60px; 
+                height: 60px; 
+                border-radius: 60px; 
+                background-color: gray; 
+                overflow: hidden; 
+                margin: auto; 
+
+                img{
+                    object-fit: cover;
+                    min-height: 100%; 
+                    min-width: 100%; 
+                }
+            }
+            ion-row{
+                text-align: center; 
+                p{
+                    font-size: 1em;
+                    font-weight: 700;
+                    margin: auto; 
+                    padding-top: 8px; 
+                }
+
+                h6{
+                    margin: auto; 
+                    padding-top: 8px; 
+                }
+            }
+            
+        }
+
+        .review-txt-col{
+            .review-star-row{
+                padding-bottom: 8px; 
+            }
+            h6{
+                margin: 3px 0 0 10px; 
+            }
+            p{
+                margin-top: 0; 
+                font-size: 1em;
+            }
+        }
+    }
 }

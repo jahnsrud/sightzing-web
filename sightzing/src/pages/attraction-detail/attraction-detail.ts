@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Label } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Label, Content } from 'ionic-angular';
 import { Attraction } from '../../app/attraction/attraction';
 
 @IonicPage()
@@ -8,7 +8,7 @@ import { Attraction } from '../../app/attraction/attraction';
   templateUrl: 'attraction-detail.html',
 })
 export class AttractionDetailPage {
-
+  @ViewChild(Content) content: Content;
   attraction:Attraction;
 
   title: string;
@@ -19,7 +19,7 @@ export class AttractionDetailPage {
   price: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
+    
     this.attraction = this.navParams.get("attraction");
     this.title = this.attraction.title;
     this.description = this.attraction.description;
@@ -31,10 +31,38 @@ export class AttractionDetailPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AttractionDetailPage');
-
     this.fillPrice();
     this.fillStars();
     this.fillAmneties(); 
+    this.content.ionScrollStart.subscribe(() => {
+      this.changeNavbarOnScroll();
+    });
+    this.content.ionScrollEnd.subscribe(() => {
+      if(this.content.scrollTop == 0){
+        this.changeNavbarToTransparent(); 
+      }
+    });
+  }
+
+
+  changeNavbarOnScroll(){
+    let navbar = document.getElementById("navbar"); 
+    navbar.style.backgroundColor = "white"; 
+    navbar.style.boxShadow = "0 2px 10px 1px rgba(150, 150, 150, 0.1), 0 0px 10px 1px rgba(150, 150, 150, 0.1), 0 7px 10px 0 rgba(150, 150, 150, 0.12)";
+    let backButtons = document.getElementsByClassName("back-button-icon");
+    for(let i = 0; i < backButtons.length; i++){
+      backButtons[i].setAttribute("style", "color: black;")
+    }
+  }
+
+  changeNavbarToTransparent(){
+    let navbar = document.getElementById("navbar"); 
+    navbar.style.backgroundColor = "transparent"; 
+    navbar.style.boxShadow = "none"; 
+    let backButtons = document.getElementsByClassName("back-button-icon");
+    for(let i = 0; i < backButtons.length; i++){
+      backButtons[i].setAttribute("style", "color: white;")
+    }
   }
 
   fillAmneties(){
