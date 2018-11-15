@@ -139,7 +139,7 @@ export class ProfilePage {
 
   presentActionSheet() {
 
-  let actionsheet = this.actionSheetCtrl.create({
+  let actionSheet = this.actionSheetCtrl.create({
     title: 'Are you sure you want to sign out?',
     buttons: [
       {
@@ -157,6 +157,29 @@ export class ProfilePage {
       }
     ]
   });
-    actionsheet.present();
+    actionSheet.present();
+  }
+
+  presentDeleteProfileActionSheet() {
+
+    let actionSheet = this.actionSheetCtrl.create({
+      title: 'Are you sure you want to delete your profile?',
+      buttons: [
+        {
+          text: 'Yes, delete my Profile',
+          role: 'destructive',
+          handler: () => {
+            this.signOut();
+          }
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+          }
+        }
+      ]
+    });
+    actionSheet.present();
   }
 }

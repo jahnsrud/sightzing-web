@@ -50,5 +50,7 @@ export class LoginPage {
       position: 'bottom'
     });
     localStorage.setItem("isLoggedin", "true");
+    toast.present();
+    this.dismiss();
   }
 }
