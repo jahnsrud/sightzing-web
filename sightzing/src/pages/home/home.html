@@ -39,12 +39,12 @@
   <!--I en slider-->
 
   <ion-slides>
-    <ion-slide loop="true" *ngFor="let item of featuredList; let i = index;">
+    <ion-slide loop="true" *ngFor="let item of featuredList; let i = index;" (click)="presentTour(item.title)">
       <div class="featured-card" [style.backgroundImage]="'url(' + item.image + ')'">
         <p class="featured-card-time-usage">{{item.type == 'Attraction' ? item.attraction.time : item.time }}</p>
-        <p class="featured-card-type-heading">{{item.type}}</p>
-        <p class="featured-card-title">{{ item.title }}</p>
       </div>
+      <p class="featured-card-type-heading">{{item.type}}</p>
+      <p class="featured-card-title">{{ item.title }}</p>
     </ion-slide>
   </ion-slides>
 
@@ -56,7 +56,7 @@
         <div class="scrollableCard" [style.backgroundImage]="'url('+ item.imageUrl +')'">
           <div class="inner-image" (click)="presentTour(item.title)">
           </div>
-          <p class="featured-card-title scroll-title">{{item.title}}</p>
+          <p class="scroll-title">{{item.title}}</p>
         </div>
       </div>
     </div>
@@ -79,7 +79,7 @@
           </button>
           <div class="inner-image" (click)="presentAttraction(item.title)">
           </div>
-          <p class="featured-card-title scroll-title">{{item.title}}</p>
+          <p class="scroll-title">{{item.title}}</p>
         </div>
       </div>
     </div>

@@ -51,16 +51,22 @@ ion-slides {
 .featured-card-type-heading {
     font-size: 10pt;
     margin: 0;
-    bottom: 50px;
-    position: absolute;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: left;
+    color: gray;
+    font-weight: bold;
+    // position: absolute;
 }
 
 .featured-card-title {
     font-size: 14pt;
     font-weight: bold;
     margin: 0;
-    bottom: 24px;
-    position: absolute;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+    // position: absolute;
 }
 
 .featured-card-time-usage {
@@ -102,6 +108,9 @@ h3 {
         width: 90px;
         color: white;
         margin-left: 10px;
+        bottom: 8px;
+        position: absolute;
+        font-weight: bold;
     }
 
     .hello {
