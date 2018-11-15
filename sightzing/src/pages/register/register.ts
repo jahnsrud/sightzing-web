@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
+import { ProfilePage } from '../profile/profile';
 
 /**
  * Generated class for the RegisterPage page.
@@ -29,6 +30,13 @@ export class RegisterPage {
     this.dismiss();
   }
 
+  changeToLoggedinUser() {
+    let loggedinModal = this.modalCtrl.create(ProfilePage);
+    loggedinModal.present();
+    this.dismiss();
+    localStorage.setItem("isLoggedIn", "true");
+  }
+
   dismiss() {
     this.viewCtrl.dismiss(this.modalCtrl);
   }
@@ -46,8 +54,8 @@ export class RegisterPage {
 
     registerGrid.setAttribute("style", "display: none;");
     welcomeUserGrid.setAttribute("style", "display: block;");
-    loginBtn.setAttribute("style", "visibility: hidden;");
-    registerBtn.setAttribute("style", "visibility: hidden;");
+    loginBtn.setAttribute("style", "display: none;");
+    registerBtn.setAttribute("style", "display: none;");
     profilePlaceHolder.setAttribute("style", "display: block;");
     plusBtn.setAttribute("style", "display: block");
   }

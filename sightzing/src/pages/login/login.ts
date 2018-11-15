@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, ViewController, ToastController } from 'ionic-angular';
 import { RegisterPage } from '../register/register';
 
 /**
@@ -16,7 +16,7 @@ import { RegisterPage } from '../register/register';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController, public toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
@@ -34,4 +34,12 @@ export class LoginPage {
     this.viewCtrl.dismiss(this.modalCtrl);
   }
 
+  loginWithWeibo() {
+
+    let toast = this.toastCtrl.create({
+      message: "Bai Bao signed in 🇨🇳",
+      duration: 3000,
+      position: 'bottom'
+    });
+  }
 }

@@ -170,4 +170,14 @@ export class ProfilePage {
     (<HTMLInputElement> document.getElementById("registerbtn")).disabled = false;
   }
 
+  checkLoggedinStatus() {
+
+    if(localStorage.getItem("isLoggedin")== "true") {
+      document.getElementById("notloggedindiv").setAttribute("style","display: none;");
+      document.getElementById("loggedindiv").setAttribute("style","display: block;;");
+    } else {
+      document.getElementById("notloggedindiv").setAttribute("style","display: block;;");
+    }
+  }
+
 }
