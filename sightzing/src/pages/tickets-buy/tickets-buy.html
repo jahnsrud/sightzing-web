@@ -8,13 +8,12 @@
 
   <ion-navbar>
     <ion-title>Confirm</ion-title>
+    <ion-buttons end *ngIf="!shouldViewFaceId">
 
-    <ion-buttons end>
       <button ion-button (click)="dismiss()">
         Cancel
       </button>
     </ion-buttons>
-
   </ion-navbar>
 
 </ion-header>
@@ -22,10 +21,11 @@
 
 <ion-content padding>
 
-  <h1>24 hour Oslo City Pass</h1>
+  <h1 *ngIf="!shouldViewFaceId">24 hour Oslo City Pass</h1>
   <p *ngIf="!shouldViewFaceId">395 NOK from your Alipay account</p>
 
   <iframe *ngIf="shouldViewFaceId" class="face-id" width="90" height="90" src="https://lottiefiles.com/iframe/1052-face-id" frameborder="0" allowfullscreen></iframe>
+  <p *ngIf="shouldViewFaceId" class="face-id-subtitle">Face ID</p>
 
   <button *ngIf="!shouldViewFaceId" ion-button shape="round" class="btn" color="primary" (click)=confirmPurchase()>Purchase</button>
 
