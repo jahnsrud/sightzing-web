@@ -34,15 +34,18 @@
   <div id="registerdiv">
     <ion-list>
         <ion-item>
-          <ion-input type="email" placeholder="email" class="input" id="emailinput"></ion-input>
+          <ion-label stacked>email</ion-label>
+          <ion-input type="email" class="input" id="emailinput"></ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-input type="Password" placeholder="Password" class="input"></ion-input>
+          <ion-label stacked>Password</ion-label>
+            <ion-input type="Password" class="input"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-input type="Password" placeholder="Confirm Password" class="input"></ion-input>
+          <ion-label stacked>Confirm Password</ion-label>
+          <ion-input type="Password" class="input"></ion-input>
         </ion-item>
 
         <button ion-button class="btn button-full button-round" (click)="changeToWelcomeUser()">Register</button>
@@ -55,11 +58,13 @@
 
   <ion-list>
     <ion-item>
-        <ion-input type="text" placeholder="Full Name" class="input" id="fullname"></ion-input>
+        <ion-label stacked>Full Name</ion-label>
+        <ion-input type="text" class="input" id="fullname"></ion-input>
     </ion-item>
     
     <ion-item>
-    <ion-input type="text" placeholder="Country" class="input" id="countryinput"></ion-input>
+      <ion-label stacked>Country</ion-label>
+    <ion-input type="text" class="input" id="countryinput"></ion-input>
     </ion-item>
 
     <button ion-button class="btn button-full button-round" (click)="changeToLoggedinUser()">Save</button>

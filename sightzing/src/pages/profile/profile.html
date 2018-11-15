@@ -59,15 +59,18 @@
   <div id="editprofilediv">
     <ion-list>
       <ion-item>
-        <ion-input type="text" placeholder="Full Name" class="input" id="fullname"></ion-input>
+        <ion-label stacked>Full Name</ion-label>
+        <ion-input type="text" class="input" id="fullname"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input type="text" placeholder="Country" class="input" id="countryinput"></ion-input>
+        <ion-label stacked>Country</ion-label>
+        <ion-input type="text" class="input" id="countryinput"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input type="email" placeholder="email" class="input"></ion-input>
+        <ion-label stacked>Email</ion-label>
+        <ion-input type="email" class="input"></ion-input>
       </ion-item>
     </ion-list>
 
@@ -82,15 +85,18 @@
   <div id="editpassworddiv">
     <ion-list>
       <ion-item>
-        <ion-input type="password" placeholder="Old password"></ion-input>
+        <ion-label stacked>Old password</ion-label>
+        <ion-input type="password"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input type="password" placeholder="New password"></ion-input>
+        <ion-label stacked>New password</ion-label>
+        <ion-input type="password"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input type="passwrod" placeholder="Confirm password"></ion-input>
+        <ion-label stacked>Confirm password</ion-label>
+        <ion-input type="passwrod"></ion-input>
       </ion-item>
     </ion-list>
     <button ion-button class="btn button-full button-round" (click)="changeToLoggedinUser()">Confirm</button>

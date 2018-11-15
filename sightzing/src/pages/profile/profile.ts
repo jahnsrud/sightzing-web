@@ -60,26 +60,20 @@ export class ProfilePage {
   changeToLoggedinUser() {
 
     let editPasswordGrid = document.getElementById("editpassworddiv");
-    let editProfieGrid = document.getElementById("editprofilediv");
+    let editProfileGrid = document.getElementById("editprofilediv");
     let loggedinGrid = document.getElementById("loggedindiv");
-    let loginGrid = document.getElementById("logindiv");
     let plusBtn = document.getElementById("plusbtn");
     let profilePlaceholder = document.getElementById("profilePlaceholder");
-    let loginBtn = document.getElementById("loginbtn");
-    let registerBtn = document.getElementById("registerbtn");
 
     localStorage.setItem("isLoggedin", "true");
 
     document.getElementById("title").innerHTML="Profile";
 
     editPasswordGrid.setAttribute("style","display: none;");
-    editProfieGrid.setAttribute("style","display: none;");
+    editProfileGrid.setAttribute("style","display: none;");
     profilePlaceholder.setAttribute("style","display: block;");
-    loginGrid.setAttribute("style","display: none;");
     loggedinGrid.setAttribute("style", "display: block;");
     plusBtn.setAttribute("style","display: none;");
-    loginBtn.setAttribute("style", "visibility: hidden;");
-    registerBtn.setAttribute("style", "visibility: hidden;");    
   }
 
   signOut() {
