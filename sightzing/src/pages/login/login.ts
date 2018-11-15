@@ -17,6 +17,7 @@ import { ProfilePage } from '../profile/profile';
 })
 export class LoginPage {
 
+  public emailOrUsername: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController, public toastCtrl: ToastController) {
   }
 
@@ -30,6 +31,7 @@ export class LoginPage {
     loggedinModal.present();
     this.dismiss();
     localStorage.setItem("isLoggedin", "true");
+    this.checkInput();
   }
 
   changeToRegister() {
@@ -42,6 +44,18 @@ export class LoginPage {
     this.viewCtrl.dismiss(this.modalCtrl);
   }
 
+  checkInput() {
+    if(this.emailOrUsername.includes("@")){
+      localStorage.setItem("emailInput", this.emailOrUsername);
+      localStorage.setItem("Country", "China");
+      localStorage.setItem("Username", "Your Username");
+      } 
+      else {
+        localStorage.setItem("Username", this.emailOrUsername);
+        localStorage.setItem("emailInput", "YourEmail@email.com");
+        localStorage.setItem("Country", "China");
+      }
+}
   loginWithWeibo() {
 
     let toast = this.toastCtrl.create({

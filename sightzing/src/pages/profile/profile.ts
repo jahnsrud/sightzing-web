@@ -16,6 +16,9 @@ import { RegisterPage } from '../register/register';
 })
 export class ProfilePage {
 
+  public Username: any;
+  public Country: any;
+  public emailInput: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewController: ViewController, public modalController: ModalController, public toastCtrl: ToastController, public actionSheetCtrl: ActionSheetController) {
   }
 
@@ -75,6 +78,9 @@ export class ProfilePage {
     localStorage.setItem("isLoggedin", "true");
 
     document.getElementById("title").innerHTML="Profile";
+    localStorage.setItem("emailInput",this.emailInput);
+    localStorage.setItem("Username", this.Username);
+    localStorage.setItem("Country", this.Country);
 
     editPasswordGrid.setAttribute("style","display: none;");
     editProfileGrid.setAttribute("style","display: none;");
