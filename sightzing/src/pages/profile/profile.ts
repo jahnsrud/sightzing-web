@@ -21,6 +21,7 @@ export class ProfilePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
+    this.checkLoggedinStatus();
   }
 
   dismiss() {
@@ -35,23 +36,12 @@ export class ProfilePage {
       position: 'bottom'
     });
 
-    localStorage.setItem("isloggedin", "true");
-
-    this.checkLoginStatus();
+    localStorage.setItem("isLoggedin", "true");
 
     toast.present();
 
     this.viewController.dismiss(this.modalController);
 
-  }
-
-  checkLoginStatus(){
-
-    if(localStorage.getItem("isLoggedin") == "true") {
-
-      document.getElementById("loggedindiv").setAttribute("style", "display: block;");
-    }else {}
-    
   }
   
 
@@ -123,6 +113,7 @@ export class ProfilePage {
     let plusBtn = document.getElementById("plusbtn");
 
     document.getElementById("title").innerHTML="Profile";
+    localStorage.setItem("isLoggedin", "false");
 
     plusBtn.setAttribute("style", "display: none;");
     profileGrid.setAttribute("style","display: block");
@@ -174,9 +165,10 @@ export class ProfilePage {
 
     if(localStorage.getItem("isLoggedin")== "true") {
       document.getElementById("notloggedindiv").setAttribute("style","display: none;");
-      document.getElementById("loggedindiv").setAttribute("style","display: block;;");
+      document.getElementById("loggedindiv").setAttribute("style","display: block;");
     } else {
-      document.getElementById("notloggedindiv").setAttribute("style","display: block;;");
+      document.getElementById("loggedindiv").setAttribute("style", "display: none;");
+      document.getElementById("notloggedindiv").setAttribute("style","display: block;");
     }
   }
 

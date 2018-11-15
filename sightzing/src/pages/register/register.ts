@@ -34,7 +34,7 @@ export class RegisterPage {
     let loggedinModal = this.modalCtrl.create(ProfilePage);
     loggedinModal.present();
     this.dismiss();
-    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("isLoggedin", "true");
   }
 
   dismiss() {

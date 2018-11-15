@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, ViewController, ToastController } from 'ionic-angular';
 import { RegisterPage } from '../register/register';
+import { ProfilePage } from '../profile/profile';
 
 /**
  * Generated class for the LoginPage page.
@@ -24,6 +25,13 @@ export class LoginPage {
     (<HTMLInputElement> document.getElementById("loginbtn")).disabled = true;
   }
 
+  changeToLoggedinUser() {
+    let loggedinModal = this.modalCtrl.create(ProfilePage);
+    loggedinModal.present();
+    this.dismiss();
+    localStorage.setItem("isLoggedin", "true");
+  }
+
   changeToRegister() {
     let registerModal = this.modalCtrl.create(RegisterPage);
     registerModal.present();
@@ -41,5 +49,6 @@ export class LoginPage {
       duration: 3000,
       position: 'bottom'
     });
+    localStorage.setItem("isLoggedin", "true");
   }
 }
