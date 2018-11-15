@@ -41,6 +41,9 @@ export class ProfilePage {
     });
 
     localStorage.setItem("isLoggedin", "true");
+    localStorage.setItem("Username", "Bai Bao");
+    localStorage.setItem("emailInput", "Bai.Bao@online.no");
+    localStorage.setItem("Country", "China");
 
     toast.present();
 
@@ -81,7 +84,8 @@ export class ProfilePage {
     localStorage.setItem("emailInput",this.emailInput);
     localStorage.setItem("Username", this.Username);
     localStorage.setItem("Country", this.Country);
-    
+    this.setUsernameEmailAndCountry();
+
     editPasswordGrid.setAttribute("style","display: none;");
     editProfileGrid.setAttribute("style","display: none;");
     profilePlaceholder.setAttribute("style","display: block;");
