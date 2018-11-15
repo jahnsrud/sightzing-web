@@ -22,6 +22,7 @@ export class ProfilePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
     this.checkLoggedinStatus();
+    this.setUsernameEmailAndCountry();
   }
 
   dismiss() {
@@ -44,6 +45,12 @@ export class ProfilePage {
 
   }
   
+  setUsernameEmailAndCountry() {
+
+    document.getElementById("email").innerHTML= localStorage.getItem("emailInput");
+    document.getElementById("username").innerHTML= localStorage.getItem("Username");
+    document.getElementById("country").innerHTML= localStorage.getItem("Country");
+  }
 
   changeToLogin() {
     let loginModal = this.modalController.create(LoginPage);

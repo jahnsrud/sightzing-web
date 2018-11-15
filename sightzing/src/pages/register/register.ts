@@ -17,6 +17,9 @@ import { ProfilePage } from '../profile/profile';
 })
 export class RegisterPage {
 
+  public Email: any;
+  public username: any;
+  public country: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController) {
   }
 
@@ -35,11 +38,15 @@ export class RegisterPage {
     loggedinModal.present();
     this.dismiss();
     localStorage.setItem("isLoggedin", "true");
+    localStorage.setItem("Username", this.username);
+    localStorage.setItem("Country", this.country);
   }
 
   dismiss() {
     this.viewCtrl.dismiss(this.modalCtrl);
   }
+  
+
 
   changeToWelcomeUser() {
 
@@ -51,6 +58,7 @@ export class RegisterPage {
     let plusBtn = document.getElementById("plusbtn");
     
     document.getElementById("title").innerHTML="Welcome!";
+    localStorage.setItem("emailInput", this.Email);
 
     registerGrid.setAttribute("style", "display: none;");
     welcomeUserGrid.setAttribute("style", "display: block;");

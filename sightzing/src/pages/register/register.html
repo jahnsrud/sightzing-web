@@ -35,7 +35,7 @@
     <ion-list>
         <ion-item>
           <ion-label stacked>email</ion-label>
-          <ion-input type="email" class="input" id="emailinput"></ion-input>
+          <ion-input type="email" [(ngModel)]="Email" class="input" id="emailinput"></ion-input>
         </ion-item>
 
         <ion-item>
@@ -59,12 +59,12 @@
   <ion-list>
     <ion-item>
         <ion-label stacked>Full Name</ion-label>
-        <ion-input type="text" class="input" id="fullname"></ion-input>
+        <ion-input type="text" [(ngModel)]="username" class="input" id="fullname"></ion-input>
     </ion-item>
     
     <ion-item>
       <ion-label stacked>Country</ion-label>
-    <ion-input type="text" class="input" id="countryinput"></ion-input>
+    <ion-input type="text" [(ngModel)]="country" class="input" id="countryinput"></ion-input>
     </ion-item>
 
     <button ion-button class="btn button-full button-round" (click)="changeToLoggedinUser()">Save</button>
