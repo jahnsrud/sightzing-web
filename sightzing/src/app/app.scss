@@ -15,9 +15,8 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-@import url('https://fonts.googleapis.com/css?family=Merriweather:300i|Playfair+Display:700|Roboto:300,400,700,900|Source+Sans+Pro:700');
-//@import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
-@import url('https://fonts.googleapis.com/css?family=Heebo:700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Heebo:300,400,700,900');
 
 
 
@@ -61,7 +60,7 @@ $color-gray: rgb(156, 156, 156);
 
 /*Used on main tab-titles*/
 h1{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Heebo', sans-serif;
     color: $color-dark-gray;
     font-weight: 700; 
     font-size: $h1-font-size !important;
@@ -70,7 +69,7 @@ h1{
 
 /*Used on sub-pages like attraction or tour*/
 h2{
-    font-family: 'Roboto', sans-serif; 
+    font-family: 'Heebo', sans-serif; 
     color: $color-dark-gray; 
     font-weight: 700; 
     font-size: $h2-font-size !important; 
@@ -79,7 +78,7 @@ h2{
 
 /*Used on other titles like category-listing*/
 h3{
-    font-family: 'Roboto', serif;
+    font-family: 'Heebo', serif;
     font-weight: 700 !important;
     font-size: $h3-font-size !important;
     margin-bottom: 1rem !important;
@@ -88,7 +87,7 @@ h3{
 
 /*Used on smaller titles like time-listing on attractions*/
 h4{
-    font-family: 'Roboto', serif; 
+    font-family: 'Heebo', serif; 
     font-weight: 400; 
     font-size: $h4-font-size !important; 
 }
@@ -96,7 +95,7 @@ h4{
 /*Used on small titles like titles on filter*/
 h5{
     font-size: $h5-font-size !important;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Heebo', sans-serif;
     font-weight: 700 !important; 
     text-transform: uppercase; 
     letter-spacing: 1px;
@@ -105,14 +104,14 @@ h5{
 /*Used on smallest titles, like headlines for icons*/
 h6{
     font-size: $h6-font-size !important;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Heebo', sans-serif;
     font-weight: 400 !important; 
     text-transform: uppercase; 
     letter-spacing: 1px;
 }
 
 p{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Heebo', sans-serif;
     font-weight: 400; 
     font-size: 1.15em;
     color: $color-dark-gray;
@@ -123,7 +122,7 @@ p{
     margin: 0; 
     color: $color-dark-gray;
     font-size: 0.8em !important;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Heebo', sans-serif;
     font-weight: 900 !important; 
     text-transform: uppercase; 
     letter-spacing: 1px;
