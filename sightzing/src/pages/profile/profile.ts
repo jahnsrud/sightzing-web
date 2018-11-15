@@ -81,7 +81,7 @@ export class ProfilePage {
     localStorage.setItem("emailInput",this.emailInput);
     localStorage.setItem("Username", this.Username);
     localStorage.setItem("Country", this.Country);
-
+    
     editPasswordGrid.setAttribute("style","display: none;");
     editProfileGrid.setAttribute("style","display: none;");
     profilePlaceholder.setAttribute("style","display: block;");
