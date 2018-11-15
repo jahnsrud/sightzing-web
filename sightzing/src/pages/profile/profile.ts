@@ -57,40 +57,18 @@ export class ProfilePage {
     this.dismiss();
   }
 
-  changeToWelcomeUser() {
-
-    let registerGrid = document.getElementById("registerdiv");
-    let welcomeUserGrid = document.getElementById("welcomeuserdiv");
-    let loginBtn = document.getElementById("loginbtn");
-    let registerBtn = document.getElementById("registerbtn");
-    let profilePlaceHolder = document.getElementById("profilePlaceholder");
-    let plusBtn = document.getElementById("plusbtn");
-    
-    document.getElementById("title").innerHTML="Welcome!";
-
-    registerGrid.setAttribute("style", "display: none;");
-    welcomeUserGrid.setAttribute("style", "display: block;");
-    loginBtn.setAttribute("style", "visibility: hidden;");
-    registerBtn.setAttribute("style", "visibility: hidden;");
-    profilePlaceHolder.setAttribute("style", "display: block;");
-    plusBtn.setAttribute("style", "display: block");
-  }
-
   changeToLoggedinUser() {
 
     let editPasswordGrid = document.getElementById("editpassworddiv");
     let editProfieGrid = document.getElementById("editprofilediv");
     let loggedinGrid = document.getElementById("loggedindiv");
     let loginGrid = document.getElementById("logindiv");
-    let welcomeUserGrid = document.getElementById("welcomeuserdiv");
     let plusBtn = document.getElementById("plusbtn");
     let profilePlaceholder = document.getElementById("profilePlaceholder");
     let loginBtn = document.getElementById("loginbtn");
     let registerBtn = document.getElementById("registerbtn");
 
     localStorage.setItem("isLoggedin", "true");
-
-    this.checkLoginStatus();
 
     document.getElementById("title").innerHTML="Profile";
 
@@ -99,7 +77,6 @@ export class ProfilePage {
     profilePlaceholder.setAttribute("style","display: block;");
     loginGrid.setAttribute("style","display: none;");
     loggedinGrid.setAttribute("style", "display: block;");
-    welcomeUserGrid.setAttribute("style","display: none");
     plusBtn.setAttribute("style","display: none;");
     loginBtn.setAttribute("style", "visibility: hidden;");
     registerBtn.setAttribute("style", "visibility: hidden;");    
@@ -147,18 +124,6 @@ export class ProfilePage {
     editPasswordGrid.setAttribute("style","display: block;");
     loggedinGrid.setAttribute("style","display: none;");
     profilePlaceholder.setAttribute("style","display: none;");
-  }
-
-  registrationIsActive() {
-    (<HTMLInputElement> document.getElementById("registerbtn")).disabled = true;
-    (<HTMLInputElement> document.getElementById("loginbtn")).disabled = false;
-
-  }
-
-  loginIsActive() {
-
-    (<HTMLInputElement> document.getElementById("loginbtn")).disabled = true;
-    (<HTMLInputElement> document.getElementById("registerbtn")).disabled = false;
   }
 
   checkLoggedinStatus() {
