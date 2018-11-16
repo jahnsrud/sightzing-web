@@ -1,8 +1,10 @@
 
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, Content } from 'ionic-angular';
 import { TourList } from '../../app/tour/tourlist';
 import { WelcomePage } from '../welcome/welcome';
+import { ProfilePage } from '../profile/profile';
+
 
 
 @IonicPage()
@@ -11,12 +13,9 @@ import { WelcomePage } from '../welcome/welcome';
   templateUrl: 'info.html',
 })
 export class InfoPage {
-  
-  /* LIST OF ITEMS */
-  items: any = [];
-  
-  /* HEIGHT OF ITEMS */
-  itemExpandHeight: number = 120;
+  @ViewChild(Content) content: Content;
+  items: any = []; //List of items
+  itemExpandHeight: number = 120;  //height of items
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public tourList: TourList, public modalController: ModalController) {
     
@@ -49,50 +48,76 @@ export class InfoPage {
         iconName: "add"}
         ];
               
-        }
+  }
             
-        /* STATEMENT TO SEE IF ITEMS IS EXPANDED OR NOT */
-        expandItem(item) {
-          this.items.map((listItem) => {
-            
-            if (item == listItem) {
-              listItem.expanded = !listItem.expanded;
-            } else {
-              listItem.expanded = false;
-            }
-            
-            return listItem;
-            
-          });
-        }
-            
-
-        /*FUNCTION FOR CHANGE OF ICON*/
-        public changeIcon(theItem) {
-          
-          for (let i = 0; i < this.items.length; i++) {
-            this.items[i].iconName = "add";
-          }
-
-          theItem.iconName = "remove";
-
-        }
-
-        async presentWelcomePage() {
-
-          const modal = await this.modalController.create(WelcomePage);
-          modal.present();
-          // return await modal.present();
+  /* STATEMENT TO SEE IF ITEMS IS EXPANDED OR NOT */
+  expandItem(item) {
+    this.items.map((listItem) => {
       
-        }
-        
-        ionViewDidLoad() {
-          console.log('ionViewDidLoad InfoPage');
-        }
-        
-        ionViewDidEnter(){
-          console.log(this.tourList.getTourList());
-        }
-        
+      if (item == listItem) {
+        listItem.expanded = !listItem.expanded;
+      } else {
+        listItem.expanded = false;
       }
+      
+      return listItem;
+      
+    });
+  }
+            
+
+  /*FUNCTION FOR CHANGE OF ICON*/
+  public changeIcon(theItem) {
+    
+    for (let i = 0; i < this.items.length; i++) {
+      this.items[i].iconName = "add";
+    }
+
+    theItem.iconName = "remove";
+
+  }
+
+  async presentWelcomePage() {
+
+    const modal = await this.modalController.create(WelcomePage);
+    modal.present();
+    // return await modal.present();
+
+  }
+        
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad InfoPage');
+
+    this.content.ionScrollStart.subscribe(() => {
+      this.changeNavbarOnScroll();
+    });
+    this.content.ionScrollEnd.subscribe(() => {
+      if(this.content.scrollTop == 0){
+        this.changeNavbarToTransparent(); 
+      }
+    });
+  }
+        
+  ionViewDidEnter(){
+    console.log(this.tourList.getTourList());
+  }
+
+  changeNavbarOnScroll(){
+    let navbar = document.getElementById("navbar-info"); 
+    navbar.style.backgroundColor = "white"; 
+    navbar.style.boxShadow = "0 2px 10px 1px rgba(150, 150, 150, 0.1), 0 0px 10px 1px rgba(150, 150, 150, 0.1), 0 7px 10px 0 rgba(150, 150, 150, 0.12)";
+  }
+
+  changeNavbarToTransparent(){
+    let navbar = document.getElementById("navbar-info"); 
+    navbar.style.backgroundColor = "transparent"; 
+    navbar.style.boxShadow = "none"; 
+  }
+
+  async presentProfile() {
+    const modal = await this.modalController.create(ProfilePage);
+    modal.present();
+  }
+  
+}
           

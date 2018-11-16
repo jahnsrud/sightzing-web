@@ -3,6 +3,14 @@
 .ios, .md {
     page-info {
 
+        #navbar-info{
+            transition: background-color 0.15s ease-in, box-shadow 0.15s ease-in;
+        }
+
+        .profile-button{
+            font-size: 2.3em;
+        }
+
         button {
             align-items: baseline;
         }
