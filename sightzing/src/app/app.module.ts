@@ -22,6 +22,7 @@ import { TourList } from './tour/tourlist';
 import { TicketsBuyPage } from '../pages/tickets-buy/tickets-buy';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
+import { MapPage } from '../pages/map/map';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { RegisterPage } from '../pages/register/register';
     ProfilePage,
     TicketsBuyPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    MapPage
   ],
   imports: [
     BrowserModule,
@@ -63,7 +65,8 @@ import { RegisterPage } from '../pages/register/register';
     ProfilePage,
     TicketsBuyPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    MapPage
   ],
   providers: [
     StatusBar,
