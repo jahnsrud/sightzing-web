@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import mapboxgl from 'mapbox-gl';
 
 /**
  * Generated class for the MapPage page.
@@ -16,10 +17,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class MapPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MapPage');
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoiamFobWFyMTciLCJhIjoiY2pvazNkODgyMDJtOTNwbW43YTQ2azA5ZSJ9.iPR0QgDHkzsJMy6jgCGNMg';
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v10',
+        center: [59.91607882117212, 10.736283711544957],
+        zoom: 9
+    });
   }
 
 }
