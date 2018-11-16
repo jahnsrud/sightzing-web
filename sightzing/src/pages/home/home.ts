@@ -1,5 +1,5 @@
-import { Component, Testability } from '@angular/core';
-import { NavController, ModalController, ToastController } from 'ionic-angular';
+import { Component, Testability, ViewChild } from '@angular/core';
+import { NavController, ModalController, ToastController, Content } from 'ionic-angular';
 import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
 import { WelcomePage } from '../welcome/welcome';
 import { TourPage } from '../tour/tour'
@@ -16,7 +16,7 @@ const attraction: Attraction = new Attraction();
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  @ViewChild(Content) content: Content;
   featuredList: any[];
   tourList: any;
   attractionList: any;
@@ -65,6 +65,35 @@ export class HomePage {
 
     this.attractionList = attraction.getAttractions();
 
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad HomePage');
+
+    this.content.ionScrollStart.subscribe(() => {
+      this.changeNavbarOnScroll();
+    });
+    this.content.ionScrollEnd.subscribe(() => {
+      if(this.content.scrollTop == 0){
+        this.changeNavbarToTransparent(); 
+      }
+    });
+  }
+
+  ionViewDidEnter(){
+    console.log('ionViewDidEnter HomePage');
+  }
+
+  changeNavbarOnScroll(){
+    let navbar = document.getElementById("navbar-home"); 
+    navbar.style.backgroundColor = "white"; 
+    navbar.style.boxShadow = "0 2px 10px 1px rgba(150, 150, 150, 0.1), 0 0px 10px 1px rgba(150, 150, 150, 0.1), 0 7px 10px 0 rgba(150, 150, 150, 0.12)";
+  }
+
+  changeNavbarToTransparent(){
+    let navbar = document.getElementById("navbar-home"); 
+    navbar.style.backgroundColor = "transparent"; 
+    navbar.style.boxShadow = "none"; 
   }
 
   getCurrentWeather() {

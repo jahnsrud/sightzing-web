@@ -1,10 +1,8 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Today</ion-title>
-
+  <ion-navbar id="navbar-home">
     <ion-buttons end>
       <button ion-button (click)="presentProfile()">
-        <ion-icon class="profile-button" name="contact"></ion-icon>
+        <ion-icon class="profile-button" name="ios-contact"></ion-icon>
       </button>
     </ion-buttons>
 
@@ -12,7 +10,10 @@
 </ion-header>
 
 <ion-content padding>
-
+  <ion-title>
+    <h1>Today</h1>
+  </ion-title>
+  
   <ion-grid>
     <ion-row>
       <ion-col col-6>
