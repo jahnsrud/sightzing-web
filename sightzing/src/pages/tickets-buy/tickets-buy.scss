@@ -1,17 +1,31 @@
 page-tickets-buy {
 
+    .heading {
+        font-size: 16pt !important;
+    }
+
+    .subtitle {
+        color: gray;
+    }
+
     .alipay {
-        width: 30px;
+        width: 20px;
+        margin-right: 10px;
     }
 
     ion-title {
         position: absolute;
         left: 10px;
     }
-    
+
+    .toolbar-title-md {
+        margin-top: -15px;
+    }
+
     .face-id {
         margin-left: 50%;
         transform: translateX(-50%);
+        margin-top: 50px;
         
     }
 
@@ -23,37 +37,50 @@ page-tickets-buy {
     }
 
     .face-id-mini {
-        width: 20px;
+        width: 28px;
+        margin-right: 10px;
     }
 
     .alipay-purchase-info {
         height: 100px;
-        background-color: #F4F4F4;
+        background-color: #d0e9f5;
         width: 100%;
-        padding: 8px;
+        padding-left: 32px;
+        padding-right: 32px;
+        padding-bottom: 32px;
+        padding-top: 15px;
         overflow: hidden;
     }
 
-    ion-content {
-        padding-left: 16px;
-        padding-right: 16px;
+    .wrapper {
+        padding-left: 32px;
+        padding-right: 32px;
     }
 
-    button .pay-button {
-        
+    .pay-button {
+        height: 50px;
+        background-color: black;
+        color: white;
+        bottom: 0;
+        border-radius: 8px;
     }
 
     .purchase-total {
         font-weight: bold;
+        font-size: 15pt;
     }
 
     .visa {
         width: 40px;
-        display: inline-block;
+        float: right;
+        margin-top: 10px;
+
     }
 
-    .card-number {
-        display: inline-block;
+    .card-grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
 }
