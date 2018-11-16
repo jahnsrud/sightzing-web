@@ -7,9 +7,8 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Confirm</ion-title>
+    <ion-title><img class="alipay" src="../../assets/imgs/alipay.png">Alipay</ion-title>
     <ion-buttons end *ngIf="!shouldViewFaceId">
-
       <button ion-button (click)="dismiss()">
         Cancel
       </button>
@@ -18,15 +17,32 @@
 
 </ion-header>
 
+<ion-content>
 
-<ion-content padding>
+  <div class="alipay-purchase-info">
 
-  <h1 *ngIf="!shouldViewFaceId">24 hour Oslo City Pass</h1>
-  <p *ngIf="!shouldViewFaceId">395 NOK from your Alipay account</p>
+    <ion-grid center>
+      <ion-row>
+        <ion-col>
+        <p class="purchase-total">395 NOK</p>
+        </ion-col>
+        <ion-col>
+          <img class="visa" src="../../assets/imgs/icon-visa.png">
+          <p class="card-number">0333</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 
-  <iframe *ngIf="shouldViewFaceId" class="face-id" width="90" height="90" src="https://lottiefiles.com/iframe/1052-face-id" frameborder="0" allowfullscreen></iframe>
-  <p *ngIf="shouldViewFaceId" class="face-id-subtitle">Face ID</p>
+  <div padding>
 
-  <button *ngIf="!shouldViewFaceId" ion-button shape="round" class="btn" color="primary" (click)=confirmPurchase()>Purchase</button>
+    <h2 *ngIf="!shouldViewFaceId">24 hours in Oslo</h2>
+    <p *ngIf="!shouldViewFaceId">This ticket is valid from activated to test. Testing, testing, this is just a test for filling more text space.</p>
 
+    <iframe *ngIf="shouldViewFaceId" class="face-id" width="90" height="90" src="https://lottiefiles.com/iframe/1052-face-id"
+      frameborder="0" allowfullscreen></iframe>
+    <p *ngIf="shouldViewFaceId" class="face-id-subtitle">Face ID</p>
+
+    <button class="pay-button" ion-button *ngIf="!shouldViewFaceId"  color="black" (click)=confirmPurchase()><img src="../../assets/imgs/icon-face-id.png" class="face-id-mini">Pay with Face ID</button>
+    </div>
 </ion-content>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, ModalController, ToastController, ActionSheetController } from 'ionic-angular';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginPage } from '../login/login';
 import { RegisterPage } from '../register/register';
 /**
@@ -19,7 +20,13 @@ export class ProfilePage {
   public Username: any;
   public Country: any;
   public emailInput: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewController: ViewController, public modalController: ModalController, public toastCtrl: ToastController, public actionSheetCtrl: ActionSheetController) {
+  editProfileForm: FormGroup;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewController: ViewController, public modalController: ModalController, public toastCtrl: ToastController, public actionSheetCtrl: ActionSheetController, public formBuilder: FormBuilder) {
+    this.editProfileForm= formBuilder.group({
+      'inputUsername': ['', Validators.compose([Validators.required])],
+      'inputCountry': ['', Validators.compose([Validators.required])],
+      'inputEmail': ['', Validators.compose([Validators.required])]
+    });
   }
 
   ionViewDidLoad() {
