@@ -1,5 +1,14 @@
 page-tickets-buy {
 
+    .alipay {
+        width: 30px;
+    }
+
+    ion-title {
+        position: absolute;
+        left: 10px;
+    }
+    
     .face-id {
         margin-left: 50%;
         transform: translateX(-50%);
@@ -11,6 +20,40 @@ page-tickets-buy {
         font-size: 10pt;
         font-weight: bold;
         color: rgb(109, 109, 109);
+    }
+
+    .face-id-mini {
+        width: 20px;
+    }
+
+    .alipay-purchase-info {
+        height: 100px;
+        background-color: #F4F4F4;
+        width: 100%;
+        padding: 8px;
+        overflow: hidden;
+    }
+
+    ion-content {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    button .pay-button {
+        
+    }
+
+    .purchase-total {
+        font-weight: bold;
+    }
+
+    .visa {
+        width: 40px;
+        display: inline-block;
+    }
+
+    .card-number {
+        display: inline-block;
     }
 
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { TicketsPage } from '../tickets/tickets';
 
 /**
  * Generated class for the TicketsBuyPage page.
