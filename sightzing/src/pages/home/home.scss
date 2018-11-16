@@ -1,146 +1,154 @@
-.title-uppercase {
-    text-transform: uppercase;
-    font-size: 10pt;
-    letter-spacing: 1px;
-}
+page-home{
 
-.weather-temperature {
-    font-size: 20pt;
-    display: inherit;
-    margin-left: 10px;
-    margin-bottom: 4px;
-    // font-weight: bold;
-}
-
-#weather-subtitle {
-    font-style: italic;
-    font-size: 11pt;
-    color: gray;
-}
-
-.profile-button {
-    font-size: 2.3em;
-}
-
-#sun {
-    font-size: 31pt;
-    color: orange;
-}
-
-ion-slides {
-    height: auto;
-}
-
-ion-scroll::-webkit-scrollbar{
-    display:none;
+    #navbar-home{
+        transition: background-color 0.15s ease-in, box-shadow 0.15s ease-in;
     }
-   
 
-.featured-card {
-    width: 95%;
-    height: 200px;
-    background-color: #E9E9E9;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 10px;
-    padding: 10px;
-    overflow: hidden;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-
-}
-
-
-.featured-card-type-heading {
-    font-size: 1.1rem !important;
-    margin: 0;
-    margin-top: 10px;
-    margin-left: 10px;
-    text-align: left;
-    color: gray;
-    font-weight: bold;
-    // position: absolute;
-}
-
-.featured-card-title {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin: 0;
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-bottom: 5px;
-    text-align: left;
-    border-bottom: 1px solid $color-lighter-gray;
-    padding-bottom: 16px;
-}
-
-.featured-card-time-usage {
-    font-size: 12pt;
-    position: absolute;
-    left: 10px;
-    top: 0px;
-
-}
-
-.featured-card-time-usage::before {
-    content: "🕖";
-    margin-right: 7px;
-}
-
-h3 {
-    margin-left: 10px;
-}
-
-.scrollableCard {
-    width: 125px;
-    height: 175px;
-    background: lightgray;
-    margin-right: 20px;
-    border-radius: 10px;
-    background-size: cover;
-    background-position: top;
-
-    .inner-image{
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-        opacity: 0.4;
-        background-image: linear-gradient(transparent, black);
-    }
-    .scroll-title {
+    .title-uppercase {
+        text-transform: uppercase;
         font-size: 10pt;
-        width: 90px;
-        color: white;
+        letter-spacing: 1px;
+    }
+
+    .weather-temperature {
+        font-size: 20pt;
+        display: inherit;
         margin-left: 10px;
-        bottom: 8px;
-        position: absolute;
-        font-weight: bold;
+        margin-bottom: 4px;
+        // font-weight: bold;
     }
 
-    .hello {
-        background-color: white;
-        width: 35px;
-        height: 35px;
-        z-index: 1;
-        float: right;
-        margin-right: 5px;
-        margin-top: 5px;
-        &:hover {
-            background-color: $color-orange;
+    #weather-subtitle {
+        font-style: italic;
+        font-size: 11pt;
+        color: gray;
+    }
+
+    .profile-button {
+        font-size: 2.3em;
+    }
+
+    #sun {
+        font-size: 31pt;
+        color: orange;
+    }
+
+    ion-slides {
+        height: auto;
+    }
+
+    ion-scroll::-webkit-scrollbar{
+        display:none;
         }
+    
+
+    .featured-card {
+        width: 95%;
+        height: 200px;
+        background-color: #E9E9E9;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 10px;
+        padding: 10px;
+        overflow: hidden;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+
     }
 
-}
 
-.front-page-content {
-    width: 100%;
-    height: 200px;
-    margin-left: -5px;
-    margin-top: -15px;
-}
+    .featured-card-type-heading {
+        font-size: 1.1rem !important;
+        margin: 0;
+        margin-top: 10px;
+        margin-left: 10px;
+        text-align: left;
+        color: gray;
+        font-weight: bold;
+        // position: absolute;
+    }
 
-.add-button-icon{
-    font-size: 1.3em !important;
+    .featured-card-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin: 0;
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-bottom: 5px;
+        text-align: left;
+        color: $color-dark-gray; 
+        border-bottom: 1px solid $color-lighter-gray;
+        padding-bottom: 16px;
+    }
+
+    .featured-card-time-usage {
+        font-size: 12pt;
+        position: absolute;
+        left: 10px;
+        top: 0px;
+
+    }
+
+    .featured-card-time-usage::before {
+        content: "🕖";
+        margin-right: 7px;
+    }
+
+    h3 {
+        margin-left: 10px;
+    }
+
+    .scrollableCard {
+        width: 125px;
+        height: 175px;
+        background: lightgray;
+        margin-right: 20px;
+        border-radius: 10px;
+        background-size: cover;
+        background-position: top;
+
+        .inner-image{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            opacity: 0.4;
+            background-image: linear-gradient(transparent, black);
+        }
+        .scroll-title {
+            font-size: 0.9em !important;
+            width: 90px;
+            color: white;
+            margin-left: 10px;
+            bottom: 8px;
+            position: absolute;
+            font-weight: bold;
+        }
+
+        .hello {
+            background-color: white;
+            width: 35px;
+            height: 35px;
+            z-index: 1;
+            float: right;
+            margin-right: 5px;
+            margin-top: 5px;
+            &:hover {
+                background-color: $color-orange;
+            }
+        }
+
+    }
+
+    .front-page-content {
+        width: 100%;
+        height: 200px;
+        margin-left: -5px;
+        margin-top: -15px;
+    }
+
+    .add-button-icon{
+        font-size: 1.3em !important;
+    }
 }

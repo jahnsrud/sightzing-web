@@ -22,6 +22,10 @@ page-explore {
         margin-left: 12px;
     }
 
+    #navbar-explore{
+        transition: background-color 0.15s ease-in, box-shadow 0.15s ease-in;
+    }
+
     #filter-icon{
         height: 30px;
         width: 30px;
