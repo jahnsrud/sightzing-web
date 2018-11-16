@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {TourList} from '../../app/tour/tourlist';
 import {Attraction} from '../../app/attraction/attraction';
 import { MapPage } from '../map/map';
+import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
+// import mapboxgl from 'mapbox-gl';
 
 const attraction: Attraction = new Attraction();
 
@@ -15,6 +17,7 @@ export class MyGuidePage {
   attraction:Attraction;
 
   time: number;
+  attractionsCount:number;
 
   //myAttractions = attraction.getAttraction("Nordmarka");
 
@@ -25,6 +28,26 @@ export class MyGuidePage {
 
     //this.tourList.getTourList();
 
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad MyGuidePage');
+
+    /* mapboxgl.accessToken = 'pk.eyJ1IjoiamFobWFyMTciLCJhIjoiY2pvazNkODgyMDJtOTNwbW43YTQ2azA5ZSJ9.iPR0QgDHkzsJMy6jgCGNMg';
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v10',
+        center: [59.91607882117212, 10.736283711544957],
+        zoom: 9
+    });*/
+  }
+
+  openAttraction(attractionName:string) {
+    let attraction = new Attraction();
+    attraction.fillListWithAttractions();
+    this.navCtrl.push(AttractionDetailPage, {
+      attraction: attraction.getAttraction(attractionName)
+    });
   }
 
   openMap() {
@@ -40,12 +63,6 @@ export class MyGuidePage {
       }
     });
   } */
-  
-
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MyGuidePage');
-  }
 
   ionViewDidEnter(){
   	//This list is populated from where the user adds tours or attractions.

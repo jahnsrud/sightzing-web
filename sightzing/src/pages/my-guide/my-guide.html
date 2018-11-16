@@ -10,14 +10,11 @@
 
 <ion-content padding class="card-background-page">
 
-  <div class="map-content">
-      <h1>"Map comes later"</h1>
-  </div>
-
-  <button ion-button (click)="openMap()">Map -></button>
+  <img class="map-preview" src="../../assets/imgs/map-oslo.png" (click)="openMap()">
 
   <div>
-    <p><!-- {{ time }}--></p> 
+    <p>Time: {{ time }}</p> 
+    <p>Attractions: {{ attractionsCount }}</p>
   </div>
 
   <!--<ion-card>
@@ -26,8 +23,9 @@
   </ion-card> -->
 
   <div *ngFor="let item of tourList.getTourList(); let i = index;">
-    <ion-card>
+    <ion-card (click)="openAttraction(item.title)">
       <div>{{ item.title }}</div>
+      <p>{{ item.time }}h</p>
     </ion-card>
 
     <div class="timeline">
