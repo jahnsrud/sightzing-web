@@ -32,7 +32,7 @@ export class TicketsBuyPage {
 
     setTimeout(() => {
       this.dismiss();
-    }, 6400);
+    }, 6350);
 
     // this.dismiss();
   }

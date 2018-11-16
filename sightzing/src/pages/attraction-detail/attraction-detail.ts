@@ -1,6 +1,7 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, style } from '@angular/core';
 import { IonicPage, NavController, NavParams, Label, Content } from 'ionic-angular';
 import { Attraction } from '../../app/attraction/attraction';
+import { keyframes } from '@angular/core/src/animation/dsl';
 
 @IonicPage()
 @Component({

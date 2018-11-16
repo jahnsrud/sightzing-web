@@ -1,7 +1,6 @@
 page-explore {
 
 
-
     /*--------------------------------------*/
     /*UNIVERSAL*/
     /*--------------------------------------*/
@@ -18,15 +17,16 @@ page-explore {
     /*Toolbar*/
     /*--------------------------------------*/
 
+    .toolbar-title-ios {
+        text-align: left;
+        margin-left: 12px;
+    }
+
     #filter-icon{
         height: 30px;
         width: 30px;
         color: $color-dark-gray;
     }
-    /*
-    ion-toolbar{
-        position: absolute;
-    }*/
 
     /*Button*/
     button{
@@ -227,4 +227,6 @@ page-explore {
     .add-button-icon{
         font-size: 1.3em !important;
     }
+
+    
 }
