@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ModalController, ViewController } 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginPage } from '../login/login';
 import { ProfilePage } from '../profile/profile';
+import { formDirectiveProvider } from '@angular/forms/src/directives/reactive_directives/form_group_directive';
 
 /**
  * Generated class for the RegisterPage page.
@@ -23,6 +24,7 @@ export class RegisterPage {
   public Email: any;
   public username: any;
   public country: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController, public formBuilder: FormBuilder) {
   
     this.registerForm= formBuilder.group({
@@ -32,6 +34,11 @@ export class RegisterPage {
       'inputUsername': ['', Validators.compose([Validators.required])],
       'inputCountry': ['', Validators.compose([Validators.required])]
     });
+  }
+
+  getInputField() {
+  let input = (<HTMLInputElement>document.getElementById('file'));
+  return input;
   }
 
   ionViewDidLoad() {
@@ -77,4 +84,33 @@ export class RegisterPage {
     plusBtn.setAttribute("style", "display: block");
   }
 
+  upload(callback) {
+    //get the input and the file
+    let file = this.getInputField().files[0];
+
+    //if the file isn't a image nothing happens.
+    //you are free to implement a fallback
+    if (!file || !file.type.match(/image.*/)) return;
+
+    //Creates the FormData object and attach to a key name "file"
+    var fd = new FormData();
+    fd.append("file", file);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://localhost:8200/");
+    xhr.onloadend = function(e) {
+        //The response of de upload
+        xhr.responseText;
+        if(callback) {
+        callback();
+    }
+}
+}
+
+  callback(upload) {
+
+    let image = this.getInputField().files[0];
+    let profilePlaceHolder = document.getElementById("profileplaceholder");
+    profilePlaceHolder.setAttribute("src", upload.target.result);
+  } 
 }
