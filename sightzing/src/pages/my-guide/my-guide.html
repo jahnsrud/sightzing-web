@@ -23,8 +23,9 @@
   </ion-card> -->
 
   <div *ngFor="let item of tourList.getTourList(); let i = index;">
-    <ion-card>
+    <ion-card (click)="openAttraction(item.title)">
       <div>{{ item.title }}</div>
+      <p>{{ item.time }}h</p>
     </ion-card>
 
     <div class="timeline">

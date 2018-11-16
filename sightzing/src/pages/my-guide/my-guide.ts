@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {TourList} from '../../app/tour/tourlist';
 import {Attraction} from '../../app/attraction/attraction';
 import { MapPage } from '../map/map';
+import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
 // import mapboxgl from 'mapbox-gl';
 
 const attraction: Attraction = new Attraction();
@@ -39,6 +40,14 @@ export class MyGuidePage {
         center: [59.91607882117212, 10.736283711544957],
         zoom: 9
     });*/
+  }
+
+  openAttraction(attractionName:string) {
+    let attraction = new Attraction();
+    attraction.fillListWithAttractions();
+    this.navCtrl.push(AttractionDetailPage, {
+      attraction: attraction.getAttraction(attractionName)
+    });
   }
 
   openMap() {
