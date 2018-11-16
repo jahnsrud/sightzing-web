@@ -8,6 +8,17 @@ page-profile {
     width: 35%;
    }
 
+   #file {
+
+    display: none;
+   }
+
+   #addicon {
+
+    font-size: 40pt;
+    color: orange;
+   }
+
    .tinyText {
 
     text-align: center;
@@ -60,6 +71,11 @@ page-profile {
     display: none;
    }
 
+   #closeicon {
+
+    font-size: 20pt;
+   }
+
    .ortext {
 
     text-align: center;
@@ -73,7 +89,8 @@ page-profile {
    #plusbtn {
 
     display: none;
-    margin-left: 50%;
+    margin-left: 61%;
+    margin-top: -45px;
    }
 
    #welcomeuserdiv {

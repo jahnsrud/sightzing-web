@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, ViewController, ToastController } from 'ionic-angular';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegisterPage } from '../register/register';
 import { ProfilePage } from '../profile/profile';
 
@@ -16,9 +17,12 @@ import { ProfilePage } from '../profile/profile';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
   public emailOrUsername: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController, public toastCtrl: ToastController) {
+  someForm: FormGroup;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController, public toastCtrl: ToastController, public formBuilder: FormBuilder) {
+    this.someForm= formBuilder.group({
+      'inputEmailOrUser': ['', Validators.compose([Validators.required])]
+    });
   }
 
   ionViewDidLoad() {

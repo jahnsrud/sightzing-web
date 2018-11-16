@@ -31,6 +31,11 @@ ion-slides {
     height: auto;
 }
 
+ion-scroll::-webkit-scrollbar{
+    display:none;
+    }
+   
+
 .featured-card {
     width: 95%;
     height: 200px;

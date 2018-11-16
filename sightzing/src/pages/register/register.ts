@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginPage } from '../login/login';
 import { ProfilePage } from '../profile/profile';
 
@@ -17,10 +18,20 @@ import { ProfilePage } from '../profile/profile';
 })
 export class RegisterPage {
 
+  welcomeUserForm: FormGroup;
+  registerForm: FormGroup;
   public Email: any;
   public username: any;
   public country: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController, public formBuilder: FormBuilder) {
+  
+    this.registerForm= formBuilder.group({
+      'inputEmail': ['', Validators.compose([Validators.required])]
+    });
+    this.welcomeUserForm= formBuilder.group({
+      'inputUsername': ['', Validators.compose([Validators.required])],
+      'inputCountry': ['', Validators.compose([Validators.required])]
+    });
   }
 
   ionViewDidLoad() {
@@ -45,8 +56,6 @@ export class RegisterPage {
   dismiss() {
     this.viewCtrl.dismiss(this.modalCtrl);
   }
-  
-
 
   changeToWelcomeUser() {
 

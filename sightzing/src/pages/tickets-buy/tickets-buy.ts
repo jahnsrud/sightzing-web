@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { TicketsPage } from '../tickets/tickets';
 
 /**
  * Generated class for the TicketsBuyPage page.
@@ -31,7 +32,7 @@ export class TicketsBuyPage {
 
     setTimeout(() => {
       this.dismiss();
-    }, 6400);
+    }, 6350);
 
     // this.dismiss();
   }

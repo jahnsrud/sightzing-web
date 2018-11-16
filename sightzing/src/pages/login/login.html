@@ -7,7 +7,7 @@
 <ion-header padding>
 
   <ion-navbar>
-    <ion-buttons end><button ion-button shape="round" class="closeBtn" (click)="dismiss()">X</button></ion-buttons>
+    <ion-buttons end><button ion-button shape="round" class="closeBtn" (click)="dismiss()"><ion-icon name="close-circle"></ion-icon></button></ion-buttons>
   </ion-navbar>
   <ion-grid class="kappagrid">
     <ion-row id="titleandbtnsrow">
@@ -28,11 +28,11 @@
 
 <ion-content padding>
 
-  <div id="logindiv">
+  <div id="logindiv" [formGroup]="someForm">
     <ion-list>
         <ion-item>
           <ion-label stacked>Email/Username</ion-label>
-          <ion-input type="email" [(ngModel)]="emailOrUsername" class="input"></ion-input>
+          <ion-input type="email" formControlName="inputEmailOrUser" [(ngModel)]="emailOrUsername" class="input"></ion-input>
         </ion-item>
 
         <ion-item>
@@ -41,7 +41,7 @@
         </ion-item>
     </ion-list>
 
-          <button ion-button class="btn button-full button-round" (click)="changeToLoggedinUser()" id="bigloginbtn">Log in</button>
+          <button ion-button [disabled]="!someForm.valid" class="btn button-full button-round" (click)="changeToLoggedinUser()" id="bigloginbtn">Log in</button>
         
           <p class="ortext">Or</p>
 

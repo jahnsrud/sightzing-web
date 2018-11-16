@@ -50,7 +50,7 @@
 
 
   <h3>Tours</h3>
-  <ion-scroll scrollX="true" class="front-page-content">
+  <ion-scroll scrollX="true" scrollbar="false" class="front-page-content">
     <div class="somewhere" style="display: inline-flex">
       <div *ngFor="let item of tourList; let i = index;">
         <div class="scrollableCard" [style.backgroundImage]="'url('+ item.imageUrl +')'">
@@ -63,14 +63,14 @@
   </ion-scroll>
 
   <h3>Events</h3>
-  <ion-scroll scrollX="true" class="front-page-content">
+  <ion-scroll scrollX="true" scrollbar="false" class="front-page-content">
     <div class="somewhere" style="display: inline-flex">
       <div class="scrollableCard" *ngFor="let item of eventList"></div>
     </div>
   </ion-scroll>
 
   <h3>Attractions</h3>
-  <ion-scroll scrollX="true" class="front-page-content">
+  <ion-scroll scrollX="true" scrollbar="false" class="front-page-content">
     <div class="somewhere" style="display: inline-flex">
       <div *ngFor="let item of attractionList; let i = index;">
         <div class="scrollableCard" [style.backgroundImage]="'url('+ item.imageUrl +')'">

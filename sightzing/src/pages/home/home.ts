@@ -142,25 +142,9 @@ export class HomePage {
   }
   quoteList: string[] = ["Party in the city where the heat is on",
 
-    "Somebody call 911, shawty's fire burning on the dancefloor",
-
-    "Fire burning fire burning on the dancefloor",
-
-    "I am getting so hot, i wanna take my clothes off",
-
     "It's gettin hot in here!",
 
-    "I wanna make you wet",
-
-    "I wanna make you sweat",
-
-    "It rains, it pours, it rains, it pours",
-
     "I only wanted to see you laughing in the purple rain.",
-
-    "lil' homie in my hood, when it rains it pours",
-
-    "I tell her baby baby baby baby, I'm a fireball",
 
     "The sun is shining, and so are you",
 
@@ -171,10 +155,6 @@ export class HomePage {
     "Blowing with the wind, of change",
 
     "It's raining men, Hallelujah!",
-
-    "You better run, you better take cover",
-
-    "Cant you hear, can't you hear the thunder",
 
     "Man's not hot"];
 
