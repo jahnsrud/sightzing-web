@@ -83,34 +83,4 @@ export class RegisterPage {
     profilePlaceHolder.setAttribute("style", "display: block;");
     plusBtn.setAttribute("style", "display: block");
   }
-
-  upload(callback) {
-    //get the input and the file
-    let file = this.getInputField().files[0];
-
-    //if the file isn't a image nothing happens.
-    //you are free to implement a fallback
-    if (!file || !file.type.match(/image.*/)) return;
-
-    //Creates the FormData object and attach to a key name "file"
-    var fd = new FormData();
-    fd.append("file", file);
-
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost:8200/");
-    xhr.onloadend = function(e) {
-        //The response of de upload
-        xhr.responseText;
-        if(callback) {
-        callback();
-    }
-}
-}
-
-  callback(upload) {
-
-    let image = this.getInputField().files[0];
-    let profilePlaceHolder = document.getElementById("profileplaceholder");
-    profilePlaceHolder.setAttribute("src", upload.target.result);
-  } 
 }

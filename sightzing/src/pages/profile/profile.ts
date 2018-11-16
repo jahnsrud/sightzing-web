@@ -20,6 +20,7 @@ export class ProfilePage {
   public Username: any;
   public Country: any;
   public emailInput: any;
+  url = '';
   editProfileForm: FormGroup;
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewController: ViewController, public modalController: ModalController, public toastCtrl: ToastController, public actionSheetCtrl: ActionSheetController, public formBuilder: FormBuilder) {
     this.editProfileForm= formBuilder.group({
@@ -121,10 +122,12 @@ export class ProfilePage {
     let plusBtn = document.getElementById("plusbtn");
     let profilePlaceholder = document.getElementById("profilePlaceholder");
     let editProfieGrid = document.getElementById("editprofilediv");
+    let fileUpload = document.getElementById("file");
     let loggedinGrid = document.getElementById("loggedindiv");
 
     document.getElementById("title").innerHTML="Edit Profile";
 
+    fileUpload.setAttribute("style", "display: block;");
     loggedinGrid.setAttribute("style","display: none;");
     editProfieGrid.setAttribute("style","display: block;");
     profilePlaceholder.setAttribute("style","display: block;");
@@ -200,4 +203,16 @@ export class ProfilePage {
     });
     actionSheet.present();
   }
+
+  readUrl(event:any) {
+    if (event.target.files && event.target.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = (event:any) => {
+            this.url = event.target.result;
+        }
+
+        reader.readAsDataURL(event.target.files[0]);
+    }
+}
 }

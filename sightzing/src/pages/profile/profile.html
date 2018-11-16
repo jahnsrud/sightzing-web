@@ -26,9 +26,9 @@
 
 <ion-content padding>
 
-  <img ion-img id="profilePlaceholder" src="http://pronksiapartments.ee/wp-content/uploads/2015/10/placeholder-face-big.png">
-  <input type="file" name="file" id="file" accept="image/*;capture=camera">
-  <label for="file" id="plusbtn"><ion-icon id="addicon" name="add-circle"></ion-icon></label>
+    <input id="file" type='file' (change)="readUrl($event)">
+    <img id="profilePlaceholder" [src]="url">
+    <label for="file" id="plusbtn"><ion-icon id="addicon" name="add-circle"></ion-icon></label>
 
   <div id="notloggedindiv">
     <p class="tinyText">You are not logged in.</p>
