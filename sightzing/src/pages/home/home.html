@@ -13,7 +13,7 @@
   <ion-title>
     <h1>Today</h1>
   </ion-title>
-  
+
   <ion-grid>
     <ion-row>
       <ion-col col-6>
@@ -44,7 +44,7 @@
       <div class="featured-card" [style.backgroundImage]="'url(' + item.image + ')'">
         <p class="featured-card-time-usage">{{item.type == 'Attraction' ? item.attraction.time : item.time }}</p>
       </div>
-      <p class="featured-card-type-heading">{{item.type}}</p>
+      <h6 class="featured-card-type-heading">{{item.type}}</h6>
       <p class="featured-card-title">{{ item.title }}</p>
     </ion-slide>
   </ion-slides>

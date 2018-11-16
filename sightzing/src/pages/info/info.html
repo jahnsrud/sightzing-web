@@ -1,10 +1,14 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>Info</ion-title>
       </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+
+  <ion-title>
+    <h1>Info</h1>
+  </ion-title>
+
   
   <!----------->
   <!--BUTTONS-->
@@ -16,7 +20,7 @@
       </ion-icon>
       <h3 style="font-weight: bold">{{ item.title }}</h3>
       <br>
-      <expandable [expandHeight]="itemExpandHeight" [expanded]="item.expanded">
+      <expandable [expanded]="item.expanded" class="expandable-box">
         <p>{{ item.content }}</p>
       </expandable>
     </button>

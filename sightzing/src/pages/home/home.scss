@@ -54,7 +54,7 @@ ion-scroll::-webkit-scrollbar{
 
 
 .featured-card-type-heading {
-    font-size: 10pt;
+    font-size: 1.1rem !important;
     margin: 0;
     margin-top: 10px;
     margin-left: 10px;
@@ -65,13 +65,15 @@ ion-scroll::-webkit-scrollbar{
 }
 
 .featured-card-title {
-    font-size: 14pt;
-    font-weight: bold;
+    font-size: 1.4rem;
+    font-weight: 700;
     margin: 0;
+    margin-right: 10px;
     margin-left: 10px;
     margin-bottom: 5px;
     text-align: left;
-    // position: absolute;
+    border-bottom: 1px solid $color-lighter-gray;
+    padding-bottom: 16px;
 }
 
 .featured-card-time-usage {
