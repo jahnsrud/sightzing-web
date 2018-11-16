@@ -4,6 +4,7 @@ import { FilterComponent } from '../../components/filter/filter';
 import { Main } from '../../app/main';
 import {Attraction} from '../../app/attraction/attraction';
 import { Tour } from '../../app/tour/tour';
+import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
 
 const attraction: Attraction = new Attraction();
 const tour: Tour = new Tour();
@@ -143,7 +144,9 @@ export class ExplorePage {
     //Get the resultrow
     var resultRow = document.getElementById("result-row");
 
-    for(let i = 1; i<this.results.length; i++){
+    for(let i = 1; i < this.results.length; i++) {
+      resultRow.onclick = null
+      resultRow.onclick = () => this.pushDetailPage(this.results[i].title);
       resultGrid.appendChild(resultRow.cloneNode(true));
     }
 
@@ -154,8 +157,10 @@ export class ExplorePage {
     for(let i = 0; i < images.length; i++){
       console.log(this.results[i]);
       images[i].setAttribute("src", this.results[i].imageUrl);
-      titles[i].innerHTML = this.results[i].title;
+      
+      images[i].innerHTML
 
+      titles[i].innerHTML = this.results[i].title;
       var starsCounted = 0;
       var attractionStars = this.results[i].rating;
 
@@ -195,6 +200,14 @@ export class ExplorePage {
 
   }
 
+  pushDetailPage(page:string) {
+    let attraction = new Attraction();
+    attraction.fillListWithAttractions();
+    this.navCtrl.push(AttractionDetailPage, {
+      attraction: attraction.getAttraction(page)
+    });
+  }
+
   changeToExplore(hei: string){
     //this.onResultPage = false;
 
@@ -225,14 +238,6 @@ export class ExplorePage {
   }
 
   /*
-
-  CODE FOR SETTING CLICK-FUNCTION DYNAMICALLY:
-  //choiceButton.onclick = () => this.changeToExplore("hei");
-
-  getOnResultPage(){
-    return this.onResultPage;
-  }*/
-
     /*
   removeFromRow(id: string){
 
