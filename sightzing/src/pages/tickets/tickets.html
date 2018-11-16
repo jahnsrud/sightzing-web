@@ -14,22 +14,27 @@
 
 <ion-content padding>
 
-    <div class="ticket-card">
-      <img id="city-pass-logo" src="../../assets/imgs/oslo-city-pass-logo.png">
+    <ion-title>
+        <h1>City Pass</h1>
+    </ion-title>
 
-      <ion-row justify-content-center align-items-center>
-      <div (click)="betaDisablePurchase()" *ngIf="qrView" id="qr">
-              <img src="../../assets/imgs/qr-code.png">
-              <p class="qr-subtitle">Valid for 24 hours</p>
-          </div>
-      </ion-row>
-      
-      <div *ngIf="!qrView" (click)="buyTicket()" class="buy-button">
-          <img class="buy-logo" src="../../assets/imgs/alipay.png">
-          <p class="buy-overhead-title">1 PERSON</p>  
-          <p class="buy-text">Buy with Alipay (kr 395)</p>
-    </div>
-    
+    <div class="ticket-container">
+      <div class="ticket-card">
+        <img id="city-pass-logo" src="../../assets/imgs/oslo-city-pass-logo.png">
+
+        <ion-row justify-content-center align-items-center>
+        <div (click)="betaDisablePurchase()" *ngIf="qrView" id="qr">
+                <img src="../../assets/imgs/qr-code.png">
+                <p class="qr-subtitle">Valid for 24 hours</p>
+            </div>
+        </ion-row>
+        
+        <div *ngIf="!qrView" (click)="buyTicket()" class="buy-button">
+            <img class="buy-logo" src="../../assets/imgs/alipay.png">
+            <p class="buy-overhead-title">1 PERSON</p>  
+            <p class="buy-text">Buy with Alipay (kr 395)</p>
+        </div>
+      </div>
       </div>
     
       <p class="description-text">Unlock all of Oslo with only one pass. Oslo City Pass gives you free public transportation in the city, and access to all attractions and museums in the app.</p>
