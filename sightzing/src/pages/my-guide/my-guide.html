@@ -10,12 +10,11 @@
 
 <ion-content padding class="card-background-page">
 
-  <div id="map"></div>
-  
-  <button ion-button (click)="openMap()">Map -></button>
+  <img class="map-preview" src="../../assets/imgs/map-oslo.png" (click)="openMap()">
 
   <div>
-    <p><!-- {{ time }}--></p> 
+    <p>Time: {{ time }}</p> 
+    <p>Attractions: {{ attractionsCount }}</p>
   </div>
 
   <!--<ion-card>

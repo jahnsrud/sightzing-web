@@ -1,8 +1,10 @@
 page-my-guide{
 
-    .map {
-        height: 200px;
+    .map-preview {
+        border-radius: 16px;
+        overflow: hidden;
         width: 100%;
+        
     }
     
     .card {

@@ -16,6 +16,7 @@ export class MyGuidePage {
   attraction:Attraction;
 
   time: number;
+  attractionsCount:number;
 
   //myAttractions = attraction.getAttraction("Nordmarka");
 
