@@ -47,7 +47,7 @@ export class AttractionDetailPage {
 
 
   changeNavbarOnScroll(){
-    let navbar = document.getElementById("navbar"); 
+    let navbar = document.getElementById("navbar-attraction"); 
     navbar.style.backgroundColor = "white"; 
     navbar.style.boxShadow = "0 2px 10px 1px rgba(150, 150, 150, 0.1), 0 0px 10px 1px rgba(150, 150, 150, 0.1), 0 7px 10px 0 rgba(150, 150, 150, 0.12)";
     let backButtons = document.getElementsByClassName("back-button-icon");
@@ -57,7 +57,7 @@ export class AttractionDetailPage {
   }
 
   changeNavbarToTransparent(){
-    let navbar = document.getElementById("navbar"); 
+    let navbar = document.getElementById("navbar-attraction"); 
     navbar.style.backgroundColor = "transparent"; 
     navbar.style.boxShadow = "none"; 
     let backButtons = document.getElementsByClassName("back-button-icon");

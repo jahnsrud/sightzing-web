@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { IonicPage, NavController, NavParams, PopoverController, Content } from 'ionic-angular';
 import { FilterComponent } from '../../components/filter/filter';
 import { Main } from '../../app/main';
 import {Attraction} from '../../app/attraction/attraction';
@@ -21,8 +21,8 @@ const tour: Tour = new Tour();
   templateUrl: 'explore.html',
 })
 export class ExplorePage {
+  @ViewChild(Content) content: Content;
   results = new Array();
-  //onResultPage = false;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public popoverController: PopoverController) {
@@ -30,14 +30,39 @@ export class ExplorePage {
     tour.fillListWithTours();
 
   }
-
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad ExplorePage');
-  }
 
+    this.content.ionScrollStart.subscribe(() => {
+      this.changeNavbarOnScroll();
+    });
+    this.content.ionScrollEnd.subscribe(() => {
+      if(this.content.scrollTop == 0){
+        this.changeNavbarToTransparent(); 
+      }
+    });
+  }
+  
   ionViewDidEnter(){
     this.addCorrectAmountOfAttractions();
   }
+
+  changeNavbarOnScroll(){
+    let navbar = document.getElementById("navbar-explore"); 
+    navbar.style.backgroundColor = "white"; 
+    navbar.style.boxShadow = "0 2px 10px 1px rgba(150, 150, 150, 0.1), 0 0px 10px 1px rgba(150, 150, 150, 0.1), 0 7px 10px 0 rgba(150, 150, 150, 0.12)";
+  }
+
+  changeNavbarToTransparent(){
+    let navbar = document.getElementById("navbar-explore"); 
+    navbar.style.backgroundColor = "transparent"; 
+    navbar.style.boxShadow = "none"; 
+  }
+
+  
+
+  
 
   openFilter(event):void{
     let filterPop = this.popoverController.create(FilterComponent);

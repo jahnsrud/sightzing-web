@@ -26,6 +26,13 @@ page-explore {
         height: 30px;
         width: 30px;
         color: $color-dark-gray;
+        display: table; 
+        font-size: 2em;
+    }
+
+    #filter-icon::before{
+        display: table-cell;
+        vertical-align: middle; 
     }
 
     /*Button*/
