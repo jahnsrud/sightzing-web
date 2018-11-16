@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {TourList} from '../../app/tour/tourlist';
 import {Attraction} from '../../app/attraction/attraction';
+import { MapPage } from '../map/map';
 
 const attraction: Attraction = new Attraction();
 
@@ -24,6 +25,10 @@ export class MyGuidePage {
 
     //this.tourList.getTourList();
 
+  }
+
+  openMap() {
+    this.navCtrl.push(MapPage);
   }
 
   /* getAttractionTime() {
