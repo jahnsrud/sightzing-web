@@ -1,5 +1,67 @@
 page-profile {
 
+    .closeBtn{
+        font-size: 2.7rem;
+    }
+
+    .button{
+        height: 45px;
+    }
+
+    .profile-title{
+        display: inline-block; 
+    }
+
+    .profile-switch-container{
+        height: auto; 
+        display: flex; 
+    }
+
+    #titleandbtnsrow{
+        display: flex; 
+    }
+
+    #loginbtn {
+        display: inline-block;
+        width: auto;
+        margin-top: auto;
+        text-decoration: underline; 
+    }
+    
+    #registerbtn {
+        display: inline-block;
+        width: auto;
+        padding-right: 16px;
+        margin-top: auto; 
+    }
+
+    .profile-page-button{
+        margin-bottom: 16px;
+    }
+
+    .profile-pic-container{
+        top: 16px;
+        width: 85px; 
+        height: 85px; 
+        margin: auto; 
+        display: block; 
+        position: relative; 
+        background-color: $color-light-gray; 
+        border-radius: 100%; 
+        box-shadow: 0 2px 10px 1px rgba(150, 150, 150, 0.1), 0 0px 10px 1px rgba(150, 150, 150, 0.1), 0 7px 10px 0 rgba(150, 150, 150, 0.12);
+    }
+
+    .button-container{
+        margin-top: 132px;
+        padding: 0 8px;
+    }
+    
+    #notloggedindiv{
+        margin-top: 40px;
+    }
+
+
+
    #profilePlaceholder {
 
     display: block;
@@ -24,10 +86,7 @@ page-profile {
     text-align: center;
    }
 
-   .btn {
 
-    margin-top: 5%;
-   }
 
    #title {
 
@@ -35,10 +94,6 @@ page-profile {
     width: 100%;
    }
 
-   .toolbar {
-
-    display: table;
-   }
 
    #loginbtn {
 

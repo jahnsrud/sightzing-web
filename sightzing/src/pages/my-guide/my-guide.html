@@ -1,14 +1,22 @@
 
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>My Guide</ion-title>
+  <ion-navbar id="navbar-guide">
+      <ion-buttons end>
+        <button>
+          <ion-icon class="edit-icon" name="md-create"></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding class="card-background-page">
+
+  <ion-title>
+    <h1>My Guide</h1>
+  </ion-title>
 
   <img class="map-preview" src="../../assets/imgs/map-oslo.png" (click)="openMap()">
 

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
 import {TourList} from '../../app/tour/tourlist';
 import {Attraction} from '../../app/attraction/attraction';
 import { MapPage } from '../map/map';
@@ -14,10 +14,11 @@ const attraction: Attraction = new Attraction();
   templateUrl: 'my-guide.html',
 })
 export class MyGuidePage {
+  @ViewChild(Content) content: Content;
   attraction:Attraction;
-
   time: number;
   attractionsCount:number;
+
 
   //myAttractions = attraction.getAttraction("Nordmarka");
 
@@ -40,6 +41,27 @@ export class MyGuidePage {
         center: [59.91607882117212, 10.736283711544957],
         zoom: 9
     });*/
+
+    this.content.ionScrollStart.subscribe(() => {
+      this.changeNavbarOnScroll();
+    });
+    this.content.ionScrollEnd.subscribe(() => {
+      if(this.content.scrollTop == 0){
+        this.changeNavbarToTransparent(); 
+      }
+    });
+  }
+
+  changeNavbarOnScroll(){
+    let navbar = document.getElementById("navbar-guide"); 
+    navbar.style.backgroundColor = "white"; 
+    navbar.style.boxShadow = "0 2px 10px 1px rgba(150, 150, 150, 0.1), 0 0px 10px 1px rgba(150, 150, 150, 0.1), 0 7px 10px 0 rgba(150, 150, 150, 0.12)";
+  }
+
+  changeNavbarToTransparent(){
+    let navbar = document.getElementById("navbar-guide"); 
+    navbar.style.backgroundColor = "transparent"; 
+    navbar.style.boxShadow = "none"; 
   }
 
   openAttraction(attractionName:string) {

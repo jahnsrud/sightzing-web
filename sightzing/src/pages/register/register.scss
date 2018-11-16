@@ -1,22 +1,40 @@
 page-register {
+    .closeBtn{
+        font-size: 2.7rem;
+    }
+    
+    .profile-title{
+        display: inline-block; 
+    }
+
+    .profile-switch-container{
+        height: auto; 
+        display: flex; 
+    }
+
+    #titleandbtnsrow{
+        display: flex; 
+    }
 
     #loginbtn {
+        display: inline-block;
+        width: auto;
+        margin-top: auto;
+    }
+    
+    #registerbtn {
+        display: inline-block;
+        width: auto;
+        padding-right: 16px;
+        margin-top: auto; 
+        text-decoration: underline; 
+    }
 
-        min-width: 50px;
-        max-width: 50px;
-        width: auto;
-        margin-top: 40%;
-        float: right;
-       }
+    .button{
+        height: 45px;
+    }
+
     
-       #registerbtn {
-    
-        min-width: 100px;
-        max-width: 100px;
-        width: auto;
-        margin-top: 40%;
-        margin-left: 40%;
-       }
 
        #title {
 

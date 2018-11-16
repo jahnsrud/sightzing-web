@@ -4,10 +4,16 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header padding>
+<ion-header>
   <ion-navbar>
-    <ion-buttons end><button ion-button shape="round" class="closeBtn" (click)="dismiss()"><ion-icon name="close-circle" id="closeicon"></ion-icon></button></ion-buttons>
+      <ion-buttons end>
+          <button class="closeBtn" (click)="dismiss()">
+            <ion-icon name="ios-close-circle-outline"></ion-icon>
+          </button>
+        </ion-buttons>
   </ion-navbar>
+
+<!--
   <ion-grid class="kappagrid">
     <ion-row id="titleandbtnsrow">
       <ion-col>
@@ -20,29 +26,52 @@
         <button ion-button class="button button-assertive button-clear" id="loginbtn" (click)="changeToLogin()">Log in</button>
       </ion-col>
     </ion-row>
-  </ion-grid>
+  </ion-grid>-->
 </ion-header>
 
 
 <ion-content padding>
+  <div id="titleandbtnsrow">
+      <ion-title>
+        <h1 class="profile-title" id="title">Profile</h1>
+      </ion-title>
+      <div class="profile-switch-container">
+        <h3 id="registerbtn" (click)="changeToRegister()">Register</h3>
+        <h3 id="loginbtn" (click)="changeToLogin()">Log in</h3>
+      </div>
+  </div>
+
+  <!--Circle container for image-->
+  <div class="profile-pic-container">
+
+  </div>
+
 
     <input id="file" type='file' (change)="readUrl($event)">
     <img id="profilePlaceholder" [src]="url">
     <label for="file" id="plusbtn"><ion-icon id="addicon" name="add-circle"></ion-icon></label>
 
+  <!--Not logged in elements (Buttons for logging in)-->
   <div id="notloggedindiv">
     <p class="tinyText">You are not logged in.</p>
 
+    <div class="button-container">
+      <button ion-button full round (click)="loginWithWeibo()" class="profile-page-button">
+        <ion-img id="weibo-logo" src="../../assets/imgs/weibo-logo.png"></ion-img>
+        <p class="button-txt">Log in with Weibo</p>
+      </button>
 
+      <button ion-button full round (click)="changeToLogin()" class="profile-page-button">
+        <p class="button-txt">Log in</p>
+      </button>
 
-    <button ion-button class="btn button-full button-round" (click)="loginWithWeibo()"><ion-img id="weibo-logo"
-      src="../../assets/imgs/weibo-logo.png"></ion-img>Log in with Weibo</button>
-
-    <button ion-button class="btn button-full button-round" (click)="changeToLogin()">Log in</button>
-
-    <button ion-button class="btn button-full button-round" ngDisabled="checked" (click)="changeToRegister()">Register</button>
+      <button ion-button full round ngDisabled="checked" (click)="changeToRegister()" class="profile-page-button">
+        <p class="button-txt">Register</p>
+      </button>
+    </div>
   </div>
 
+  <!--Logged in elements-->
   <div id="loggedindiv">
     <h3 id="username" class="userinfo">Username</h3>
 

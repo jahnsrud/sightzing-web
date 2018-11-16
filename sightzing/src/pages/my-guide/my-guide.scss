@@ -1,5 +1,9 @@
 page-my-guide{
 
+    .edit-icon{
+        font-size: 2.3rem;
+    }
+
     .map-preview {
         border-radius: 16px;
         overflow: hidden;
@@ -24,10 +28,10 @@ page-my-guide{
     }
     
     .icon {
-        position: relative;
-        font-size: 1.5em;
-        left: -0.13em;
-        top: 0.5em;
+        //position: relative;
+        //font-size: 1.5em;
+        //left: -0.13em;
+        //top: 0.5em;
     }
 
     .input {
