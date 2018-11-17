@@ -20,9 +20,9 @@
       <p>{{tour.description}}<p>
       </div>
 
-      <h1>What to see</h1>
+      <h2>What to see</h2>
 
-      <div *ngFor="let item of attractionList; let i = index;">
+      <div *ngFor="let item of tour.attractions; let i = index;">
           <div class="scrollableCard" [style.backgroundImage]="'url('+ item.imageUrl +')'">
             <button ion-button round icon-only class="hello" (click)="addAttractionToMainList(item.title)">
               <ion-icon name="add" class="add-button-icon"></ion-icon>
@@ -32,11 +32,5 @@
             <p class="scroll-title">{{item.title}}</p>
           </div>
         </div>
-
-      <p>{{tour.attractions[0].title}}</p>
-      <p>{{tour.attractions[1].title}}</p>
-      <p>{{tour.attractions[2].title}}</p>
-      <p>{{tour.attractions[3].title}}</p>
-
 
 </ion-content>
