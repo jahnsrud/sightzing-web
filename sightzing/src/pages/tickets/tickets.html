@@ -44,9 +44,11 @@
 
   <p class="description-text">Unlock all of Oslo with only one pass. Oslo City Pass gives you free public
     transportation in the city, and access to all attractions and museums in the app.</p>
-  <div *ngIf="qrView" class="add-to-passes" (click)="addPass()">
+  <a href="https://q.pass.is/deThaPydjYam" target="_blank">
+    <div *ngIf="qrView" class="add-to-passes" (click)="addPass()">
     <img *ngIf="!isAndroid" src="../../assets/imgs/add-to-apple-wallet-logo.png" class="pass-button">
     <img *ngIf="isAndroid" src="../../assets/imgs/add-to-gpay-logo.png" class="apple-wallet-button">
   </div>
+</a>
 
 </ion-content>
