@@ -54,18 +54,18 @@
 
   <div id="registerdiv" [formGroup]="registerForm">
     <ion-list>
-        <ion-item>
-          <ion-label floating>Email</ion-label>
+        <ion-item class="editprofileinput">
+          <ion-label floating style="color: grey;">Email</ion-label>
           <ion-input type="email" formControlName="inputEmail" [(ngModel)]="Email" class="input" id="emailinput"></ion-input>
         </ion-item>
 
-        <ion-item>
-          <ion-label floating>Password</ion-label>
+        <ion-item class="editprofileinput">
+          <ion-label floating style="color: grey;">Password</ion-label>
             <ion-input type="Password" class="input"></ion-input>
         </ion-item>
 
-        <ion-item>
-          <ion-label floating>Confirm Password</ion-label>
+        <ion-item class="editprofileinput">
+          <ion-label floating style="color: grey;">Confirm Password</ion-label>
           <ion-input type="Password" class="input"></ion-input>
         </ion-item>
 
@@ -80,13 +80,13 @@
 <div id="welcomeuserdiv" [formGroup]="welcomeUserForm">
 
   <ion-list>
-    <ion-item>
-        <ion-label floating>Full Name</ion-label>
+    <ion-item class="editprofileinput">
+        <ion-label floating style="color: grey;">Full Name</ion-label>
         <ion-input type="text" formControlName="inputUsername" [(ngModel)]="username" class="input" id="fullname"></ion-input>
     </ion-item>
     
-    <ion-item>
-      <ion-label floating>Country</ion-label>
+    <ion-item class="editprofileinput">
+      <ion-label floating style="color: grey;">Country</ion-label>
     <ion-input type="text" formControlName="inputCountry" [(ngModel)]="country" class="input" id="countryinput"></ion-input>
     </ion-item>
 

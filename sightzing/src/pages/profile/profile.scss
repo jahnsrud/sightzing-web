@@ -95,16 +95,18 @@ page-profile {
     .list-md .item-input.input-has-focus:last-child,
     .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child,
     .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
-        border-bottom: 1px solid orange;
+        border-bottom: 0.3px solid grey;
         box-shadow: none;
     }
     .list-md .item-input.input-has-focus:last-child .item-inner,
     .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child .item-inner,
     .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child .item-inner {
+        border-bottom: 0.3px solid grey;
         box-shadow: none; 
     }
-
-
+    .list-md .item-input:last-child {
+        border-bottom: 1px solid grey;
+    }
 
    #title {
 
@@ -154,10 +156,12 @@ page-profile {
     text-align: center;
    }
 
-   .input {
+   .editprofileinput {
 
-    border-bottom: 5%;
+    border-bottom: 0.3px solid grey;
+    padding-left: 0px;
    }
+
 
    #plusbtn {
 

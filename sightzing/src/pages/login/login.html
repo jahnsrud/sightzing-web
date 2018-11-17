@@ -30,13 +30,13 @@
 
   <div id="logindiv" [formGroup]="someForm">
     <ion-list>
-        <ion-item>
-          <ion-label floating>Email</ion-label>
+        <ion-item class="editprofileinput">
+          <ion-label floating style="color: grey;">Email</ion-label>
           <ion-input type="email" formControlName="inputEmailOrUser" [(ngModel)]="emailOrUsername" class="input"></ion-input>
         </ion-item>
 
-        <ion-item>
-            <ion-label floating>Password</ion-label>
+        <ion-item class="editprofileinput">
+            <ion-label floating style="color: grey;">Password</ion-label>
             <ion-input type="password" class="input"></ion-input>
         </ion-item>
     </ion-list>
