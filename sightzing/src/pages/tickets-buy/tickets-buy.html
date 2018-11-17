@@ -7,13 +7,18 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title><img class="alipay" src="../../assets/imgs/alipay.png">Alipay</ion-title>
+    <ion-title>
+      <img class="alipay" src="../../assets/imgs/alipay.png">
+      <h3>Alipay</h3>
+    </ion-title>
     <ion-buttons end *ngIf="!shouldViewFaceId">
-      <button ion-button (click)="dismiss()">
-        Cancel
-      </button>
+        <button class="closeBtn" (click)="dismiss()">
+          <ion-icon name="ios-close-circle-outline"></ion-icon>
+        </button>
     </ion-buttons>
   </ion-navbar>
+
+    
 
 </ion-header>
 
@@ -42,7 +47,10 @@
       frameborder="0" allowfullscreen></iframe>
     <p *ngIf="shouldViewFaceId" class="face-id-subtitle">Face ID</p>
 
-    <button class="pay-button" ion-button *ngIf="!shouldViewFaceId"  full color="dark" (click)=confirmPurchase()><img src="../../assets/imgs/icon-face-id.png" class="face-id-mini">Pay with Face ID</button>
+    <button ion-button full round class="pay-button" *ngIf="!shouldViewFaceId" color="dark" (click)=confirmPurchase()>
+      <img src="../../assets/imgs/icon-face-id.png" class="face-id-mini">
+      <p class="button-txt txt-white">Pay with Face ID</p>
+    </button>
     
   </div>
 

@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, ModalController, Content } from 'ionic-angular';
 import { TicketsBuyPage } from '../tickets-buy/tickets-buy';
+import { ProfilePage } from '../profile/profile';
+
 
 /**
  * Generated class for the TicketsPage page.
@@ -15,7 +17,7 @@ import { TicketsBuyPage } from '../tickets-buy/tickets-buy';
   templateUrl: 'tickets.html',
 })
 export class TicketsPage {
-
+  @ViewChild(Content) content: Content;
   qrView:boolean = true;
   isPurchased:boolean = false;
 
@@ -24,6 +26,15 @@ export class TicketsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TicketsPage');
+
+    this.content.ionScrollStart.subscribe(() => {
+      this.changeNavbarOnScroll();
+    });
+    this.content.ionScrollEnd.subscribe(() => {
+      if(this.content.scrollTop == 0){
+        this.changeNavbarToTransparent(); 
+      }
+    });
   }
 
   ionViewWillEnter() {
@@ -32,6 +43,18 @@ export class TicketsPage {
 
   ionViewDidEnter() {
     this.checkTicketStatus();
+  }
+
+  changeNavbarOnScroll(){
+    let navbar = document.getElementById("navbar-tickets"); 
+    navbar.style.backgroundColor = "white"; 
+    navbar.style.boxShadow = "0 2px 10px 1px rgba(150, 150, 150, 0.1), 0 0px 10px 1px rgba(150, 150, 150, 0.1), 0 7px 10px 0 rgba(150, 150, 150, 0.12)";
+  }
+
+  changeNavbarToTransparent(){
+    let navbar = document.getElementById("navbar-tickets"); 
+    navbar.style.backgroundColor = "transparent"; 
+    navbar.style.boxShadow = "none"; 
   }
 
   async buyTicket() {
@@ -66,6 +89,11 @@ export class TicketsPage {
       this.qrView = false;
     }
     
+  }
+
+  async presentProfile() {
+    const modal = await this.modalController.create(ProfilePage);
+    modal.present();
   }
 
 }

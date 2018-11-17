@@ -1,96 +1,105 @@
 
-.ticket-container{
-    padding: 0 8px;
-}
+page-tickets{
 
-.ticket-card {
-    width: 100%;
-    background-color: rgb(202, 202, 202);
-    background-image: url('../../assets/imgs/fun.jpg');
-    background-size: cover;
-    //height: 550px;
-    height: 400px;
-    margin-top: 16px;
-    border-radius: 10px;
-    padding: 10px;
-    overflow: hidden;
-    position: relative;
+    .profile-button {
+        font-size: 2.3em;
+    }
 
-}
+    .ticket-container{
+        padding: 0 8px;
+    }
 
-#city-pass-logo {
-    width: 84px;
-    right: 20px;
-    position: absolute;
-}
+    .ticket-card {
+        width: 100%;
+        background-color: rgb(202, 202, 202);
+        background-image: url('../../assets/imgs/fun.jpg');
+        background-size: cover;
+        //height: 550px;
+        height: 375px;
+        margin-top: 16px;
+        border-radius: 10px;
+        padding: 10px;
+        overflow: hidden;
+        position: relative;
 
-#qr {
-    padding: 33px;
-    background-color: white;
-    border-radius: 10px;
-    width: 170px;
-    position: absolute;
-    top: 120px;
-    
-}
+    }
 
-.qr-subtitle {
-    color: gray;
-    font-size: 12pt;
-    font-weight: bold;
-    text-align: center;
-}
+    #city-pass-logo {
+        width: 64px;
+        right: 15px;
+        position: absolute;
+    }
 
-.buy-button {
-    background-color: white;
-    border-radius: 10px;
-    padding: 5px;
-    height: 55px;
-    width: 87%;
-    overflow: hidden;
-    position: absolute;
-    bottom: 18px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    cursor: pointer;
-    box-shadow: 0 7px 10px 0 rgba(0,0,0,.10), 0 1px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-}
+    #qr {
+        padding: 33px;
+        background-color: white;
+        border-radius: 10px;
+        width: 170px;
+        position: absolute;
+        //top: 120px;
+        top: 100px;
+    }
 
-.buy-button:hover {
-    background-color: rgb(235, 235, 235);
-}
+    .qr-subtitle {
+        color: gray;
+        font-size: 12pt;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 0;
+    }
 
-.buy-logo {
-    width: 30px;
-    margin-top: 8px;
-    margin-left: 6px;
-}
+    .buy-button {
+        background-color: white;
+        border-radius: 10px;
+        padding: 5px;
+        height: 55px;
+        width: 87%;
+        overflow: hidden;
+        position: absolute;
+        bottom: 18px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        cursor: pointer;
+        box-shadow: 0 7px 10px 0 rgba(0,0,0,.10), 0 1px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    }
 
-.buy-overhead-title {
-    display: inline-block;
-    color: #848484;
-    font-size: 9pt;
-    text-transform: uppercase;
-    position: absolute;
-    left: 54px;
-    bottom: 17px;
-}
+    .buy-button:hover {
+        background-color: rgb(235, 235, 235);
+    }
 
-.buy-text {
-    color: black;
-    display: inline-block;
-    font-weight: bold;
-    font-size: 12pt;
-    left: 54px;
-    position: absolute;
-    bottom: -8px;
-}
+    .buy-logo {
+        width: 30px;
+        margin-top: 8px;
+        margin-left: 6px;
+    }
 
-.description-text {
-    color: gray;
-    font-size: 12pt;
-    padding: 18px;
+    .buy-overhead-title {
+        display: inline-block;
+        color: #848484;
+        font-size: 9pt;
+        text-transform: uppercase;
+        position: absolute;
+        left: 54px;
+        bottom: 20px;
+        margin-top: 0;
+    }
 
+    .buy-text {
+        color: black;
+        display: inline-block;
+        font-weight: bold;
+        font-size: 12pt;
+        left: 54px;
+        position: absolute;
+        bottom: -8px;
+    }
+
+    .description-text {
+        color: gray;
+        font-size: 12pt;
+        padding: 18px;
+
+    }
 }

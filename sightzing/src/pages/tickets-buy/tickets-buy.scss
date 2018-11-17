@@ -11,11 +11,18 @@ page-tickets-buy {
     .alipay {
         width: 20px;
         margin-right: 10px;
+        display: inline-block;
     }
 
     ion-title {
         position: absolute;
         left: 10px;
+
+        h3{
+            display: inline-block;
+            position: relative; 
+            top: -3px;
+        }
     }
 
     .toolbar-title-md {
@@ -59,10 +66,14 @@ page-tickets-buy {
 
     .pay-button {
         height: 50px;
-        background-color: black;
+        background-color: $color-orange;
+        //background-color: black;
         color: white;
         bottom: 0;
-        border-radius: 8px;
+    }
+
+    .pay-button:hover{
+        background-color: $color-orange !important;
     }
 
     .purchase-total {
@@ -81,6 +92,14 @@ page-tickets-buy {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .txt-white{
+        color: white !important; 
+    }
+
+    .closeBtn{
+        font-size: 2.7rem;
     }
 
 }

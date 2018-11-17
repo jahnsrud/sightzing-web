@@ -6,8 +6,12 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>City Pass</ion-title>
+  <ion-navbar id="navbar-tickets">
+      <ion-buttons end>
+          <button ion-button (click)="presentProfile()">
+            <ion-icon class="profile-button" name="ios-contact"></ion-icon>
+          </button>
+        </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -31,7 +35,8 @@
         
         <div *ngIf="!qrView" (click)="buyTicket()" class="buy-button">
             <img class="buy-logo" src="../../assets/imgs/alipay.png">
-            <p class="buy-overhead-title">1 PERSON</p>  
+            <h6 class="buy-overhead-title">1 PERSON</h6>  
+            <!--<p class="buy-overhead-title">1 PERSON</p>-->  
             <p class="buy-text">Buy with Alipay (kr 395)</p>
         </div>
       </div>
