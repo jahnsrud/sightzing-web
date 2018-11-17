@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, Content, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Content, AlertController, ToastController } from 'ionic-angular';
 import { Attraction } from '../../app/attraction/attraction';
+import { TourList } from '../../app/tour/tourlist';
 import { MapPage } from '../map/map';
 
 @IonicPage()
@@ -19,7 +20,7 @@ export class AttractionDetailPage {
   rating: number;
   price: number;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertController: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertController: AlertController, public mainTourList: TourList, public toastController:ToastController) {
 
     this.attraction = this.navParams.get("attraction");
     this.title = this.attraction.title;
@@ -119,6 +120,19 @@ export class AttractionDetailPage {
       buttons: ["Dismiss"]
     });
     alert.present();
+  }
+
+  addAttraction() {
+    this.mainTourList.addAttractionToList(this.attraction);
+
+    let toast = this.toastController.create({
+      message: '✅ Added ' + this.attraction.title,
+      duration: 3000,
+      position: 'bottom'
+    });
+
+    toast.present();
+
   }
 
 }
