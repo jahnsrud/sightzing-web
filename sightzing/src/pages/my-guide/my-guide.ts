@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
-import {TourList} from '../../app/tour/tourlist';
-import {Attraction} from '../../app/attraction/attraction';
+import { TourList } from '../../app/tour/tourlist';
+import { Attraction } from '../../app/attraction/attraction';
 import { MapPage } from '../map/map';
 import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
 // import mapboxgl from 'mapbox-gl';
@@ -18,7 +18,7 @@ export class MyGuidePage {
   attraction:Attraction;
   time: number;
   attractionsCount:number;
-
+  attractionsList: Attraction[];
 
   //myAttractions = attraction.getAttraction("Nordmarka");
 
@@ -26,7 +26,6 @@ export class MyGuidePage {
     attraction.fillListWithAttractions();
 
     //this.time = this.attraction.time;
-
     //this.tourList.getTourList();
 
   }
@@ -50,6 +49,8 @@ export class MyGuidePage {
         this.changeNavbarToTransparent(); 
       }
     });
+
+    //this.attractionsList = this.tourList.getTourList(); 
   }
 
   changeNavbarOnScroll(){
@@ -88,7 +89,38 @@ export class MyGuidePage {
 
   ionViewDidEnter(){
   	//This list is populated from where the user adds tours or attractions.
-  	console.log(this.tourList.getTourList());
+    console.log(this.tourList.getTourList());
+    this.updateTime(); 
+    this.updateNumberOfAttractions(); 
+
+    if(this.tourList.getTourList().length < 1){
+      let showWhenNoAttration = document.getElementsByClassName("show-when-no-attractions");
+
+      for(let i = 0; i < showWhenNoAttration.length; i++){
+        showWhenNoAttration[i].setAttribute("style", "display: block;")
+      }
+
+      let showWhenAttractions = document.getElementsByClassName("show-when-attractions"); 
+      for(let i = 0; i < showWhenAttractions.length; i++){
+        showWhenAttractions[i].setAttribute("style", "display: none;")
+      }
+    }
+  }
+
+  updateTime(){
+    this.time = 0; 
+
+    for(let i = 0; i<this.tourList.getTourList().length; i++){
+      this.time = this.time + this.tourList.getTourList()[i].time; 
+      console.log(this.time);
+      console.log("hei");
+    }
+  }
+
+  updateNumberOfAttractions(){
+    this.attractionsCount = 0; 
+
+    this.attractionsCount = this.tourList.getTourList().length;
   }
 
 }

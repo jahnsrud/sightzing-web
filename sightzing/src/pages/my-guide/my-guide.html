@@ -18,12 +18,50 @@
     <h1>My Guide</h1>
   </ion-title>
 
-  <img class="map-preview" src="../../assets/imgs/map-oslo.png" (click)="openMap()">
-
-  <div>
-    <p>Time: {{ time }}</p> 
-    <p>Attractions: {{ attractionsCount }}</p>
+  <div class="map-container">
+    <img class="map-preview" src="../../assets/imgs/map-oslo.png" (click)="openMap()">
   </div>
+
+  <ion-grid>
+    <!--Container for Time estimate and attraction count-->
+      <ion-row id="time-and-count-row">
+          <ion-col col-12>
+              <!--Table for informtion-->
+              <div class="small-info-container">
+
+                <div class="inner-info-container border-right">
+                  <h6 class="info-txt">Time</h6>
+                  <div class="icon-w-txt-container centered">
+                    <ion-icon name="stopwatch"></ion-icon>
+                    <h4 class="inner-txt-container time-txt">{{ time }}h</h4>
+                  </div>
+                </div>
+
+                <div class="inner-info-container">
+                  <h6 class="info-txt">Attractions</h6>
+                  <div class="icon-w-txt-container centered">
+                    <h4 class="inner-txt-container time-txt">{{ attractionsCount }}</h4>
+                  </div>
+                </div>
+              </div>
+            </ion-col>
+        </ion-row>
+
+        <ion-row class="show-when-no-attractions">
+          <ion-col>
+            <p style="text-align: center;">You haven't added any attractions yet.</p>
+            <p style="text-align: center;">Go exploring!</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="show-when-attractions">
+          <ion-col col-12>
+              <ion-item>
+                <ion-input placeholder="Start" clearInput></ion-input>
+              </ion-item>
+          </ion-col>
+        </ion-row>
+  </ion-grid>
 
   <!--<ion-card>
     <ion-label>START</ion-label>
