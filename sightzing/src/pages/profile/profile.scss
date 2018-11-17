@@ -39,7 +39,7 @@ page-profile {
         margin-bottom: 16px;
     }
 
-    .profile-pic-container{
+    #profile-pic-container{
         top: 16px;
         width: 85px; 
         height: 85px; 
@@ -49,6 +49,7 @@ page-profile {
         background-color: $color-light-gray; 
         border-radius: 100%; 
         box-shadow: 0 2px 10px 1px rgba(150, 150, 150, 0.1), 0 0px 10px 1px rgba(150, 150, 150, 0.1), 0 7px 10px 0 rgba(150, 150, 150, 0.12);
+        overflow: hidden;
     }
 
     .button-container{
@@ -68,11 +69,12 @@ page-profile {
     margin-left: auto;
     margin-right: auto;
     width: 35%;
+    object-fit: cover;
    }
 
    #file {
 
-    display: none;
+    visibility: hidden;
    }
 
    #addicon {

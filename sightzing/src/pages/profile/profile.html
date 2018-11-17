@@ -42,13 +42,12 @@
   </div>
 
   <!--Circle container for image-->
-  <div class="profile-pic-container">
-
+  <div id="profile-pic-container">
+    <img id="profileplaceholder" [src]="url">
   </div>
 
 
     <input id="file" type='file' (change)="readUrl($event)">
-    <img id="profilePlaceholder" [src]="url">
     <label for="file" id="plusbtn"><ion-icon id="addicon" name="add-circle"></ion-icon></label>
 
   <!--Not logged in elements (Buttons for logging in)-->
