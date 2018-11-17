@@ -119,6 +119,17 @@ export class ProfilePage {
     plusBtn.setAttribute("style","display: none;");
   }
 
+  changeToLoggedinUserFromEditPassword() {
+
+    let editPasswordGrid = document.getElementById("editpassworddiv");
+    let loggedinGrid = document.getElementById("loggedindiv");
+
+    document.getElementById("title").innerHTML="Profile";
+
+    editPasswordGrid.setAttribute("style", "display: none;");
+    loggedinGrid.setAttribute("style", "display: block;");
+  }
+
   signOut() {
 
     let editProfieGrid = document.getElementById("editprofilediv");

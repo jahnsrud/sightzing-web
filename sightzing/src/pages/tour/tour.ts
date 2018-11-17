@@ -16,7 +16,7 @@ import { Tour } from '../../app/tour/tour';
 })
 export class TourPage {
 
-	tour:Tour;
+  tour:Tour;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   	this.tour = this.navParams.get("tour");

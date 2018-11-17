@@ -104,12 +104,14 @@ export class TicketsPage {
   }
 
   addPass() {
+    /*
     let alert = this.alertController.create({
       title: 'Added to your Wallet',
       subTitle: '',
       buttons: ['OK']
     });
     alert.present();
+    */
   }
 
 }
