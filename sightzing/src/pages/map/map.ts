@@ -21,15 +21,42 @@ export class MapPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MapPage');
+    this.configureMap();
+  }
+
+  configureMap() {
 
     mapboxgl.accessToken = 'pk.eyJ1IjoiamFobWFyMTciLCJhIjoiY2pvazNkODgyMDJtOTNwbW43YTQ2azA5ZSJ9.iPR0QgDHkzsJMy6jgCGNMg';
     const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v10',
-        center: [59.91607882117212, 10.736283711544957],
-        zoom: 9
+      container: 'map',
+      center: [
+        10.736283711544957,
+        59.91607882117212],
+      style: 'mapbox://styles/mapbox/streets-v10',
+      zoom: 11
     });
+
+    // Nasjonalgalleriet
+    new mapboxgl.Marker()
+      .setLngLat([10.737166, 59.916865])
+      .addTo(map);
+
+    // Mathallen
+    new mapboxgl.Marker()
+      .setLngLat([10.752046000000064, 59.922217])
+      .addTo(map);
+
+    // Stortinget
+    new mapboxgl.Marker()
+      .setLngLat([10.741821399999935, 
+        59.9137772])
+      .addTo(map);
+
+    // Frognerparken
+    new mapboxgl.Marker()
+      .setLngLat([10.703473400000007, 
+        59.92645829999999])
+      .addTo(map);  
   }
 
 }
