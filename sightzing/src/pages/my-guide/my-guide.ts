@@ -105,6 +105,19 @@ export class MyGuidePage {
         showWhenAttractions[i].setAttribute("style", "display: none;")
       }
     }
+
+    if(this.tourList.getTourList().length > 0){
+      let showWhenNoAttration = document.getElementsByClassName("show-when-no-attractions");
+
+      for(let i = 0; i < showWhenNoAttration.length; i++){
+        showWhenNoAttration[i].setAttribute("style", "display: none;")
+      }
+
+      let showWhenAttractions = document.getElementsByClassName("show-when-attractions"); 
+      for(let i = 0; i < showWhenAttractions.length; i++){
+        showWhenAttractions[i].setAttribute("style", "display: block;")
+      }
+    }
   }
 
   updateTime(){
