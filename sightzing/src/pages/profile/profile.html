@@ -78,11 +78,17 @@
 
     <p id="country" class="userinfo">China</p>
 
-    <button ion-button class="btn button-full button-round" (click)="changeToEditPassword()">Edit password</button>
+    <button ion-button full round (click)="changeToEditPassword()" class="profile-page-button">
+      <p class="button-txt">Edit Password</p>
+    </button>
 
-    <button ion-button class="btn button-full button-round" (click)="changeToEditProfile()">Edit profile</button>
+    <button ion-button full round (click)="changeToEditProfile()" class="profile-page-button">
+      <p class="button-txt">Edit Profile</p>
+    </button>
 
-    <button ion-button class="btn button-full button-round" (click)="presentActionSheet()">Sign out</button>
+    <button ion-button full round (click)="presentActionSheet()" class="profile-page-button">
+      <p class="button-txt">Sign Out</p>
+    </button>
   </div>
 
   <div id="editprofilediv" [formGroup]="editProfileForm">
@@ -103,32 +109,38 @@
       </ion-item>
     </ion-list>
 
-    <button ion-button [disabled]="!editProfileForm.valid" class="btn button-full button-round" (click)="changeToLoggedinUser()">Confirm</button>
+    <button ion-button full round [disabled]="!editProfileForm.valid" class="profile-page-button" (click)="changeToLoggedinUser()">
+      <p class="button-txt">Confirm</p>
+    </button>
 
     <p class="tinyText">Or</p>
 
-    <button ion-button class="btn button-full button-round" (click)="presentDeleteProfileActionSheet()">Delete profile</button>
+    <button ion-button full round class="profile-page-button" (click)="presentDeleteProfileActionSheet()">
+      <p class="button-txt">Delete Profile</p>
+    </button>
 
   </div>
 
   <div id="editpassworddiv">
     <ion-list>
-      <ion-item>
-        <ion-label floating>Old password</ion-label>
+      <ion-item class="editprofileinput">
+        <ion-label floating style="color: grey;">Old password</ion-label>
         <ion-input type="password"></ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-label floating>New password</ion-label>
+      <ion-item class="editprofileinput">
+        <ion-label floating style="color: grey;">New password</ion-label>
         <ion-input type="password"></ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-label floating>Confirm password</ion-label>
+      <ion-item class="editprofileinput">
+        <ion-label floating style="color: grey;">Confirm password</ion-label>
         <ion-input type="passwrod"></ion-input>
       </ion-item>
     </ion-list>
-    <button ion-button class="btn button-full button-round" (click)="changeToLoggedinUser()">Confirm</button>
+    <button ion-button full round class="profile-page-button" (click)="changeToLoggedinUserFromEditPassword()">
+      <p class="button-txt">Confirm</p>
+    </button>
 
   </div>
 

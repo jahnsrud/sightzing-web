@@ -39,7 +39,7 @@
         <h1 class="profile-title" id="title">Profile</h1>
       </ion-title>
       <div class="profile-switch-container">
-        <h3 id="registerbtn" (click)="changeToRegister()">Register</h3>
+        <h3 id="registerbtn">Register</h3>
         <h3 id="loginbtn" (click)="changeToLogin()">Log in</h3>
       </div>
   </div>
@@ -90,7 +90,9 @@
     <ion-input type="text" formControlName="inputCountry" [(ngModel)]="country" class="input" id="countryinput"></ion-input>
     </ion-item>
 
-    <button ion-button [disabled]="!welcomeUserForm.valid" class="btn button-full button-round" (click)="changeToLoggedinUser()">Save</button>
+    <button ion-button full round [disabled]="!welcomeUserForm.valid" (click)="changeToLoggedinUser()">
+      <p class="button-txt">Save</p>
+    </button>
 
   </ion-list>
 </div>
