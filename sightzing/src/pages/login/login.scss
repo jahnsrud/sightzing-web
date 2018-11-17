@@ -37,6 +37,7 @@ page-login {
         width: auto;
         margin-top: auto;
         text-decoration: underline; 
+        padding-right: 8px;
     }
     
     #registerbtn {
@@ -48,13 +49,14 @@ page-login {
 
     #logindiv {
         text-align: center;
+        margin-top: 30px;
+        padding: 0 8px;
     }
 
     .editprofileinput {
-
         border-bottom: 0.3px solid grey;
         padding-left: 0px;
-       }
+    }
 
     .ortext {
         text-align: center;
@@ -71,5 +73,9 @@ page-login {
 
     .button{
         height: 45px;
+    }
+
+    .list-md{
+        margin-bottom: 102px;
     }
 }

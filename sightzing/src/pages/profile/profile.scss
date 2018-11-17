@@ -53,7 +53,7 @@ page-profile {
     }
 
     .button-container{
-        margin-top: 132px;
+        margin-top: 100px;
         padding: 0 8px;
     }
     
@@ -108,6 +108,7 @@ page-profile {
         border-bottom: 1px solid grey;
     }
 
+
    #title {
 
     display: table-cell;
@@ -157,17 +158,17 @@ page-profile {
    }
 
    .editprofileinput {
-
-    border-bottom: 0.3px solid grey;
-    padding-left: 0px;
+       //margin: 0 8px 0 8px;
+        padding: 0;
+        border-bottom: 0.3px solid grey;
+        //padding-left: 0px;
    }
 
 
    #plusbtn {
-
-    margin-left: 61%;
-    margin-top: -45px;
-    display: none;
+        margin-left: 61%;
+        margin-top: -45px;
+        display: none;
    }
 
    #welcomeuserdiv {
@@ -193,7 +194,7 @@ page-profile {
    }
 
    #editpassworddiv {
-
+    padding: 0 8px;
     display: none;
    }
 

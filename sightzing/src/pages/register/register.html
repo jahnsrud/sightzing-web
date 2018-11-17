@@ -50,7 +50,11 @@
 
 
     <input id="file" type='file' (change)="readUrl($event)">
-    <label for="file" id="plusbtn"><ion-icon id="addicon" name="add-circle"></ion-icon></label>
+    <label for="file" id="plusbtn">
+      <div id="add-pic-btn-container">
+        <ion-icon id="addicon" name="add"></ion-icon>
+      </div>
+    </label>
 
   <div id="registerdiv" [formGroup]="registerForm">
     <ion-list>
@@ -69,7 +73,7 @@
           <ion-input type="Password" class="input"></ion-input>
         </ion-item>
 
-        <button ion-button full round [disabled]="!registerForm.valid" (click)="changeToWelcomeUser()">
+        <button ion-button full round [disabled]="!registerForm.valid" (click)="changeToWelcomeUser()" id="register-btn">
             <p class="button-txt">Register</p>
         </button>
         
@@ -90,7 +94,7 @@
     <ion-input type="text" formControlName="inputCountry" [(ngModel)]="country" class="input" id="countryinput"></ion-input>
     </ion-item>
 
-    <button ion-button full round [disabled]="!welcomeUserForm.valid" (click)="changeToLoggedinUser()">
+    <button ion-button full round [disabled]="!welcomeUserForm.valid" (click)="changeToLoggedinUser()" id="save-btn">
       <p class="button-txt">Save</p>
     </button>
 
