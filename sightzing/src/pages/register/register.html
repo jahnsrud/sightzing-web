@@ -8,7 +8,7 @@
 
   <ion-navbar>
     <ion-buttons end>
-        <button class="closeBtn" (click)="dismiss()">
+        <button ionbutton class="closeBtn" (click)="dismiss()">
           <ion-icon name="ios-close-circle-outline"></ion-icon>
         </button>
       </ion-buttons>
@@ -44,23 +44,28 @@
       </div>
   </div>
 
-    <img ion-img id="profilePlaceholder" src="http://pronksiapartments.ee/wp-content/uploads/2015/10/placeholder-face-big.png">
-    <button ion-button round id="plusbtn">+</button>
+  <div id="profile-pic-container">
+    <img id="profileplaceholder" [src]="url">
+  </div>
+
+
+    <input id="file" type='file' (change)="readUrl($event)">
+    <label for="file" id="plusbtn"><ion-icon id="addicon" name="add-circle"></ion-icon></label>
 
   <div id="registerdiv" [formGroup]="registerForm">
     <ion-list>
         <ion-item>
-          <ion-label stacked>email</ion-label>
+          <ion-label floating>Email</ion-label>
           <ion-input type="email" formControlName="inputEmail" [(ngModel)]="Email" class="input" id="emailinput"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label stacked>Password</ion-label>
+          <ion-label floating>Password</ion-label>
             <ion-input type="Password" class="input"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label stacked>Confirm Password</ion-label>
+          <ion-label floating>Confirm Password</ion-label>
           <ion-input type="Password" class="input"></ion-input>
         </ion-item>
 
@@ -76,12 +81,12 @@
 
   <ion-list>
     <ion-item>
-        <ion-label stacked>Full Name</ion-label>
+        <ion-label floating>Full Name</ion-label>
         <ion-input type="text" formControlName="inputUsername" [(ngModel)]="username" class="input" id="fullname"></ion-input>
     </ion-item>
     
     <ion-item>
-      <ion-label stacked>Country</ion-label>
+      <ion-label floating>Country</ion-label>
     <ion-input type="text" formControlName="inputCountry" [(ngModel)]="country" class="input" id="countryinput"></ion-input>
     </ion-item>
 

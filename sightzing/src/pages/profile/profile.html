@@ -7,7 +7,7 @@
 <ion-header>
   <ion-navbar>
       <ion-buttons end>
-          <button class="closeBtn" (click)="dismiss()">
+          <button ion-button class="closeBtn" (click)="dismiss()">
             <ion-icon name="ios-close-circle-outline"></ion-icon>
           </button>
         </ion-buttons>
@@ -88,17 +88,17 @@
   <div id="editprofilediv" [formGroup]="editProfileForm">
     <ion-list>
       <ion-item>
-        <ion-label stacked>Full Name</ion-label>
+        <ion-label floating>Full Name</ion-label>
         <ion-input type="text" formControlName="inputUsername" [(ngModel)]="Username" class="input" id="fullname"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>Country</ion-label>
+        <ion-label floating>Country</ion-label>
         <ion-input type="text" formControlName="inputCountry" [(ngModel)]="Country" class="input" id="countryinput"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>Email</ion-label>
+        <ion-label floating>Email</ion-label>
         <ion-input type="email" formControlName="inputEmail" [(ngModel)]="emailInput" class="input"></ion-input>
       </ion-item>
     </ion-list>
@@ -114,17 +114,17 @@
   <div id="editpassworddiv">
     <ion-list>
       <ion-item>
-        <ion-label stacked>Old password</ion-label>
+        <ion-label floating>Old password</ion-label>
         <ion-input type="password"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>New password</ion-label>
+        <ion-label floating>New password</ion-label>
         <ion-input type="password"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>Confirm password</ion-label>
+        <ion-label floating>Confirm password</ion-label>
         <ion-input type="passwrod"></ion-input>
       </ion-item>
     </ion-list>

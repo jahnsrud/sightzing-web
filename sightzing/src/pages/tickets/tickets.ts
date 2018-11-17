@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, Content } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, Content, Platform, AlertController } from 'ionic-angular';
 import { TicketsBuyPage } from '../tickets-buy/tickets-buy';
 import { ProfilePage } from '../profile/profile';
 
@@ -20,12 +20,19 @@ export class TicketsPage {
   @ViewChild(Content) content: Content;
   qrView:boolean = true;
   isPurchased:boolean = false;
+  isAndroid = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalController: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalController: ModalController, public platform: Platform, public alertController: AlertController) {
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TicketsPage');
+
+    if (this.platform.is('ios')) {
+      this.isAndroid = false;
+    } else {
+      this.isAndroid = true;
+    }
 
     this.content.ionScrollStart.subscribe(() => {
       this.changeNavbarOnScroll();
@@ -94,6 +101,15 @@ export class TicketsPage {
   async presentProfile() {
     const modal = await this.modalController.create(ProfilePage);
     modal.present();
+  }
+
+  addPass() {
+    let alert = this.alertController.create({
+      title: 'Added to your Wallet',
+      subTitle: '',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
 }

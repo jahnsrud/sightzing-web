@@ -21,15 +21,62 @@ export class MapPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MapPage');
+    this.configureMap();
+  }
+
+  configureMap() {
 
     mapboxgl.accessToken = 'pk.eyJ1IjoiamFobWFyMTciLCJhIjoiY2pvazNkODgyMDJtOTNwbW43YTQ2azA5ZSJ9.iPR0QgDHkzsJMy6jgCGNMg';
     const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v10',
-        center: [59.91607882117212, 10.736283711544957],
-        zoom: 9
+      container: 'map',
+      center: [
+        10.736283711544957,
+        59.91607882117212],
+      style: 'mapbox://styles/mapbox/streets-v10',
+      zoom: 11
     });
+
+    // Nasjonalgalleriet
+    new mapboxgl.Marker()
+      .setLngLat([10.737166, 59.916865])
+      .addTo(map);
+
+    // Mathallen
+    new mapboxgl.Marker()
+      .setLngLat([10.752046000000064, 59.922217])
+      .addTo(map);
+
+    // Stortinget
+    new mapboxgl.Marker()
+      .setLngLat([10.741821399999935,
+        59.9137772])
+      .addTo(map);
+
+    // Frognerparken
+    new mapboxgl.Marker()
+      .setLngLat([10.703473400000007,
+        59.92645829999999])
+      .addTo(map);
+
+
+    map.on('click', function (e) {
+      var features = map.queryRenderedFeatures(e.point, {
+        layers: ['layer-name-here'] // replace this with the name of the layer
+      });
+
+      if (!features.length) {
+        return;
+      }
+
+      var feature = features[0];
+
+      var popup = new mapboxgl.Popup({ offset: [0, -15] })
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
+        .setLngLat(feature.geometry.coordinates)
+        .addTo(map);
+    });
+
   }
 
 }

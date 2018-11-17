@@ -28,18 +28,20 @@
           <!--Adress & Website-->
           <ion-row>
             <div class="small-info-container adress-table-bar">
-              <div class="adress-container">
+              <div class="adress-container" (click)="openMap()">
                 <ion-icon name="pin" class="adress-icon"></ion-icon>
                 <p class="adressbar">
                   Her kommer 
                 </p>
               </div>
+              <a href="https://kristiania.no" target="_blank">
               <div class="adress-container">
                 <ion-icon name="desktop"></ion-icon>
                 <p class="adressbar">
-                  Her kommer webadresse
+                  Visit website
                 </p>
               </div>
+            </a>
             </div>
           </ion-row>
 
