@@ -40,7 +40,7 @@
   <!--I en slider-->
 
   <ion-slides>
-    <ion-slide loop="true" *ngFor="let item of featuredList; let i = index;" (click)="presentTour(item.title)">
+    <ion-slide loop="true" *ngFor="let item of featuredList; let i = index;" (click)="presentFeatured(item.title, item.type)">
       <div class="featured-card" [style.backgroundImage]="'url(' + item.image + ')'">
         <p class="featured-card-time-usage">{{item.type == 'Attraction' ? item.attraction.time : item.time }}</p>
       </div>

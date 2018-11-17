@@ -154,6 +154,16 @@ export class HomePage {
     });
   }
 
+  presentFeatured(title: string, type: string) {
+console.log(title, type)
+    if (type.toLowerCase() == "tour") {
+      this.presentTour(title);
+    } else if (type.toLowerCase() == "attraction") {
+      this.presentAttraction(title);
+    }
+
+  }
+
   async presentProfile() {
     const modal = await this.modalController.create(ProfilePage);
     modal.present();
