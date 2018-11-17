@@ -48,15 +48,35 @@ export class MapPage {
 
     // Stortinget
     new mapboxgl.Marker()
-      .setLngLat([10.741821399999935, 
+      .setLngLat([10.741821399999935,
         59.9137772])
       .addTo(map);
 
     // Frognerparken
     new mapboxgl.Marker()
-      .setLngLat([10.703473400000007, 
+      .setLngLat([10.703473400000007,
         59.92645829999999])
-      .addTo(map);  
+      .addTo(map);
+
+
+    map.on('click', function (e) {
+      var features = map.queryRenderedFeatures(e.point, {
+        layers: ['layer-name-here'] // replace this with the name of the layer
+      });
+
+      if (!features.length) {
+        return;
+      }
+
+      var feature = features[0];
+
+      var popup = new mapboxgl.Popup({ offset: [0, -15] })
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
+        .setLngLat(feature.geometry.coordinates)
+        .addTo(map);
+    });
+
   }
 
 }
