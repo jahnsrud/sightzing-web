@@ -22,7 +22,7 @@
     <img class="map-preview" src="../../assets/imgs/map-oslo.png" (click)="openMap()">
   </div>
 
-  <ion-grid>
+  <ion-grid no-padding>
     <!--Container for Time estimate and attraction count-->
       <ion-row id="time-and-count-row">
           <ion-col col-12>
@@ -47,6 +47,7 @@
             </ion-col>
         </ion-row>
 
+        <!--Container to display when no attractions-->
         <ion-row class="show-when-no-attractions">
           <ion-col>
             <p style="text-align: center;">You haven't added any attractions yet.</p>
@@ -54,12 +55,40 @@
           </ion-col>
         </ion-row>
 
+        <!--Container to show when there is attractions-->
+        <ion-row class="show-when-attractions">
+          <h3>Timeline</h3>
+        </ion-row>
+
         <ion-row class="show-when-attractions">
           <ion-col col-12>
-              <ion-item>
-                <ion-input placeholder="Start" clearInput></ion-input>
+              <ion-item class="start-input-container">
+                <ion-input placeholder="Start" clearInput class="start-input"></ion-input>
               </ion-item>
           </ion-col>
+        </ion-row>
+
+        <!--Gets the attractions in the tourList-->
+        <ion-row class="show-when-attractions" *ngFor="let item of tourList.getTourList(); let i = index;">
+          <ion-card (click)="openAttraction(item.title)">
+            <div class="card-txt-container">
+              <div class="title-container">
+                <p class="featured-card-title">{{ item.title }}</p>
+              </div>
+              <div class="time-container border-right">
+                  <ion-icon name="stopwatch"></ion-icon>
+                  <p class="card-time-title">{{ item.time }}h</p>
+              </div>
+              <div class="star-container">
+                  <ion-icon name="star-half"></ion-icon>
+                  <ion-icon name="star-half"></ion-icon>
+                  <ion-icon name="star-half"></ion-icon>
+                  <ion-icon name="star-half"></ion-icon>
+                  <ion-icon name="star-half"></ion-icon>
+              </div>
+            </div>
+          </ion-card>
+
         </ion-row>
   </ion-grid>
 

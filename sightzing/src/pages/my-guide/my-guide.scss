@@ -1,5 +1,9 @@
 page-my-guide{
 
+    $text-input-md-show-focus-highlight: false;
+    $text-input-wp-show-focus-highlight: false;
+    $text-input-md-highlight-color: transparent;
+
     .edit-icon{
         font-size: 2.3rem;
     }
@@ -17,7 +21,7 @@ page-my-guide{
     /*Styling for time estimate and attraction count*/ 
     #time-and-count-row{
         margin-top: 24px;
-        margin-bottom: 24px;
+        margin-bottom: 32px;
     }
 
     #time-icon{
@@ -61,15 +65,103 @@ page-my-guide{
         padding-left: 5px; 
     }
     
-    /**/
+
+    /*Grid for when attractions are added*/
+    .show-when-attractions{
+        padding: 0 8px;
+    }
+
+    /*Start input field*/
+    .item-md.item-block .item-inner,
+    .item-md.item-input.input-has-focus .item-inner,
+    .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner,
+    .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner,
+    .list-md .item-input.input-has-focus:last-child,
+    .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child,
+    .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
+        border-bottom: none;
+        box-shadow: none;
+    }
+    .list-md .item-input.input-has-focus:last-child .item-inner,
+    .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child .item-inner,
+    .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child .item-inner {
+        box-shadow: none; 
+    }
+
+    .text-input, .text-input-md{
+        margin-left: 16px; 
+        color: $color-dark-gray;
+        font-size: 1rem !important;
+        font-family: 'Heebo', sans-serif;
+        font-weight: 900 !important; 
+        text-transform: uppercase; 
+        letter-spacing: 1px;
+    }
+
+    .text-input-clear-icon, .button-clear, .button-clear-md{
+        box-shadow: none;
+    }
+
+    .start-input-container{
+        padding: 0; 
+    }
+
+    .start-input{
+        border: 1px solid $color-light-gray; 
+        border-radius: 10px; 
+    }
+
+    /*Cards with attractions*/
+
     .card {
         //height: 5em;
         background-color: #ffffff !important;
         color: black;
         text-align: left;
         padding: 1.3em;
+        width: 100%; 
+        border-radius: 10px;
+        margin: 16px 0;
     }
-    
+
+    .card-txt-container{
+        display: table;
+        width: 100%; 
+    }
+
+    .featured-card-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin: 0;
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-bottom: 5px;
+        text-align: left;
+        color: $color-dark-gray; 
+        padding-bottom: 16px;
+    }
+
+    .time-container{
+        display: table-cell;
+        width: 50px;
+        text-align: right; 
+        padding-right: 8px;
+    }
+
+    .title-container{
+        display: table-cell; 
+    }
+
+    .star-container{
+        display: table-cell; 
+    }
+
+
+    .card-time-title{
+        display: inline-block;
+        padding-left: 5px;
+    }
+
     .timeline {
         position: relative;
         background-color: #a39f9f !important;
