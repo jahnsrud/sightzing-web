@@ -127,6 +127,9 @@ export class ProfilePage {
 
     document.getElementById("title").innerHTML="Profile";
     localStorage.setItem("isLoggedin", "false");
+    localStorage.clear();
+    this.setUsernameEmailAndCountry();
+    this.setProfilePic();
 
     plusBtn.setAttribute("style", "display: none;");
     profileGrid.setAttribute("style","display: block");
@@ -179,7 +182,7 @@ export class ProfilePage {
     title: 'Are you sure you want to sign out?',
     buttons: [
       {
-        text: 'Yes',
+        text: 'Sign out',
         role: 'destructive',
         handler: () => {
           this.signOut();
@@ -202,7 +205,7 @@ export class ProfilePage {
       title: 'Are you sure you want to delete your profile?',
       buttons: [
         {
-          text: 'Yes, delete my Profile',
+          text: 'delete my Profile',
           role: 'destructive',
           handler: () => {
             this.signOut();
