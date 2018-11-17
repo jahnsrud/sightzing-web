@@ -37,6 +37,7 @@ export class WelcomePage {
     });
 
     toast.present();
+    localStorage.setItem("isLoggedin", "true");
 
     this.viewController.dismiss(this.modalController);
 

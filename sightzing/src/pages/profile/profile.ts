@@ -34,6 +34,7 @@ export class ProfilePage {
     console.log('ionViewDidLoad ProfilePage');
     this.checkLoggedinStatus();
     this.setUsernameEmailAndCountry();
+    this.setProfilePic();
   }
 
   dismiss() {
@@ -58,12 +59,27 @@ export class ProfilePage {
     this.viewController.dismiss(this.modalController);
 
   }
+
+  setProfilePic() {
+    document.getElementById("profileplaceholder").setAttribute("src", localStorage.getItem("imageUrl"));
+  }
   
   setUsernameEmailAndCountry() {
-
+    if(localStorage.getItem("emailInput")!= ""){
     document.getElementById("email").innerHTML= localStorage.getItem("emailInput");
+    } else {
+      document.getElementById("email").setAttribute("style", "display: none;");
+    }
+    if(localStorage.getItem("Username")!= ""){
     document.getElementById("username").innerHTML= localStorage.getItem("Username");
+    } else {
+      document.getElementById("username").setAttribute("style", "display: none;");
+    }
+    if(localStorage.getItem("Country")!= ""){
     document.getElementById("country").innerHTML= localStorage.getItem("Country");
+    } else {
+      document.getElementById("country").setAttribute("style", "display: none;");
+    }
   }
 
   changeToLogin() {
@@ -84,9 +100,10 @@ export class ProfilePage {
     let editProfileGrid = document.getElementById("editprofilediv");
     let loggedinGrid = document.getElementById("loggedindiv");
     let plusBtn = document.getElementById("plusbtn");
-    let profilePlaceholder = document.getElementById("profilePlaceholder");
+    let profilePlaceholder = document.getElementById("profileplaceholder");
 
     localStorage.setItem("isLoggedin", "true");
+    localStorage.setItem("imageUrl", this.url);
 
     document.getElementById("title").innerHTML="Profile";
     localStorage.setItem("emailInput",this.emailInput);
@@ -120,14 +137,12 @@ export class ProfilePage {
   changeToEditProfile() {
 
     let plusBtn = document.getElementById("plusbtn");
-    let profilePlaceholder = document.getElementById("profilePlaceholder");
+    let profilePlaceholder = document.getElementById("profileplaceholder");
     let editProfieGrid = document.getElementById("editprofilediv");
-    let fileUpload = document.getElementById("file");
     let loggedinGrid = document.getElementById("loggedindiv");
 
     document.getElementById("title").innerHTML="Edit Profile";
-
-    fileUpload.setAttribute("style", "display: block;");
+    
     loggedinGrid.setAttribute("style","display: none;");
     editProfieGrid.setAttribute("style","display: block;");
     profilePlaceholder.setAttribute("style","display: block;");
