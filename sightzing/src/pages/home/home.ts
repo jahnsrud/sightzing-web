@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, ModalController, ToastController, Content } from 'ionic-angular';
+import { NavController, ModalController, ToastController, Content, AlertController } from 'ionic-angular';
 import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
 import { WelcomePage } from '../welcome/welcome';
 import { TourPage } from '../tour/tour'
@@ -22,7 +22,7 @@ export class HomePage {
   attractionList: any;
   eventList: any;
 
-  constructor(public navController: NavController, public modalController: ModalController, public mainTourList: TourList, public toastCtrl:ToastController) {
+  constructor(public navController: NavController, public modalController: ModalController, public mainTourList: TourList, public toastCtrl: ToastController, public alertController: AlertController) {
 
     this.getCurrentWeather();
     this.displayRandomQuote();
@@ -38,7 +38,7 @@ export class HomePage {
 
     this.featuredList = [
       {
-        "title": "Hidden treasures of Oslo",
+        "title": "Hidden Treasures of Oslo",
         "type": "Tour",
         "attractions": [
           attraction.getAttraction("Nordmarka"),
@@ -64,40 +64,40 @@ export class HomePage {
 
     this.eventList = [
       {
-        "title": "Flåklypa Remix",
-        "description": "Remix",
-        "date": "1. desember 2018",
-        "imageUrl": "../../assets/imgs/all-attractions.jpg"
+        "title": "Theatre: Julemiddag",
+        "description": "",
+        "date": "4. desember 2018",
+        "imageUrl": "../../assets/imgs/julemiddag.jpg"
       },
       {
-        "title": "Flåklypa Remix",
-        "description": "Remix",
-        "date": "1. desember 2018",
-        "imageUrl": "../../assets/imgs/all-attractions.jpg"
+        "title": "Outdoor Cinema: Home Alone",
+        "description": "",
+        "date": "7. desember 2018",
+        "imageUrl": "../../assets/imgs/outdoor-cinema.jpg"
       },
       {
-        "title": "Flåklypa Remix",
-        "description": "Remix",
-        "date": "1. desember 2018",
-        "imageUrl": "../../assets/imgs/all-attractions.jpg"
+        "title": "Julebrus-tasting",
+        "description": "",
+        "date": "8. desember 2018",
+        "imageUrl": "../../assets/imgs/julebrus.jpg"
       },
       {
-        "title": "Flåklypa Remix",
-        "description": "Remix",
-        "date": "1. desember 2018",
-        "imageUrl": "../../assets/imgs/all-attractions.jpg"
+        "title": "Christmas Concert: Kurt Nilsen",
+        "description": "",
+        "date": "8. desember 2018",
+        "imageUrl": "../../assets/imgs/kurt-nilsen.jpg"
       },
       {
-        "title": "Flåklypa Remix",
-        "description": "Remix",
-        "date": "1. desember 2018",
-        "imageUrl": "../../assets/imgs/all-attractions.jpg"
+        "title": "Ennio Moricone",
+        "description": "",
+        "date": "10. desember 2018",
+        "imageUrl": "../../assets/imgs/ennio-morricone.jpg"
       },
       {
-        "title": "Flåklypa Remix",
-        "description": "Remix",
-        "date": "1. desember 2018",
-        "imageUrl": "../../assets/imgs/all-attractions.jpg"
+        "title": "Svanesjøen",
+        "description": "",
+        "date": "11. desember 2018",
+        "imageUrl": "../../assets/imgs/svanesjoen.jpg"
       }
     ];
 
@@ -114,26 +114,26 @@ export class HomePage {
       this.changeNavbarOnScroll();
     });
     this.content.ionScrollEnd.subscribe(() => {
-      if(this.content.scrollTop == 0){
-        this.changeNavbarToTransparent(); 
+      if (this.content.scrollTop == 0) {
+        this.changeNavbarToTransparent();
       }
     });
   }
 
-  ionViewDidEnter(){
+  ionViewDidEnter() {
     console.log('ionViewDidEnter HomePage');
   }
 
-  changeNavbarOnScroll(){
-    let navbar = document.getElementById("navbar-home"); 
-    navbar.style.backgroundColor = "white"; 
+  changeNavbarOnScroll() {
+    let navbar = document.getElementById("navbar-home");
+    navbar.style.backgroundColor = "white";
     navbar.style.boxShadow = "0 2px 10px 1px rgba(150, 150, 150, 0.1), 0 0px 10px 1px rgba(150, 150, 150, 0.1), 0 7px 10px 0 rgba(150, 150, 150, 0.12)";
   }
 
-  changeNavbarToTransparent(){
-    let navbar = document.getElementById("navbar-home"); 
-    navbar.style.backgroundColor = "transparent"; 
-    navbar.style.boxShadow = "none"; 
+  changeNavbarToTransparent() {
+    let navbar = document.getElementById("navbar-home");
+    navbar.style.backgroundColor = "transparent";
+    navbar.style.boxShadow = "none";
   }
 
   getCurrentWeather() {
@@ -195,7 +195,7 @@ export class HomePage {
   }
 
   presentFeatured(title: string, type: string) {
-console.log(title, type)
+    console.log(title, type)
     if (type.toLowerCase() == "tour") {
       this.presentTour(title);
     } else if (type.toLowerCase() == "attraction") {
@@ -207,6 +207,15 @@ console.log(title, type)
   async presentProfile() {
     const modal = await this.modalController.create(ProfilePage);
     modal.present();
+  }
+
+  openEvent() {
+    let alert = this.alertController.create({
+      title: "Not available",
+      subTitle: "Events is not available in this version of Sightzing. Check back later 😎",
+      buttons: ["Dismiss"]
+    });
+    alert.present();
   }
 
   isFirstLaunch() {

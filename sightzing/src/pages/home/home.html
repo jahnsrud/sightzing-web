@@ -66,9 +66,10 @@
   <h3>Events</h3>
   <ion-scroll scrollX="true" scrollbar="false" class="front-page-content">
     <div class="somewhere" style="display: inline-flex">
-      <div class="scrollableCard" *ngFor="let item of eventList" [style.backgroundImage]="'url('+ item.imageUrl +')'">
+      <div class="scrollableCard" *ngFor="let item of eventList" [style.backgroundImage]="'url('+ item.imageUrl +')'" (click)="openEvent()">
 
           <p class="scroll-title">{{item.title}}</p>
+          <p class="">{{item.date}}</p>
 
       </div>
     </div>
