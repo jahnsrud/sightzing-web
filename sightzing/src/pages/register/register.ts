@@ -24,7 +24,7 @@ export class RegisterPage {
   public Email: any;
   public username: any;
   public country: any;
-
+  url = '';
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController, public formBuilder: FormBuilder) {
   
     this.registerForm= formBuilder.group({
@@ -58,6 +58,7 @@ export class RegisterPage {
     localStorage.setItem("isLoggedin", "true");
     localStorage.setItem("Username", this.username);
     localStorage.setItem("Country", this.country);
+    localStorage.setItem("imageUrl", this.url);
   }
 
   dismiss() {
@@ -70,9 +71,10 @@ export class RegisterPage {
     let welcomeUserGrid = document.getElementById("welcomeuserdiv");
     let loginBtn = document.getElementById("loginbtn");
     let registerBtn = document.getElementById("registerbtn");
-    let profilePlaceHolder = document.getElementById("profilePlaceholder");
+    let profilePlaceHolder = document.getElementById("profileplaceholder");
     let plusBtn = document.getElementById("plusbtn");
-    
+    let imgContainer = document.getElementById("profile-pic-container");
+
     document.getElementById("title").innerHTML="Welcome!";
     localStorage.setItem("emailInput", this.Email);
 
@@ -82,5 +84,18 @@ export class RegisterPage {
     registerBtn.setAttribute("style", "display: none;");
     profilePlaceHolder.setAttribute("style", "display: block;");
     plusBtn.setAttribute("style", "display: block");
+    imgContainer.setAttribute("style", "display: block;");
   }
+
+  readUrl(event:any) {
+    if (event.target.files && event.target.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = (event:any) => {
+            this.url = event.target.result;
+        }
+
+        reader.readAsDataURL(event.target.files[0]);
+    }
+}
 }

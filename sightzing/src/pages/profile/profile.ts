@@ -104,6 +104,7 @@ export class ProfilePage {
 
     localStorage.setItem("isLoggedin", "true");
     localStorage.setItem("imageUrl", this.url);
+    this.setProfilePic();
 
     document.getElementById("title").innerHTML="Profile";
     localStorage.setItem("emailInput",this.emailInput);
@@ -155,7 +156,7 @@ export class ProfilePage {
   changeToEditPassword() {
 
     let editPasswordGrid = document.getElementById("editpassworddiv");
-    let profilePlaceholder = document.getElementById("profilePlaceholder");
+    let profilePlaceholder = document.getElementById("profileplaceholder");
     let loggedinGrid = document.getElementById("loggedindiv");
 
     document.getElementById("title").innerHTML="Edit Password";
