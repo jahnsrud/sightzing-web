@@ -1,4 +1,4 @@
-import { Component, Testability, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavController, ModalController, ToastController, Content } from 'ionic-angular';
 import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
 import { WelcomePage } from '../welcome/welcome';
@@ -31,6 +31,9 @@ export class HomePage {
 
     if (this.isFirstLaunch()) {
       // presenter welcome
+
+
+
     }
 
     this.featuredList = [
@@ -59,7 +62,44 @@ export class HomePage {
       }
     ];
 
-    this.eventList = [...attraction.getAttractions()].slice(4, 8);
+    this.eventList = [
+      {
+        "title": "Flåklypa Remix",
+        "description": "Remix",
+        "date": "1. desember 2018",
+        "imageUrl": "../../assets/imgs/all-attractions.jpg"
+      },
+      {
+        "title": "Flåklypa Remix",
+        "description": "Remix",
+        "date": "1. desember 2018",
+        "imageUrl": "../../assets/imgs/all-attractions.jpg"
+      },
+      {
+        "title": "Flåklypa Remix",
+        "description": "Remix",
+        "date": "1. desember 2018",
+        "imageUrl": "../../assets/imgs/all-attractions.jpg"
+      },
+      {
+        "title": "Flåklypa Remix",
+        "description": "Remix",
+        "date": "1. desember 2018",
+        "imageUrl": "../../assets/imgs/all-attractions.jpg"
+      },
+      {
+        "title": "Flåklypa Remix",
+        "description": "Remix",
+        "date": "1. desember 2018",
+        "imageUrl": "../../assets/imgs/all-attractions.jpg"
+      },
+      {
+        "title": "Flåklypa Remix",
+        "description": "Remix",
+        "date": "1. desember 2018",
+        "imageUrl": "../../assets/imgs/all-attractions.jpg"
+      }
+    ];
 
     this.tourList = tour.getTours();
 
