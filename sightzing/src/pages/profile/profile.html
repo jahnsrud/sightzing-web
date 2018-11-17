@@ -87,18 +87,18 @@
 
   <div id="editprofilediv" [formGroup]="editProfileForm">
     <ion-list>
-      <ion-item>
-        <ion-label floating>Full Name</ion-label>
+      <ion-item class="editprofileinput">
+        <ion-label floating class="inputlabel" style="color: grey;">Full Name</ion-label>
         <ion-input type="text" formControlName="inputUsername" [(ngModel)]="Username" class="input" id="fullname"></ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-label floating>Country</ion-label>
+      <ion-item class="editprofileinput">
+        <ion-label floating class="inputlabel" style="color: grey;">Country</ion-label>
         <ion-input type="text" formControlName="inputCountry" [(ngModel)]="Country" class="input" id="countryinput"></ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-label floating>Email</ion-label>
+      <ion-item class="editprofileinput">
+        <ion-label floating class="inputlabel" style="color: grey;">Email</ion-label>
         <ion-input type="email" formControlName="inputEmail" [(ngModel)]="emailInput" class="input"></ion-input>
       </ion-item>
     </ion-list>
