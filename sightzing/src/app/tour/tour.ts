@@ -16,7 +16,7 @@ export class Tour {
     constructor(){
 
     }
-
+    
     setValues(title: string,
         description: string,
         imageUrl: string,

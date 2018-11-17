@@ -5,4 +5,65 @@ page-tour {
         
     }
 
+    .tour-description {
+        padding: 16px;
+        line-height: 1.5;
+        color: #646464;
+        text-align: center;
+    }
+
+    .info-bar {
+        background-color: black;
+        height: 70px;
+        width: 100%;
+    }
+
+    .result-txt-box{
+        display: table-cell;
+        vertical-align: bottom;
+    }
+
+    .result-time{
+        color: white !important;
+        display: inline-block;
+    }
+
+    .star-box{
+        padding-left: 8px;
+        min-width: 90px;
+        max-width: 90px;
+        padding-bottom: 1px;
+    }
+
+    .star-icon{
+        color: white;
+    }
+
+    .title-box{
+        width: 100%;
+    }
+
+    .result-title{
+        bottom: 0;
+        padding-left: 16px;
+        text-align: left;
+        margin: 0 !important;
+    }
+
+    .time-box{
+        text-align: right;
+        padding-right: 8px;
+        min-width: 70px;
+    }
+
+    .divider{
+        height: 20px;
+        background-color: white;
+        width: 1px;
+    }
+
+    .time-icon{
+        display: inline-block;
+        color: white;
+    }
 }

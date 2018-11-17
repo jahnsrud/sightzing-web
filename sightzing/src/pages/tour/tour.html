@@ -15,22 +15,65 @@
 
 <ion-content padding>
 
-	  <div id="header-img">
-      <img src="{{ tour.imageUrl }}" alt="Attraction Photo" id="attraction-large-photo">
-      <p>{{tour.description}}<p>
-      </div>
+  <div id="header-img">
+    <img src="{{ tour.imageUrl }}" alt="Attraction Photo" id="attraction-large-photo">
 
-      <h2>What to see</h2>
+    <p>Time</p>
+    <p>{{ tour.totalTime }}</p>
 
-      <div *ngFor="let item of tour.attractions; let i = index;">
-          <div class="scrollableCard" [style.backgroundImage]="'url('+ item.imageUrl +')'">
-            <button ion-button round icon-only class="hello" (click)="addAttractionToMainList(item.title)">
-              <ion-icon name="add" class="add-button-icon"></ion-icon>
-            </button>
-            <div class="inner-image" (click)="presentAttraction(item.title)">
-            </div>
-            <p class="scroll-title">{{item.title}}</p>
-          </div>
+    <p>Attractions</p>
+    <p>{{ tour.attractions.count }}</p>
+
+    <p>Rating</p>
+    <p>Rating here, thanks!</p>
+
+    <p class="tour-description">{{ tour.description }}<p>
+  </div>
+
+  <h2>What to see</h2>
+
+  <ion-row id="result-row" *ngFor="let item of tour.attractions; let i = index;" (click)="presentAttraction(item.title)">
+
+    <ion-card class="cat-sm-height">
+
+      <!--Background image-->
+      <img class="result-card-img" />
+
+      <div class="img-overlay"></div>
+
+      <button ion-button round icon-only class="add-button" (click)="someRandomMethod()">
+          <ion-icon name="add" class="add-button-icon"></ion-icon>
+      </button>
+      
+        <div class="result-txt-box title-box">
+          <h3 class="card-title result-title">
+            {{ item.title }}
+          </h3>
         </div>
+
+        <!--Time-box-->
+        <div class="result-txt-box time-box">
+          <ion-icon class="time-icon" name="time"></ion-icon>
+          <h4 class="result-time">
+            {{ item.time }}
+          </h4>
+        </div>
+
+        <!--Divider-line-->
+        <div class="result-txt-box">
+          <div class="divider"></div>
+        </div>
+
+        <!--Star box-->
+        <div class="result-txt-box star-box">
+
+        </div>
+
+      </ion-card>
+  </ion-row>
+
+  <div class="info-bar">
+    Test
+  </div>
 
 </ion-content>
