@@ -62,9 +62,21 @@
 
         <ion-row class="show-when-attractions">
           <ion-col col-12>
+            <h6 class="position-header">Start</h6>
+          </ion-col>
+          <ion-col col-12>
               <ion-item class="start-input-container">
-                <ion-input placeholder="Start" clearInput class="start-input"></ion-input>
+                <ion-input placeholder="Oslo Central Station" clearInput class="start-input"></ion-input>
               </ion-item>
+          </ion-col>
+          <ion-col>
+            <div class="timeline">
+              <ion-icon name="ios-bus" class="bus"></ion-icon>
+              <div class="travel-txt">
+                <h6>Bus for 20 mins</h6>
+                <p class="button-txt">See in map</p>
+              </div>
+            </div>
           </ion-col>
         </ion-row>
 
@@ -89,13 +101,32 @@
             </div>
           </ion-card>
 
+          <div class="timeline">
+            <ion-icon name="walk" class="walk"></ion-icon>
+            <div class="travel-txt">
+              <h6>Walk for 13 mins</h6>
+              <p class="button-txt">See in map</p>
+            </div>
+          </div>
+
         </ion-row>
+
+        <ion-row class="show-when-attractions big-margin-top">
+            <ion-col col-12>
+              <h6 class="position-header">Stop</h6>
+            </ion-col>
+            <ion-col col-12>
+                <ion-item class="start-input-container">
+                  <ion-input placeholder="Oslo Central Station" clearInput class="start-input"></ion-input>
+                </ion-item>
+            </ion-col>
+          </ion-row>
   </ion-grid>
 
   <!--<ion-card>
     <ion-label>START</ion-label>
     <ion-input></ion-input>
-  </ion-card> -->
+  </ion-card> 
 
   <div *ngFor="let item of tourList.getTourList(); let i = index;">
     <ion-card (click)="openAttraction(item.title)">
@@ -106,6 +137,6 @@
     <div class="timeline">
       <ion-icon name="walk" class="walk"></ion-icon>
     </div>
-  </div>
+  </div>-->
   
 </ion-content>

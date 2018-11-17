@@ -19,6 +19,10 @@ page-my-guide{
         width: 100%;
     }
 
+    h3{
+        margin-bottom: 32px !important;
+    }
+
     /*Styling for time estimate and attraction count*/ 
     #time-and-count-row{
         margin-top: 24px;
@@ -162,27 +166,46 @@ page-my-guide{
         padding-left: 5px;
     }
 
+    /*Timeline line*/
     .timeline {
         position: relative;
-        background-color: #a39f9f !important;
+        background-color: $color-orange !important;
         height: 3.5em;
-        width: 0.2em;
+        width: 2px;
         left: 3em;
-    }
-    
-    .icon {
-        //position: relative;
-        //font-size: 1.5em;
-        //left: -0.13em;
-        //top: 0.5em;
-    }
-
-    .input {
-        //background-color: #a39f9f !important;
     }
 
     .walk {
-        font-size: 22pt;
+        font-size: 2.3rem;
+        color: $color-dark-gray;
+        padding-top: 1rem;
+        margin-left: -2px;
+    }
+
+    .bus{
+        font-size: 2.3rem;
+        color: $color-dark-gray;
+        padding-top: 1rem;
+        margin-left: -6px;
+    }
+
+    .big-margin-top{
+        margin-top: 24px;
+    }
+
+    .position-header{
+        margin-left: 16px;
+    }
+
+    .travel-txt{
+        position: absolute;
+        width: 200px; 
+        top: 12px;
+        left: 24px;
+
+        h6{
+            margin-bottom: 3px;
+        }
     }
     
 }
