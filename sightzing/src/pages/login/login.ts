@@ -65,7 +65,7 @@ export class LoginPage {
     let toast = this.toastCtrl.create({
       message: "Bai Bao signed in 🇨🇳",
       duration: 3000,
-      position: 'bottom'
+      position: 'top'
     });
     localStorage.setItem("isLoggedin", "true");
     toast.present();

@@ -156,7 +156,7 @@ export class HomePage {
     let toast = this.toastCtrl.create({
       message: '✅ Added ' + attraction.getAttraction(i).title,
       duration: 3000,
-      position: 'bottom'
+      position: 'top'
     });
 
     toast.present();

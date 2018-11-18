@@ -34,7 +34,7 @@ export class WelcomePage {
     let toast = this.toastCtrl.create({
       message: "Bai Bao signed in 🇨🇳",
       duration: 3000,
-      position: 'bottom'
+      position: 'top'
     });
 
     toast.present();
