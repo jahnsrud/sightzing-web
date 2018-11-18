@@ -67,9 +67,12 @@ export class ExplorePage {
   }
 
   openFilter(event):void{
-    let filterPop = this.popoverController.create(FilterComponent);
+    let filterPop = this.popoverController.create(
+      FilterComponent,
+      {showBackdrop: false},
+      {cssClass: 'backdropOpacityPopover'});
     filterPop.present({
-      ev: event
+      ev: event,
     });
   }
 

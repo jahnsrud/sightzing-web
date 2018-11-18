@@ -168,4 +168,8 @@ export class MyGuidePage {
     alert.present();
   }
 
+  viewMap() {
+    this.navCtrl.push(MapPage);
+  }
+
 }
