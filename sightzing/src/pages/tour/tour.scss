@@ -66,4 +66,59 @@ page-tour {
         display: inline-block;
         color: white;
     }
+
+    /*Styling for time estimate and attraction count*/ 
+    #time-and-count-row{
+        margin-top: 24px;
+        margin-bottom: 32px;
+    }
+
+    #time-icon{
+        position: relative; 
+        top: -2px;
+    }
+
+    .small-info-container{
+        display: table;
+        margin: auto;
+    }
+
+    .inner-info-container{
+        display: table-cell; 
+        padding-left: 15px; 
+        padding-right: 15px; 
+    }
+
+    .border-right{
+        border-right: solid $color-gray 1px; 
+    }
+
+    .info-txt{
+        text-align: center;    
+    }
+
+    .icon-w-txt-container{
+        display: table; 
+    }
+
+    .centered{
+        margin: auto; 
+    }
+
+    .inner-txt-container{
+        display: table-cell; 
+        vertical-align: middle;
+    }
+
+    .time-txt{
+        padding-left: 5px; 
+    }
+
+    .add-my-guide-btn{
+        background-color: $color-orange !important;
+    }
+
+    .add-my-guide-txt{
+        color: white; 
+    }
 }

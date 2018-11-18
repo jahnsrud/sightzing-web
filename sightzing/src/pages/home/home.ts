@@ -83,13 +83,13 @@ export class HomePage {
         "imageUrl": "../../assets/imgs/kurt-nilsen.jpg"
       },
       {
-        "title": "Ennio Moricone",
+        "title": "Concert: Ennio Moricone",
         "description": "",
         "date": "10. December 2018",
         "imageUrl": "../../assets/imgs/ennio-morricone.jpg"
       },
       {
-        "title": "Svanesjøen",
+        "title": "Ballet: Swan Lake",
         "description": "",
         "date": "11. December 2018",
         "imageUrl": "../../assets/imgs/svanesjoen.jpg"

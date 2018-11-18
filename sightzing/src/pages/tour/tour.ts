@@ -47,7 +47,7 @@ export class TourPage {
     this.mainTourList.addTourToList(this.tour);
 
     let toast = this.toastController.create({
-      message: '✅ Added ' + this.tour.title + "to My Guide. Happy exploring!",
+      message: '✅ Added ' + this.tour.title + " to My Guide. Happy exploring!",
       duration: 3000,
       position: 'top'
     });
