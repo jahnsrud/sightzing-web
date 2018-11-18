@@ -122,6 +122,24 @@ export class AttractionDetailPage {
     alert.present();
   }
 
+  viewOpeningHours() {
+    let alert = this.alertController.create({
+      title: "Not available",
+      subTitle: "Opening hours is not available in this version of Sightzing. Check back later 😎 You can also see how we planned them in our prototypes",
+      buttons: ["Dismiss"]
+    });
+    alert.present();
+  }
+
+  viewNotAvailable() {
+    let alert = this.alertController.create({
+      title: "Not available",
+      subTitle: "This feature is not available in this version of Sightzing. Check back later 😎 You can also see how we planned them in our prototypes",
+      buttons: ["Dismiss"]
+    });
+    alert.present();
+  }
+
   addAttraction() {
     this.mainTourList.addAttractionToList(this.attraction);
 

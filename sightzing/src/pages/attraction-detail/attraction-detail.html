@@ -212,7 +212,7 @@
                 <p>Open now</p>
               </ion-col>
               <ion-col col-2 class="right-align">
-                <ion-icon name="ios-information-circle-outline" class="big-icon"></ion-icon>
+                <ion-icon name="ios-information-circle-outline" class="big-icon" (click)="viewOpeningHours()"></ion-icon>
               </ion-col>
           </ion-row>
 
@@ -448,14 +448,14 @@
                   <!--Table for informtion-->
                   <div class="small-info-container">
     
-                    <div class="inner-info-container border-right">
+                    <div class="inner-info-container border-right" (click)="viewNotAvailable()">
                       <h6 class="info-txt">Rate</h6>
                       <div class="icon-w-txt-container centered">
                         <ion-icon name="star-outline"></ion-icon>
                       </div>
                     </div>
     
-                    <div class="inner-info-container">
+                    <div class="inner-info-container" (click)="viewNotAvailable()">
                       <h6 class="info-txt">Share</h6>
                       <div class="icon-w-txt-container centered">
                         <ion-icon name="ios-share-outline"></ion-icon>
