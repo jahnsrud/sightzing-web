@@ -13,7 +13,7 @@
 <ion-content fullscreen padding>
   <ion-title><h1>Explore</h1></ion-title>
 
-  <ion-searchbar (ionInput)="getItems($event)" (click)="showSearchGrid()"></ion-searchbar>
+  <ion-searchbar [(ngModel)]="inputValue" (ionInput)="getItems($event)" (ionChange)="checkInput()"></ion-searchbar>
 
   <ion-grid no-padding id="search-grid">
         <ion-row id="result-row-search" class="result-rows-class" *ngFor="let item of returnableSearch">

@@ -29,6 +29,7 @@ export class ExplorePage {
   searchItems: string[] = new Array(); 
   searchResult: any[] = new Array();
   returnableSearch: any[] = new Array(); 
+  public inputValue;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public popoverController: PopoverController) {
@@ -153,18 +154,29 @@ export class ExplorePage {
     this.content.scrollToTop();
   }
 
-  showSearchGrid(){
-    //get the search-grid and set to display block
+  checkInput(){
+    let value = this.inputValue; 
+    console.log("her er verdi: " + value);
     let searchGrid = document.getElementById("search-grid");
-    searchGrid.setAttribute("style", "display: block;")
+    let exploreGrid = document.getElementById("explore-grid");
+    let resultGrid = document.getElementById("result-grid");
 
-     //get the explore-grid and hide
-     let exploreGrid = document.getElementById("explore-grid");
-     exploreGrid.setAttribute("style", "display: none;");
+    if(value != null && value != ""){
+      //get the search-grid and set to display block
+      searchGrid.setAttribute("style", "display: block;")
 
-     //get the resultgrid and hide
-     let resultGrid = document.getElementById("result-grid");
-     resultGrid.setAttribute("style", "display: none;");
+      //get the explore-grid and hide
+      exploreGrid.setAttribute("style", "display: none;");
+
+      //get the resultgrid and hide
+      resultGrid.setAttribute("style", "display: none;");
+    }
+
+    else{
+      searchGrid.setAttribute("style", "display: none;");
+      exploreGrid.setAttribute("style", "display: block;");
+      resultGrid.setAttribute("style", "display: none;");
+    }
   }
 
   changeToResults(choice: string){
