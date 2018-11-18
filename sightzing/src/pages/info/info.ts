@@ -37,8 +37,14 @@ export class InfoPage {
         expanded: false,
         iconName: "add"},
       {
-        title: 'About sightZing',
+        title: "About sightZing",
         content: "sihgtZing's mission is to help travelers exploring Oslo for the first time, give them the basic knowledge of how to get to one point from another. We want to help people and give them the ultimate experience when they first come to Oslo.",
+        aboutTitle: "Creators",
+        creator1: "Markus Jahnsrud",
+        creator2: "Stine Sandberg",
+        creator3: "Håvard Nordlie Mathisen",
+        creator4: "Marcus Tveide Jensen",
+        creator5: "Andreas Breime Persson",
         expanded: false,
         iconName: "add"},
       {
