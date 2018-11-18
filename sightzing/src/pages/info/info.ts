@@ -49,7 +49,9 @@ export class InfoPage {
         iconName: "add"},
       {
         title: 'Terms and Conditions',
-        content: '',
+        content: 'Please read these Terms and Conditions carefully before using the sightZing mobile application operated by us. ',
+        content2: "Your access to and use of the Service is conditioned on your acceptance of and compilance with these terms. these terms apply to all visitors, users and others who access or use the service.",
+        content3: "By accessing or using the service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.",
         expanded: false,
         iconName: "add"}
         ];
