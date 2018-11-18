@@ -50,7 +50,7 @@ export class ProfilePage {
 
     localStorage.setItem("isLoggedin", "true");
     localStorage.setItem("Username", "Bai Bao");
-    localStorage.setItem("emailInput", "Bai.Bao@online.no");
+    localStorage.setItem("emailInput", "Bai.Bao@hotmail.com");
     localStorage.setItem("Country", "China");
 
     toast.present();
@@ -120,6 +120,7 @@ export class ProfilePage {
 
   changeToLoggedinUserFromEditPassword() {
 
+    let profilePlaceholder = document.getElementById("profileplaceholder");
     let editPasswordGrid = document.getElementById("editpassworddiv");
     let loggedinGrid = document.getElementById("loggedindiv");
 
@@ -129,22 +130,25 @@ export class ProfilePage {
     this.Country= localStorage.getItem("Country");
     this.emailInput= localStorage.getItem("emailInput");
 
+    profilePlaceholder.setAttribute("style", "display: block");
     editPasswordGrid.setAttribute("style", "display: none;");
     loggedinGrid.setAttribute("style", "display: block;");
   }
 
   signOut() {
 
+    let profilePlaceholder = document.getElementById("profileplaceholder");
     let editProfieGrid = document.getElementById("editprofilediv");
     let loggedinGrid = document.getElementById("loggedindiv");
     let profileGrid = document.getElementById("notloggedindiv");
     let plusBtn = document.getElementById("plusbtn");
 
-    document.getElementById("title").innerHTML="Profile";
     localStorage.setItem("isLoggedin", "false");
+    document.getElementById("title").innerHTML="Profile";
     this.setUsernameEmailAndCountry();
     this.setProfilePic();
 
+    profilePlaceholder.setAttribute("style", "display: none;");
     plusBtn.setAttribute("style", "display: none;");
     profileGrid.setAttribute("style","display: block");
     loggedinGrid.setAttribute("style", "display: none;");
@@ -167,7 +171,7 @@ export class ProfilePage {
   }
 
   changeToEditPassword() {
-
+    
     let editPasswordGrid = document.getElementById("editpassworddiv");
     let profilePlaceholder = document.getElementById("profileplaceholder");
     let loggedinGrid = document.getElementById("loggedindiv");
@@ -176,7 +180,7 @@ export class ProfilePage {
 
     editPasswordGrid.setAttribute("style","display: block;");
     loggedinGrid.setAttribute("style","display: none;");
-    profilePlaceholder.setAttribute("style","display: none;");
+    profilePlaceholder.setAttribute("style","display: block;");
   }
 
   checkLoggedinStatus() {
@@ -251,4 +255,8 @@ export class ProfilePage {
         reader.readAsDataURL(event.target.files[0]);
     }
 }
+
+  moveFocus(nextElement) {
+    nextElement.setFocus();
+  }
 }

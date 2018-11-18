@@ -98,4 +98,8 @@ export class RegisterPage {
         reader.readAsDataURL(event.target.files[0]);
     }
 }
+
+moveFocus(nextElement) {
+  nextElement.setFocus();
+}
 }

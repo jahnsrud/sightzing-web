@@ -68,7 +68,14 @@ export class LoginPage {
       position: 'top'
     });
     localStorage.setItem("isLoggedin", "true");
+    localStorage.setItem("Username", "Bai Bao");
+    localStorage.setItem("emailInput", "Bai.Bao@hotmail.com");
+    localStorage.setItem("Country", "China");
     toast.present();
     this.dismiss();
+  }
+
+  moveFocus(nextElement) {
+    nextElement.setFocus();
   }
 }
