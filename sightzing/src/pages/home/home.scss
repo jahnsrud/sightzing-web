@@ -84,16 +84,17 @@ page-home{
     }
 
     .featured-card-time-usage {
-        font-size: 12pt;
+        font-size: 10pt !important;
         position: absolute;
         left: 10px;
         top: 0px;
+        color: black;
 
     }
 
     .featured-card-time-usage::before {
         content: "🕖";
-        margin-right: 7px;
+        margin-right: 5px;
     }
 
     h3 {

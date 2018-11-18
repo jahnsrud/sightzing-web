@@ -43,7 +43,7 @@ export class InfoPage {
         creator1: "Markus Jahnsrud",
         creator2: "Stine Sandberg",
         creator3: "Håvard Nordlie Mathisen",
-        creator4: "Marcus Tveide Jensen",
+        creator4: " Marcus Tveide Jensen",
         creator5: "Andreas Breime Persson",
         expanded: false,
         iconName: "add"},
