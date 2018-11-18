@@ -66,37 +66,37 @@ export class HomePage {
       {
         "title": "Theatre: Julemiddag",
         "description": "",
-        "date": "4. desember 2018",
+        "date": "4. December 2018",
         "imageUrl": "../../assets/imgs/julemiddag.jpg"
       },
       {
         "title": "Outdoor Cinema: Home Alone",
         "description": "",
-        "date": "7. desember 2018",
+        "date": "7. December 2018",
         "imageUrl": "../../assets/imgs/outdoor-cinema.jpg"
       },
       {
-        "title": "Julebrus-tasting",
+        "title": "Julebrus tasting",
         "description": "",
-        "date": "8. desember 2018",
+        "date": "8. December 2018",
         "imageUrl": "../../assets/imgs/julebrus.jpg"
       },
       {
         "title": "Christmas Concert: Kurt Nilsen",
         "description": "",
-        "date": "8. desember 2018",
+        "date": "8. December 2018",
         "imageUrl": "../../assets/imgs/kurt-nilsen.jpg"
       },
       {
         "title": "Ennio Moricone",
         "description": "",
-        "date": "10. desember 2018",
+        "date": "10. December 2018",
         "imageUrl": "../../assets/imgs/ennio-morricone.jpg"
       },
       {
         "title": "Svanesjøen",
         "description": "",
-        "date": "11. desember 2018",
+        "date": "11. December 2018",
         "imageUrl": "../../assets/imgs/svanesjoen.jpg"
       }
     ];
