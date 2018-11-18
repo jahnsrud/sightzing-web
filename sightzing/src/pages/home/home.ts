@@ -36,7 +36,7 @@ export class HomePage {
 
     this.featuredList = [
       {
-        "title": "Hidden Treasures of Oslo",
+        "title": "Hidden Treasures",
         "type": "Tour",
         "attractions": [
         ],

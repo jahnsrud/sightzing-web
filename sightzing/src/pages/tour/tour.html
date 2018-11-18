@@ -7,13 +7,16 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{tour.title}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-title>
+    <h1>{{ tour.title }}</h1>
+  </ion-title>
 
   <div id="header-img">
     <img src="{{ tour.imageUrl }}" alt="Attraction Photo" id="attraction-large-photo">
@@ -39,12 +42,6 @@
           </div>
         </div>
 
-        <div class="inner-info-container">
-          <h6 class="info-txt">Rating</h6>
-          <div class="icon-w-txt-container centered">
-            <h4 class="inner-txt-container">{{ tour.rating }}</h4>
-          </div>
-        </div>
 
       </ion-col>
     </ion-row>
@@ -53,8 +50,8 @@
   </div>
 
   <button ion-button full round class="add-my-guide-btn" (click)="addAllAttractions()">
-      <p class="button-txt add-my-guide-txt"> + Add all to My Guide</p>
-    </button>
+    <p class="button-txt add-my-guide-txt"> + Add all to My Guide</p>
+  </button>
 
   <h2>What to see</h2>
 
@@ -97,9 +94,5 @@
 
     </ion-card>
   </ion-row>
-
-  <div class="info-bar">
-    Test
-  </div>
 
 </ion-content>
