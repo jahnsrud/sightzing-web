@@ -2,9 +2,11 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController, Content } from 'ionic-angular';
 import { FilterComponent } from '../../components/filter/filter';
 import { Main } from '../../app/main';
-import {Attraction} from '../../app/attraction/attraction';
+import { Attraction } from '../../app/attraction/attraction';
 import { Tour } from '../../app/tour/tour';
 import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
+import { TourPage } from '../tour/tour';
+
 
 const attraction: Attraction = new Attraction();
 const tour: Tour = new Tour();
@@ -24,12 +26,12 @@ const tour: Tour = new Tour();
 export class ExplorePage {
   @ViewChild(Content) content: Content;
   results = new Array();
+  searchList = new Array(); 
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public popoverController: PopoverController) {
     attraction.fillListWithAttractions();
     tour.fillListWithTours();
-
   }
   
   ionViewDidLoad() {
@@ -47,6 +49,7 @@ export class ExplorePage {
   
   ionViewDidEnter(){
     this.addCorrectAmountOfAttractions();
+    this.addToSearchList(); 
   }
 
   changeNavbarOnScroll(){
@@ -61,15 +64,29 @@ export class ExplorePage {
     navbar.style.boxShadow = "none"; 
   }
 
-  
-
-  
-
   openFilter(event):void{
     let filterPop = this.popoverController.create(FilterComponent);
     filterPop.present({
       ev: event
     });
+  }
+
+  getItems(ev: any){
+    let value = ev.target.value; 
+
+    if(value && value.trim() !== ''){
+      console.log(value); 
+    }
+  }
+
+  addToSearchList(){
+    for(let i = 0; i < attraction.getAttractions.length; i++){
+      this.searchList.push(attraction.getAttractions[i].title);
+    }
+
+    for(let j = 0; j < tour.getTours.length; j++){
+      this.searchList.push(tour.getTours[j].title);
+    }
   }
 
   addCorrectAmountOfAttractions(){
@@ -111,18 +128,27 @@ export class ExplorePage {
 
   }
 
+  scrollToTop() {
+    this.content.scrollToTop();
+  }
 
   changeToResults(choice: string){
+    this.scrollToTop(); 
+    let categoryType: string;
+
     if(choice == "Tours"){
       this.results = tour.getTours();
+      categoryType = "tour";
     }
 
     else if(choice == "All"){
       this.results = attraction.getAttractions();
+      categoryType = "atraction";
     }
 
     else {
       this.results = attraction.getAttractionByCategory(choice);
+      categoryType = "attraction";
       console.log(this.results);
       console.log("url: " + this.results[0].imageUrl);
     }
@@ -145,20 +171,30 @@ export class ExplorePage {
     var resultRow = document.getElementById("result-row");
 
     for(let i = 1; i < this.results.length; i++) {
-      resultRow.onclick = null
-      resultRow.onclick = () => this.pushDetailPage(this.results[i].title);
       resultGrid.appendChild(resultRow.cloneNode(true));
     }
 
+    var rows = resultGrid.getElementsByClassName("result-rows-class");
     var images = resultGrid.getElementsByClassName("result-card-img");
     var titles = resultGrid.getElementsByClassName("result-title");
     var stars = resultGrid.getElementsByClassName("star-box");
 
+
     for(let i = 0; i < images.length; i++){
+      let element: HTMLElement = rows[i] as HTMLElement;
+      element.onclick = ()=>{
+        if(categoryType == "attraction"){
+          this.pushDetailPage(this.results[i].title);
+        }
+        else{
+          this.pushTourPage(this.results[i].title);
+        }
+      }
+
       console.log(this.results[i]);
       images[i].setAttribute("src", this.results[i].imageUrl);
       
-      images[i].innerHTML
+      //images[i].innerHTML
 
       titles[i].innerHTML = this.results[i].title;
       var starsCounted = 0;
@@ -208,9 +244,16 @@ export class ExplorePage {
     });
   }
 
-  changeToExplore(hei: string){
-    //this.onResultPage = false;
+  pushTourPage(tourName:string){
+    let tour = new Tour();
+    tour.fillListWithTours();
 
+    this.navCtrl.push(TourPage, {
+      tour: tour.getTour(tourName)
+    });
+  }
+
+  changeToExplore(hei: string){
     //get the explore-grid
     var exploreGrid = document.getElementById("explore-grid");
     exploreGrid.setAttribute("style", "display: flex;");
@@ -236,30 +279,6 @@ export class ExplorePage {
     }
 
   }
-
-  /*
-    /*
-  removeFromRow(id: string){
-
-    var buttonColumn = document.getElementById("btn-col");
-    var existingChoices = buttonColumn.children;
-
-    for(var i = 0; i < existingChoices.length; i++){
-      if((existingChoices[i].id == id) && (existingChoices.length > 1)){
-        buttonColumn.removeChild(existingChoices[i]);
-      }
-    }
-
-    this.checkIfEmpty();
-  }
-
-  checkIfEmpty(){
-      var buttonColumn = document.getElementById("btn-col");
-
-     if(buttonColumn.children.length < 2){
-       this.changeToExplore();
-     }
-  }*/
 
 
 }

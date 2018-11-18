@@ -1,7 +1,7 @@
 //more pictures
 //opening hours
 
-const attractions: Attraction[] = new Array();
+
 
 export class Attraction {
 
@@ -14,6 +14,7 @@ export class Attraction {
     rating: number;
     category: string;
     time: number;
+    attractions: Attraction[] = new Array();
 
     constructor(){
 
@@ -40,13 +41,13 @@ export class Attraction {
     }
 
     getAttractions(){
-       return attractions;
+       return this.attractions;
     }
 
     getAttraction(name: string){
-        for(var i = 0; i < attractions.length; i++){
-            if(attractions[i].title == name){
-                return attractions[i];
+        for(var i = 0; i < this.attractions.length; i++){
+            if(this.attractions[i].title == name){
+                return this.attractions[i];
             }
         }
         return null;
@@ -54,9 +55,9 @@ export class Attraction {
 
     getAttractionByCategory(category: string){
         let attractionsWithCat: Attraction[] = new Array();
-        for(var i = 0; i < attractions.length; i++){
-            if(attractions[i].category == category){
-                attractionsWithCat.push(attractions[i]);
+        for(var i = 0; i < this.attractions.length; i++){
+            if(this.attractions[i].category == category){
+                attractionsWithCat.push(this.attractions[i]);
             }
         }
         return attractionsWithCat;
@@ -73,11 +74,12 @@ export class Attraction {
         time: number){
             let attraction: Attraction = new Attraction();
             attraction.setValues(title, description, imageUrl, googlePlacesId, website, price, rating, category, time);
-            attractions.push(attraction);
+            this.attractions.push(attraction);
     }
 
     fillListWithAttractions(){
         //Sights
+        this.attractions = []; 
         this.addNewAttractionToList("Akershus Fortress", "Akershus Fortress or Akershus Castle is a medieval castle that was built to protect and provide a royal residence for Oslo, the capital of Norway. The castle has also been used as a military base, a prison and is currently the temporary seat of the prime minister of Norway.", "../assets/imgs/akershus-festning.jpg", "googleplacesid", "website", 1, 4.5, "Sights", 1);
         this.addNewAttractionToList("Royal Palace", "The Royal Palace in Oslo was built int the first half of the 19th century as the Norwegian residence of the French-born King Charles III of Norway, who reigned as king of Norway and Sweden. The Palace is the official residence of the current Norwegian monarch.", "../assets/imgs/royal-palace.jpg", "", "", 1, 4, "Sights", 2);
         this.addNewAttractionToList("Oslo City Hall", "Oslo City Hall is a municipal building in Oslo, the capital of Norway. It houses the city counsil, the city's administration and various other municipal organisations. The building as it stands today was constructed between 1931 and 1950, with an interruption during the Second World War.", "../assets/imgs/city-hall.jpeg", "", "", 1, 3, "Sights", 4);
