@@ -26,21 +26,7 @@
       <h3 style="font-weight: bold">{{ item.title }}</h3>
       <expandable [expanded]="item.expanded" class="expandable-box">
         <p>{{ item.content }}</p>
-        <br>
-        <p>{{ item.content2 }}</p>
-        <br>
-        <p>{{ item.content3 }}</p>
         <p style="font-weight:bold">{{ item.aboutTitle }}</p>
-        <br>
-        <p>{{ item.creator1 }}</p>
-        <br>
-        <p>{{ item.creator2 }}</p>
-        <br>
-        <p>{{ item.creator3 }}</p>
-        <br>
-        <p>{{ item.creator4 }}</p>
-        <br>
-        <p>{{ item.creator5 }}</p>
       </expandable>
     </button>
 
@@ -49,6 +35,6 @@
   <!--END-OF-BUTTONS-->
   <!----------->
 
-  <button ion-button full shape="round" color="primary" (click)="presentWelcomePage()">Open Welcome Screen</button>
+  <button ion-button full round (click)="presentWelcomePage()">Open Welcome Screen</button>
 
 </ion-content>

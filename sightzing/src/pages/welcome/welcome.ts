@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, ModalController, ViewController, NavParams, ToastController } from 'ionic-angular';
+import { RegisterPage } from '../register/register';
 
 /**
  * Generated class for the WelcomePage page.
@@ -15,7 +16,7 @@ import { IonicPage, NavController, ModalController, ViewController, NavParams, T
 })
 export class WelcomePage {
 
-  constructor(public navCtrl: NavController, public modalController: ModalController, public viewController: ViewController, 
+  constructor(public navCtrl: NavController, public modalController: ModalController, public viewController: ViewController,
     public navParams: NavParams,
     public toastCtrl: ToastController) {
   }
@@ -33,13 +34,21 @@ export class WelcomePage {
     let toast = this.toastCtrl.create({
       message: "Bai Bao signed in 🇨🇳",
       duration: 3000,
-      position: 'bottom'
+      position: 'top'
     });
 
     toast.present();
     localStorage.setItem("isLoggedin", "true");
 
     this.viewController.dismiss(this.modalController);
+
+  }
+
+  register() {
+    let welcomeModal = this.modalController.create(RegisterPage);
+    welcomeModal.present();
+    this.dismiss();
+
 
   }
 }

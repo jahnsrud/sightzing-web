@@ -21,17 +21,18 @@
 
   <div class="splash-log-in">
     <ion-row class="row">
-      <button ion-button shape="round" class="btn" color="primary" (click)="loginWithWeibo()">
-        <ion-img id="weibo-logo" src="../../assets/imgs/weibo-logo.png"></ion-img>Log in with Weibo
+
+      <button ion-button full round (click)="loginWithWeibo()" class="welcome-page-button">
+        <img id="weibo-logo" src="../../assets/imgs/weibo-logo.png">Log in with Weibo
       </button>
     </ion-row>
 
     <ion-row class="row">
-      <button ion-button shape="round" class="btn" color="primary">Register with email</button>
+      <button ion-button full round (click)="register()" class="welcome-page-button">Register / Log in</button>
     </ion-row>
 
     <ion-row class="row">
-      <button ion-button shape="round" class="btn" color="primary" (click)="dismiss()">Skip</button>
+      <button ion-button full round (click)="dismiss()" class="welcome-page-button">Skip</button>
     </ion-row>
 
   </div>

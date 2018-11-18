@@ -128,7 +128,7 @@ export class AttractionDetailPage {
     let toast = this.toastController.create({
       message: '✅ Added ' + this.attraction.title,
       duration: 3000,
-      position: 'bottom'
+      position: 'top'
     });
 
     toast.present();

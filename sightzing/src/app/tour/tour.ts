@@ -59,7 +59,7 @@ export class Tour {
         this.addNewTourToList("The Panorama Tour", "Enhance your sightseeing experience of Oslo on a half-day Panorama tour of Norway's capital, delve into the rich history of the city. Take a look at Akershus Fortress, stop for photos at the royal palace, and tour the Oslo City Hall as well as the Oslo Cathedral.", "../assets/imgs/panorama-tour.jpg", 3.5, attraction.getAttractionByCategory("Sights"));
         this.addNewTourToList("For the Cultural Ones", "Follow the footsteps of ancient vikings, see the main attractions in the historic centers as you trace a route from Fram museum to the National Gallery.", "../assets/imgs/cultural-tour.jpg", 2, attraction.getAttractionByCategory("Museums"));
         this.addNewTourToList("Instafriendly", "Explore the amazing sculptures and extraordinary figures in The Vigelands Park, take a look at the amazingly big ski jump, and then take your trip to Nordmarka and take pictures you will remember for life.", "../assets/imgs/instafriendly-tour.jpg", 5, attraction.getAttractionByCategory("Nature & Parks"));
-        this.addNewTourToList("Hidden Treasures of Oslo", "Avoid the tourist traps and experience Oslo like the people who live there.", "../assets/imgs/instafriendly-tour.jpg", 5, attraction.getAttractionByCategory("Nature & Parks"))
+        this.addNewTourToList("Hidden Treasures of Oslo", "Avoid the tourist traps and experience Oslo like the people who live there.", "../assets/imgs/hidden-oslo-tour.jpg", 5, attraction.getAttractionByCategory("Nature & Parks"))
 
     }
 

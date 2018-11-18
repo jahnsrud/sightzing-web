@@ -127,6 +127,6 @@ export class Attraction {
         //Clubs & Pubs
         this.addNewAttractionToList("Jaeger", "An intimate club nestled in the heart of the Norwegian capital, Oslo. Ours is a sonic, manifesto lifted straight from the disco provocateurs of the seventies, and an expansive understanding of house and techno.", "../assets/imgs/jaeger.jpg", "", "", 1, 5, "Clubs & Pubs", 1.5);
         this.addNewAttractionToList("The Villa", "The Villa is an underground club sanctuary that has quickly achieved a reputable status thanks to a consistent run of interesting, current, and cutting edge bookings. Located in the center of Oslo.", "../assets/imgs/the-villa.jpg", "", "", 1, 4, "Clubs & Pubs", 2);
-console.log("here");
+
     }
 }

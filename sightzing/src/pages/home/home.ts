@@ -29,11 +29,9 @@ export class HomePage {
     attraction.fillListWithAttractions();
     tour.fillListWithTours();
 
-    if (this.isFirstLaunch()) {
-      // presenter welcome
-
-
-
+    if (localStorage.getItem("isLoggedin")=="false"){
+      let welcomeModal = this.modalController.create(WelcomePage);
+      welcomeModal.present();
     }
 
     this.featuredList = [
@@ -45,8 +43,8 @@ export class HomePage {
           attraction.getAttraction("Fram Museum"),
           attraction.getAttraction("Oslo Cathedral")
         ],
-        "time": 0,
-        "image": "../../assets/imgs/all-attractions.jpg"
+        "time": 7.5,
+        "image": "../../assets/imgs/hidden-oslo-tour.jpg"
       },
       {
         "title": attraction.getAttraction("Holmenkollen").title,
@@ -158,7 +156,7 @@ export class HomePage {
     let toast = this.toastCtrl.create({
       message: '✅ Added ' + attraction.getAttraction(i).title,
       duration: 3000,
-      position: 'bottom'
+      position: 'top'
     });
 
     toast.present();
@@ -219,16 +217,6 @@ export class HomePage {
     alert.present();
   }
 
-  isFirstLaunch() {
-
-    // legg inn logikk her
-
-    localStorage.getItem("firstLaunch");
-    localStorage.setItem("firstLaunch", "false");
-
-    return true;
-
-  }
   quoteList: string[] = ["Party in the city where the heat is on",
 
     "It's gettin hot in here!",
