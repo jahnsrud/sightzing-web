@@ -99,7 +99,9 @@ export class RegisterPage {
     }
 }
 
-moveFocus(nextElement) {
+moveFocus(event, nextElement) {
+  if(event.key === "Enter"){
   nextElement.setFocus();
+  }
 }
 }

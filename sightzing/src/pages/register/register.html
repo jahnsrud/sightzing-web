@@ -60,12 +60,12 @@
     <ion-list>
         <ion-item class="editprofileinput">
           <ion-label floating style="color: grey;">Email</ion-label>
-          <ion-input type="email" formControlName="inputEmail" [(ngModel)]="Email" class="input" id="emailinput"(keyup)="moveFocus(b)"></ion-input>
+          <ion-input type="email" formControlName="inputEmail" [(ngModel)]="Email" class="input" id="emailinput"(keyup)="moveFocus($event, b)"></ion-input>
         </ion-item>
 
         <ion-item class="editprofileinput">
           <ion-label floating style="color: grey;">Password</ion-label>
-            <ion-input type="Password" class="input" #b (keyup)="moveFocus(c)"></ion-input>
+            <ion-input type="Password" class="input" #b (keyup)="moveFocus($event, c)"></ion-input>
         </ion-item>
 
         <ion-item class="editprofileinput">
@@ -86,7 +86,7 @@
   <ion-list>
     <ion-item class="editprofileinput">
         <ion-label floating style="color: grey;">Full Name</ion-label>
-        <ion-input type="text" formControlName="inputUsername" [(ngModel)]="username" class="input" id="fullname" (keyup)="moveFocus(x)"></ion-input>
+        <ion-input type="text" formControlName="inputUsername" [(ngModel)]="username" class="input" id="fullname" (keyup)="moveFocus($event, x)"></ion-input>
     </ion-item>
     
     <ion-item class="editprofileinput">

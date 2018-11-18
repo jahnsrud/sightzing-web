@@ -32,7 +32,7 @@
     <ion-list>
         <ion-item class="editprofileinput">
           <ion-label floating style="color: grey;">Email</ion-label>
-          <ion-input type="email" formControlName="inputEmailOrUser" [(ngModel)]="emailOrUsername" class="input"(keyup)="moveFocus(b)"></ion-input>
+          <ion-input type="email" formControlName="inputEmailOrUser" [(ngModel)]="emailOrUsername" class="input"(keyup)="moveFocus($event, b)"></ion-input>
         </ion-item>
 
         <ion-item class="editprofileinput">

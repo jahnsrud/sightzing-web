@@ -75,7 +75,9 @@ export class LoginPage {
     this.dismiss();
   }
 
-  moveFocus(nextElement) {
+  moveFocus(event, nextElement) {
+    if(event.key === "Enter"){
     nextElement.setFocus();
+    }
   }
 }
