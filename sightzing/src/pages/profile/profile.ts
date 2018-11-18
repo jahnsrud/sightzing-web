@@ -23,11 +23,10 @@ export class ProfilePage {
   url = '';
   editProfileForm: FormGroup;
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewController: ViewController, public modalController: ModalController, public toastCtrl: ToastController, public actionSheetCtrl: ActionSheetController, public formBuilder: FormBuilder) {
-    this.editProfileForm= formBuilder.group({
-      'inputUsername': ['', Validators.compose([Validators.required])],
-      'inputCountry': ['', Validators.compose([Validators.required])],
-      'inputEmail': ['', Validators.compose([Validators.required])]
-    });
+    this.Username= localStorage.getItem("Username");
+    this.Country= localStorage.getItem("Username");
+    this.emailInput= localStorage.getItem("emailInput");
+    this.url= localStorage.getItem("imageUrl");
   }
 
   ionViewDidLoad() {
@@ -126,6 +125,10 @@ export class ProfilePage {
 
     document.getElementById("title").innerHTML="Profile";
 
+    this.Username= localStorage.getItem("Username");
+    this.Country= localStorage.getItem("Country");
+    this.emailInput= localStorage.getItem("emailInput");
+
     editPasswordGrid.setAttribute("style", "display: none;");
     loggedinGrid.setAttribute("style", "display: block;");
   }
@@ -186,6 +189,10 @@ export class ProfilePage {
       document.getElementById("loggedindiv").setAttribute("style", "display: none;");
       document.getElementById("notloggedindiv").setAttribute("style","display: block;");
     }
+  }
+
+  checkUserInput() {
+
   }
 
   presentActionSheet() {
