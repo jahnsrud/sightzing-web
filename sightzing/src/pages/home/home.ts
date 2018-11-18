@@ -29,11 +29,9 @@ export class HomePage {
     attraction.fillListWithAttractions();
     tour.fillListWithTours();
 
-    if (this.isFirstLaunch()) {
-      // presenter welcome
-
-
-
+    if (localStorage.getItem("isLoggedin")=="false"){
+      let welcomeModal = this.modalController.create(WelcomePage);
+      welcomeModal.present();
     }
 
     this.featuredList = [
@@ -219,16 +217,6 @@ export class HomePage {
     alert.present();
   }
 
-  isFirstLaunch() {
-
-    // legg inn logikk her
-
-    localStorage.getItem("firstLaunch");
-    localStorage.setItem("firstLaunch", "false");
-
-    return true;
-
-  }
   quoteList: string[] = ["Party in the city where the heat is on",
 
     "It's gettin hot in here!",

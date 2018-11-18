@@ -24,7 +24,7 @@ export class ProfilePage {
   editProfileForm: FormGroup;
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewController: ViewController, public modalController: ModalController, public toastCtrl: ToastController, public actionSheetCtrl: ActionSheetController, public formBuilder: FormBuilder) {
     this.Username= localStorage.getItem("Username");
-    this.Country= localStorage.getItem("Username");
+    this.Country= localStorage.getItem("Country");
     this.emailInput= localStorage.getItem("emailInput");
     this.url= localStorage.getItem("imageUrl");
   }
@@ -142,7 +142,6 @@ export class ProfilePage {
 
     document.getElementById("title").innerHTML="Profile";
     localStorage.setItem("isLoggedin", "false");
-    localStorage.clear();
     this.setUsernameEmailAndCountry();
     this.setProfilePic();
 

@@ -26,7 +26,8 @@ const tour: Tour = new Tour();
 export class ExplorePage {
   @ViewChild(Content) content: Content;
   results = new Array();
-  searchList = new Array(); 
+  searchItems: string[] = new Array(); 
+  searchResult: any[] = new Array();
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public popoverController: PopoverController) {
@@ -49,7 +50,6 @@ export class ExplorePage {
   
   ionViewDidEnter(){
     this.addCorrectAmountOfAttractions();
-    this.addToSearchList(); 
   }
 
   changeNavbarOnScroll(){
@@ -73,19 +73,32 @@ export class ExplorePage {
 
   getItems(ev: any){
     let value = ev.target.value; 
-
+    this.addToSearchList(); 
+    console.log(this.searchItems);
     if(value && value.trim() !== ''){
-      console.log(value); 
+      console.log(value);
+      this.searchResult = [];
+      this.searchItems.filter((item) => {
+        if(item.toLowerCase().indexOf(value.toLowerCase()) > -1){
+          this.searchResult.push(item);
+        }
+        return this.searchResult;
+      })
     }
   }
 
   addToSearchList(){
-    for(let i = 0; i < attraction.getAttractions.length; i++){
-      this.searchList.push(attraction.getAttractions[i].title);
+    this.searchItems = [];
+    let attractionsList = attraction.getAttractions(); 
+    let toursList = tour.getTours(); 
+
+
+    for(let i = 0; i < attractionsList.length; i++){
+      this.searchItems.push(attractionsList[i].title);
     }
 
-    for(let j = 0; j < tour.getTours.length; j++){
-      this.searchList.push(tour.getTours[j].title);
+    for(let j = 0; j < toursList.length; j++){
+      this.searchItems.push(toursList[j].title);
     }
   }
 
