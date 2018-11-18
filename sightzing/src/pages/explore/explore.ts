@@ -28,6 +28,7 @@ export class ExplorePage {
   results = new Array();
   searchItems: string[] = new Array(); 
   searchResult: any[] = new Array();
+  returnableSearch: any[] = new Array(); 
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public popoverController: PopoverController) {
@@ -80,10 +81,17 @@ export class ExplorePage {
       this.searchResult = [];
       this.searchItems.filter((item) => {
         if(item.toLowerCase().indexOf(value.toLowerCase()) > -1){
-          this.searchResult.push(item);
+          this.searchResult.push(attraction.getAttraction(item));
         }
-        return this.searchResult;
       })
+      this.returnableSearch = [];
+      for(let i = 0; i < this.searchResult.length; i++){
+        if(this.searchResult[i] != null){
+          this.returnableSearch.push(this.searchResult[i]);
+        }
+      }
+      console.log(this.returnableSearch);
+      return this.returnableSearch;
     }
   }
 
@@ -145,6 +153,20 @@ export class ExplorePage {
     this.content.scrollToTop();
   }
 
+  showSearchGrid(){
+    //get the search-grid and set to display block
+    let searchGrid = document.getElementById("search-grid");
+    searchGrid.setAttribute("style", "display: block;")
+
+     //get the explore-grid and hide
+     let exploreGrid = document.getElementById("explore-grid");
+     exploreGrid.setAttribute("style", "display: none;");
+
+     //get the resultgrid and hide
+     let resultGrid = document.getElementById("result-grid");
+     resultGrid.setAttribute("style", "display: none;");
+  }
+
   changeToResults(choice: string){
     this.scrollToTop(); 
     let categoryType: string;
@@ -152,6 +174,11 @@ export class ExplorePage {
     if(choice == "Tours"){
       this.results = tour.getTours();
       categoryType = "tour";
+    }
+
+    else if(choice == "search"){
+      this.results = this.searchResult;
+      categoryType = "attraction";
     }
 
     else if(choice == "All"){

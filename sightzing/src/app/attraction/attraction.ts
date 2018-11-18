@@ -46,7 +46,7 @@ export class Attraction {
 
     getAttraction(name: string){
         for(var i = 0; i < this.attractions.length; i++){
-            if(this.attractions[i].title == name){
+            if(this.attractions[i].title.toLowerCase() == name.toLowerCase()){
                 return this.attractions[i];
             }
         }
