@@ -54,12 +54,17 @@ export class Attraction {
     }
 
     getAttractionByCategory(category: string){
+
+        // Must be here for now. Otherwise this.attractions is empty.
+        this.fillListWithAttractions();
+
         let attractionsWithCat: Attraction[] = new Array();
         for(var i = 0; i < this.attractions.length; i++){
             if(this.attractions[i].category == category){
                 attractionsWithCat.push(this.attractions[i]);
             }
         }
+
         return attractionsWithCat;
     }
 

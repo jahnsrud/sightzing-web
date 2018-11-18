@@ -188,6 +188,7 @@ export class HomePage {
   async presentTour(i: string) {
     let tour = new Tour();
     tour.fillListWithTours();
+    console.log(tour);
 
     this.navController.push(TourPage, {
       tour: tour.getTour(i)
