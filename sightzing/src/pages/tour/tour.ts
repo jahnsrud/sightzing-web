@@ -20,10 +20,14 @@ import { TourList } from '../../app/tour/tourlist';
 export class TourPage {
 
   tour:Tour;
+  attractionsCount:number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public mainTourList: TourList, public toastController: ToastController) {
   	this.tour = this.navParams.get("tour");
-  	console.log(this.tour);
+    console.log(this.tour);
+
+    this.attractionsCount = this.tour.attractions.length;
+
   }
 
   ionViewDidLoad() {
@@ -43,7 +47,7 @@ export class TourPage {
     this.mainTourList.addTourToList(this.tour);
 
     let toast = this.toastController.create({
-      message: '✅ Added ' + this.tour.title,
+      message: '✅ Added ' + this.tour.title + " to My Guide. Happy exploring!",
       duration: 3000,
       position: 'top'
     });

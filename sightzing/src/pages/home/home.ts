@@ -36,15 +36,12 @@ export class HomePage {
 
     this.featuredList = [
       {
-        "title": "Hidden Treasures of Oslo",
+        "title": "Hidden Treasures",
         "type": "Tour",
         "attractions": [
-          attraction.getAttraction("Nordmarka"),
-          attraction.getAttraction("Fram Museum"),
-          attraction.getAttraction("Oslo Cathedral")
         ],
         "time": 7.5,
-        "image": "../../assets/imgs/hidden-oslo-tour.jpg"
+        "image": "../../assets/imgs/all-attractions.jpg"
       },
       {
         "title": attraction.getAttraction("Holmenkollen").title,
@@ -86,13 +83,13 @@ export class HomePage {
         "imageUrl": "../../assets/imgs/kurt-nilsen.jpg"
       },
       {
-        "title": "Ennio Moricone",
+        "title": "Concert: Ennio Moricone",
         "description": "",
         "date": "10. December 2018",
         "imageUrl": "../../assets/imgs/ennio-morricone.jpg"
       },
       {
-        "title": "Svanesjøen",
+        "title": "Ballet: Swan Lake",
         "description": "",
         "date": "11. December 2018",
         "imageUrl": "../../assets/imgs/svanesjoen.jpg"

@@ -22,6 +22,7 @@ page-home{
         font-style: italic;
         font-size: 11pt;
         color: gray;
+        text-align: right;
     }
 
     .profile-button {
@@ -131,12 +132,12 @@ page-home{
             font-size: 0.7em !important;
             width: 93px;
             color: white;
-            margin-left: 10px;
             top: 16px;
             position: absolute;
             font-weight: bold;
             background-color: black !important;
             padding: 3px;
+            margin-left: 10px;
             border-radius: 4px;
         }
 

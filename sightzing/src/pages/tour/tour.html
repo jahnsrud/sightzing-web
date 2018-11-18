@@ -7,7 +7,6 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{tour.title}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,22 +14,44 @@
 
 <ion-content padding>
 
+  <ion-title>
+    <h1>{{ tour.title }}</h1>
+  </ion-title>
+
   <div id="header-img">
     <img src="{{ tour.imageUrl }}" alt="Attraction Photo" id="attraction-large-photo">
 
-    <p>Time</p>
-    <p>{{ tour.totalTime }}</p>
+    <ion-row id="time-and-count-row">
+      <ion-col col-12>
+        <!--Table for informtion-->
+        <div class="small-info-container">
 
-    <p>Attractions</p>
-    <p>{{ tour.attractions.count }}</p>
+          <div class="inner-info-container border-right">
+            <h6 class="info-txt">Time</h6>
+            <div class="icon-w-txt-container centered">
+              <ion-icon name="stopwatch" id="time-icon"></ion-icon>
+              <h4 class="inner-txt-container time-txt">{{ tour.totalTime }}h</h4>
+            </div>
+          </div>
 
-    <p>Rating</p>
-    <p>Rating here, thanks!</p>
+          <div class="inner-info-container">
+            <h6 class="info-txt">Attractions</h6>
+            <div class="icon-w-txt-container centered">
+              <h4 class="inner-txt-container">{{ attractionsCount }}</h4>
+            </div>
+          </div>
+        </div>
+
+
+      </ion-col>
+    </ion-row>
 
     <p class="tour-description">{{ tour.description }}<p>
   </div>
 
-  <button ion-button full round class="add-my-guide-btn" (click)="addAllAttractions()">Add all to My Guide</button>
+  <button ion-button full round class="add-my-guide-btn" (click)="addAllAttractions()">
+    <p class="button-txt add-my-guide-txt"> + Add all to My Guide</p>
+  </button>
 
   <h2>What to see</h2>
 
@@ -44,38 +65,34 @@
       <div class="img-overlay"></div>
 
       <button ion-button round icon-only class="add-button" (click)="someRandomMethod()">
-          <ion-icon name="add" class="add-button-icon"></ion-icon>
+        <ion-icon name="add" class="add-button-icon"></ion-icon>
       </button>
-      
-        <div class="result-txt-box title-box">
-          <h3 class="card-title result-title">
-            {{ item.title }}
-          </h3>
-        </div>
 
-        <!--Time-box-->
-        <div class="result-txt-box time-box">
-          <ion-icon class="time-icon" name="time"></ion-icon>
-          <h4 class="result-time">
-            {{ item.time }}
-          </h4>
-        </div>
+      <div class="result-txt-box title-box">
+        <h3 class="card-title result-title">
+          {{ item.title }}
+        </h3>
+      </div>
 
-        <!--Divider-line-->
-        <div class="result-txt-box">
-          <div class="divider"></div>
-        </div>
+      <!--Time-box-->
+      <div class="result-txt-box time-box">
+        <ion-icon class="time-icon" name="time"></ion-icon>
+        <h4 class="result-time">
+          {{ item.time }}
+        </h4>
+      </div>
 
-        <!--Star box-->
-        <div class="result-txt-box star-box">
+      <!--Divider-line-->
+      <div class="result-txt-box">
+        <div class="divider"></div>
+      </div>
 
-        </div>
+      <!--Star box-->
+      <div class="result-txt-box star-box">
 
-      </ion-card>
+      </div>
+
+    </ion-card>
   </ion-row>
-
-  <div class="info-bar">
-    Test
-  </div>
 
 </ion-content>

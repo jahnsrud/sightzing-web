@@ -1,10 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Content, AlertController } from 'ionic-angular';
 import { TourList } from '../../app/tour/tourlist';
 import { Attraction } from '../../app/attraction/attraction';
 import { MapPage } from '../map/map';
 import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
-// import mapboxgl from 'mapbox-gl';
 
 const attraction: Attraction = new Attraction();
 
@@ -23,7 +22,7 @@ export class MyGuidePage {
 
   //myAttractions = attraction.getAttraction("Nordmarka");
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public tourList: TourList) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public tourList: TourList, public alertController:AlertController) {
     attraction.fillListWithAttractions();
 
     //this.time = this.attraction.time;
@@ -34,14 +33,6 @@ export class MyGuidePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyGuidePage');
 
-    /* mapboxgl.accessToken = 'pk.eyJ1IjoiamFobWFyMTciLCJhIjoiY2pvazNkODgyMDJtOTNwbW43YTQ2azA5ZSJ9.iPR0QgDHkzsJMy6jgCGNMg';
-    const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v10',
-        center: [59.91607882117212, 10.736283711544957],
-        zoom: 9
-    });*/
-
     this.content.ionScrollStart.subscribe(() => {
       this.changeNavbarOnScroll();
     });
@@ -51,7 +42,6 @@ export class MyGuidePage {
       }
     }); 
 
-    //this.attractionsList = this.tourList.getTourList(); 
   }
 
   changeNavbarOnScroll(){
@@ -167,6 +157,15 @@ export class MyGuidePage {
         }
       }
     }
+  }
+
+  edit() {
+    let alert = this.alertController.create({
+      title: "Not available",
+      subTitle: "Editing the My Guide is not available in this version of Sightzing. Check back later 😎",
+      buttons: ["Dismiss"]
+    });
+    alert.present();
   }
 
 }

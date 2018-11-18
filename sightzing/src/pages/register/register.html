@@ -60,17 +60,17 @@
     <ion-list>
         <ion-item class="editprofileinput">
           <ion-label floating style="color: grey;">Email</ion-label>
-          <ion-input type="email" formControlName="inputEmail" [(ngModel)]="Email" class="input" id="emailinput"></ion-input>
+          <ion-input type="email" formControlName="inputEmail" [(ngModel)]="Email" class="input" id="emailinput"(keyup)="moveFocus(b)"></ion-input>
         </ion-item>
 
         <ion-item class="editprofileinput">
           <ion-label floating style="color: grey;">Password</ion-label>
-            <ion-input type="Password" class="input"></ion-input>
+            <ion-input type="Password" class="input" #b (keyup)="moveFocus(c)"></ion-input>
         </ion-item>
 
         <ion-item class="editprofileinput">
           <ion-label floating style="color: grey;">Confirm Password</ion-label>
-          <ion-input type="Password" class="input"></ion-input>
+          <ion-input type="Password" class="input" #c></ion-input>
         </ion-item>
 
         <button ion-button full round [disabled]="!registerForm.valid" (click)="changeToWelcomeUser()" id="register-btn">
@@ -86,12 +86,12 @@
   <ion-list>
     <ion-item class="editprofileinput">
         <ion-label floating style="color: grey;">Full Name</ion-label>
-        <ion-input type="text" formControlName="inputUsername" [(ngModel)]="username" class="input" id="fullname"></ion-input>
+        <ion-input type="text" formControlName="inputUsername" [(ngModel)]="username" class="input" id="fullname" (keyup)="moveFocus(x)"></ion-input>
     </ion-item>
     
     <ion-item class="editprofileinput">
       <ion-label floating style="color: grey;">Country</ion-label>
-    <ion-input type="text" formControlName="inputCountry" [(ngModel)]="country" class="input" id="countryinput"></ion-input>
+    <ion-input type="text" formControlName="inputCountry" [(ngModel)]="country" class="input" id="countryinput" #x></ion-input>
     </ion-item>
 
     <button ion-button full round [disabled]="!welcomeUserForm.valid" (click)="changeToLoggedinUser()" id="save-btn">

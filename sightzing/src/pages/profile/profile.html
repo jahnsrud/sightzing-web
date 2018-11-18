@@ -101,17 +101,17 @@
     <ion-list>
       <ion-item class="editprofileinput">
         <ion-label floating class="inputlabel" style="color: grey;">Full Name</ion-label>
-        <ion-input type="text"[(ngModel)]="Username" class="input" id="fullname"></ion-input>
+        <ion-input type="text"[(ngModel)]="Username" class="input" id="fullname" (keyup)="moveFocus(b)"></ion-input>
       </ion-item>
 
       <ion-item class="editprofileinput">
         <ion-label floating class="inputlabel" style="color: grey;">Country</ion-label>
-        <ion-input type="text" [(ngModel)]="Country" class="input" id="countryinput"></ion-input>
+        <ion-input type="text" [(ngModel)]="Country" class="input" id="countryinput" #b (keyup)="moveFocus(c)"></ion-input>
       </ion-item>
 
       <ion-item class="editprofileinput">
         <ion-label floating class="inputlabel" style="color: grey;">Email</ion-label>
-        <ion-input type="email" [(ngModel)]="emailInput" class="input" id="inputEmail"></ion-input>
+        <ion-input type="email" [(ngModel)]="emailInput" class="input" id="inputEmail" #c></ion-input>
       </ion-item>
     </ion-list>
 
@@ -131,17 +131,17 @@
     <ion-list>
       <ion-item class="editprofileinput">
         <ion-label floating style="color: grey;">Old password</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" (keyup)="moveFocus(x)"></ion-input>
       </ion-item>
 
       <ion-item class="editprofileinput">
         <ion-label floating style="color: grey;">New password</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" #x (keyup)="moveFocus(y)"></ion-input>
       </ion-item>
 
       <ion-item class="editprofileinput">
         <ion-label floating style="color: grey;">Confirm password</ion-label>
-        <ion-input type="passwrod"></ion-input>
+        <ion-input type="passwrod" #y></ion-input>
       </ion-item>
     </ion-list>
     <button ion-button full round class="profile-page-button" id="editpasswordbtn" (click)="changeToLoggedinUserFromEditPassword()">
