@@ -1,5 +1,9 @@
 page-tour {
 
+    #header-img{
+        padding: 0 8px;
+    }
+
     #attraction-large-photo {
         border-radius: 10px;
         
@@ -122,8 +126,13 @@ page-tour {
         padding-left: 5px; 
     }
 
+    #button-container{
+        padding: 0 8px;
+    }
+
     .add-my-guide-btn{
         background-color: $color-orange !important;
+        height: 45px;
     }
 
     .add-my-guide-txt{

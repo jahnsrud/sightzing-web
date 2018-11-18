@@ -25,13 +25,14 @@ export class TourPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public mainTourList: TourList, public toastController: ToastController) {
   	this.tour = this.navParams.get("tour");
     console.log(this.tour);
-
-    this.attractionsCount = this.tour.attractions.length;
-
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TourPage');
+  }
+
+  ionViewDidEnter(){
+    this.attractionsCount = this.tour.attractions.length;
   }
 
   presentAttraction(title: string) {
