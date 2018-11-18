@@ -131,17 +131,17 @@
     <ion-list>
       <ion-item class="editprofileinput">
         <ion-label floating style="color: grey;">Old password</ion-label>
-        <ion-input type="password" (keyup)="moveFocus(b)"></ion-input>
+        <ion-input type="password" (keyup)="moveFocus(x)"></ion-input>
       </ion-item>
 
       <ion-item class="editprofileinput">
         <ion-label floating style="color: grey;">New password</ion-label>
-        <ion-input type="password" #b (keyup)="moveFocus(c)"></ion-input>
+        <ion-input type="password" #x (keyup)="moveFocus(y)"></ion-input>
       </ion-item>
 
       <ion-item class="editprofileinput">
         <ion-label floating style="color: grey;">Confirm password</ion-label>
-        <ion-input type="passwrod" #c></ion-input>
+        <ion-input type="passwrod" #y></ion-input>
       </ion-item>
     </ion-list>
     <button ion-button full round class="profile-page-button" id="editpasswordbtn" (click)="changeToLoggedinUserFromEditPassword()">

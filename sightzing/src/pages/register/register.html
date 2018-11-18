@@ -86,12 +86,12 @@
   <ion-list>
     <ion-item class="editprofileinput">
         <ion-label floating style="color: grey;">Full Name</ion-label>
-        <ion-input type="text" formControlName="inputUsername" [(ngModel)]="username" class="input" id="fullname" (keyup)="moveFocus(b)"></ion-input>
+        <ion-input type="text" formControlName="inputUsername" [(ngModel)]="username" class="input" id="fullname" (keyup)="moveFocus(x)"></ion-input>
     </ion-item>
     
     <ion-item class="editprofileinput">
       <ion-label floating style="color: grey;">Country</ion-label>
-    <ion-input type="text" formControlName="inputCountry" [(ngModel)]="country" class="input" id="countryinput" #b></ion-input>
+    <ion-input type="text" formControlName="inputCountry" [(ngModel)]="country" class="input" id="countryinput" #x></ion-input>
     </ion-item>
 
     <button ion-button full round [disabled]="!welcomeUserForm.valid" (click)="changeToLoggedinUser()" id="save-btn">
