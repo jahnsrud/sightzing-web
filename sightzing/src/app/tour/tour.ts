@@ -16,7 +16,7 @@ export class Tour {
     constructor(){
 
     }
-    
+
     setValues(title: string,
         description: string,
         imageUrl: string,
@@ -60,6 +60,7 @@ export class Tour {
         this.addNewTourToList("For the Cultural Ones", "Follow the footsteps of ancient vikings, see the main attractions in the historic centers as you trace a route from Fram museum to the National Gallery.", "../assets/imgs/cultural-tour.jpg", 2, attraction.getAttractionByCategory("Museums"));
         this.addNewTourToList("Instafriendly", "Explore the amazing sculptures and extraordinary figures in The Vigelands Park, take a look at the amazingly big ski jump, and then take your trip to Nordmarka and take pictures you will remember for life.", "../assets/imgs/instafriendly-tour.jpg", 5, attraction.getAttractionByCategory("Nature & Parks"));
         this.addNewTourToList("Hidden Treasures of Oslo", "Avoid the tourist traps and experience Oslo like the people who live there.", "../assets/imgs/instafriendly-tour.jpg", 5, attraction.getAttractionByCategory("Nature & Parks"))
+
     }
 
 }

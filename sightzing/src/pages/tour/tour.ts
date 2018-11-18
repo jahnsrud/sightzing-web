@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Tour } from '../../app/tour/tour';
+import { Attraction } from '../../app/attraction/attraction';
+import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
 
 /**
  * Generated class for the TourPage page.
@@ -25,6 +27,14 @@ export class TourPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TourPage');
+  }
+
+  presentAttraction(title: string) {
+    let attraction = new Attraction();
+    attraction.fillListWithAttractions();
+    this.navCtrl.push(AttractionDetailPage, {
+      attraction: attraction.getAttraction(title)
+    });
   }
 
 }

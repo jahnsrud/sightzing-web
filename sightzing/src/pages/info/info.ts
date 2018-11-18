@@ -23,27 +23,35 @@ export class InfoPage {
     this.items = [
       {
         title: 'About Oslo',
-        content: 'Oslo is the best city evah we have trolls and a opera house you can walk on. its pretty cool. we also have lusekofter. brunos and ostehøvels',
+        content: 'Oslo, the capital of Norway, sits on the southern coast at the head of the Oslofjord. it is known for its green spaces and museums. Oslo is the economic and governmental centre of Norway. Oslo is also a hub of Norwegian trade.',
         expanded: false,
         iconName: "add"},
       {
         title: 'Practical Information',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+        content: 'Oslo is a relatively small city and parking is at a premium so a car is a bit of a liability. Fortunately, there is an extensive and superbly edfficient public transport system.',
         expanded: false,
         iconName: "add"},
       {
         title: 'Public Transportation',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        content: 'There exists an efficient public transportation system involving buses, trams, subway, trains and ferries. The city is served by 50 bus lines and eight tram routes, all starting from jernbanetorvet at Oslo S station.',
         expanded: false,
         iconName: "add"},
       {
-        title: 'About sightZing',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+        title: "About sightZing",
+        content: "sihgtZing's mission is to help travelers exploring Oslo for the first time, give them the basic knowledge of how to get to one point from another. We want to help people and give them the ultimate experience when they first come to Oslo.",
+        aboutTitle: "Creators",
+        creator1: "Markus Jahnsrud",
+        creator2: "Stine Sandberg",
+        creator3: "Håvard Nordlie Mathisen",
+        creator4: " Marcus Tveide Jensen",
+        creator5: "Andreas Breime Persson",
         expanded: false,
         iconName: "add"},
       {
         title: 'Terms and Conditions',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+        content: 'Please read these Terms and Conditions carefully before using the sightZing mobile application operated by us. ',
+        content2: "Your access to and use of the Service is conditioned on your acceptance of and compilance with these terms. these terms apply to all visitors, users and others who access or use the service.",
+        content3: "By accessing or using the service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.",
         expanded: false,
         iconName: "add"}
         ];
