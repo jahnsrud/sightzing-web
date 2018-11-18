@@ -39,12 +39,9 @@ export class HomePage {
         "title": "Hidden Treasures of Oslo",
         "type": "Tour",
         "attractions": [
-          attraction.getAttraction("Nordmarka"),
-          attraction.getAttraction("Fram Museum"),
-          attraction.getAttraction("Oslo Cathedral")
         ],
         "time": 7.5,
-        "image": "../../assets/imgs/hidden-oslo-tour.jpg"
+        "image": "../../assets/imgs/all-attractions.jpg"
       },
       {
         "title": attraction.getAttraction("Holmenkollen").title,
