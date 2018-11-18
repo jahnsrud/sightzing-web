@@ -43,8 +43,8 @@ export class HomePage {
           attraction.getAttraction("Fram Museum"),
           attraction.getAttraction("Oslo Cathedral")
         ],
-        "time": 0,
-        "image": "../../assets/imgs/all-attractions.jpg"
+        "time": 7.5,
+        "image": "../../assets/imgs/hidden-oslo-tour.jpg"
       },
       {
         "title": attraction.getAttraction("Holmenkollen").title,
