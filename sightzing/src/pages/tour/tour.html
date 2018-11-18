@@ -55,7 +55,7 @@
     </button>
   </div>
 
-  <h2>What to see</h2>
+  <h2 style="padding-left: 8px;">What to see</h2>
 
   <ion-row id="result-row" *ngFor="let item of tour.attractions; let i = index;" (click)="presentAttraction(item.title)">
 
@@ -66,32 +66,23 @@
 
       <div class="img-overlay"></div>
 
-      <button ion-button round icon-only class="add-button" (click)="someRandomMethod()">
+      <button ion-button round icon-only class="add-button">
         <ion-icon name="add" class="add-button-icon"></ion-icon>
       </button>
+      <div class="result-txt">
+        <div class="result-txt-box title-box">
+          <h3 class="card-title result-title">
+            {{ item.title }}
+          </h3>
+        </div>
 
-      <div class="result-txt-box title-box">
-        <h3 class="card-title result-title">
-          {{ item.title }}
-        </h3>
-      </div>
-
-      <!--Time-box-->
-      <div class="result-txt-box time-box">
-        <ion-icon class="time-icon" name="time"></ion-icon>
-        <h4 class="result-time">
-          {{ item.time }}
-        </h4>
-      </div>
-
-      <!--Divider-line-->
-      <div class="result-txt-box">
-        <div class="divider"></div>
-      </div>
-
-      <!--Star box-->
-      <div class="result-txt-box star-box">
-
+        <!--Time-box-->
+        <div class="result-txt-box time-box">
+          <ion-icon class="time-icon" name="time"></ion-icon>
+          <h4 class="result-time">
+            {{ item.time }} h
+          </h4>
+        </div>
       </div>
 
     </ion-card>
