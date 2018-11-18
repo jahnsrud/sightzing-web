@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { Tour } from '../../app/tour/tour';
 import { Attraction } from '../../app/attraction/attraction';
 import { AttractionDetailPage } from '../attraction-detail/attraction-detail';
+import { TourList } from '../../app/tour/tourlist';
 
 /**
  * Generated class for the TourPage page.
@@ -20,7 +21,7 @@ export class TourPage {
 
   tour:Tour;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public mainTourList: TourList, public toastController: ToastController) {
   	this.tour = this.navParams.get("tour");
   	console.log(this.tour);
   }
@@ -35,6 +36,20 @@ export class TourPage {
     this.navCtrl.push(AttractionDetailPage, {
       attraction: attraction.getAttraction(title)
     });
+  }
+
+  addAllAttractions() {
+
+    this.mainTourList.addTourToList(this.tour);
+
+    let toast = this.toastController.create({
+      message: '✅ Added ' + this.tour.title,
+      duration: 3000,
+      position: 'top'
+    });
+
+    toast.present();
+
   }
 
 }
