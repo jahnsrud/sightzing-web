@@ -4,7 +4,9 @@ Din turistguide i Oslo.
 
 ## Hva er dette?
 
-En prosjekt ved Høyskolen Kristiania i emnet DS3800 Grensesnittdesign. Målet med emnet er god brukeropplevelse og ikke kode. Dette reflekteres kanskje når man ser på selve koden.
+Et prosjekt ved Høyskolen Kristiania i emnet DS3800 Grensesnittdesign. Oppgaven var å lage en turistguide tilpasset målgruppen kinesiske turister.
+
+Målet med emnet er god brukeropplevelse og ikke kode. Dette reflekteres kanskje når man ser på selve koden. Løsningen er bygget i Ionic.
 
 Prøv selv: https://soriko-5bf52.firebaseapp.com 
 
