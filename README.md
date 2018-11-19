@@ -12,6 +12,8 @@ Prøv selv: https://soriko-5bf52.firebaseapp.com
 
 NB: løsningen er kun tilpasset mobil
 
+![sightzing](https://user-images.githubusercontent.com/4276097/48703326-9ab60300-ebf3-11e8-8a6d-7d9aaf0c9f1a.jpg)
+
 ### Gruppe:
 - Andreas Breime Persson - perand17 - 704845
 - Marcus Tveide Jensen - jenmar17 - 705023
